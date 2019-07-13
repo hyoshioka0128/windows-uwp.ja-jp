@@ -1,23 +1,23 @@
 ---
 description: この記事では、お客様のデスクトップ アプリケーションで UWP XAML の UI をホストする方法について説明します。
-title: デスクトップ アプリケーションで API をホストしている UWP XAML を使用します。
+title: デスクトップ アプリケーションで API をホストしている UWP XAML の使用
 ms.date: 04/16/2019
 ms.topic: article
-keywords: windows 10、uwp、windows フォーム、wpf、win32、xaml 諸島
+keywords: windows 10、uwp、windows フォーム、wpf、win32、xaml islands
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 16f61c1f950583ee0fef7f30b7e17939df7ea538
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: fa38c952d4d46d83ea9b4e9f0db5f516fe09ce59
+ms.sourcegitcommit: f9a30bfd1e8eab50d0b1db97dd2f650ce66b5d34
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67317759"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67690895"
 ---
-# <a name="using-the-uwp-xaml-hosting-api-in-a-desktop-application"></a>デスクトップ アプリケーションで API をホストしている UWP XAML を使用します。
+# <a name="using-the-uwp-xaml-hosting-api-in-a-desktop-application"></a>デスクトップ アプリケーションで API をホストしている UWP XAML の使用
 
-以降では、Windows 10、バージョンが 1903、デスクトップ アプリケーションを UWP 以外 (WPF、Windows フォームなどとC++Win32 アプリケーション) を使用できます、 *API をホストしている UWP XAML*に関連付けられている任意の UI 要素に UWP コントロールをホストする、ウィンドウ ハンドル (HWND)。 この API は、のみ UWP コントロールを使用して利用できる最新の Windows 10 の UI 機能を使用するデスクトップ アプリケーションを UWP 以外を使用できます。 デスクトップ アプリケーションを UWP 以外が使用する UWP コントロールをホストするには、この API を使用するなど、 [Fluent Design System](/windows/uwp/design/fluent-design-system/index)サポートと[Windows インク](/windows/uwp/design/pen-and-stylus-interactions)します。
+以降では、Windows 10、バージョンが 1903、デスクトップ アプリケーションを UWP 以外 (WPF、Windows フォームなどとC++Win32 アプリケーション) を使用できます、 *API をホストしている UWP XAML*に関連付けられている任意の UI 要素に UWP コントロールをホストする、ウィンドウ ハンドル (HWND)。 この API は、のみ UWP コントロールを使用して利用できる最新の Windows 10 の UI 機能を使用するデスクトップ アプリケーションを UWP 以外を使用できます。 デスクトップ アプリケーションを UWP 以外が使用する UWP コントロールをホストするには、この API を使用するなど、 [Fluent Design System](/windows/uwp/design/fluent-design-system/index)サポートと[Windows インク](/windows/uwp/design/input/pen-and-stylus-interactions)します。
 
 API をホストしている UWP XAML では、開発者がデスクトップ アプリケーションを UWP 以外に Fluent UI に表示できるようにするコントロールの広範なセットの基盤を提供します。 この機能は呼 *XAML Islands* と呼ばれます。 この機能の概要については、[デスクトップ アプリケーションでの UWP コントロール](xaml-islands.md) を参照してください。
 
@@ -49,7 +49,7 @@ API をホストしている UWP XAML には、これらのメインの Windows 
 
 * この [**DesktopWindowXamlSource**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource) クラスは、お客様のデスクトップ アプリケーションでホストしている UWP XAML コンテンツのインスタンスを表します。 このクラスの最も重要なメンバーは、 [**コンテンツ**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource.content)プロパティです。 このプロパティに割り当てる、 [ **Windows.UI.Xaml.UIElement** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement)をホストします。 このクラスには、ルーティングのキーボード フォーカスのナビゲーション、および XAML Islands からの他のメンバーもあります。
 
-* **IDesktopWindowXamlSourceNative**と**IDesktopWindowXamlSourceNative2** COM インターフェイスです。 **IDesktopWindowXamlSourceNative**提供、 **AttachToWindow**メソッドは、親の UI 要素に、アプリケーションで XAML の島をアタッチするために使用します。 **IDesktopWindowXamlSourceNative2**提供、 **PreTranslateMessage**メソッドで、特定の Windows メッセージを正しく処理するため、UWP XAML フレームワークを使用します。
+* **IDesktopWindowXamlSourceNative**と**IDesktopWindowXamlSourceNative2** COM インターフェイスです。 **IDesktopWindowXamlSourceNative**提供、 **AttachToWindow**メソッドは、親の UI 要素に、アプリケーションで XAML Islandsをアタッチするために使用します。 **IDesktopWindowXamlSourceNative2**提供、 **PreTranslateMessage**メソッドで、特定の Windows メッセージを正しく処理するため、UWP XAML フレームワークを使用します。
     > [!NOTE]
     > これらのインターフェイスが宣言されている、 **windows.ui.xaml.hosting.desktopwindowxamlsource.h** Windows sdk ヘッダー ファイル。 既定では、このファイルは、%programfiles (x86) %\Windows Kits\10\Include で\\< ビルド番号\>\um します。 C++ Win32 プロジェクトでは、このヘッダー ファイルを直接参照することができます。 WPF や Windows フォーム プロジェクトでは、アプリケーション コードを使用してインターフェイスを宣言する必要があります、 [ **ComImport** ](https://docs.microsoft.com/dotnet/api/system.runtime.interopservices.comimportattribute)属性。 インターフェイスの宣言内の宣言を正確に一致するかどうかを確認**windows.ui.xaml.hosting.desktopwindowxamlsource.h**します。
 
@@ -57,9 +57,9 @@ API をホストしている UWP XAML には、これらのメインの Windows 
 
 ![DesktopWindowXamlSource アーキテクチャ](images/xaml-islands/xaml-hosting-api-rev2.png)
 
-* 基本レベルで XAML の島をホストするアプリケーションで UI 要素は、します。 この UI 要素には、ウィンドウ ハンドル (HWND) が必要です。 XAML の島をホストできる UI 要素の例として、 [ **System.Windows.Interop.HwndHost** ](https://docs.microsoft.com/dotnet/api/system.windows.interop.hwndhost) WPF アプリケーション、 [ **System.Windows.Forms.Control**](https://docs.microsoft.com/dotnet/api/system.windows.forms.control) Windows フォーム アプリケーションの場合、[ウィンドウ](https://docs.microsoft.com/windows/desktop/winmsg/about-windows)のC++Win32 アプリケーション。
+* 基本レベルで XAML Islandsをホストするアプリケーションで UI 要素は、します。 この UI 要素には、ウィンドウ ハンドル (HWND) が必要です。 XAML Islandsをホストできる UI 要素の例として、 [ **System.Windows.Interop.HwndHost** ](https://docs.microsoft.com/dotnet/api/system.windows.interop.hwndhost) WPF アプリケーション、 [ **System.Windows.Forms.Control**](https://docs.microsoft.com/dotnet/api/system.windows.forms.control) Windows フォーム アプリケーションの場合、[ウィンドウ](https://docs.microsoft.com/windows/desktop/winmsg/about-windows)のC++Win32 アプリケーション。
 
-* レベルは、次を**DesktopWindowXamlSource**オブジェクト。 このオブジェクトは、XAML の島をホストするためのインフラストラクチャを提供します。 コードは、このオブジェクトを作成し、親の UI 要素にアタッチします。
+* レベルは、次を**DesktopWindowXamlSource**オブジェクト。 このオブジェクトは、XAML Islandsをホストするためのインフラストラクチャを提供します。 コードは、このオブジェクトを作成し、親の UI 要素にアタッチします。
 
 * 作成するときに、 **DesktopWindowXamlSource**、このオブジェクトは、UWP コントロールをホストするネイティブの子ウィンドウを自動的に作成されます。 このネイティブ子ウィンドウはほとんどの場合、コードから抽象化されていますが、そのハンドル (HWND) に必要な場合にアクセスできます。
 

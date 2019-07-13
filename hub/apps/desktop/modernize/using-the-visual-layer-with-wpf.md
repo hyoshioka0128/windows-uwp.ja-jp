@@ -1,5 +1,5 @@
 ---
-title: WPF でのビジュアル層の使用
+title: WPF でのビジュアル レイヤーの使用
 description: 既存の WPF コンテンツと組み合わせて、ビジュアル レイヤー API を使用して、高度なアニメーションや効果を作成するための手法について説明します。
 ms.date: 03/18/2019
 ms.topic: article
@@ -14,9 +14,9 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 05/24/2019
 ms.locfileid: "66215150"
 ---
-# <a name="using-the-visual-layer-with-wpf"></a>WPF でのビジュアル層の使用
+# <a name="using-the-visual-layer-with-wpf"></a>WPF でのビジュアル レイヤーの使用
 
-Windows ランタイムの合成 Api を使用することができます (とも呼ばれる、[ビジュアル層](/windows/uwp/composition/visual-layer)) で、Windows Presentation Foundation (WPF) アプリ用 Windows 10 のユーザーに光を最新のエクスペリエンスを作成します。
+Windows ランタイムの合成 Api を使用することができます (とも呼ばれる、[ビジュアル レイヤー](/windows/uwp/composition/visual-layer)) で、Windows Presentation Foundation (WPF) アプリ用 Windows 10 のユーザーに光を最新のエクスペリエンスを作成します。
 
 このチュートリアルの完成したコードは GitHub で入手できます。[WPF HelloComposition サンプル](https://github.com/Microsoft/Windows.UI.Composition-Win32-Samples/tree/master/dotnet/WPF/HelloComposition)します。
 
