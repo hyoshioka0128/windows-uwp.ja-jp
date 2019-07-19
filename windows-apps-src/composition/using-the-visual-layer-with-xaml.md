@@ -25,7 +25,7 @@ XAML とビジュアル レイヤーの相互運用機能を使用すると、XA
 - ピクセル パーフェクトなドロップ シャドウ
 
 これらの効果やアニメーションは既存の XAML コンテンツに適用できます。このため、新しい機能を活用するために、XAML アプリを大幅に再構成する必要はありません。
-レイアウト アニメーション、シャドウ、ぼかし効果については、以下の「レシピ」セクションで説明しています。 視差効果を実装するコード サンプルについては、[ParallaxingListItems のサンプル](https://github.com/microsoft/WindowsCompositionSamples/tree/master/SampleGallery/Samples/SDK 10586/ParallaxingListItems)をご覧ください。 [WindowsUIDevLabs リポジトリ](https://github.com/microsoft/WindowsCompositionSamples)にも、アニメーション、シャドウ、効果を実装するためのサンプルがいくつかあります。
+レイアウト アニメーション、シャドウ、ぼかし効果については、以下の「レシピ」セクションで説明しています。 視差効果を実装するコード サンプルについては、[ParallaxingListItems のサンプル]("https://github.com/microsoft/WindowsCompositionSamples/tree/master/SampleGallery/Samples/SDK 10586/ParallaxingListItems")をご覧ください。 [WindowsUIDevLabs リポジトリ](https://github.com/microsoft/WindowsCompositionSamples)にも、アニメーション、シャドウ、効果を実装するためのサンプルがいくつかあります。
 
 ## <a name="the-xamlcompositionbrushbase-class"></a>XamlCompositionBrushBase クラス
 
@@ -365,5 +365,5 @@ private void InitializeFrostedGlass(UIElement glassHost)
 - [ビジュアル層の概要](https://docs.microsoft.com/windows/uwp/composition/visual-layer)
 - [**ElementCompositionPreview**クラス](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Hosting.ElementCompositionPreview)
 - [WindowsUIDevLabs GitHub](https://github.com/microsoft/WindowsCompositionSamples) にある高度な UI とコンポジションのサンプル
-- [BasicXamlInterop サンプル](https://github.com/microsoft/WindowsCompositionSamples/tree/master/SampleGallery/Samples/SDK 10586/BasicXamlInterop)
-- [ParallaxingListItems サンプル](https://github.com/microsoft/WindowsCompositionSamples/tree/master/SampleGallery/Samples/SDK 10586/ParallaxingListItems)
+- [BasicXamlInterop サンプル]("https://github.com/microsoft/WindowsCompositionSamples/tree/master/SampleGallery/Samples/SDK 10586/BasicXamlInterop")
+- [ParallaxingListItems サンプル]("https://github.com/microsoft/WindowsCompositionSamples/tree/master/SampleGallery/Samples/SDK 10586/ParallaxingListItems")
