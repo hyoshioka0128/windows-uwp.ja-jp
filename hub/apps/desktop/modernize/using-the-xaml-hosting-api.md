@@ -19,7 +19,7 @@ ms.locfileid: "75683685"
 
 Windows 10 バージョン1903以降、UWP 以外のデスクトップアプリ (Win32、WPF C++ 、Windows フォームアプリを含む) は、 *UWP XAML ホスティング API*を使用して、ウィンドウハンドル (HWND) に関連付けられている任意の UI 要素で uwp コントロールをホストできます。 この API によって、uwp 以外のデスクトップアプリは、UWP コントロール経由でのみ使用できる最新の Windows 10 UI 機能を使用できるようになります。 たとえば、UWP 以外のデスクトップアプリは、この API を使用して、 [Fluent デザインシステム](/windows/uwp/design/fluent-design-system/index)を使用し、 [Windows Ink](/windows/uwp/design/input/pen-and-stylus-interactions)をサポートする UWP コントロールをホストできます。
 
-UWP XAML ホスティング API は、開発者が UWP デスクトップアプリに対して Fluent UI を取り込むことができるようにするために用意されている、より広範なコントロールセットの基盤を提供します。 この機能は呼 *XAML Islands* と呼ばれます。 この機能の概要については、「[デスクトップアプリでの UWP XAML コントロールのホスト (Xaml アイランド)](xaml-islands.md)」を参照してください。
+UWP XAML ホスティング API は、開発者が UWP デスクトップアプリに対して Fluent UI を取り込むことができるようにするために用意されている、より広範なコントロールセットの基盤を提供します。 この機能は呼 *XAML Islands* と呼ばれます。 この機能の概要については、「[デスクトップアプリでの UWP XAML コントロールのホスト (XAML Islands)](xaml-islands.md)」を参照してください。
 
 > [!NOTE]
 > XAML Islands に関するフィードバックがある場合は、 [Microsoft.Toolkit.Win32 リポジトリ](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/issues)に新しい問題を作成し、そこにコメントを残してください。 個人的にフィードバックを送信したい場合は、XamlIslandsFeedback@microsoft.com に送信できます。 あなたの洞察とシナリオは弊社にとって非常に重要です。
@@ -30,13 +30,13 @@ UWP XAML ホスティング API は、デスクトップアプリで UWP コン�
 
 * C++ Win32 デスクトップアプリがあり、uwp コントロールをアプリでホストする場合は、uwp XAML ホスティング API を使用する必要があります。 これらの種類のアプリに代わる方法はありません。
 
-* WPF アプリと Windows フォームアプリの場合、UWP XAML ホスティング API を直接使用するのではなく、Windows Community Toolkit で[Xaml アイランド .net コントロール](xaml-islands.md#wpf-and-windows-forms-applications)を使用することを強くお勧めします。 これらのコントロールは UWP XAML ホスティング API を内部的に使用し、キーボードナビゲーションやレイアウトの変更など、UWP XAML ホスティング API を直接使用した場合に対処する必要がある動作をすべて実装しています。
+* WPF アプリと Windows フォームアプリの場合、UWP XAML ホスティング API を直接使用するのではなく、Windows Community Toolkit で[XAML Island .NET コントロール](xaml-islands.md#wpf-and-windows-forms-applications)を使用することを強くお勧めします。 これらのコントロールは UWP XAML ホスティング API を内部的に使用し、キーボードナビゲーションやレイアウトの変更など、UWP XAML ホスティング API を直接使用した場合に対処する必要がある動作をすべて実装しています。
 
 この記事では、 C++ win32 アプリのみが UWP XAML ホスティング API を使用することをお勧めしますC++ 。この記事では、主に win32 アプリの手順と例について説明します。 ただし、WPF で UWP XAML ホスティング API を使用して、Windows フォームアプリを選択することもできます。 この記事では、WPF の[ホストコントロール](xaml-islands.md#host-controls)と Windows Community Toolkit の Windows フォームに関連するソースコードについて説明します。そのため、これらのコントロールで UWP XAML ホスティング API がどのように使用されているかを確認できます。
 
 ## <a name="prerequisites"></a>必要条件
 
-XAML アイランドには、Windows 10 バージョン 1903 (以降) と、それに対応する Windows SDK のビルドが必要です。 C++ Win32 アプリで XAML アイランドを使用するには、最初にプロジェクトを設定する必要があります。
+XAML Islands には、Windows 10 バージョン 1903 (以降) と、それに対応する Windows SDK のビルドが必要です。 C++ Win32 アプリで XAML Islands を使用するには、最初にプロジェクトを設定する必要があります。
 
 ### <a name="support-for-cwinrt"></a>/WinRT C++のサポート
 
@@ -75,9 +75,9 @@ UWP XAML ホスティング API には、これらの主な Windows ランタイ
 | IDesktopWindowXamlSourceNative | この COM インターフェイスには**Attachtowindow**メソッドが用意されています。このメソッドは、アプリの XAML Island を親 UI 要素にアタッチするために使用します。 すべての**Desktopwindowxamlsource**オブジェクトは、このインターフェイスを実装します。 |
 | IDesktopWindowXamlSourceNative2 | この COM インターフェイスには、UWP XAML フレームワークが特定の Windows メッセージを正しく処理できるようにする**PreTranslateMessage**メソッドが用意されています。 すべての**Desktopwindowxamlsource**オブジェクトは、このインターフェイスを実装します。 |
 
-次の図は、デスクトップアプリでホストされている XAML アイランド内のオブジェクトの階層を示しています。
+次の図は、デスクトップアプリでホストされている XAML Islands 内のオブジェクトの階層を示しています。
 
-* 基本レベルは、XAML アイランドをホストするアプリ内の UI 要素です。 この UI 要素には、ウィンドウハンドル (HWND) が必要です。 XAML アイランドをホストできる UI 要素の例としては、Win32 アプリC++用の[ウィンドウ](https://docs.microsoft.com/windows/desktop/winmsg/about-windows)、WPF アプリの [System.Windows.Interop.HwndHost](https://docs.microsoft.com/dotnet/api/system.windows.interop.hwndhost)、および Windows フォーム アプリ用の [System.Windows.Forms.Control](https://docs.microsoft.com/dotnet/api/system.windows.forms.control) がありますが、このような場合です。
+* 基本レベルは、XAML Islands をホストするアプリ内の UI 要素です。 この UI 要素には、ウィンドウハンドル (HWND) が必要です。 XAML Islands をホストできる UI 要素の例としては、Win32 アプリC++用の[ウィンドウ](https://docs.microsoft.com/windows/desktop/winmsg/about-windows)、WPF アプリの [System.Windows.Interop.HwndHost](https://docs.microsoft.com/dotnet/api/system.windows.interop.hwndhost)、および Windows フォーム アプリ用の [System.Windows.Forms.Control](https://docs.microsoft.com/dotnet/api/system.windows.forms.control) がありますが、このような場合です。
 
 * 次のレベルには、 **Desktopwindowxamlsource**オブジェクトがあります。 このオブジェクトは、XAML Islandsをホストするためのインフラストラクチャを提供します。 コードは、このオブジェクトを作成し、親 UI 要素にアタッチする役割を担います。
 
@@ -95,9 +95,9 @@ UWP XAML ホスティング API には、これらの主な Windows ランタイ
 
 次のサンプルは、 C++ Win32 アプリで UWP XAML ホスティング API を使用する方法を示しています。
 
-* [単純な XAML アイランドサンプル](https://github.com/marb2000/XamlIslands/tree/master/1903_Samples/CppWinRT_Win32_SimpleApp)。 このサンプルでは、パッケージ化されていないC++ Win32 アプリ (つまり、msix パッケージに組み込まれていないアプリ) で UWP コントロールをホストする基本的な実装を示します。
+* [単純な XAML Island サンプル](https://github.com/marb2000/XamlIslands/tree/master/1903_Samples/CppWinRT_Win32_SimpleApp)。 このサンプルでは、パッケージ化されていないC++ Win32 アプリ (つまり、msix パッケージに組み込まれていないアプリ) で UWP コントロールをホストする基本的な実装を示します。
 
-* [カスタムコントロールのサンプルを使用した XAML 島](https://github.com/marb2000/XamlIslands/tree/master/1903_Samples/CppWinRT_Win32_App)。 このサンプルでは、パッケージC++されていない Win32 アプリでカスタム UWP コントロールをホストする完全な実装と、キーボード入力やフォーカス移動などの他の動作を処理する方法を示します。 
+* [カスタムコントロールのサンプルを使用した XAML Island](https://github.com/marb2000/XamlIslands/tree/master/1903_Samples/CppWinRT_Win32_App)。 このサンプルでは、パッケージC++されていない Win32 アプリでカスタム UWP コントロールをホストする完全な実装と、キーボード入力やフォーカス移動などの他の動作を処理する方法を示します。 
 
 ### <a name="wpf-and-windows-forms"></a>WPF と Windows フォーム
 
@@ -156,7 +156,7 @@ XAML ホスティング API を使用して UWP コントロールをホスト�
 
 次の手順とコード例は、上記のプロセスを実装する方法を示しています。
 
-1. プロジェクトの **[ソースファイル]** フォルダーで、既定の**windowsproject .cpp**ファイルを開きます。 ファイルの内容全体を削除し、次の `include` と `using` ステートメントを追加します。 これらのステートメントにC++は、標準および UWP のヘッダーと名前空間に加えて、XAML アイランドに固有のいくつかの項目が含まれています。
+1. プロジェクトの **[ソースファイル]** フォルダーで、既定の**windowsproject .cpp**ファイルを開きます。 ファイルの内容全体を削除し、次の `include` と `using` ステートメントを追加します。 これらのステートメントにC++は、標準および UWP のヘッダーと名前空間に加えて、XAML Islands に固有のいくつかの項目が含まれています。
 
     ```cppwinrt
     #include <windows.h>
