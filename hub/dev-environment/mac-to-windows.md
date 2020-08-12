@@ -27,7 +27,7 @@ ms.locfileid: "87363711"
 | **操作** | **Mac** | **Windows** |
 |---------------|--------------------|---------------------|
 | コピー | Command + C | Ctrl+C |
-| ［切り取り］ | Command + X | Ctrl + X |
+| 切り取り | Command + X | Ctrl + X |
 | 貼り付け | Command + V | Ctrl + V |
 | 元に戻す | Command + Z | Ctrl + Z |
 | 上書き保存 | Command + S | Ctrl + S |
