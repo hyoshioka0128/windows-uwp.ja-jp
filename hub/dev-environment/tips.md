@@ -48,9 +48,9 @@ Windows Defender の設定を更新し、セキュリティ脅威のスキャン
 
 ![Windows Defender のスクリーンショット](../images/windows-defender-exclusions.png)
 
-## <a name="launch-all-your-command-lines-in-windows-terminal-at-once"></a>すべてのコマンド ラインを Windows ターミナルで一度に起動する
+## <a name="launch-all-your-command-lines-in-windows-terminal-at-once"></a>すべてのコマンド ラインを Windows Terminal で一度に起動する
 
-* [Windows ターミナルのコマンド ライン引数](https://docs.microsoft.com/windows/terminal/command-line-arguments?tabs=powershell#multiple-panes)を使用することで、PowerShell、Ubuntu、Azure CLI など、複数のコマンド ラインをすべて、単一のウィンドウの複数のペインで起動することができます。 [Windows ターミナル](https://docs.microsoft.com/windows/terminal/get-started)、[WSL/Ubuntu](https://docs.microsoft.com/windows/wsl/install-win10)、[Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest) をインストールした後、PowerShell で次のコマンドを入力して、新しい複数ペイン ウィンドウで 3 つをすべて開きます。
+* [Windows Terminal のコマンド ライン引数](https://docs.microsoft.com/windows/terminal/command-line-arguments?tabs=powershell#multiple-panes)を使用することで、PowerShell、Ubuntu、Azure CLI など、複数のコマンド ラインをすべて、単一のウィンドウの複数のペインで起動することができます。 [Windows Terminal](https://docs.microsoft.com/windows/terminal/get-started)、[WSL/Ubuntu](https://docs.microsoft.com/windows/wsl/install-win10)、[Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest) をインストールした後、PowerShell で次のコマンドを入力して、新しい複数ペイン ウィンドウで 3 つをすべて開きます。
 
     ```powershell
     wt -p "Command Prompt" `; split-pane -p "Windows PowerShell" `; split-pane -H wsl.exe
