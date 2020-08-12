@@ -73,7 +73,7 @@
       items:
         - name: Linux 用 Windows サブシステム
           href: 'https://docs.microsoft.com/windows/wsl/'
-        - name: Windows ターミナル
+        - name: Windows Terminal
           href: 'https://docs.microsoft.com/windows/terminal/'
         - name: Windows パッケージ マネージャー
           items:
