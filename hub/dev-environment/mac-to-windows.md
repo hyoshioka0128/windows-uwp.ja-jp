@@ -32,18 +32,18 @@ ms.locfileid: "87363711"
 | 元に戻す | Command + Z | Ctrl + Z |
 | 上書き保存 | Command + S | Ctrl + S |
 | 開く | Command + O | Ctrl + O |
-| コンピューターのロック | Command + Control + Q | WindowsKey + L |
-| デスクトップの表示 | Command + F3 | WindowsKey + D |
-| ファイル ブラウザーを開く | Command + N | WindowsKey + E |
-| ウィンドウの最小化 | Command + M | WindowsKey + M |
-| 検索 | Command + Space | WindowsKey |
+| コンピューターのロック | Command + Control + Q | Windows キー + L |
+| デスクトップの表示 | Command + F3 | Windows キー + D |
+| ファイル ブラウザーを開く | Command + N | Windows キー + E |
+| ウィンドウの最小化 | Command + M | Windows キー + M |
+| 検索 | Command + Space | Windows キー |
 | アクティブ ウィンドウを閉じる | Command + W | Control + W |
 | 現在のタスクの切り替え | Command + Tab | Alt + Tab |
-| ウィンドウの全画面表示への最大化 | Control + Command + F | WindowsKey + Up |
-| 画面の保存 (スクリーンショット) | Command + Shift + 3 | WindowsKey + Shift + S |
-| ウィンドウの保存 | Command + Shift + 4 | WindowsKey + Shift + S |
+| ウィンドウの全画面表示への最大化 | Control + Command + F | Windows キー + Up |
+| 画面の保存 (スクリーンショット) | Command + Shift + 3 | Windows キー + Shift + S |
+| ウィンドウの保存 | Command + Shift + 4 | Windows キー + Shift + S |
 | 項目の情報やプロパティの表示 | Command + I | Alt + Enter |
- | すべての項目の選択 | Command + A | Ctrl + A |
+| すべての項目の選択 | Command + A | Ctrl + A |
 | リスト内の複数の項目の選択 (非連続) | Command、次に各項目をクリック | Control、次に各項目をクリック |
 | 特殊文字の入力 | Option + 文字キー | Alt + 文字キー|
 
@@ -62,7 +62,7 @@ ms.locfileid: "87363711"
 | デスクトップへの移動 | 4 本指を広げる | 3 本指での下方向へのスワイプ |
 | Cortana/アクション センターを開く | 2 本指での右からのスライド | 3 本指でのタップ |
 | 追加情報を開く | 3 本指でのタップ | なし |
-|スタートパッドの表示/アプリの起動 | 4 本指でのピンチ | 4 本指でのタップ |
+| スタートパッドの表示/アプリの起動 | 4 本指でのピンチ | 4 本指でのタップ |
 
 注: トラックパッド オプションは、両方のプラットフォームで構成できます。
 
@@ -103,21 +103,21 @@ Linux 用 Windows サブシステム (WSL) をインストールして、Windows
 
 多くのサード パーティ製品に加えて、Microsoft から 2 つの "ターミナル" が提供されています。コマンドラインのシェルとアプリケーションへのアクセスを提供する GUI アプリケーションです。
 
-1. **[Windows ターミナル](https://docs.microsoft.com/windows/terminal/)** :Windows ターミナルは高度な構成が可能な最新のコマンドライン ターミナル アプリケーションであり、高パフォーマンス、低遅延のコマンドライン ユーザー エクスペリエンス、複数のタブ、分割されたウィンドウ ペイン、カスタムのテーマとスタイル、異なるシェルまたはコマンドライン アプリ用の複数の "プロファイル"、さらにコマンドライン ユーザー エクスペリエンスのさまざまな側面を構成してカスタマイズするための非常に多くの機能を特徴としています。
+1. **[Windows Terminal](https://docs.microsoft.com/windows/terminal/)** :Windows Terminal は高度な構成が可能な最新のコマンドライン ターミナル アプリケーションであり、高パフォーマンス、低遅延のコマンドライン ユーザー エクスペリエンス、複数のタブ、分割されたウィンドウ ペイン、カスタムのテーマとスタイル、異なるシェルまたはコマンドライン アプリ用の複数の "プロファイル"、さらにコマンドライン ユーザー エクスペリエンスのさまざまな側面を構成してカスタマイズするための非常に多くの機能を特徴としています。
 
-    Windows ターミナルを使用して、PowerShell、WSL シェル (Ubuntu や Debian)、従来の Windows コマンド プロンプト、その他のコマンドライン アプリ (SSH、Azure CLI、Git Bash など) に接続されたタブを開くことができます。
+    Windows Terminal を使用して、PowerShell、WSL シェル (Ubuntu や Debian)、従来の Windows コマンド プロンプト、その他のコマンドライン アプリ (SSH、Azure CLI、Git Bash など) に接続されたタブを開くことができます。
 
 2. **[コンソール](https://docs.microsoft.com/windows/console/)** :Mac や Linux では、ユーザーは通常、まず好みのターミナル アプリケーションを開き、そこでユーザーの既定のシェル (BASH など) を作成して接続します。
 
     しかし、歴史の気まぐれのせいで、Windows ユーザーは伝統的に、シェルを開始して、その後 Windows から自動的に GUI コンソール アプリを開始して接続していました。
 
-    今でもシェルを直接起動して従来の Windows コンソールを使用することは可能ですが、ユーザーには、Windows ターミナルをインストールして、極めて高速で生産性が高い、コマンドラインのベスト エクスペリエンスを活用することを強くお勧めします。
+    今でもシェルを直接起動して従来の Windows コンソールを使用することは可能ですが、ユーザーには、Windows Terminal をインストールして、極めて高速で生産性が高い、コマンドラインのベスト エクスペリエンスを活用することを強くお勧めします。
 
 ## <a name="apps-and-utilities"></a>アプリとユーティリティ
 
  **アプリ** | **Mac** | **Windows** |
 |---------------|--------------------|---------------------|
-| 設定と基本設定 | システム設定 | Settings |
+| 設定と基本設定 | システム設定 | 設定 |
 | タスク マネージャー | アクティビティ モニター | タスク マネージャー |
 | ディスク フォーマット | ディスク ユーティリティ | ディスクの管理 |
 | テキスト編集 | TextEdit | メモ帳 |
