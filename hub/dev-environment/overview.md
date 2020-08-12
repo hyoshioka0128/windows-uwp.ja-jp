@@ -79,7 +79,7 @@ ms.locfileid: "87363734"
     :::column-end:::
     :::column:::
        [![Windows ターミナル](../images/terminal.png)](https://docs.microsoft.com/windows/terminal/)<br>
-        **[Windows ターミナル](https://docs.microsoft.com/windows/terminal/)**<br>
+        **[Windows Terminal](https://docs.microsoft.com/windows/terminal/)**<br>
         複数のコマンド ライン シェルで動作するようにターミナル環境をカスタマイズします。
         <br>
         [ターミナルをインストールする](https://www.microsoft.com/p/windows-terminal/9n0dx20hk701?rtc=1&activetab=pivot:overviewtab)
@@ -133,9 +133,9 @@ Linux 用 Windows サブシステム (WSL) を使用することにより、開�
 
 > [!VIDEO https://channel9.msdn.com/Blogs/One-Dev-Minute/What-can-I-do-with-WSL--One-Dev-Question/player?format=ny]
 
-また Windows ターミナルを使用して、あらゆる好みのコマンド ライン ツールを、複数タブを使用する同じウィンドウで、または複数のペインで開くこともできます。それには、PowerShell、Windows コマンド プロンプト、Ubuntu、Debian、Azure CLI、Oh-my-Zsh、Git Bash が含まれ、これらすべてを開くこともできます。
+また Windows Terminal を使用して、あらゆる好みのコマンド ライン ツールを、複数タブを使用する同じウィンドウで、または複数のペインで開くこともできます。それには、PowerShell、Windows コマンド プロンプト、Ubuntu、Debian、Azure CLI、Oh-my-Zsh、Git Bash が含まれ、これらすべてを開くこともできます。
 
-- 詳細については、[Windows ターミナルのドキュメント](https://docs.microsoft.com/windows/terminal)や [Channel 9 の WT についての動画](https://channel9.msdn.com/Search?term=windows%20terminal&lang-en=true)を参照してください。
+- 詳細については、[Windows Terminal のドキュメント](https://docs.microsoft.com/windows/terminal)や [Channel 9 の WT についての動画](https://channel9.msdn.com/Search?term=windows%20terminal&lang-en=true)を参照してください。
 
 > [!VIDEO https://channel9.msdn.com/Blogs/One-Dev-Minute/What-are-the-main-features-of-the-new-Terminal--One-Dev-Question/player?format=ny]
 
