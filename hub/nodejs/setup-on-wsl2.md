@@ -32,13 +32,13 @@ WSL 2 と Linux ディストリビューションをインストールしたら�
 
 最新のパッケージであることを確認するために、インストールした直後も含めて、Linux ディストリビューションを定期的に更新することをお勧めします。 Windows はこの更新を自動的に処理しません。 使用中のディストリビューションを更新するには、コマンド `sudo apt update && sudo apt upgrade` を使用します。  
 
-## <a name="install-windows-terminal-optional"></a>Windows ターミナルをインストールする (省略可能)
+## <a name="install-windows-terminal-optional"></a>Windows Terminal をインストールする (省略可能)
 
-新しい Windows ターミナルでは、複数のタブ (コマンド プロンプト、PowerShell、複数の Linux ディストリビューション間をすばやく切り替える) が有効になり、カスタム キー バインド (タブを開くまたは閉じる、コピーと貼り付けを行うなどのためのショートカット キー) を作成でき、検索機能、カスタム テーマ (配色、フォント スタイルとサイズ、背景画像/ぼかし/透明度) を使用できます。 [詳しくはこちらをご覧ください](https://docs.microsoft.com/windows/terminal)。
+新しい Windows Terminal では、複数のタブ (コマンド プロンプト、PowerShell、複数の Linux ディストリビューション間をすばやく切り替える) が有効になり、カスタム キー バインド (タブを開くまたは閉じる、コピーと貼り付けを行うなどのためのショートカット キー) を作成でき、検索機能、カスタム テーマ (配色、フォント スタイルとサイズ、背景画像/ぼかし/透明度) を使用できます。 [詳しくはこちらをご覧ください](https://docs.microsoft.com/windows/terminal)。
 
-1. [Microsoft Store で Windows ターミナル](https://www.microsoft.com/store/apps/9n0dx20hk701)を取得します: ストアを介してインストールすると、更新プログラムが自動的に処理されます。
+1. [Microsoft Store で Windows Terminal](https://www.microsoft.com/store/apps/9n0dx20hk701) を取得します: ストアを介してインストールすると、更新プログラムが自動的に処理されます。
 
-2. インストールが完了したら、Windows ターミナルを開き、 **[設定]** を選択して、`settings.json` ファイルによってターミナルをカスタマイズします。
+2. インストールが完了したら、Windows Terminal を開き、 **[設定]** を選択して、`settings.json` ファイルによってターミナルをカスタマイズします。
 
     ![Windows ターミナルの設定](../images/windows-terminal-settings.png)
 
