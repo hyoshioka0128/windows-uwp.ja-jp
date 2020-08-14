@@ -44,7 +44,7 @@ productDirectory:
     links:
     - url: /windows/apps/winui/
       text: 開始
-  - title: Linux 用 Windows サブシステム、Windows ターミナル、Python、およびその他のツール
+  - title: Linux 用 Windows サブシステム、Windows Terminal、Python、およびその他のツール
     imageSrc: https://docs.microsoft.com/media/logos/logo_linux-color.svg
     links:
     - url: /windows/dev-environment/
