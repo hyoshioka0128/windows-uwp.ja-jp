@@ -36,7 +36,7 @@ WinUI は、GitHub でホストされているオープン ソース プロジ�
 
 #### <a name="description"></a>説明
 
-TabView コントロールは、それぞれがアプリ内の新しいページまたはドキュメントを表すタブのコレクションです。 TabView は、アプリに複数のコンテンツ ページがあり、ユーザーがタブを追加、閉じ、再配置できることを期待している場合に便利です。 新しい [Windows ターミナル](https://github.com/Microsoft/Terminal)では、複数のコマンド ライン インターフェイスを表示するために TabView が使用されます。
+TabView コントロールは、それぞれがアプリ内の新しいページまたはドキュメントを表すタブのコレクションです。 TabView は、アプリに複数のコンテンツ ページがあり、ユーザーがタブを追加、閉じ、再配置できることを期待している場合に便利です。 新しい [Windows Terminal](https://github.com/Microsoft/Terminal) では、複数のコマンド ライン インターフェイスを表示するために TabView が使用されます。
 
 #### <a name="documentation"></a>ドキュメント
 
