@@ -36,7 +36,7 @@ WSL と Linux ディストリビューションをインストールしたら、
 最新のパッケージであることを確認するために、インストールした直後も含めて、Linux ディストリビューションを定期的に更新することをお勧めします。 Windows はこの更新を自動的に処理しません。 使用中のディストリビューションを更新するには、コマンド `sudo apt update && sudo apt upgrade` を使用します。  
 
 > [!TIP]
-> 複数のタブ (コマンド プロンプト、PowerShell、複数の Linux ディストリビューション間をすばやく切り替える) の有効化、カスタム キー バインド (タブを開くまたは閉じる、コピーと貼り付けを行うなどのためのショートカット キー) の作成、検索機能の使用、カスタム テーマ (配色、フォント スタイルとサイズ、背景画像/ぼかし/透明度) の設定を行うために、[新しい Windows ターミナルを Microsoft Store からインストールする](https://www.microsoft.com/store/apps/9n0dx20hk701)ことを検討してください。 [詳しくはこちらをご覧ください](https://docs.microsoft.com/windows/terminal)。
+> 複数のタブ (コマンド プロンプト、PowerShell、複数の Linux ディストリビューション間をすばやく切り替える) の有効化、カスタム キー バインド (タブを開くまたは閉じる、コピーと貼り付けを行うなどのためのショートカット キー) の作成、検索機能の使用、カスタム テーマ (配色、フォント スタイルとサイズ、背景画像/ぼかし/透明度) の設定を行うために、[新しい Windows Terminal を Microsoft Store からインストールする](https://www.microsoft.com/store/apps/9n0dx20hk701)ことを検討してください。 [詳しくはこちらをご覧ください](https://docs.microsoft.com/windows/terminal)。
 
 ## <a name="set-up-visual-studio-code"></a>Visual Studio Code を設定する
 
