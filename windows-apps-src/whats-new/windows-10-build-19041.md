@@ -47,7 +47,7 @@ Windows の開発環境 | 「[Windows の開発環境](/windows/dev-environment/
 Windows での Python | [Windows での Python](/windows/python/)に関するセクションでは、Python 言語を初めて使用する開発者向けの情報や、Windows で利用できる他のツールを使って Python 環境を最適化することに関心のある開発者向けの情報が提供されています。 [Web 開発](/windows/python/web-frameworks)や[データベースの対話式操作](/windows/python/databases)のために Python 環境を設定する方法をご確認ください。
 Windows での NodeJS | [Node.js 開発環境での推奨されている設定](/windows/nodejs/setup-on-wsl2)に関するページでは、Linux サーバーにデプロイする上級開発者向けの詳細なガイドラインが提供されています。 また、[一般的な Node.js Web フレームワーク](/windows/nodejs/web-frameworks)、[データベースの対話式操作](/windows/nodejs/databases)、[Docker コンテナー](/windows/nodejs/containers)のセットアップ手順も説明されています。
 Mac-to-Windows | [開発環境を変更するためのガイド](/windows/dev-environment/mac-to-windows)は、開発プラットフォームを Mac から Windows に移行するユーザー向けに準備されたもので、ショートカットや開発ユーティリティを比較できる対応表が用意されています。
-Windows ターミナル | コマンド プロンプト、PowerShell、Linux 用 Windows サブシステム (WSL) などのコマンド ライン ツールとシェルのユーザー向けの[最新のターミナル アプリケーション](https://www.microsoft.com/p/windows-terminal/9n0dx20hk701?activetab=pivot:overviewtab)です。 主な機能には、複数のタブ、ペイン、Unicode および UTF-8 文字のサポート、GPU で高速化されたテキスト レンダリング エンジン、独自のテーマを作成したり、テキスト、色、背景、およびショートカット キーのバインドをカスタマイズしたりする機能があります。
+Windows Terminal | コマンド プロンプト、PowerShell、Linux 用 Windows サブシステム (WSL) などのコマンド ライン ツールとシェルのユーザー向けの[最新のターミナル アプリケーション](https://www.microsoft.com/p/windows-terminal/9n0dx20hk701?activetab=pivot:overviewtab)です。 主な機能には、複数のタブ、ペイン、Unicode および UTF-8 文字のサポート、GPU で高速化されたテキスト レンダリング エンジン、独自のテーマを作成したり、テキスト、色、背景、およびショートカット キーのバインドをカスタマイズしたりする機能があります。
 WSL 2 | [新しいバージョンの Linux 用 Windows サブシステム (WSL)](/windows/wsl/wsl2-about) が利用できるようになりました。 WSL 2 の機能では、Windows 上で実際の Linux カーネルを実行するためのアーキテクチャが再構成されており、ファイル システムのパフォーマンス向上と、システム コールの完全な互換性の追加が実現されています。 この新しいアーキテクチャによって、Linux バイナリと Windows やお使いのコンピューターのハードウェアとの対話方法は変わりますが、ユーザー エクスペリエンスについては以前のバージョンの WSL の場合と同じになっています。 個々の Linux ディストリビューションは、WSL1 または WSL2 ディストリビューションとして実行することも、並列実行することもでき、いつでも変更できます。 </br> 使用を開始するには、[WSL 2 をインストール](https://docs.microsoft.com/windows/wsl/wsl2-install)します。 </br> 詳細については、[WSL 1 と WSL 2 の間のユーザー エクスペリエンスの変更](https://docs.microsoft.com/windows/wsl/wsl2-ux-changes)に関するページを参照してください。 </br> [WSL 2 に関するよく寄せられる質問](https://docs.microsoft.com/windows/wsl/wsl2-faq)に関するページもご確認ください。
 
 ## <a name="msix-packaging-and-deployment"></a>MSIX、パッケージ作成、デプロイ
@@ -91,9 +91,9 @@ Windows UI ギャラリー | 各 WinUI 機能の例については、XAML コン
 
 ## <a name="videos"></a>ビデオ
 
-### <a name="windows-terminal-the-secret-to-command-line-happiness"></a>Windows ターミナル: コマンド ライン活用の秘訣
+### <a name="windows-terminal-the-secret-to-command-line-happiness"></a>Windows Terminal: コマンド ライン活用の秘訣
 
-ワークフローに合わせて Windows ターミナルをカスタマイズする方法について説明し、機能を実際にデモンストレーションします。 [ビデオをご覧ください](https://www.youtube.com/watch?v=2dsnwlnNBzs)。詳細については、[ドキュメントでご確認](https://github.com/microsoft/terminal#terminal--console-overview)いただけます。
+ワークフローに合わせて Windows Terminal をカスタマイズする方法について説明し、機能を実際にデモンストレーションします。 [ビデオをご覧ください](https://www.youtube.com/watch?v=2dsnwlnNBzs)。詳細については、[ドキュメントでご確認](https://github.com/microsoft/terminal#terminal--console-overview)いただけます。
 
 ### <a name="wsl2-code-faster-on-the-windows-subsystem-for-linux"></a>WSL2:Linux 用 Windows サブシステムの高速コード
 
