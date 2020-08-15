@@ -23,9 +23,9 @@ ms.locfileid: "83665865"
 
 * [Project Reunion](https://blogs.windows.com/windowsdeveloper/2020/05/19/developing-for-all-1-billion-windows-10-devices-and-beyond/) は、Windows 開発の未来です。
 
-## <a name="windows-terminal"></a>Windows ターミナル
+## <a name="windows-terminal"></a>Windows Terminal
 
-* [Windows ターミナルをインストールしてセットアップする](https://docs.microsoft.com/windows/terminal/get-started)
+* [Windows Terminal をインストールしてセットアップする](https://docs.microsoft.com/windows/terminal/get-started)
 * [カスタム キー バインドを設定する](https://docs.microsoft.com/windows/terminal/customize-settings/key-bindings)
 * [カスタマイズされたターミナルのギャラリー](https://docs.microsoft.com/windows/terminal/custom-terminal-gallery/retro-command-prompt)
 
