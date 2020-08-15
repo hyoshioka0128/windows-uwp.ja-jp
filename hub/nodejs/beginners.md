@@ -65,7 +65,7 @@ Node.js は、Web アプリケーションの作成に主に使用される Java
 > "app.js" ファイルに「`console`」と入力すると、[`console`](https://developer.mozilla.org/docs/Web/API/Console) オブジェクト関連でサポートされているオプションが VS Code に表示されることに注目してください。このオプションは IntelliSense 使用時に選択できます。 他の [JavaScript オブジェクト](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects)を使用し、Intellisense をいろいろ試してみてください。
 
 > [!TIP]
-> 複数のコマンド ライン (Ubuntu、PowerShell、Windows コマンド プロンプトなど) を使用する予定がある場合や、テキスト、背景色、キー バインド、複数のウィンドウ ペインなど、[ターミナルをカスタマイズする](https://github.com/microsoft/terminal/blob/master/doc/user-docs/UsingJsonSettings.md)場合は、新しい [Windows ターミナル](https://github.com/microsoft/terminal/blob/master/doc/user-docs/index.md)を試してみてください。
+> 複数のコマンド ライン (Ubuntu、PowerShell、Windows コマンド プロンプトなど) を使用する予定がある場合や、テキスト、背景色、キー バインド、複数のウィンドウ ペインなど、[ターミナルをカスタマイズする](https://github.com/microsoft/terminal/blob/master/doc/user-docs/UsingJsonSettings.md)場合は、新しい [Windows Terminal](https://github.com/microsoft/terminal/blob/master/doc/user-docs/index.md) を試してみてください。
 
 ## <a name="set-up-a-basic-web-app-framework-by-using-express"></a>Express を使用し、基本的な Web アプリ フレームワークを設定する
 
