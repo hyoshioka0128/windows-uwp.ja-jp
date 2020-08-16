@@ -86,7 +86,7 @@ Ionic を使用して PWA またはハイブリッド web アプリの構築を�
 
 - コードを記述するための VS Code。 [Windows 用の VS Code をダウンロード](https://code.visualstudio.com/)します。 Linux コマンドラインを使用してアプリをビルドする場合は、 [Wsl リモート拡張機能](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl)をインストールすることもできます。
 
-- 任意のコマンドラインインターフェイス (CLI) を操作するための Windows ターミナル。 [Microsoft Store から Windows ターミナルをインストール](https://www.microsoft.com/en-us/p/windows-terminal-preview/9n0dx20hk701?activetab=pivot:overviewtab)します。
+- 任意のコマンドラインインターフェイス (CLI) を操作するための Windows Terminal。 [Microsoft Store から Windows Terminal をインストール](https://www.microsoft.com/en-us/p/windows-terminal-preview/9n0dx20hk701?activetab=pivot:overviewtab)します。
 
 - バージョン管理用の Git。 [Git をダウンロード](https://git-scm.com/downloads)します。
 
