@@ -40,11 +40,11 @@ ms.locfileid: "82255236"
 4. [Windows 用 NodeJS のインストール](https://nodejs.org/en/)複数のプロジェクトとバージョンの NodeJS を操作する場合は、 [Windows 用の Node Version Manager (nvm)](https://github.com/coreybutler/nvm-windows#node-version-manager-nvm-for-windows)を使用することを検討してください。 新しいプロジェクトには、最新の LTS バージョンをインストールすることをお勧めします。
 
 > [!NOTE]
-> また、推奨されるコマンドラインインターフェイス (CLI)、および[バージョン管理用の Git](https://git-scm.com/downloads)を操作するために、 [Windows Terminal](https://www.microsoft.com/p/windows-terminal-preview/9n0dx20hk701?activetab=pivot:overviewtab)をインストールして使用することを検討してください。 [JAVA jdk](https://www.oracle.com/java/technologies/javase-downloads.html)は Android Studio v2.0 以降でパッケージ化されていますが、Android Studio とは別に jdk を更新する必要がある場合は、 [Windows x64 インストーラー](https://www.oracle.com/java/technologies/javase-jdk14-downloads.html)を使用してください。
+> また、推奨されるコマンドラインインターフェイス (CLI)、および[バージョン管理用の Git](https://git-scm.com/downloads)を操作するために、 [Windows Terminal](https://www.microsoft.com/p/windows-terminal-preview/9n0dx20hk701?activetab=pivot:overviewtab)をインストールして使用することを検討してください。 [Java JDK](https://www.oracle.com/java/technologies/javase-downloads.html)は Android Studio v2.0 以降でパッケージ化されていますが、Android Studio とは別に JDK を更新する必要がある場合は、 [Windows x64 インストーラー](https://www.oracle.com/java/technologies/javase-jdk14-downloads.html)を使用してください。
 
 ## <a name="create-a-new-project-with-react-native"></a>ネイティブな応答を使用した新しいプロジェクトの作成
 
-1. Npm を使用して、Windows コマンドプロンプト、PowerShell、 [Windows Terminal](https://www.microsoft.com/p/windows-terminal-preview/9n0dx20hk701?activetab=pivot:overviewtab)、VS Code の ターミナル (表示 > ターミナル) から [Expo CLI](https://docs.expo.io/versions/latest/) コマンドラインユーティリティをインストールします。
+1. Npm を使用して、Windows コマンドプロンプト、PowerShell、 [Windows Terminal](https://www.microsoft.com/p/windows-terminal-preview/9n0dx20hk701?activetab=pivot:overviewtab)、VS Code の ターミナル (表示 > 統合ターミナル) から [Expo CLI](https://docs.expo.io/versions/latest/) コマンドラインユーティリティをインストールします。
 
     ```powershell
     npm install -g expo-cli
