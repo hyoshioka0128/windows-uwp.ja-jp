@@ -23,7 +23,7 @@ Windows オペレーティングシステムを使用して Android デバイス
 - [Xamarin.Forms](xamarin-forms.md)
 - [React Native](react-native.md)
 - [Cordova、Ionic、または PhoneGap](pwa.md)
-- [ゲーム開発用の c/c + +](native-android.md#use-c-or-c-for-android-game-development)
+- [ゲーム開発用の C/C++](native-android.md#use-c-or-c-for-android-game-development)
 
 また、このガイドでは、Windows を使用して次のことを行うためのヒントを提供します。
 
