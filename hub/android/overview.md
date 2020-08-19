@@ -33,7 +33,7 @@ Windows オペレーティングシステムを使用して Android デバイス
 
 ## <a name="native-android"></a>ネイティブ Android
 
-[Windows でのネイティブ android 開発](./native-android.md)は、アプリが android のみを対象としていることを意味します (iOS デバイスでも Windows デバイスでもありません)。 [Android Studio](https://developer.android.com/studio/install#windows)または[Visual Studio](https://visualstudio.microsoft.com/vs/android/)を使用して、Android オペレーティングシステム専用に設計されたエコシステム内で開発を行うことができます。 Android デバイス向けにパフォーマンスが最適化され、ユーザーインターフェイスのルックアンドフィールがデバイス上の他のネイティブアプリと一貫性を持つようになります。また、ユーザーのデバイスのすべての機能がアクセスして使用できるようになります。 ネイティブ形式でアプリを開発すると、Android デバイス専用に確立されたすべての対話パターンとユーザーエクスペリエンス標準に従っているため、"安心感" を実現できます。
+[Windows でのネイティブ Android 開発](./native-android.md)は、アプリが Android のみを対象としていることを意味します (iOS デバイスでも Windows デバイスでもありません)。 [Android Studio](https://developer.android.com/studio/install#windows)または[Visual Studio](https://visualstudio.microsoft.com/vs/android/)を使用して、Android オペレーティングシステム専用に設計されたエコシステム内で開発を行うことができます。 Android デバイス向けにパフォーマンスが最適化され、ユーザーインターフェイスのルックアンドフィールがデバイス上の他のネイティブアプリと一貫性を持つようになります。また、ユーザーのデバイスのすべての機能がアクセスして使用できるようになります。 ネイティブ形式でアプリを開発すると、Android デバイス専用に確立されたすべての対話パターンとユーザーエクスペリエンス標準に従っているため、"安心感" を実現できます。
 
 ## <a name="cross-platform"></a>クロスプラットフォーム
 
@@ -80,7 +80,7 @@ Windows オペレーティングシステムを使用して Android デバイス
 
 ## <a name="game-development"></a>ゲーム開発
 
-Android 用のゲーム開発は、通常は OpenGL または Vulkan で記述されたカスタムレンダリングロジックを使用するため、標準の Android アプリの開発とは異なります。 この理由から、ゲーム開発をサポートする多くの C ライブラリが使用されているため、開発者は、android [Native Development Kit (NDK)](https://docs.microsoft.com/cpp/cross-platform/create-an-android-native-activity-app?view=vs-2019)と共に[c/c + +](https://docs.microsoft.com/cpp/cross-platform/?view=vs-2019)を使用して android 用のゲームを作成するのが一般的です。 [ゲーム開発用の C/c + + の使用を開始](native-android.md#use-c-or-c-for-android-game-development)します。
+Android 用のゲーム開発は、通常は OpenGL または Vulkan で記述されたカスタムレンダリングロジックを使用するため、標準の Android アプリの開発とは異なります。 この理由から、ゲーム開発をサポートする多くの C ライブラリが使用されているため、開発者は、Android [Native Development Kit (NDK)](https://docs.microsoft.com/cpp/cross-platform/create-an-android-native-activity-app?view=vs-2019)と共に [C/C++](https://docs.microsoft.com/cpp/cross-platform/?view=vs-2019) を使用して Android 用のゲームを作成するのが一般的です。 [ゲーム開発用の C/C++ の使用を開始](native-android.md#use-c-or-c-for-android-game-development)します。
 
 Android 用にゲームを開発するためのもう1つの一般的なパスは、ゲームエンジンを使用することです。 利用可能な無料のオープンソースエンジンは多数あります。たとえば、 [Visual Studio](https://docs.microsoft.com/visualstudio/cross-platform/visual-studio-tools-for-unity?view=vs-2019)、 [unreal Engine](https://docs.unrealengine.com/en-US/Platforms/Mobile/Android/GettingStarted/index.html)、[モノゲーム (xamarin](https://docs.microsoft.com/xamarin/graphics-games/monogame/introduction/))、 [urhosharp With](https://docs.microsoft.com/xamarin/graphics-games/urhosharp/introduction)Xamarin、 [SkiaSharp](https://docs.microsoft.com/xamarin/xamarin-forms/user-interface/graphics/skiasharp/) WITH xamarin、アプリゲームキット、Fusion、コロナ SDK、ココス2d などがあります。
 
