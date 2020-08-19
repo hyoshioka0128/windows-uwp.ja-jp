@@ -33,7 +33,7 @@ ms.locfileid: "82255196"
 
 また、Android フォンを使用するか、アプリを実行するように構成されたエミュレーターを使用することもできます。 「 [Android デバイスまたはエミュレーターでのテスト」を](emulator.md)参照してください。
 
-## <a name="create-a-new-xamarinforms-project"></a>新しい Xamarin. フォームプロジェクトを作成する
+## <a name="create-a-new-xamarinforms-project"></a>新しい Xamarin.Forms プロジェクトを作成する
 
 Visual Studio を起動します。 [ファイル > 新規 > プロジェクト] をクリックして、新しいプロジェクトを作成します。
 
@@ -85,7 +85,7 @@ Mainpage.xaml の内容を次のコードに置き換えます。
 
 この時点で、UI は完成です。 ただし、 **UpButton_Clicked**および**DOWNBUTTON_CLICKED**メソッドは XAML で参照されますが、どこにも定義されていないため、timechangerforms はビルドされません。 アプリが実行された場合でも、現在の時刻は表示されません。 次のセクションでは、これらのエラーを修正し、UI に機能を追加します。
 
-## <a name="add-logic-code-with-c"></a>C でロジックコードを追加する#
+## <a name="add-logic-code-with-c"></a>C# でロジックコードを追加する
 
 ソリューションエクスプローラーで Mainpage.xaml を右クリックし、[コードの**表示**] をクリックします。 このファイルには、UI に機能を追加する分離コードが含まれています。
 
