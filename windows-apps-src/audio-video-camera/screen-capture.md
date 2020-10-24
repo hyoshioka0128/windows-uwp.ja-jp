@@ -9,37 +9,39 @@ dev_langs:
 - vb
 keywords: Windows 10, UWP, 画面キャプチャ
 ms.localizationpriority: medium
-ms.openlocfilehash: ad9a6bbc4055258b5f89b07d8670f3147eafc86d
-ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
+ms.openlocfilehash: 26de7699f9f261bba6e02bc3664e335c46e4ac3d
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71339767"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91218665"
 ---
 # <a name="screen-capture"></a>画面の取り込み
 
-Windows 10、バージョン 1803 以降では、[Windows.Graphics.Capture](https://docs.microsoft.com/uwp/api/windows.graphics.capture) に、ディスプレイまたはアプリケーション ウィンドウからフレームを取得する API が用意されています。これにより、ビデオ ストリームやスナップショットを作成して、共同作業に対応したインタラクティブなエクスペリエンスを構築できます。
+Windows 10、バージョン 1803 以降では、[Windows.Graphics.Capture](/uwp/api/windows.graphics.capture) に、ディスプレイまたはアプリケーション ウィンドウからフレームを取得する API が用意されています。これにより、ビデオ ストリームやスナップショットを作成して、共同作業に対応したインタラクティブなエクスペリエンスを構築できます。
 
 画面キャプチャでは、開発者がセキュリティで保護されたシステム UI を起動し、エンド ユーザーがこれを使ってキャプチャ対象のディスプレイまたはアプリケーション ウィンドウを選択すると、アクティブにキャプチャされた項目の周囲に、それを通知する黄色の枠線がシステムによって描画されます。 複数の同時キャプチャ セッションの場合は、キャプチャされる各項目が黄色の枠線で囲まれます。
 
 > [!NOTE]
-> 画面キャプチャ API は、デスクトップおよび Windows Mixed Reality のイマーシブ ヘッドセットでのみサポートされています。
+> 画面キャプチャ Api は、デスクトップおよび Windows Mixed Reality のイマーシブヘッドセットでのみサポートされています。
+
+この記事では、表示またはアプリケーションウィンドウの1つのイメージのキャプチャについて説明します。 画面からキャプチャされたフレームをビデオファイルにエンコードする方法の詳細については、「[ビデオへの画面のキャプチャ](screen-capture-video.md)」を参照してください。
 
 ## <a name="add-the-screen-capture-capability"></a>画面キャプチャ機能を追加する
 
-**Windows.Graphics.Capture** の名前空間にある API を使用するには、アプリケーションのマニフェストで汎用的な機能を宣言する必要があります。
+**Windows**の名前空間にある api を使用するには、アプリケーションのマニフェストで汎用的な機能を宣言する必要があります。
 
 1. **ソリューションエクスプローラー**で**package.appxmanifest**を開きます。
-2. **[機能]** タブをクリックします。
+2. **[機能]** タブを選択します。
 3. **グラフィックスキャプチャ**を確認します。
 
 ![グラフィックスキャプチャ](images/screen-capture-1.png)
 
 ## <a name="launch-the-system-ui-to-start-screen-capture"></a>システム UI を起動して画面キャプチャを開始する
 
-システム UI を起動する前に、アプリケーションが現在、画面キャプチャに対応しているかどうかを確認できます。 アプリケーションで画面キャプチャを使用できなくなる理由はいくつかあります。たとえば、デバイスがハードウェア要件を満たしていない場合や、キャプチャ対象のアプリケーションが画面キャプチャをブロックしている場合などです。 [GraphicsCaptureSession](https://docs.microsoft.com/uwp/api/windows.graphics.capture.graphicscapturesession) クラスで **IsSupported** メソッドを使用して、UWP の画面キャプチャがサポートされているかどうかを判断します。
+システム UI を起動する前に、アプリケーションが現在、画面キャプチャに対応しているかどうかを確認できます。 アプリケーションで画面キャプチャを使用できなくなる理由はいくつかあります。たとえば、デバイスがハードウェア要件を満たしていない場合や、キャプチャ対象のアプリケーションが画面キャプチャをブロックしている場合などです。 [GraphicsCaptureSession](/uwp/api/windows.graphics.capture.graphicscapturesession) クラスで **IsSupported** メソッドを使用して、UWP の画面キャプチャがサポートされているかどうかを判断します。
 
-```cs
+```csharp
 // This runs when the application starts.
 public void OnInitialization()
 {
@@ -59,9 +61,9 @@ Public Sub OnInitialization()
 End Sub
 ```
 
-画面キャプチャがサポートされていることを確認したら、[GraphicsCapturePicker](https://docs.microsoft.com/uwp/api/windows.graphics.capture.graphicscapturepicker) クラスを使用して、システム ピッカー UI を起動します。 エンド ユーザーは、この UI を使用して、画面キャプチャするディスプレイまたはアプリケーション ウィンドウを選択します。 ピッカーによって [GraphicsCaptureItem](https://docs.microsoft.com/uwp/api/windows.graphics.capture.graphicscaptureitem)が返されます。これは、**GraphicsCaptureSession** の作成に使用します。
+画面キャプチャがサポートされていることを確認したら、[GraphicsCapturePicker](/uwp/api/windows.graphics.capture.graphicscapturepicker) クラスを使用して、システム ピッカー UI を起動します。 エンド ユーザーは、この UI を使用して、画面キャプチャするディスプレイまたはアプリケーション ウィンドウを選択します。 ピッカーによって [GraphicsCaptureItem](/uwp/api/windows.graphics.capture.graphicscaptureitem)が返されます。これは、**GraphicsCaptureSession** の作成に使用します。
 
-```cs
+```csharp
 public async Task StartCaptureAsync()
 {
     // The GraphicsCapturePicker follows the same pattern the
@@ -96,7 +98,7 @@ End Function
 
 これは UI コードであるため、UI スレッドで呼び出す必要があります。 アプリケーションのページ ( **MainPage.xaml.cs**など) の分離コードから呼び出している場合は、自動的に実行されますが、そうでない場合は、次のコードを使用して UI スレッドで実行するように強制できます。
 
-```cs
+```csharp
 CoreWindow window = CoreApplication.MainView.CoreWindow;
 
 await window.Dispatcher.RunAsync(CoreDispatcherPriority.Normal, async () =>
@@ -113,9 +115,9 @@ Await window.Dispatcher.RunAsync(CoreDispatcherPriority.Normal,
 
 ## <a name="create-a-capture-frame-pool-and-capture-session"></a>キャプチャ フレーム プールとキャプチャ セッションを作成する
 
-**GraphicsCaptureItem**を使用して、D3D デバイスでサポートされているピクセル形式 (**DXGI @ NO__T-3format @ NO__T-4B8G8R8A8 @ NO__T-5unorm**)、必要なフレームの数 (任意の整数を指定できます) を使用して[Direct3D11CaptureFramePool](https://docs.microsoft.com/uwp/api/windows.graphics.capture.direct3d11captureframepool)を作成します。)、フレームサイズ。 **GraphicsCaptureItem** クラスの **ContentSize** プロパティをフレーム サイズとして使用できます。
+**GraphicsCaptureItem**を使用して、D3D デバイス、サポートされているピクセル形式 (**DXGI \_ 形式 \_ B8G8R8A8 \_ unorm**)、必要なフレームの数 (任意の整数)、フレームサイズを含む[Direct3D11CaptureFramePool](/uwp/api/windows.graphics.capture.direct3d11captureframepool)を作成します。 **GraphicsCaptureItem** クラスの **ContentSize** プロパティをフレーム サイズとして使用できます。
 
-```cs
+```csharp
 private GraphicsCaptureItem _item;
 private Direct3D11CaptureFramePool _framePool;
 private CanvasDevice _canvasDevice;
@@ -152,7 +154,7 @@ End Sub
 
 次に、**GraphicsCaptureItem** を **CreateCaptureSession** メソッドに渡して、**Direct3D11CaptureFramePool** の **GraphicsCaptureSession** クラスのインスタンスを取得します。
 
-```cs
+```csharp
 _session = _framePool.CreateCaptureSession(_item);
 ```
 
@@ -168,7 +170,7 @@ _session = FramePool.CreateCaptureSession(CaptureItem)
 
 フレーム プールとキャプチャ セッションを作成した後、**GraphicsCaptureSession** インスタンスで **StartCapture** メソッドを呼び出して、アプリへのキャプチャ フレームの送信を開始することをシステムに通知します。
 
-```cs
+```csharp
 _session.StartCapture();
 ```
 
@@ -176,9 +178,9 @@ _session.StartCapture();
 _session.StartCapture()
 ```
 
-これらのキャプチャー フレーム、つまり [Direct3D11CaptureFrame](https://docs.microsoft.com/uwp/api/windows.graphics.capture.direct3d11captureframe)オブジェクトを取得するには、**Direct3D11CaptureFramePool.FrameArrived** イベントを使用できます。
+これらのキャプチャー フレーム、つまり [Direct3D11CaptureFrame](/uwp/api/windows.graphics.capture.direct3d11captureframe)オブジェクトを取得するには、**Direct3D11CaptureFramePool.FrameArrived** イベントを使用できます。
 
-```cs
+```csharp
 _framePool.FrameArrived += (s, a) =>
 {
     // The FrameArrived event fires for every frame on the thread that
@@ -216,32 +218,32 @@ UI スレッドで **FrameArrived** を使用することはできれば避け�
 
 これに代わる方法として、**Direct3D11CaptureFramePool.TryGetNextFrame**メソッドを使用し、必要なフレームをすべて取得し終わるまで、フレームを手動で取得することができます。
 
-**Direct3D11CaptureFrame**オブジェクトには、**ContentSize**、**Surface**、**SystemRelativeTime** の 3 つのプロパティが含まれています **SystemRelativeTime** は、他のメディア要素との同期に使用する QPC ([QueryPerformanceCounter](https://docs.microsoft.com/windows/desktop/api/profileapi/nf-profileapi-queryperformancecounter)) 時間です。
+**Direct3D11CaptureFrame**オブジェクトには、**ContentSize**、**Surface**、**SystemRelativeTime** の 3 つのプロパティが含まれています **SystemRelativeTime** は、他のメディア要素との同期に使用する QPC ([QueryPerformanceCounter](/windows/desktop/api/profileapi/nf-profileapi-queryperformancecounter)) 時間です。
 
 ## <a name="process-capture-frames"></a>キャプチャフレームの処理
 
-**Direct3D11CaptureFramePool** の各フレームは、**TryGetNextFrame** を呼び出したときにチェック アウトされ、**Direct3D11CaptureFrame** オブジェクトの有効期間に従ってチェック インされます。 ネイティブ アプリケーションの場合、**Direct3D11CaptureFrame** オブジェクトを解放するだけで、フレームがフレーム プールにチェック インされます。 管理されているアプリケーションの場合は、**Direct3D11CaptureFrame.Dispose** (C++ では **Close**) メソッドの使用をお勧めします。 **Direct3D11CaptureFrame** によって [IClosable](https://docs.microsoft.com/uwp/api/Windows.Foundation.IClosable) インターフェイスが実装されます。これは C# の呼び出し元に、[IDisposable](https://docs.microsoft.com/dotnet/api/system.idisposable) として投影されます。
+**Direct3D11CaptureFramePool** の各フレームは、**TryGetNextFrame** を呼び出したときにチェック アウトされ、**Direct3D11CaptureFrame** オブジェクトの有効期間に従ってチェック インされます。 ネイティブ アプリケーションの場合、**Direct3D11CaptureFrame** オブジェクトを解放するだけで、フレームがフレーム プールにチェック インされます。 管理されているアプリケーションの場合は、**Direct3D11CaptureFrame.Dispose** (C++ では **Close**) メソッドの使用をお勧めします。 **Direct3D11CaptureFrame** によって [IClosable](/uwp/api/Windows.Foundation.IClosable) インターフェイスが実装されます。これは C# の呼び出し元に、[IDisposable](/dotnet/api/system.idisposable) として投影されます。
 
 フレームのチェックイン後、アプリケーションは、**Direct3D11CaptureFrame** オブジェクトへの参照を保存してはならず、その基になる Direct3D サーフェスへの参照も保存できません。
 
-フレームの処理中は、アプリケーションによって、[ID3D11Multithread](https://docs.microsoft.com/windows/desktop/api/d3d11_4/nn-d3d11_4-id3d11multithread) を **Direct3D11CaptureFramePool** オブジェクトに関連付けられた同じデバイスにロックすることをお勧めします。
+フレームの処理中は、アプリケーションによって、[ID3D11Multithread](/windows/desktop/api/d3d11_4/nn-d3d11_4-id3d11multithread) を **Direct3D11CaptureFramePool** オブジェクトに関連付けられた同じデバイスにロックすることをお勧めします。
 
 基になる Direct3D サーフェスは、常に **Direct3D11CaptureFramePool** の作成時 (または再作成時) に指定されたサイズとなります。 コンテンツがフレームよりも大きい場合、コンテンツはフレームのサイズにクリップされます。 コンテンツがフレームより小さい場合、フレームの残りの部分には未定義のデータが格納されます。 未定義のコンテンツが表示されないように、アプリケーションで、その **Direct3D11CaptureFrame** の **ContentSize** プロパティを使用して、サブ矩形をコピーして取り出すことをお勧めします。
 
 ## <a name="take-a-screenshot"></a>スクリーンショットを撮る
 
-この例では、各 **Direct3D11CaptureFrame** を [CanvasBitmap](https://microsoft.github.io/Win2D/html/T_Microsoft_Graphics_Canvas_CanvasBitmap.htm) に変換します。これは [Win2D API](https://microsoft.github.io/Win2D/html/Introduction.htm) の一部です。
+この例では、各 **Direct3D11CaptureFrame** を [CanvasBitmap](https://microsoft.github.io/Win2D/html/T_Microsoft_Graphics_Canvas_CanvasBitmap.htm)に変換します。これは [Win2D api](https://microsoft.github.io/Win2D/html/Introduction.htm)の一部です。
 
-```cs
+```csharp
 // Convert our D3D11 surface into a Win2D object.
 CanvasBitmap canvasBitmap = CanvasBitmap.CreateFromDirect3D11Surface(
     _canvasDevice,
     frame.Surface);
 ```
 
-**CanvasBitmap** を取得したら、それをイメージ ファイルとして保存できます。 次の例では、ユーザーの **[保存済みの写真]** フォルダーに PNG ファイルとして保存します。
+**CanvasBitmap**を取得したら、それをイメージファイルとして保存できます。 次の例では、ユーザーの **保存さ** れているピクチャフォルダーに PNG ファイルとして保存します。
 
-```cs
+```csharp
 StorageFolder pictureFolder = KnownFolders.SavedPictures;
 StorageFile file = await pictureFolder.CreateFileAsync("test.png", CreationCollisionOption.ReplaceExisting);
 
@@ -257,14 +259,14 @@ using (var fileStream = await file.OpenAsync(FileAccessMode.ReadWrite))
 
 **Recreate** を呼び出すと、すべての既存のフレームが破棄されます。 これにより、アプリケーションがアクセスできなくなったデバイスの Direct3D サーフェスを基とするフレームが渡されることがなくなります。 このため、**Recreate** を呼び出す前に、保留中のすべてのフレームを処理することをお勧めします。
 
-## <a name="putting-it-all-together"></a>完成したコードの例
+## <a name="putting-it-all-together"></a>まとめ
 
-次のコードスニペットは、UWP アプリケーションで画面キャプチャを実装する方法を示すエンドツーエンドの例です。 このサンプルでは、フロントエンドに2つのボタンがあります。1つは**Button_ClickAsync**を呼び出し、もう1つは**ScreenshotButton_ClickAsync**を呼び出します。
+次のコードスニペットは、UWP アプリケーションで画面キャプチャを実装する方法を示すエンドツーエンドの例です。 このサンプルでは、フロントエンドに2つのボタンがあります。1つは **Button_ClickAsync**を呼び出し、もう1つは **ScreenshotButton_ClickAsync**を呼び出します。
 
 > [!NOTE]
-> このスニペットでは、2D グラフィックスレンダリング用のライブラリである[Win2D](https://microsoft.github.io/Win2D/html/Introduction.htm)を使用します。 プロジェクトに設定する方法については、ドキュメントを参照してください。
+> このスニペットでは、2D グラフィックスレンダリング用のライブラリである [Win2D](https://microsoft.github.io/Win2D/html/Introduction.htm)を使用します。 プロジェクトに設定する方法については、ドキュメントを参照してください。
 
-```cs
+```csharp
 using Microsoft.Graphics.Canvas;
 using Microsoft.Graphics.Canvas.UI.Composition;
 using System;
@@ -684,10 +686,11 @@ Partial Public NotInheritable Class MainPage
 End Class
 ```
 
-## <a name="record-a-video"></a>ビデオを録画する
+## <a name="record-a-video"></a>ビデオを録画します
 
-アプリケーションのビデオを記録する場合は、[Windows.Media.AppRecording 名前空間](https://docs.microsoft.com/uwp/api/windows.media.apprecording)を使用すると、より簡単に実行できます。 これはデスクトップ拡張 SDK の一部であるため、デスクトップ上でのみ機能し、プロジェクトから参照を追加する必要があります。 詳細については、「[デバイス ファミリの概要](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview)」を参照してください。
+アプリケーションのビデオを記録する場合は、記事「 [ビデオへのキャプチャ](screen-capture-video.md)」に記載されているチュートリアルに従ってください。 または、Windows の " [名前空間](/uwp/api/windows.media.apprecording)" を使用することもできます。 これはデスクトップ拡張 SDK の一部であるため、デスクトップ上でのみ機能し、プロジェクトから参照を追加する必要があります。 詳細については、「 [拡張機能 sdk を使用したプログラミング](/uwp/extension-sdks/device-families-overview) 」を参照してください。
 
 ## <a name="see-also"></a>関連項目
 
-* [Windows.Graphics.Capture 名前空間](https://docs.microsoft.com/uwp/api/windows.graphics.capture)
+* [Windows.Graphics.Capture 名前空間](/uwp/api/windows.graphics.capture)
+* [ビデオに画面の取り込み](screen-capture-video.md)

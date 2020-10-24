@@ -4,16 +4,16 @@ title: 位置変更アニメーション
 ms.assetid: 25D1EE31-5C25-4F21-B34C-FBD8FB1C8FFF
 label: Motion--Reposition
 template: detail.hbs
-ms.date: 05/19/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f469ab07794014b77ea08087ada793cb83133cc8
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 95d8d69bdd289a8ff5d995995f71cfbd8688ae9b
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970527"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91217715"
 ---
 # <a name="reposition-animations"></a>位置変更アニメーション
 
@@ -21,7 +21,7 @@ ms.locfileid: "82970527"
 
 位置変更アニメーションを使って、1 つまたは複数の要素を新しい位置に移動します。
 
-> **重要な API**: [**RepositionThemeAnimation クラス**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.RepositionThemeAnimation)、[**RepositionThemeTransition クラス**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.RepositionThemeTransition)
+> **重要な API**: [**RepositionThemeAnimation クラス**](/uwp/api/Windows.UI.Xaml.Media.Animation.RepositionThemeAnimation)、[**RepositionThemeTransition クラス**](/uwp/api/Windows.UI.Xaml.Media.Animation.RepositionThemeTransition)
 
 ## <a name="dos-and-donts"></a>推奨と非推奨
 
@@ -31,15 +31,11 @@ ms.locfileid: "82970527"
 
 ## <a name="related-articles"></a>関連記事
 
-* [アニメーションの概要](https://docs.microsoft.com/windows/uwp/graphics/animations-overview)
-* [位置変更のアニメーション化](https://docs.microsoft.com/previous-versions/windows/apps/jj649434(v=win.10))
-* [クイック スタート: ライブラリのアニメーションを使った UI のアニメーション化](https://docs.microsoft.com/previous-versions/windows/apps/hh452703(v=win.10))
-* [**RepositionThemeAnimation クラス**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.RepositionThemeAnimation)
-* [**RepositionThemeTransition クラス**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.RepositionThemeTransition)
+* [アニメーションの概要](./xaml-animation.md)
+* [位置変更のアニメーション化](/previous-versions/windows/apps/jj649434(v=win.10))
+* [クイック スタート: ライブラリのアニメーションを使った UI のアニメーション化](/previous-versions/windows/apps/hh452703(v=win.10))
+* [**RepositionThemeAnimation クラス**](/uwp/api/Windows.UI.Xaml.Media.Animation.RepositionThemeAnimation)
+* [**RepositionThemeTransition クラス**](/uwp/api/Windows.UI.Xaml.Media.Animation.RepositionThemeTransition)
 
 
  
-
-
-
-

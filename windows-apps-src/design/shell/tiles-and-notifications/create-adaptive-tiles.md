@@ -4,22 +4,22 @@ title: アダプティブ タイルの作成
 ms.assetid: 1246B58E-D6E3-48C7-AD7F-475D113600F9
 label: Create adaptive tiles
 template: detail.hbs
-ms.date: 05/19/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: bbc0f23ad712850e565814febe5b7e681e58a85d
-ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
+ms.openlocfilehash: c60794a52c3d8a5f597d4ab2d09490405c98f85a
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83234573"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91218375"
 ---
 # <a name="create-adaptive-tiles"></a>アダプティブ タイルの作成
 
-アダプティブ タイル テンプレートは Windows 10 の新機能であり、シンプルで柔軟なマークアップ言語を使って、さまざまな画面密度に合わせて変化する独自のタイル通知コンテンツをデザインできるようになります。 この記事では、Windows アプリのアダプティブライブタイルを作成する方法について説明します。 アダプティブ タイルのすべての要素と属性の一覧については、「[アダプティブ タイルのスキーマ](../tiles-and-notifications/tile-schema.md)」をご覧ください 
+アダプティブ タイル テンプレートは Windows 10 の新機能であり、シンプルで柔軟なマークアップ言語を使って、さまざまな画面密度に合わせて変化する独自のタイル通知コンテンツをデザインできるようになります。 この記事では、Windows アプリのアダプティブ ライブ タイルを作成する方法について説明します。 アダプティブ タイルのすべての要素と属性の一覧については、「[アダプティブ タイルのスキーマ](../tiles-and-notifications/tile-schema.md)」をご覧ください 
 
-(必要に応じて、Windows 10 の通知をデザインするときは、[Windows 8 タイル テンプレート カタログ](https://docs.microsoft.com/previous-versions/windows/apps/hh761491(v=win.10))のプリセット テンプレートを引き続き使えます)。
+(必要に応じて、Windows 10 の通知をデザインするときは、[Windows 8 タイル テンプレート カタログ](/previous-versions/windows/apps/hh761491(v=win.10))のプリセット テンプレートを引き続き使えます)。
 
 
 ## <a name="getting-started"></a>作業の開始
@@ -203,7 +203,7 @@ TileContent content = new TileContent()
 
 ![アダプティブ タイル サイズ: 小、中、ワイド、大](images/adaptive-tiles-sizes.png)
 
-## <a name="branding"></a>ブランド設定
+## <a name="branding"></a>ブランド化
 
 
 通知ペイロード内で branding 属性を使って、ライブ タイルの下部でブランディング (表示名とコーナー ロゴ) を制御できます。 表示なし ("none")、名前のみ表示 ("name")、ロゴのみ表示 ("logo")、名前とロゴの両方を表示 ("nameAndLogo") のいずれかを選べます。
@@ -284,7 +284,7 @@ TileContent content = new TileContent()
 
  
 
-## <a name="display-name"></a>Display name
+## <a name="display-name"></a>表示名
 
 
 **displayName** 属性に任意のテキスト文字列を入力することで、通知の表示名を上書きすることができます。 ブランディングと同様、通知ペイロード全体に影響を与える [TileVisual](../tiles-and-notifications/tile-schema.md#tilevisual) 要素で、または個々のタイルにのみ影響を与える [TileBinding](../tiles-and-notifications/tile-schema.md#tilebinding) 要素で、表示名を指定できます。
@@ -335,7 +335,7 @@ TileContent content = new TileContent()
 
 ![アダプティブ タイルの表示名](images/adaptive-tiles-displayname.png)
 
-## <a name="text"></a>テキスト
+## <a name="text"></a>Text
 
 
 テキストの表示には、[AdaptiveText](../tiles-and-notifications/tile-schema.md#adaptivetext) 要素を使用します。 hint を使うと、テキストの表示方法を変更できます。
@@ -415,13 +415,13 @@ new AdaptiveText()
 |                                |                           |             |
 |--------------------------------|---------------------------|-------------|
 | &lt;テキストヒント-style = " \* "/&gt; | フォントの高さ               | フォントの太さ |
-| caption                        | 12 epx (有効ピクセル) | 通常     |
-| body                           | 15 epx                    | 通常     |
+| caption                        | 12 epx (有効ピクセル) | Regular     |
+| body                           | 15 epx                    | Regular     |
 | base                           | 15 epx                    | 中太字    |
-| subtitle                       | 20 epx                    | 通常     |
+| subtitle                       | 20 epx                    | Regular     |
 | title                          | 24 epx                    | Semilight   |
-| subheader                      | 34 epx                    | 淡色       |
-| header                         | 46 epx                    | 淡色       |
+| subheader                      | 34 epx                    | 白       |
+| header                         | 46 epx                    | 白       |
 
  
 
@@ -1399,7 +1399,3 @@ TileWide = new TileBinding()
  
 
  
-
-
-
-

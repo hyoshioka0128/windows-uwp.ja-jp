@@ -4,16 +4,16 @@ title: アプリ設定のガイドライン
 ms.assetid: 2D765E90-3FA0-42F5-A5CB-BEDC14C3F60A
 label: Guidelines
 template: detail.hbs
-ms.date: 02/08/2017
+ms.date: 08/07/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: a9b27094a5861151b907dc7787828068122e4a54
-ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
+ms.openlocfilehash: e3fcbcaa88fa39795ac078617c9a958ff3a997ac
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83233984"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173986"
 ---
 # <a name="guidelines-for-app-settings"></a>アプリ設定のガイドライン
 
@@ -27,7 +27,7 @@ ms.locfileid: "83233984"
 - 音楽、効果音、配色テーマなど、ユーザーの設定に基づくオプション。
 - プライバシー ポリシー、ヘルプ、アプリのバージョン、著作権情報など、頻繁にはアクセスされないアプリ情報。
 
-アプリの通常のワークフローに含まれるコマンド (お絵かきアプリでのブラシ色の変更など) は設定ページに含めません。 コマンド配置について詳しくは、「[コマンド設計の基本](https://docs.microsoft.com/windows/uwp/layout/commanding-basics)」をご覧ください。
+アプリの通常のワークフローに含まれるコマンド (お絵かきアプリでのブラシ色の変更など) は設定ページに含めません。 コマンド配置について詳しくは、「[コマンド設計の基本](../basics/commanding-basics.md)」をご覧ください。
 
 ## <a name="general-recommendations"></a>一般的な推奨事項
 
@@ -46,13 +46,13 @@ ms.locfileid: "83233984"
 
 ナビゲーション ウィンドウ レイアウトの場合、アプリ設定は、選択肢が示されるナビゲーション リストの最後の項目として配置し、下部にピン留めすることをお勧めします。
 
-![ナビゲーション ウィンドウでのアプリ設定のエントリ ポイント](images/appsettings-entrypoint-navpane.png)
+![ナビゲーション ウィンドウでのアプリ設定のエントリ ポイント](images/appsettings-nav-settings.png)
 
 **アプリ バー**
 
-[アプリ バー](../controls-and-patterns/app-bars.md)またはツール バーを使っている場合、設定のエントリ ポイントを [その他] オーバーフロー メニューの最後の項目として配置します。 設定のエントリ ポイントを簡単に検索できることがアプリで重要となる場合は、オーバーフローではなく、アプリ バーに直接エントリ ポイントを配置します。
+[アプリ バー](../controls-and-patterns/app-bars.md)またはツール バーを使用している場合は、設定のエントリ ポイントを [その他] オーバーフロー メニューの最後の項目の 1 つとして配置します。 設定のエントリ ポイントを簡単に検索できることがアプリで重要となる場合は、オーバーフローではなく、アプリ バーに直接エントリ ポイントを配置します。
 
-![アプリ バーでのアプリ設定のエントリ ポイント](images/appsettings-entrypoint-tabs.png)
+![アプリ バーでのアプリ設定のエントリ ポイント](../controls-and-patterns/images/appbar_rs2_overflow_icons.png)
 
 **ハブ**
 
@@ -69,15 +69,10 @@ ms.locfileid: "83233984"
 ## <a name="layout"></a>レイアウト
 
 
-デスクトップの場合でも、モバイルの場合でも、アプリ設定のウィンドウは全画面で開き、ウィンドウ全体に表示されるようにします。 アプリ設定のメニューに 4 つまでの最上位グループが含まれる場合は、それらのグループが 1 列分右下がりで表示されるようにします。
-
-デスクトップ:
+アプリ設定のウィンドウは全画面で開き、ウィンドウ全体に表示されるはずです。 アプリ設定のメニューに 4 つまでの最上位グループが含まれる場合は、それらのグループが 1 列分右下がりで表示されるようにします。
 
 ![デスクトップにおけるアプリ設定のページのレイアウト](images/appsettings-layout-navpane-desktop.png)
 
-モバイル:
-
-![電話におけるアプリ設定のページのレイアウト](images/appsettings-layout-navpane-mobile.png)
 
 ## <a name="color-mode-settings"></a>"カラー モード" の設定
 
@@ -130,17 +125,17 @@ Detailed redlines showing preferred text strings for the "Choose a mode" section
     - [ハイパーリンク](../controls-and-patterns/hyperlinks.md): アプリ内の別のページや外部 Web サイトに移動する場合。 ユーザーがハイパーリンクをクリックすると、設定ポップアップは閉じられます。
     - [ボタン](../controls-and-patterns/buttons.md): ユーザーが現在の設定ポップアップを閉じることなく即座に操作を開始できるようにする場合。
 - 使用できないコントロールがある場合は、説明用のメッセージを追加します。 使用できないコントロールの上に、このメッセージを配置します。
-- 設定ポップアップとヘッダーがアニメーション化された後で、コンテンツとコントロールを単一のブロックとしてアニメーション化します。 [  **enterPage**](https://docs.microsoft.com/previous-versions/windows/apps/br212672(v=win.10)) または [**EntranceThemeTransition**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.EntranceThemeTransition) アニメーションを使って、100 ピクセル左のオフセットでコンテンツをアニメーション化します。
+- 設定ポップアップとヘッダーがアニメーション化された後で、コンテンツとコントロールを単一のブロックとしてアニメーション化します。 [  **enterPage**](/previous-versions/windows/apps/br212672(v=win.10)) または [**EntranceThemeTransition**](/uwp/api/Windows.UI.Xaml.Media.Animation.EntranceThemeTransition) アニメーションを使って、100 ピクセル左のオフセットでコンテンツをアニメーション化します。
 - 必要に応じて、コンテンツの整理と明確化の助けになるように、セクション ヘッダー、段落、ラベルを使います。
 - 設定を繰り返し表示する必要がある場合は、UI の階層を追加するか、展開/折りたたみモデルを使います。階層の深さは 2 階層までに抑えます。 たとえば、天気予報アプリの都市別の設定では、都市の一覧を表示し、ユーザーが都市をタップしたときに、新しいポップアップを開くか、展開して設定オプションを表示できるようにします。
-- コントロールや Web コンテンツの読み込みに時間がかかる場合は、進行状況不定コントロールを使ってユーザーに読み込み中であることを示します。 詳しくは、「[プログレス コントロールのガイドライン](https://docs.microsoft.com/windows/uwp/controls-and-patterns/progress-controls)」をご覧ください。
+- コントロールや Web コンテンツの読み込みに時間がかかる場合は、進行状況不定コントロールを使ってユーザーに読み込み中であることを示します。 詳しくは、「[プログレス コントロールのガイドライン](../controls-and-patterns/progress-controls.md)」をご覧ください。
 - 移動や変更をコミットするためのボタンは使いません。 別のページに移動するにはハイパーリンクを使います。また、ボタンを使って変更をコミットする代わりに、ユーザーが設定ポップアップを閉じたときにアプリ設定の変更を自動的に保存します。
 
 
 
 ## <a name="related-articles"></a>関連記事
 
-* [コマンド設計の基本](https://docs.microsoft.com/windows/uwp/layout/commanding-basics)
-* [プログレス コントロールのガイドライン](https://docs.microsoft.com/windows/uwp/controls-and-patterns/progress-controls)
-* [アプリ データの保存と取得](https://docs.microsoft.com/windows/uwp/app-settings/store-and-retrieve-app-data)
-* [**EntranceThemeTransition**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.EntranceThemeTransition)
+* [コマンド設計の基本](../basics/commanding-basics.md)
+* [プログレス コントロールのガイドライン](../controls-and-patterns/progress-controls.md)
+* [アプリ データの保存と取得](./store-and-retrieve-app-data.md)
+* [**EntranceThemeTransition**](/uwp/api/Windows.UI.Xaml.Media.Animation.EntranceThemeTransition)

@@ -1,10 +1,10 @@
 ---
-Description: ParallaxView コントロールを使用して、アプリに奥行きと動きを追加します。
-title: 視差を使用して、アプリに深さと移動を追加します。
+title: 視差を利用してアプリに深さと移動を追加する
+description: UWP アプリで ParallaxView コントロールを使用して、ビューアーに近い項目が背景の項目よりも速く移動する視覚効果を作成する方法について説明します。
 ms.assetid: ''
 label: Parallax View
 template: detail.hbs
-ms.date: 08/09/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: abarlow
@@ -12,22 +12,22 @@ design-contact: conrwi
 dev-contact: stpete
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: d659683d6871d9d48fd17b73c74477e7bd03e258
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 702d856ec15391875f369b6145a715ade3092afb
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970497"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91220255"
 ---
 # <a name="parallax"></a>視差
 
 視差は、アプリの閲覧者の近くにある項目を背景にある項目よりも速く動かすという視覚効果です。 視差によって、奥行き、遠近感、および動きといった感覚が引き起こされます。 UWP アプリでは、ParallaxView コントロールを使用して、視差効果を作成できます。  
 
-> **WINDOWS UI ライブラリ api:** [ParallaxView クラス](/uwp/api/Microsoft.UI.Xaml.Controls.Parallaxview)、[垂直シフトプロパティ](/uwp/api/Microsoft.UI.Xaml.Controls.Parallaxview.VerticalShift)、[水平シフトプロパティ](/uwp/api/Microsoft.UI.Xaml.Controls.Parallaxview.HorizontalShift)
+> **WINDOWS UI ライブラリ api:** [ParallaxView クラス](/uwp/api/Microsoft.UI.Xaml.Controls.Parallaxview)、 [垂直シフトプロパティ](/uwp/api/Microsoft.UI.Xaml.Controls.Parallaxview.VerticalShift)、 [水平シフトプロパティ](/uwp/api/Microsoft.UI.Xaml.Controls.Parallaxview.HorizontalShift)
 >
-> **プラットフォーム api**: [ParallaxView クラス](/uwp/api/Windows.UI.Xaml.Controls.Parallaxview)、[垂直シフトプロパティ](/uwp/api/Windows.UI.Xaml.Controls.Parallaxview.VerticalShift)、[水平シフトプロパティ](/uwp/api/Windows.UI.Xaml.Controls.Parallaxview.HorizontalShift)
+> **プラットフォーム api**: [ParallaxView クラス](/uwp/api/Windows.UI.Xaml.Controls.Parallaxview)、 [垂直シフトプロパティ](/uwp/api/Windows.UI.Xaml.Controls.Parallaxview.VerticalShift)、 [水平シフトプロパティ](/uwp/api/Windows.UI.Xaml.Controls.Parallaxview.HorizontalShift)
 
-## <a name="examples"></a>使用例
+## <a name="examples"></a>例
 
 <table>
 <th align="left">XAML コントロール ギャラリー<th>
@@ -45,7 +45,7 @@ ms.locfileid: "82970497"
 
 ## <a name="parallax-and-the-fluent-design-system"></a>視差と Fluent Design System
 
- Fluent Design System では、ライト、深度、モーション、マテリアル、スケールを取り入れた、モダンで目を引く UI を作成できます。 視差は、アプリにモーション、深度、スケールを追加する Fluent Design System コンポーネントです。 詳細については、「 [Fluent Design の概要](/windows/apps/fluent-design-system)」を参照してください。
+ Fluent Design System では、ライト、深度、モーション、マテリアル、スケールを取り入れた、モダンで目を引く UI を作成できます。 視差は、アプリにモーション、深度、スケールを追加する Fluent Design System コンポーネントです。 詳しくは、[Fluent Design の概要](/windows/apps/fluent-design-system)に関するページをご覧ください。
 
 ## <a name="how-it-works-in-a-user-interface"></a>ユーザー インターフェイスでのしくみ
 
@@ -56,14 +56,14 @@ UI では、UI のスクロールやパンを行うときに、さまざまな�
  
 ## <a name="using-the-parallaxview-control-to-create-a-parallax-effect"></a>ParallaxView コントロールを使用して視差効果を作成する
 
-視差効果を作成するには、[ParallaxView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Parallaxview) コントロールを使用します。 このコントロールによって、前景要素 (リストなど) のスクロール位置が背景要素 (画像など) に関連付けられます。 前景要素をスクロールすると、背景要素がアニメーション化され、視差効果が発生します。 
+視差効果を作成するには、[ParallaxView](/uwp/api/Windows.UI.Xaml.Controls.Parallaxview) コントロールを使用します。 このコントロールによって、前景要素 (リストなど) のスクロール位置が背景要素 (画像など) に関連付けられます。 前景要素をスクロールすると、背景要素がアニメーション化され、視差効果が発生します。 
 
-ParallaxView コントロールを使用するには、ソース要素と背景要素を用意し、[VerticalShift](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Parallaxview.VerticalShift) プロパティ (垂直スクロール用) や [HorizontalShift](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Parallaxview.HorizontalShift) プロパティ (水平スクロール用) を 0 より大きい値に設定します。 
-* Source プロパティは、前景要素への参照を受け取ります。 視差効果を発生させるには、前景が [ScrollViewer](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ScrollViewer) であるか、前景が ScrollViewer を含んでいる要素 ([ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview) や [RichTextBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichEditBox) など) であることがj必要です。 
+ParallaxView コントロールを使用するには、ソース要素と背景要素を用意し、[VerticalShift](/uwp/api/Windows.UI.Xaml.Controls.Parallaxview.VerticalShift) プロパティ (垂直スクロール用) や [HorizontalShift](/uwp/api/Windows.UI.Xaml.Controls.Parallaxview.HorizontalShift) プロパティ (水平スクロール用) を 0 より大きい値に設定します。 
+* Source プロパティは、前景要素への参照を受け取ります。 視差効果を発生させるには、前景が [ScrollViewer](/uwp/api/Windows.UI.Xaml.Controls.ScrollViewer) であるか、前景が ScrollViewer を含んでいる要素 ([ListView](/uwp/api/windows.ui.xaml.controls.listview) や [RichTextBox](/uwp/api/Windows.UI.Xaml.Controls.RichEditBox) など) であることがj必要です。 
 
-* 背景要素を設定するには、その要素を ParallaxView コントロールの子として追加します。 背景要素には、[Image](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Image) など、どのような [UIElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement) でも使用できます。また、追加の UI 要素を含んでいるパネルも使用できます。 
+* 背景要素を設定するには、その要素を ParallaxView コントロールの子として追加します。 背景要素には、[Image](/uwp/api/Windows.UI.Xaml.Controls.Image) など、どのような [UIElement](/uwp/api/windows.ui.xaml.uielement) でも使用できます。また、追加の UI 要素を含んでいるパネルも使用できます。 
 
-視差効果を作成するには、ParallaxView が背景要素を介して動作するようにする必要があります。 [Grid](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.grid) パネルや [Canvas](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.canvas) パネルを使用すると、項目を相互に重ねることができ、それらの項目は ParallaxView コントロールで適切に動作します。  
+視差効果を作成するには、ParallaxView が背景要素を介して動作するようにする必要があります。 [Grid](/uwp/api/windows.ui.xaml.controls.grid) パネルや [Canvas](/uwp/api/windows.ui.xaml.controls.canvas) パネルを使用すると、項目を相互に重ねることができ、それらの項目は ParallaxView コントロールで適切に動作します。  
 
 次の例では、リストの視差効果を作成します。
  
@@ -123,6 +123,6 @@ VerticalShift プロパティと HorizontalShift プロパティでは、視差�
 
 ## <a name="related-articles"></a>関連記事
 
-- [ParallaxView クラス](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Parallaxview) 
+- [ParallaxView クラス](/uwp/api/Windows.UI.Xaml.Controls.Parallaxview) 
 - [UWP 用 Fluent Design](/windows/apps/fluent-design-system)
-- [システムの科学: Fluent Design と奥行き](https://medium.com/microsoft-design/science-in-the-system-fluent-design-and-depth-fb6d0f23a53f)
+- [システムの科学:Fluent Design と奥行き](https://medium.com/microsoft-design/science-in-the-system-fluent-design-and-depth-fb6d0f23a53f)

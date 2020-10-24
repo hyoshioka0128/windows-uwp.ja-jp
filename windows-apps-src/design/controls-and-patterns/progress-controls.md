@@ -1,5 +1,5 @@
 ---
-Description: プログレス コントロールは、時間のかかる操作が進行中であることを示すフィードバックをユーザーに返します。
+description: プログレス コントロールは、時間のかかる操作が進行中であることを示すフィードバックをユーザーに返します。
 title: プログレス コントロールのガイドライン
 ms.assetid: FD53B716-C43D-408D-8B07-522BC1F3DF9D
 label: Progress controls
@@ -12,12 +12,12 @@ design-contact: jeffarn
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 25ca05dc6c604d40092cdc28d186de4b835774b2
-ms.sourcegitcommit: e1104689fc1db5afb85701205c2580663522ee6d
+ms.openlocfilehash: fbd9ed95137263f4ddad44e2272d4d77aced241f
+ms.sourcegitcommit: 234bb7c896b990f624b2b8789820b92426e52291
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86997999"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90013386"
 ---
 # <a name="progress-controls"></a>プログレス コントロール
 
@@ -27,15 +27,15 @@ ms.locfileid: "86997999"
 
 |  |  |
 | - | - |
-| ![WinUI ロゴ](images/winui-logo-64x64.png) | **ProgressBar** コントロールは、Windows アプリのための新しいコントロールと UI 機能を含む NuGet パッケージである Windows UI ライブラリの一部として含まれています。 インストール手順などについて詳しくは、「[Windows UI Library (Windows UI ライブラリ)](https://docs.microsoft.com/uwp/toolkits/winui/)」をご覧ください。 |
+| ![WinUI ロゴ](images/winui-logo-64x64.png) | **ProgressBar** コントロールは、Windows アプリのための新しいコントロールと UI 機能を含む NuGet パッケージである Windows UI ライブラリの一部として含まれています。 インストール手順などについて詳しくは、「[Windows UI Library (Windows UI ライブラリ)](/uwp/toolkits/winui/)」をご覧ください。 |
 
-> **Windows UI ライブラリ API:** [ProgressBar クラス](https://docs.microsoft.com/uwp/api/Microsoft.UI.Xaml.Controls.ProgressBar)、[IsIndeterminate プロパティ](https://docs.microsoft.com/uwp/api/Microsoft.ui.xaml.controls.progressbar.isindeterminate)、[ProgressRing クラス](https://docs.microsoft.com/uwp/api/Microsoft.UI.Xaml.Controls.ProgressRing)、[IsActive プロパティ](https://docs.microsoft.com/uwp/api/Microsoft.ui.xaml.controls.progressring.isactive)
+> **Windows UI ライブラリ API:** [ProgressBar クラス](/uwp/api/Microsoft.UI.Xaml.Controls.ProgressBar)、[IsIndeterminate プロパティ](/uwp/api/Microsoft.ui.xaml.controls.progressbar.isindeterminate)、[ProgressRing クラス](/uwp/api/Microsoft.UI.Xaml.Controls.ProgressRing)、[IsActive プロパティ](/uwp/api/Microsoft.ui.xaml.controls.progressring.isactive)
 >
-> **プラットフォーム API:** [ProgressBar クラス](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ProgressBar)、[IsIndeterminate プロパティ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.progressbar.isindeterminate)、[ProgressRing クラス](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ProgressRing)、[IsActive プロパティ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.progressring.isactive)
+> **プラットフォーム API:** [ProgressBar クラス](/uwp/api/Windows.UI.Xaml.Controls.ProgressBar)、[IsIndeterminate プロパティ](/uwp/api/windows.ui.xaml.controls.progressbar.isindeterminate)、[ProgressRing クラス](/uwp/api/Windows.UI.Xaml.Controls.ProgressRing)、[IsActive プロパティ](/uwp/api/windows.ui.xaml.controls.progressring.isactive)
 
 > [!NOTE]
 > ProgressBar コントロールと ProgressRing コントロールには 2 つのバージョンがあります。プラットフォームにあって Windows.UI.Xaml 名前空間によって表されるものと、Windows UI ライブラリにあって Microsoft.UI.Xaml 名前空間によって表されるものです。 ProgressRing と ProgressBar の API は同じですが、コントロールの外観は 2 つのバージョン間で異なります。 このドキュメントでは、新しい方である Windows UI ライブラリ バージョンの画像を示します。
-このドキュメントでは、XAML で **muxc** エイリアスを使って、プロジェクトに含めた Windows UI Library API を表します。 [Page](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page) 要素にこれを追加しました。
+このドキュメントでは、XAML で **muxc** エイリアスを使って、プロジェクトに含めた Windows UI Library API を表します。 [Page](/uwp/api/windows.ui.xaml.controls.page) 要素にこれを追加しました。
 
 ```xaml
 xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
@@ -61,13 +61,12 @@ Imports muxc = Microsoft.UI.Xaml.Controls
 
 なお、プログレス コントロールは読み取り専用で、対話型ではありません。 つまり、ユーザーはこれらのコントロールを直接呼び出したり、使ったりすることはできません。
 
-![ProgressBar 状態](images/progress-bar-two-states.png)
+|コントロール|ディスプレイ|
+|---|---|
+| 不確定な ProgressBar | ![ProgressBar - 不確定](images/progressbar-indeterminate.gif) |
+| 確定的な ProgressBar | ![ProgressBar - 確定](images/progressbar-determinate.png)|
+| 不確定な ProgressRing | ![ProgressRing 状態](images/progressring-indeterminate.gif)|
 
-*上から下へ、不確定 ProgressBar と確定 ProgressBar*
-
-![ProgressRing 状態](images/ProgressRing_SingleState.png)
-
-*不確定の ProgressRing*
 
 ## <a name="examples"></a>例
 
@@ -211,5 +210,5 @@ Window.Current.CoreWindow.PointerCursor = new Windows.UI.Core.CoreCursor(Windows
 
 ## <a name="related-articles"></a>関連記事
 
-- [ProgressBar クラス](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ProgressBar)
-- [ProgressRing クラス](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ProgressRing)
+- [ProgressBar クラス](/uwp/api/Windows.UI.Xaml.Controls.ProgressBar)
+- [ProgressRing クラス](/uwp/api/Windows.UI.Xaml.Controls.ProgressRing)

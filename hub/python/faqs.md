@@ -1,6 +1,6 @@
 ---
 title: Windows での Python の使用についてよく寄せられる質問
-description: Windows での Python の使用についてよく寄せられる質問
+description: 開発のための Windows での Python の使用についてよく寄せられる質問 (FAQ) に対する回答を確認することにより、役立つ情報が得られます。
 author: mattwojo
 ms.author: mattwoj
 manager: jken
@@ -8,12 +8,12 @@ ms.topic: article
 keywords: python, windows 10, microsoft, pip, py.exe, ファイル パス, PYTHONPATH, python 開発, python パッケージ化
 ms.localizationpriority: medium
 ms.date: 07/19/2019
-ms.openlocfilehash: 6dbf86e0f9435e44140159ebb2bcbc3d67928999
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 4504e7550d19d2cc713284abebed43b6305b5dbd
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "74663559"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174126"
 ---
 # <a name="frequently-asked-questions-about-using-python-on-windows"></a>Windows での Python の使用についてよく寄せられる質問
 
@@ -59,13 +59,13 @@ PYTHONPATH 環境変数は、モジュールのインポート元にすること
 
 PowerShell からこの変数を設定するには、Python を起動する直前に `$env:PYTHONPATH=’list;of;paths’` を使用します。
 
-この変数は、使用する予定の Python だけでなく、すべてのバージョンの Python によって使用される可能性があるため、 **[環境変数]** 設定でこの変数をグローバルに設定することは**非推奨**です。
+この変数は、使用する予定の Python だけでなく、すべてのバージョンの Python によって使用される可能性があるため、**[環境変数]** 設定でこの変数をグローバルに設定することは**非推奨**です。
 
 ## <a name="where-can-i-find-help-with-packaging-and-deployment"></a>パッケージ化と配置のヘルプはどこにありますか?
 
 [Docker](https://code.visualstudio.com/docs/azure/docker):[VSCode 拡張機能](https://code.visualstudio.com/docs/azure/docker)を使用すると、Dockerfile および docker-compose.yml テンプレートを使用して迅速にパッケージ化および配置する (プロジェクトに適した Docker ファイルを生成する) ことができます。
 
-[Azure Kubernetes Service (AKS)](https://docs.microsoft.com/azure/aks/) を使用すると、コンテナー化されたアプリケーションを配置および管理しながら、必要に応じてリソースを規模拡張できます。
+[Azure Kubernetes Service (AKS)](/azure/aks/) を使用すると、コンテナー化されたアプリケーションを配置および管理しながら、必要に応じてリソースを規模拡張できます。
 
 ## <a name="what-if-i-need-to-work-across-different-machines"></a>複数のコンピューターにまたがって作業する必要がある場合はどうすればよいですか?
 

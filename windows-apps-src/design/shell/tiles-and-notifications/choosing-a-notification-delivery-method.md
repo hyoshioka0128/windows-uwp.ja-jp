@@ -1,19 +1,19 @@
 ---
-Description: この記事では、8212、local \#、スケジュール、定期的、およびプッシュ&\#8212 の4つの通知オプション&について説明します。これは、タイルとバッジの更新とトースト通知の内容を提供します。
+Description: この記事では、8212、local、スケジュール、定期的、およびプッシュ&8212 の4つの通知オプション&について説明します。これは、 \# \# タイルとバッジの更新とトースト通知の内容を提供します。
 title: 通知配信方法の選択
 ms.assetid: FDB43EDE-C5F2-493F-952C-55401EC5172B
 label: Choose a notification delivery method
 template: detail.hbs
-ms.date: 05/19/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f1df2048ea54b3ffc7c62270841b2be650bb90ea
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: a7a929cb88e20cc47562ab4920fd0fc94304fae2
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970827"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91219155"
 ---
 # <a name="choose-a-notification-delivery-method"></a>通知配信方法の選択
 
@@ -46,7 +46,7 @@ ms.locfileid: "82970827"
 <th align="left">配信方法</th>
 <th align="left">用途</th>
 <th align="left">説明</th>
-<th align="left">使用例</th>
+<th align="left">例</th>
 </tr>
 </thead>
 <tbody>
@@ -154,7 +154,7 @@ API 呼び出しはローカルですが、通知では Web 画像を参照で�
 詳細については、次を参照してください。
 
 -   [Windows プッシュ通知サービス (WNS) の概要](windows-push-notification-services--wns--overview.md)
--   [プッシュ通知のガイドライン](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-windows-push-notification-services--wns--overview)
+-   [プッシュ通知のガイドライン](./windows-push-notification-services--wns--overview.md)
 -   [Windows アプリの通知コードサンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
 
 
@@ -163,15 +163,11 @@ API 呼び出しはローカルですが、通知では Web 画像を参照で�
 
 * [ローカル タイル通知の送信](sending-a-local-tile-notification.md)
 * [ローカル トースト通知の送信](send-local-toast.md)
-* [プッシュ通知のガイドライン](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-windows-push-notification-services--wns--overview)
-* [トースト通知のガイドライン](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-badges-notifications)
+* [プッシュ通知のガイドライン](./windows-push-notification-services--wns--overview.md)
+* [トースト通知のガイドライン](./index.md)
 * [定期的な通知の概要](periodic-notification-overview.md)
 * [Windows プッシュ通知サービス (WNS) の概要](windows-push-notification-services--wns--overview.md)
 * [GitHub の Windows アプリ通知コードサンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
  
 
  
-
-
-
-

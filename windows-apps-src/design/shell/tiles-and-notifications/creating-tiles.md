@@ -4,16 +4,16 @@ title: Windows アプリのタイル
 ms.assetid: 09C7E1B1-F78D-4659-8086-2E428E797653
 label: Tiles
 template: detail.hbs
-ms.date: 05/19/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 8823116b8fed3503ccf0dadc488956c93ae6c32b
-ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
+ms.openlocfilehash: 19c8612188000a3d1161fa746d6e7944667a5104
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83234458"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91218155"
 ---
 # <a name="tiles-for-windows-apps"></a>Windows アプリのタイル
 
@@ -51,7 +51,7 @@ Visual Studio で新しいプロジェクトを作成すると、アプリの名
 -   ShortName: タイル上の表示名を収めるスペースには限りがあるため、アプリの名前が切り詰められないような名前を指定することをお勧めします。
 -   ロゴ イメージ:
 
-    ここに挙げた画像を、自分で用意したものに置き換えます。 さまざまな倍率に応じて複数の画像を指定することができますが、必ずしもすべて指定する必要はありません。 多種多様なデバイスでアプリを適切に表示するために、各画像の複数のスケール バージョン (100%、200%、400%) を用意することをお勧めします。 これらの資産を生成する方法の詳細については[、「アプリアイコンとロゴ](/windows/uwp/design/style/app-icons-and-logos)」を参照してください。
+    ここに挙げた画像を、自分で用意したものに置き換えます。 さまざまな倍率に応じて複数の画像を指定することができますが、必ずしもすべて指定する必要はありません。 多種多様なデバイスでアプリを適切に表示するために、各画像の複数のスケール バージョン (100%、200%、400%) を用意することをお勧めします。 これらの資産を生成する方法の詳細については [、「アプリアイコンとロゴ](../../style/app-icons-and-logos.md) 」を参照してください。
 
     拡大/縮小された画像の名前付け規則は次のとおりです。
     
@@ -59,7 +59,7 @@ Visual Studio で新しいプロジェクトを作成すると、アプリの名
 
     例: SplashScreen.scale-100.png
 
-    イメージを参照するときは、 * &lt; イメージ名 &gt; *として参照します。* &lt;イメージファイル拡張子 &gt; * (この例では "SplashScreen")。 指定した画像からデバイスに合わせて拡大/縮小された画像が自動的に選択されます。
+    イメージを参照するときは、 * &lt; イメージ名 &gt; *として参照します。* &lt;イメージファイル拡張子 &gt; * (この例では "SplashScreen.png")。 指定した画像からデバイスに合わせて拡大/縮小された画像が自動的に選択されます。
 
 -   強制ではありませんが、幅広で大きいタイル サイズに合ったロゴを用意して、ユーザーの側でアプリのタイルをそのサイズに変更できるようにすることを強くお勧めします。 追加の画像を指定するには、**DefaultTile** 要素を作成し、**Wide310x150Logo** および **Square310x310Logo** 属性を使って、その画像を指定します。
 ```    XML

@@ -1,20 +1,20 @@
 ---
-Description: Windows アプリから開始するようにセカンダリタイルをピン留めする方法について説明します。
-title: セカンダリタイルをスタート画面にピン留めする
+description: セカンダリタイルを作成し、ユニバーサル Windows プラットフォーム (UWP) アプリからプログラムでスタートメニューにピン留めする方法について説明します。
+title: スタート画面へのセカンダリ タイルのピン留め
 label: Pin secondary tiles to Start
 template: detail.hbs
-ms.date: 05/25/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10、UWP、セカンダリ タイル、ピン留め、クイック スタート、コード サンプル、例
 ms.localizationpriority: medium
-ms.openlocfilehash: 8c535e7e2abaf68212cb0a2f6daac8741b6548a5
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 0fc83fca642ae75404180edf5fad177b92153e35
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82971047"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91220385"
 ---
-# <a name="pin-secondary-tiles-to-start"></a>セカンダリタイルをスタート画面にピン留めする
+# <a name="pin-secondary-tiles-to-start"></a>スタート画面へのセカンダリ タイルのピン留め
 
 
 このトピックでは、Windows アプリ用のセカンダリタイルを作成し、[スタート] メニューにピン留めする手順について説明します。
@@ -181,6 +181,6 @@ var tiles = await SecondaryTile.FindAllAsync();
 
 * [セカンダリ タイルの概要](secondary-tiles.md)
 * [セカンダリ タイルのガイダンス](secondary-tiles-guidance.md)
-* [タイル アセット](app-assets.md)
+* [タイル アセット](../../style/app-icons-and-logos.md)
 * [タイル コンテンツのドキュメント](create-adaptive-tiles.md)
 * [ローカル タイル通知の送信](sending-a-local-tile-notification.md)

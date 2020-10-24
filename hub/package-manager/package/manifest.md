@@ -4,12 +4,12 @@ description: ソフトウェア パッケージを Windows パッケージ マ�
 ms.date: 04/29/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 960caede306228c492bc88c81ac3c1c841b6c18c
-ms.sourcegitcommit: 9c2b21081158e712a856158d25dce76b3e213a9c
+ms.openlocfilehash: a3a1acebf2b48e767fbd16998967145976305434
+ms.sourcegitcommit: 94841d1d59703897b42b11597c28a9d966626f47
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88129749"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91110567"
 ---
 # <a name="create-your-package-manifest"></a>パッケージ マニフェストを作成する
 
@@ -56,8 +56,8 @@ License: string # The open source license or copyright.
 InstallerType: string # Enumeration of supported installer types (exe, msi, msix, inno, wix, nullsoft, appx).
 Installers:
   - Arch: string # Enumeration of supported architectures.
-  - Url: string # Path to download installation file.
-  - Sha256: string # SHA256 calculated from installer.
+    Url: string # Path to download installation file.
+    Sha256: string # SHA256 calculated from installer.
 ManifestVersion: 0.1.0
 ```
 
@@ -100,21 +100,22 @@ FileExtensions: list # List of file extensions the package could support.
 Protocols: list # List of protocols the package provides a handler for.
 Commands: list # List of commands or aliases the user would use to run the package.
 InstallerType: string # Enumeration of supported installer types (exe, msi, msix, inno, wix, nullsoft, appx).
-Custom: string # Custom switches passed to the installer.
-Silent: string # Switches passed to the installer for silent installation.
-SilentWithProgress: string # Switches passed to the installer for non-interactive install.
-Interactive: string # Experimental.
-Language: string # Experimental.
-Log: string # Specifies log redirection switches and path.
-InstallLocation: string # Specifies alternate location to install package.
+Switches: # These can be used to change the install behavior if supported by the InstallerType.
+  Custom: string # Custom switches passed to the installer.
+  Silent: string # Switches passed to the installer for silent installation.
+  SilentWithProgress: string # Switches passed to the installer for non-interactive install.
+  Interactive: string # Experimental.
+  Language: string # Experimental.
+  Log: string # Specifies log redirection switches and path.
+  InstallLocation: string # Specifies alternate location to install package.
 Installers: # Nested map of keys for specific installer.
   - Arch: string # Enumeration of supported architectures.
-  - Url: string # Path to download installation file.
-  - Sha256: string # SHA256 calculated from installer.
-  - SignatureSha256: string # SHA256 calculated from signature file's hash of MSIX file.
-  - Switches: # Collection of entries to override root keys. The primary supported values are: Custom, Silent, SilentWithProgress, Interactive. For a complete list see the specification at https://github.com/microsoft/winget-cli/blob/master/doc/ManifestSpecv0.1.md.
-  - Scope: string # Experimental.
-  - SystemAppId: string # Experimental.
+    Url: string # Path to download installation file.
+    Sha256: string # SHA256 calculated from installer.
+    SignatureSha256: string # SHA256 calculated from signature file's hash of MSIX file.
+    Switches: # Collection of entries to override root keys. The primary supported values are: Custom, Silent, SilentWithProgress, Interactive. For a complete list see the specification at https://github.com/microsoft/winget-cli/blob/master/doc/ManifestSpecv0.1.md.
+    Scope: string # Experimental.
+    SystemAppId: string # Experimental.
 Localization: # Nested map of keys for localization.
   - Language: string # Locale for display fields and localized URLs.
 ManifestVersion: string # Version number format for manifest version.
@@ -169,7 +170,7 @@ ManifestVersion: 0.1.0
 
 | インストーラー | コマンド  | ドキュメント |  
 | :--- | :-- | :--- |  
-| MSI | `/q` | [MSI のコマンドライン オプション](https://docs.microsoft.com/windows/win32/msi/command-line-options) |
+| MSI | `/q` | [MSI のコマンドライン オプション](/windows/win32/msi/command-line-options) |
 | InstallShield | `/s`  | [InstallShield のコマンドライン パラメーター](https://docs.flexera.com/installshield19helplib/helplibrary/IHelpSetup_EXECmdLine.htm) |
 | Inno Setup | `/SILENT or /VERYSILENT` | [Inno Setup のドキュメント](https://jrsoftware.org/ishelp/) |
 | Nullsoft | `/S` | [Nullsoft サイレント インストーラー/アンインストーラー](https://nsis.sourceforge.io/Docs/Chapter4.html#silent) |
