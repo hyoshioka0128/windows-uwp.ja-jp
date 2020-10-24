@@ -4,16 +4,16 @@ title: タイル、バッジ、通知
 ms.assetid: 48ee4328-7999-40c2-9354-7ea7d488c538
 label: Tiles, badges, and notifications
 template: detail.hbs
-ms.date: 05/19/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: bb65acf606ffa44f075016720ebcd055ba5febc8
-ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
+ms.openlocfilehash: ce19fdca0ff79c430fcae7353cda595702f260c0
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83234463"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91218435"
 ---
 # <a name="tiles-badges-and-notifications-for-windows-apps"></a>Windows アプリのタイル、バッジ、通知
  
@@ -37,7 +37,7 @@ ms.locfileid: "83234463"
 | アーティクル | 説明 |
 | --- | --- |
 | [タイルの作成](creating-tiles.md) | アプリの既定のタイルをカスタマイズし、さまざまな画面サイズのアセットを提供します。 |
-| [アプリ アイコン アセット](app-assets.md) | Windows 10 オペレーティング システム全体でさまざまな形式で表示される、アプリ アイコン アセットは、Windows アプリにとって名刺のようなものです。 このガイドラインでは、システム内でアプリ アイコン アセットが表示される場所の詳細について説明し、最も洗練されたアイコンを作成する方法に関して詳細なデザインのヒントを提供します。 |
+| [アプリ アイコン アセット](../../style/app-icons-and-logos.md) | Windows 10 オペレーティング システム全体でさまざまな形式で表示される、アプリ アイコン アセットは、Windows アプリにとって名刺のようなものです。 このガイドラインでは、システム内でアプリ アイコン アセットが表示される場所の詳細について説明し、最も洗練されたアイコンを作成する方法に関して詳細なデザインのヒントを提供します。 |
 | [プライマリ タイル API](primary-tile-apis.md) | アプリのプライマリ タイルをピン留めして、プライマリ タイルが現在ピン留めされているかどうかを確認する要求です。 |
 | [タイルのコンテンツ](create-adaptive-tiles.md) | タイル通知のコンテンツは、Windows 10 の新機能であるアダプティブ タイル テンプレートで指定されます。シンプルで柔軟なマークアップ言語を使って、さまざまな画面密度に合わせて変化する独自のタイル通知コンテンツをデザインできるようになります。 この記事では、Windows アプリのアダプティブ ライブ タイルを作成する方法について説明します。 |
 | [タイルのコンテンツのスキーマ](../tiles-and-notifications/tile-schema.md) | アダプティブ タイルの作成に使う要素と属性を次に示します。 |

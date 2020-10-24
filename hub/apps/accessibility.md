@@ -6,12 +6,12 @@ ms.date: 09/12/2019
 keywords: Windows 10 のアクセシビリティ, アクセシビリティ, アクセシビリティ対応 win32 アプリの構築, アクセシビリティ対応 UWP アプリの構築, アクセシビリティ対応 WPF アプリの構築, アクセシビリティ対応 WinForms アプリの構築
 ms.author: kbridge
 author: Karl-Bridge-Microsoft
-ms.openlocfilehash: 2739546061febcfc96403ed5520fdcbd8bc2c462
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 7cdfa91bec648ab6f3d09d0aeff0d62e2962db86
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "76725935"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89169046"
 ---
 # <a name="accessibility-in-windows-10"></a>Windows 10 のアクセシビリティ
 
@@ -37,13 +37,13 @@ ms.locfileid: "76725935"
 
       (PC、携帯電話、Xbox One、HoloLens などの) 各種 Windows デバイスで動作する Windows 10 のアプリケーションとゲームを開発するための最新プラットフォームで、アクセシビリティに対応したアプリやツールを開発し、Microsoft Store に公開します。
 
-      [包括的なソフトウェアの設計](https://docs.microsoft.com/windows/uwp/accessibility/designing-inclusive-software)
+      [包括的なソフトウェアの設計](/windows/uwp/accessibility/designing-inclusive-software)
 
-      [包括的な Windows アプリの開発](https://docs.microsoft.com/windows/uwp/accessibility/developing-inclusive-windows-apps)
+      [包括的な Windows アプリの開発](/windows/uwp/accessibility/developing-inclusive-windows-apps)
 
-      [アクセシビリティ テスト](https://docs.microsoft.com/windows/uwp/accessibility/accessibility-testing)
+      [アクセシビリティ テスト](/windows/uwp/accessibility/accessibility-testing)
 
-      [ストア内のアクセシビリティ](https://docs.microsoft.com/windows/uwp/accessibility/accessibility-in-the-store)
+      [ストア内のアクセシビリティ](/windows/uwp/accessibility/accessibility-in-the-store)
    :::column-end:::
    :::column:::
       ![Win32 プラットフォーム アプリ](images/platform-win32.png)
@@ -52,21 +52,21 @@ ms.locfileid: "76725935"
 
       C/C++ Windows アプリケーションの元のプラットフォームで、アクセシビリティに対応したアプリやツールを開発します。
 
-      [Windows のアクセシビリティとオートメーションの新機能](https://docs.microsoft.com/windows/desktop/accessibility-whatsnew) (英語)
+      [Windows のアクセシビリティとオートメーションの新機能](/windows/desktop/accessibility-whatsnew) (英語)
 
-      [Windows 向けのアクセシビリティ対応アプリケーションの開発](https://docs.microsoft.com/windows/desktop/accessibility-appdev) (英語)
+      [Windows 向けのアクセシビリティ対応アプリケーションの開発](/windows/desktop/accessibility-appdev) (英語)
 
-      [Windows 向けのアクセシビリティ対応 UI フレームワークの開発](https://docs.microsoft.com/windows/desktop/accessibility-uiframeworkdev) (英語)
+      [Windows 向けのアクセシビリティ対応 UI フレームワークの開発](/windows/desktop/accessibility-uiframeworkdev) (英語)
 
-      [Windows 向けのユーザー補助テクノロジの開発](https://docs.microsoft.com/windows/desktop/accessibility-atdev) (英語)
+      [Windows 向けのユーザー補助テクノロジの開発](/windows/desktop/accessibility-atdev) (英語)
 
-      [アクセシビリティのテスト](https://docs.microsoft.com/windows/desktop/accessibility-testwithuia) (英語)
+      [アクセシビリティのテスト](/windows/desktop/accessibility-testwithuia) (英語)
 
-      [従来のアクセシビリティおよびオートメーション テクノロジ - MSAA から UI オートメーションまで](https://docs.microsoft.com/windows/desktop/accessibility-legacy) (英語)
+      [従来のアクセシビリティおよびオートメーション テクノロジ - MSAA から UI オートメーションまで](/windows/desktop/accessibility-legacy) (英語)
 
-      [Windows のアクセシビリティ機能](https://docs.microsoft.com/windows/desktop/winauto/about-windows-accessibility-features) (英語)
+      [Windows のアクセシビリティ機能](/windows/desktop/winauto/about-windows-accessibility-features) (英語)
 
-      [アクセシビリティ対応アプリの設計のガイドライン](https://docs.microsoft.com/windows/desktop/uxguide/inter-accessibility)
+      [アクセシビリティ対応アプリの設計のガイドライン](/windows/desktop/uxguide/inter-accessibility)
    :::column-end:::
 :::row-end:::
 :::row:::
@@ -77,21 +77,21 @@ ms.locfileid: "76725935"
 
       Windows マネージド アプリケーション用として実績のあるプラットフォームで、XAML UI モデルと .NET Framework を使用して、アクセシビリティに対応したアプリやツールを開発します。
 
-      [アクセシビリティのベスト プラクティス](https://docs.microsoft.com/dotnet/framework/ui-automation/accessibility-best-practices)
+      [ユーザー補助のベスト プラクティス](/dotnet/framework/ui-automation/accessibility-best-practices)
 
-      [UI オートメーションの基礎](https://docs.microsoft.com/dotnet/framework/ui-automation/index)
+      [UI オートメーションの基礎](/dotnet/framework/ui-automation/index)
 
-      [マネージド コードの UI オートメーション プロバイダー](https://docs.microsoft.com/dotnet/framework/ui-automation/ui-automation-providers-for-managed-code)
+      [マネージド コードの UI オートメーション プロバイダー](/dotnet/framework/ui-automation/ui-automation-providers-for-managed-code)
 
-      [マネージド コードの UI オートメーション クライアント](https://docs.microsoft.com/dotnet/framework/ui-automation/ui-automation-clients-for-managed-code)
+      [マネージド コードの UI オートメーション クライアント](/dotnet/framework/ui-automation/ui-automation-clients-for-managed-code)
 
-      [UI オートメーション コントロール パターン](https://docs.microsoft.com/dotnet/framework/ui-automation/ui-automation-control-patterns)
+      [UI オートメーション コントロール パターン](/dotnet/framework/ui-automation/ui-automation-control-patterns)
 
-      [UI オートメーション テキスト パターン](https://docs.microsoft.com/dotnet/framework/ui-automation/ui-automation-text-pattern)
+      [UI オートメーション テキスト パターン](/dotnet/framework/ui-automation/ui-automation-text-pattern)
 
-      [UI オートメーション コントロール型](https://docs.microsoft.com/dotnet/framework/ui-automation/ui-automation-control-types)
+      [UI オートメーション コントロール型](/dotnet/framework/ui-automation/ui-automation-control-types)
 
-      [UI オートメーションの仕様とコミュニティ規約](https://docs.microsoft.com/dotnet/framework/ui-automation/ui-automation-specification-and-community-promise) (英語)
+      [UI Automation Specification および UI Automation Community Promise](/dotnet/framework/ui-automation/ui-automation-specification-and-community-promise)
    :::column-end:::
    :::column:::
       ![Windows フォーム プラットフォーム アプリ](images/platform-winforms.png)
@@ -100,13 +100,13 @@ ms.locfileid: "76725935"
 
       XAML UI モデルと .NET Framework を使用して、Windows マネージド アプリケーション用の、アクセシビリティに対応したアプリやツールを開発します。
 
-      [Windows フォームのアクセシビリティ](https://docs.microsoft.com/dotnet/framework/winforms/advanced/windows-forms-accessibility)
+      [Windows フォームのアクセシビリティ](/dotnet/framework/winforms/advanced/windows-forms-accessibility)
 
-      [アクセシビリティ対応の Windows アプリケーションの作成](https://docs.microsoft.com/dotnet/framework/winforms/advanced/walkthrough-creating-an-accessible-windows-based-application)
+      [アクセシビリティ対応の Windows アプリケーションの作成](/dotnet/framework/winforms/advanced/walkthrough-creating-an-accessible-windows-based-application)
 
-      [ユーザー補助ガイドラインをサポートする Windows フォーム コントロールのプロパティ](https://docs.microsoft.com/dotnet/framework/winforms/advanced/properties-on-windows-forms-controls-that-support-accessibility-guidelines)
+      [ユーザ補助ガイドラインをサポートする Windows フォーム コントロールのプロパティ](/dotnet/framework/winforms/advanced/properties-on-windows-forms-controls-that-support-accessibility-guidelines)
 
-      [Windows フォーム上のコントロールのユーザー補助情報の提供](https://docs.microsoft.com/dotnet/framework/winforms/controls/providing-accessibility-information-for-controls-on-a-windows-form)
+      [Windows フォーム上のコントロールのユーザー補助情報の提供](/dotnet/framework/winforms/controls/providing-accessibility-information-for-controls-on-a-windows-form)
    :::column-end:::
 :::row-end:::
 :::row:::
@@ -118,14 +118,14 @@ ms.locfileid: "76725935"
 :::row-end:::
 :::row:::
    :::column:::
-      [Web アクセシビリティについて](https://docs.microsoft.com/microsoft-edge/accessibility) (英語)
+      [Web アクセシビリティについて](/microsoft-edge/accessibility) (英語)
 
-      [アクセシビリティ対応 Web サイトの設計](https://docs.microsoft.com/microsoft-edge/accessibility/design)
+      [アクセシビリティ対応 Web サイトの設計](/microsoft-edge/accessibility/design)
    :::column-end:::
    :::column:::
-      [アクセシビリティ対応 Web サイトの構築](https://docs.microsoft.com/microsoft-edge/accessibility/build)
+      [アクセシビリティ対応 Web サイトの構築](/microsoft-edge/accessibility/build)
 
-      [アクセシビリティ対応 Web サイトのテスト](https://docs.microsoft.com/microsoft-edge/accessibility/test) (英語)
+      [アクセシビリティ対応 Web サイトのテスト](/microsoft-edge/accessibility/test) (英語)
    :::column-end:::
 :::row-end:::
 
@@ -135,12 +135,12 @@ ms.locfileid: "76725935"
 
 :::row:::
    :::column:::
-      [コード サンプル ブラウザー](https://docs.microsoft.com/samples/browse/)
+      [コード サンプル ブラウザー](/samples/browse/)
 
       MSDN コード ギャラリーに代わる新しいサンプル ブラウザーです。
    :::column-end:::
    :::column:::
-      [MSDN コード ギャラリー (提供終了)](https://code.msdn.microsoft.com/site/search?query=accessibility&f%5B0%5D.Value=accessibility&f%5B0%5D.Type=SearchText&ac=2)
+      [MSDN コード ギャラリー (GitHub アーカイブ)](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/master/Official%20Windows%20Platform%20Sample)
 
       Windows、Windows Phone、Microsoft Azure、Office、SharePoint、Silverlight、その他の製品に関するサンプルをダウンロードします。
    :::column-end:::
@@ -253,7 +253,7 @@ ms.locfileid: "76725935"
       [アクセシビリティのブログ](https://blogs.microsoft.com/accessibility/) (英語)
    :::column-end:::
    :::column:::
-      [Windows UI オートメーションのブログ](https://blogs.msdn.microsoft.com/winuiautomation/) (英語)
+      [Windows UI オートメーションのブログ](/archive/blogs/winuiautomation/) (英語)
    :::column-end:::
 :::row-end:::
 :::row:::

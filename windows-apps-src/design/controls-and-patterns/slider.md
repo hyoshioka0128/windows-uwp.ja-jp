@@ -1,6 +1,6 @@
 ---
-Description: ユーザーが有効な範囲から値を設定できます。
 title: スライダー
+description: ユーザーがトラックに沿って Thumb コントロールを動かすことで値の範囲から選択できるようにする、Windows UI ライブラリのスライダー コントロールを実装する方法について説明します。
 ms.assetid: 7EC7EA33-BE7E-4FD5-B205-B8FA7B729ACC
 label: Sliders
 template: detail.hbs
@@ -12,12 +12,12 @@ design-contact: ksulliv
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: ed202bca80518333201595987c4af631f82f0853
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 484fb64497443708ec80f3d6ad80b40d14371af5
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970787"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173916"
 ---
 # <a name="sliders"></a>スライダー
 
@@ -29,9 +29,9 @@ ms.locfileid: "82970787"
 
 |  |  |
 | - | - |
-| ![WinUI ロゴ](images/winui-logo-64x64.png) | Windows UI ライブラリ 2.2 以降には、丸めた角を使用するこのコントロールの新しいテンプレートが含まれます。 詳しくは、「[角の半径](/windows/uwp/design/style/rounded-corner)」をご覧ください。 WinUI は、Windows アプリの新しいコントロールと UI 機能が含まれる NuGet パッケージです。 インストール手順などについて詳しくは、「[Windows UI Library (Windows UI ライブラリ)](https://docs.microsoft.com/uwp/toolkits/winui/)」をご覧ください。 |
+| ![WinUI ロゴ](images/winui-logo-64x64.png) | Windows UI ライブラリ 2.2 以降には、丸めた角を使用するこのコントロールの新しいテンプレートが含まれます。 詳しくは、「[角の半径](../style/rounded-corner.md)」をご覧ください。 WinUI は、Windows アプリの新しいコントロールと UI 機能が含まれる NuGet パッケージです。 インストール手順などについて詳しくは、「[Windows UI Library (Windows UI ライブラリ)](/uwp/toolkits/winui/)」をご覧ください。 |
 
-> **プラットフォーム API**: [Slider クラス](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.slider)、[Value プロパティ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.rangebase.value)、[ValueChanged イベント](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.rangebase.valuechanged)
+> **プラットフォーム API**: [Slider クラス](/uwp/api/windows.ui.xaml.controls.slider)、[Value プロパティ](/uwp/api/windows.ui.xaml.controls.primitives.rangebase.value)、[ValueChanged イベント](/uwp/api/windows.ui.xaml.controls.primitives.rangebase.valuechanged)
 
 ## <a name="is-this-the-right-control"></a>これは適切なコントロールですか?
 
@@ -74,10 +74,6 @@ ms.locfileid: "82970787"
 </tr>
 </table>
 
-Windows Phone の音量を制御するためのスライダー。
-
-![Windows Phone の音量を制御するためのスライダー](images/control-examples/slider-phone.png)
-
 Windows 画面設定でテキスト サイズを変更するためのスライダー。
 
 ![Windows 画面設定でテキスト サイズを変更するためのスライダー](images/control-examples/slider-display-settings.png)
@@ -103,7 +99,7 @@ volumeSlider.ValueChanged += Slider_ValueChanged;
 stackPanel1.Children.Add(volumeSlider);
 ```
 
-[Value](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.rangebase.value) プロパティからスライダーの値を取得および設定します。 値の変更に応答するには、Value プロパティにバインドするデータ バインディングを使うか、[ValueChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.rangebase.valuechanged) イベントを処理します。
+[Value](/uwp/api/windows.ui.xaml.controls.primitives.rangebase.value) プロパティからスライダーの値を取得および設定します。 値の変更に応答するには、Value プロパティにバインドするデータ バインディングを使うか、[ValueChanged](/uwp/api/windows.ui.xaml.controls.primitives.rangebase.valuechanged) イベントを処理します。
 
 ```csharp
 private void Slider_ValueChanged(object sender, RangeBaseValueChangedEventArgs e)
@@ -195,4 +191,4 @@ private void Slider_ValueChanged(object sender, RangeBaseValueChangedEventArgs e
 
 ## <a name="related-topics"></a>関連トピック
 - [トグル スイッチ](toggles.md)
-- [Slider クラス](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Slider)
+- [Slider クラス](/uwp/api/Windows.UI.Xaml.Controls.Slider)

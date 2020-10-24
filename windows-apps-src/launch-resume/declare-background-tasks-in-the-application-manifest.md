@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10、uwp、バックグラウンドタスク
 ms.localizationpriority: medium
-ms.openlocfilehash: 32472f698381f4b109f280f0b964f00cdbcec66a
-ms.sourcegitcommit: 2571af6bf781a464a4beb5f1aca84ae7c850f8f9
+ms.openlocfilehash: 5b66cffa25dce28be22a1347b10e121e75936c25
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2020
-ms.locfileid: "82606201"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89155956"
 ---
 # <a name="declare-background-tasks-in-the-application-manifest"></a>アプリケーション マニフェストでのバックグラウンド タスクの宣言
 
@@ -20,8 +20,8 @@ ms.locfileid: "82606201"
 
 **重要な API**
 
--   [**BackgroundTasks スキーマ**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask)
--   [**Windows. ApplicationModel. Background**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background)
+-   [**BackgroundTasks スキーマ**](/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask)
+-   [**Windows.ApplicationModel.Background**](/uwp/api/Windows.ApplicationModel.Background)
 
 アプリ マニフェストでバックグラウンド タスクを拡張機能として宣言し、バックグラウンド タスクを使うことができるようにします。
 
@@ -90,7 +90,7 @@ ms.locfileid: "82606201"
 
 2.  Task Type 属性のリストを、このバックグラウンド タスクで使われるタスク登録の種類を示すように変更します。 バックグラウンド タスクを複数の種類のトリガーで登録する場合は、必要な Task 要素と Type 属性を個々に追加します。
 
-    **注:**  使用している各トリガーの種類を一覧表示するか、バックグラウンドタスクが宣言されていないトリガーの型に登録しないようにしてください ( [**register**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskbuilder.register)メソッドは失敗し、例外がスローされます)。
+    **メモ**   使用している各トリガーの種類を一覧表示するか、バックグラウンドタスクが宣言されていないトリガーの型に登録しないようにしてください ( [**register**](/uwp/api/windows.applicationmodel.background.backgroundtaskbuilder.register)メソッドは失敗し、例外がスローされます)。
 
     次の抜粋例は、システム イベント トリガーとプッシュ通知の使用法を示します。
 
@@ -107,7 +107,7 @@ ms.locfileid: "82606201"
 
 アプリで登録する追加のバックグラウンド タスク クラスごとに、手順 2. を繰り返します。
 
-次に、[バックグラウンド タスク サンプル]( https://code.msdn.microsoft.com/windowsapps/Background-Task-Sample-9209ade9)の完全な Application 要素の例を示します。 これは、計 3 種類のトリガーで 2 つのバックグラウンド タスク クラスを使う例を示します。 この例の Extensions セクションをコピーし、必要に応じて変更して、アプリケーション マニフェストでバックグラウンド タスクを宣言します。
+次に、[バックグラウンド タスク サンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BackgroundTask)の完全な Application 要素の例を示します。 これは、計 3 種類のトリガーで 2 つのバックグラウンド タスク クラスを使う例を示します。 この例の Extensions セクションをコピーし、必要に応じて変更して、アプリケーション マニフェストでバックグラウンド タスクを宣言します。
 
 ```xml
 <Applications>
@@ -171,7 +171,7 @@ ms.locfileid: "82606201"
 </Extensions>
 ```
 
-**EntryPoint** を指定すると、アプリケーションは指定されたメソッドへのコールバックをトリガーの発生時に受け取ります。 **EntryPoint** を指定していない場合、アプリケーションは [OnBackgroundActivated()](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onbackgroundactivated) を介してコールバックを受け取ります。  詳しくは、「[インプロセス バックグラウンド タスクの作成と登録](create-and-register-an-inproc-background-task.md)」をご覧ください
+**EntryPoint** を指定すると、アプリケーションは指定されたメソッドへのコールバックをトリガーの発生時に受け取ります。 **EntryPoint** を指定していない場合、アプリケーションは [OnBackgroundActivated()](/uwp/api/windows.ui.xaml.application.onbackgroundactivated) を介してコールバックを受け取ります。  詳しくは、「[インプロセス バックグラウンド タスクの作成と登録](create-and-register-an-inproc-background-task.md)」をご覧ください
 
 ### <a name="specify-where-your-background-task-runs-with-the-resourcegroup-attribute"></a>ResourceGroup 属性を使用して、バックグラウンド タスクの実行先を指定
 

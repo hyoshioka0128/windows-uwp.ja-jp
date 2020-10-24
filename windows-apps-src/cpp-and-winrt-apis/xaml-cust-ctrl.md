@@ -6,22 +6,23 @@ ms.topic: article
 keywords: windows 10, uwp, 標準, c++, cpp, winrt, プロジェクション, XAML, カスタム, テンプレート化, コントロール
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: a6cde5a62367dccd83ca8dc6a46c203587850422
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 805e9db834e4428f8db5815b54b8d1d669310611
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80760523"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89154226"
 ---
 # <a name="xaml-custom-templated-controls-with-cwinrt"></a>C++/WinRT による XAML カスタム (テンプレート化) コントロール
 
 > [!IMPORTANT]
-> [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) でランタイム クラスを使用および作成する方法についての理解をサポートするために重要な概念と用語については、「[C++/WinRT での API の使用](consume-apis.md)」と「[C++/WinRT での API の作成](author-apis.md)」を参照してください。
+> [C++/WinRT](./intro-to-using-cpp-with-winrt.md) でランタイム クラスを使用および作成する方法についての理解をサポートするために重要な概念と用語については、「[C++/WinRT での API の使用](consume-apis.md)」と「[C++/WinRT での API の作成](author-apis.md)」を参照してください。
 
-ユニバーサル Windows プラットフォーム (UWP) の最も強力な機能の 1 つは、XAML [**Control**](/uwp/api/windows.ui.xaml.controls.control) 型に基づいてカスタム コントロールを作成できるユーザー インターフェイス (UI) スタックの柔軟性です。 XAML UI フレームワークには、[カスタム依存関係プロパティ](/windows/uwp/xaml-platform/custom-dependency-properties)、[添付プロパティ](/windows/uwp/xaml-platform/custom-attached-properties)、[コントロール テンプレート](/windows/uwp/design/controls-and-patterns/control-templates)などの機能が用意されており、豊富な機能でカスタマイズ可能なコントロールを簡単に作成できます。 このトピックでは、C++ /WinRT を使用してカスタム (テンプレート) コントロールを作成する手順について説明します。
+ユニバーサル Windows プラットフォーム (UWP) の最も強力な機能の 1 つは、XAML [**Control**](/uwp/api/windows.ui.xaml.controls.control) 型に基づいてカスタム コントロールを作成できるユーザー インターフェイス (UI) スタックの柔軟性です。 XAML UI フレームワークには、[カスタム依存関係プロパティ](../xaml-platform/custom-dependency-properties.md)、[添付プロパティ](../xaml-platform/custom-attached-properties.md)、[コントロール テンプレート](../design/controls-and-patterns/control-templates.md)などの機能が用意されており、豊富な機能でカスタマイズ可能なコントロールを簡単に作成できます。 このトピックでは、C++ /WinRT を使用してカスタム (テンプレート) コントロールを作成する手順について説明します。
 
 ## <a name="create-a-blank-app-bglabelcontrolapp"></a>空のアプリを作成する (BgLabelControlApp)
-まず、Microsoft Visual Studio で、新しいプロジェクトを作成します。 **空のアプリ (C++/WinRT)** を作成し、名前を *BgLabelControlApp* にして、(フォルダー構造がチュートリアルと一致するように) **[ソリューションとプロジェクトを同じディレクトリに配置する]** がオフになっていることを確認します。
+
+まず、Microsoft Visual Studio で、新しいプロジェクトを作成します。 **空のアプリ (C++/WinRT)** を作成し、名前を *BgLabelControlApp* にして、(フォルダー構造がチュートリアルと一致するように) **[ソリューションとプロジェクトを同じディレクトリに配置する]** がオフになっていることを確認します。 Windows SDK の最新の一般公開された (プレビュー以外の) バージョンを対象とします。
 
 このトピックの後半で、プロジェクトをビルドするよう指示します (ただし、それまでビルドしないでください)。
 
@@ -45,16 +46,18 @@ namespace BgLabelControlApp
 }
 ```
 
-上記の一覧は、依存関係プロパティ (DP) を宣言するときに従うパターンを示しています。 各 DP には 2 つの部分があります。 まず、型 [**DependencyProperty**](/uwp/api/windows.ui.xaml.dependencyproperty) の読み取り専用の静的プロパティを宣言します。 これは、実際の DP の名前に *Property* を加えたものです。 実装ではこの静的プロパティを使用します。 次に、DP の型と名前持つ読み取りおよび書き込みインスタンス プロパティを宣言します。 (DP ではなく) *添付プロパティ*を作成する場合は、「[カスタム添付プロパティ](/windows/uwp/xaml-platform/custom-attached-properties)」のコード例を参照してください。
+上記の一覧は、依存関係プロパティ (DP) を宣言するときに従うパターンを示しています。 各 DP には 2 つの部分があります。 まず、型 [**DependencyProperty**](/uwp/api/windows.ui.xaml.dependencyproperty) の読み取り専用の静的プロパティを宣言します。 これは、実際の DP の名前に *Property* を加えたものです。 実装ではこの静的プロパティを使用します。 次に、DP の型と名前持つ読み取りおよび書き込みインスタンス プロパティを宣言します。 (DP ではなく) *添付プロパティ*を作成する場合は、「[カスタム添付プロパティ](../xaml-platform/custom-attached-properties.md)」のコード例を参照してください。
 
 > [!NOTE]
 > 浮動小数点型の DP が必要な場合は、`double` ([MIDL 3.0](/uwp/midl-3/) では `Double`) にします。 型 `float` (MIDL では `Single`) の DP を宣言して実装し、XAML マークアップでその DP の値を設定すると、エラー "*テキスト '<NUMBER>' から 'Windows.Foundation.Single' を作成できませんでした*" が発生します。
 
-ファイルを保存し、プロジェクトをビルドします。 ビルド プロセス中に、`midl.exe` ツールが実行されて、ランタイム クラスを記述する Windows ランタイム メタデータ ファイル (`\BgLabelControlApp\Debug\BgLabelControlApp\Unmerged\BgLabelControl.winmd`) が作成されます。 次に、`cppwinrt.exe` ツールが実行され、ランタイム クラスの作成と使用をサポートするソース コード ファイルが生成されます。 これらのファイルには、IDL で宣言した **BgLabelControl** ランタイム クラスの実装を開始するためのスタブが含まれています。 これらのスタブは `\BgLabelControlApp\BgLabelControlApp\Generated Files\sources\BgLabelControl.h` と `BgLabelControl.cpp` です。
+ファイルを保存します。 現時点ではプロジェクトは完成するまでビルドされませんが、ここでビルドすることは有用です。それによって、**BgLabelControl** ランタイム クラスを実装するためのソース コード ファイルが生成されるからです。 それでは、今すぐビルドしてみましょう (この段階で表示されることが予想されるビルド エラーは、"未解決の外部シンボル" に関係します)。
+
+ビルド プロセス中に、`midl.exe` ツールが実行されて、ランタイム クラスを記述する Windows ランタイム メタデータ ファイル (`\BgLabelControlApp\Debug\BgLabelControlApp\Unmerged\BgLabelControl.winmd`) が作成されます。 次に、`cppwinrt.exe` ツールが実行され、ランタイム クラスの作成と使用をサポートするソース コード ファイルが生成されます。 これらのファイルには、IDL で宣言した **BgLabelControl** ランタイム クラスの実装を開始するためのスタブが含まれています。 これらのスタブは `\BgLabelControlApp\BgLabelControlApp\Generated Files\sources\BgLabelControl.h` と `BgLabelControl.cpp` です。
 
 スタブ ファイル `BgLabelControl.h` と `BgLabelControl.cpp` を `\BgLabelControlApp\BgLabelControlApp\Generated Files\sources\` からプロジェクト フォルダー `\BgLabelControlApp\BgLabelControlApp\` にコピーします。 **ソリューション エクスプローラー**で、 **[すべてのファイルを表示]** がオンであることを確認します。 コピーしたスタブ ファイルを右クリックし、 **[プロジェクトに含める]** をクリックします。
 
-`BgLabelControl.h` と `BgLabelControl.cpp` の先頭に `static_assert` がありますが、プロジェクトをビルドする前にこれを削除する必要があります。
+`BgLabelControl.h` と `BgLabelControl.cpp` の先頭に `static_assert` がありますが、これを削除する必要があります。 これで、プロジェクトがビルドされます。
 
 ## <a name="implement-the-bglabelcontrol-custom-control-class"></a>**BgLabelControl** カスタム コントロール クラスを実装する
 ここで、`\BgLabelControlApp\BgLabelControlApp\BgLabelControl.h` と `BgLabelControl.cpp` を開いてランタイム クラスを実装してみましょう。 `BgLabelControl.h` で、コンストラクターを変更して既定のスタイル キーを設定し、**Label** と **LabelProperty** を実装し、**OnLabelChanged** という名前の静的イベント ハンドラーを追加して依存関係プロパティの値の変更を処理し、**LabelProperty** のバッキング フィールドを格納するプライベート メンバーを追加します。
@@ -214,5 +217,5 @@ struct BgLabelControl : BgLabelControlT<BgLabelControl>
 * [UIElement クラス](/uwp/api/windows.ui.xaml.uielement)
 
 ## <a name="related-topics"></a>関連トピック
-* [コントロール テンプレート](/windows/uwp/design/controls-and-patterns/control-templates)
-* [カスタム依存関係プロパティ](/windows/uwp/xaml-platform/custom-dependency-properties)
+* [コントロール テンプレート](../design/controls-and-patterns/control-templates.md)
+* [カスタム依存関係プロパティ](../xaml-platform/custom-dependency-properties.md)

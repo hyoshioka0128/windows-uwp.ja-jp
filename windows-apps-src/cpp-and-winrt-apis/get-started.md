@@ -5,16 +5,16 @@ ms.date: 04/18/2019
 ms.topic: article
 keywords: windows 10, uwp, 標準, c++, cpp, winrt, プロジェクション, 取得, 取得, 開始
 ms.localizationpriority: medium
-ms.openlocfilehash: c058a727e09f00e01664c314d8c198f3f25e841e
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: d7dc6455219510d75307df02571fc506b909553c
+ms.sourcegitcommit: 6009896ead442b378106d82870f249dc8b55b886
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "74255130"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89643822"
 ---
 # <a name="get-started-with-cwinrt"></a>C++/WinRT の使用を開始する
 
-このトピックでは、[C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) を使用して作業を短縮できるように、新しい **Windows コンソール アプリケーション (C++/WinRT)** プロジェクトに基づいた簡単なコード例を紹介します。 また、このトピックでは、[Windows デスクトップ アプリケーション プロジェクトに C++/WinRT サポートを追加する方法](#modify-a-windows-desktop-application-project-to-add-cwinrt-support)も示します。
+このトピックでは、[C++/WinRT](./intro-to-using-cpp-with-winrt.md) を使用して作業を短縮できるように、新しい **Windows コンソール アプリケーション (C++/WinRT)** プロジェクトに基づいた簡単なコード例を紹介します。 また、このトピックでは、[Windows デスクトップ アプリケーション プロジェクトに C++/WinRT サポートを追加する方法](#modify-a-windows-desktop-application-project-to-add-cwinrt-support)も示します。
 
 > [!NOTE]
 > Visual Studio 2017 (Version 15.8.0 以降) を使用し、Windows SDK Version 10.0.17134.0 (Windows 10 Version 1803) をターゲットにしている場合は、最新バージョンの Visual Studio と Windows SDK を使用して開発することをお勧めします。その後は、C++/WinRT プロジェクトを新しく作成すると、エラー " *'エラー C3861: 'from_abi': 識別子が見つかりませんでした*" と、*base.h* から発生する他のエラーでコンパイルに失敗することがあります。 これを解決するには、より新しい (より準拠した) バージョンの Windows SDK をターゲットにするか、プロジェクトのプロパティを **[C/C++]**  >  **[言語]**  >  **[準拠モード]:[いいえ]** に設定します (また、プロジェクトのプロパティの **[その他のオプション]** の **[C/C++]**  >  **[言語]**  >  **[コマンド ライン]** に **/permissive-** が表示される場合は、それを削除します)。
@@ -22,7 +22,7 @@ ms.locfileid: "74255130"
 ## <a name="a-cwinrt-quick-start"></a>C++/WinRT のクイックスタート
 
 > [!NOTE]
-> &mdash;C++/WinRT Visual Studio Extension (VSIX) と NuGet パッケージ (両者が連携してプロジェクト テンプレートとビルドをサポート) のインストールと使用など、&mdash;C++/WinRT 開発用に Visual Studio を設定する方法については、[Visual Studio での C++/WinRT のサポート](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)に関する記事を参照してください。
+> &mdash;C++/WinRT Visual Studio Extension (VSIX) と NuGet パッケージ (両者が連携してプロジェクト テンプレートとビルドをサポート) のインストールと使用など、&mdash;C++/WinRT 開発用に Visual Studio を設定する方法については、[Visual Studio での C++/WinRT のサポート](./intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)に関する記事を参照してください。
 
 新しい **Windows コンソール アプリケーション (C++/WinRT)** プロジェクトを作成します。
 
@@ -71,7 +71,9 @@ int main()
 このヘッダーには、C++/WinRT に投影された Windows API が含まれます。 つまり、Windows の種類ごとに、C++/WinRT は C++ 対応の同等の型 (*投影された型*と呼ばれます) を定義します。 投影された型には Windows の型と同じ完全修飾名がありますが、C++ **winrt** 名前空間に配置されます。 これらのインクルードをプリコンパイル済みヘッダーに配置すると、段階的なビルド時間が短縮されます。
 
 > [!IMPORTANT]
-> Windows 名前空間から型を使用する場合は、上に示すように、対応する C++/WinRT Windows 名前空間ヘッダー ファイルを含めます。 *対応する*ヘッダーは、その型の名前空間と同じ名前を持つヘッダーです。 たとえば、C++/WinRT プロジェクションを [**Windows::Foundation::Collections::PropertySet**](/uwp/api/windows.foundation.collections.propertyset) ランタイム クラスに使用するには、`#include <winrt/Windows.Foundation.Collections.h>` を指定します。 `winrt/Windows.Foundation.Collections.h` を含める場合は、`winrt/Windows.Foundation.h` "*も*" 含める必要はありません。 各 C++/WinRT プロジェクションのヘッダーには、その親の名前空間のヘッダー ファイルが自動的に含まれるため、それを明示的に含める "*必要*" はありません。 ただし、含めてもエラーは発生しません。
+> Windows 名前空間から型を使用する場合は、上に示すように、対応する C++/WinRT Windows 名前空間ヘッダー ファイルを `#include` する必要があります。 *対応する*ヘッダーは、その型の名前空間と同じ名前を持つヘッダーです。 たとえば、C++/WinRT プロジェクションを [**Windows::Foundation::Collections::PropertySet**](/uwp/api/windows.foundation.collections.propertyset) ランタイム クラスに使用するには、`winrt/Windows.Foundation.Collections.h` ヘッダーを含めます。
+> 
+> C++/WinRT プロジェクション ヘッダーに、その親の名前空間のヘッダー ファイルが自動的に含まれるのはよくあることです。 たとえば `winrt/Windows.Foundation.Collections.h` には `winrt/Windows.Foundation.h` が含まれます。 とはいえ、実装の詳細は時とともに変化するので、この挙動に依存するべきではありません。 必要なヘッダーはすべて明示的に含める必要があります。
 
 ```cppwinrt
 using namespace winrt;
@@ -127,7 +129,7 @@ HRESULT リターン コードを処理する必要もありません。 C++/Win
 
 プロジェクトのプロパティ **[全般]** \> **[Windows SDK バージョン]** に移動し、 **[すべての構成]** と **[すべてのプラットフォーム]** を選択します。 **[Windows SDK バージョン]** が 10.0.17134.0 (Windows 10 Version 1803) 以降に設定されていることを確認します。
 
-「[新しいプロジェクトがコンパイルされないのはなぜですか?](/windows/uwp/cpp-and-winrt-apis/faq)」の影響を受けていないことを確認します。
+「[新しいプロジェクトがコンパイルされないのはなぜですか?](./faq.md)」の影響を受けていないことを確認します。
 
 C++/WinRT には C++17 標準の機能が使用されるので、プロジェクト プロパティの **[C/C++]**  >  **[言語]**  >  **[C++ 言語標準]** を *[ISO C++17 標準 (/std:c++17)]* に設定します。
 
@@ -165,19 +167,23 @@ C++/WinRT の使用に慣れていき、このドキュメントの残りの部�
 
 ### <a name="consuming-windows-runtime-apis-and-types"></a>Windows ランタイム API と型の使用
 
-つまり、API の "*使用*" または "*呼び出し*" です。 たとえば、Bluetooth を使用して通信する、動画をストリーミングして表示する、Windows シェルと統合することなどを目的として、API を呼び出します。 C++/WinRT では、このカテゴリのシナリオが完全かつ徹底的にサポートされています。 詳細については、「[C++/WinRT での API の使用](/windows/uwp/cpp-and-winrt-apis/consume-apis)」を参照してください。
+つまり、API の "*使用*" または "*呼び出し*" です。 たとえば、Bluetooth を使用して通信する、動画をストリーミングして表示する、Windows シェルと統合することなどを目的として、API を呼び出します。 C++/WinRT では、このカテゴリのシナリオが完全かつ徹底的にサポートされています。 詳細については、「[C++/WinRT での API の使用](./consume-apis.md)」を参照してください。
 
 ### <a name="authoring-windows-runtime-apis-and-types"></a>Windows ランタイム API と型の作成
 
-つまり、API と型の "*作成*" です。 たとえば、前のセクションで説明した種類の API、グラフィックス API、ストレージとファイル システムの API、ネットワーク API などを生成します。 詳細については、「[C++/WinRT での API の作成](/windows/uwp/cpp-and-winrt-apis/author-apis)」を参照してください。
+つまり、API と型の "*作成*" です。 たとえば、前のセクションで説明した種類の API、グラフィックス API、ストレージとファイル システムの API、ネットワーク API などを生成します。 詳細については、「[C++/WinRT での API の作成](./author-apis.md)」を参照してください。
 
-C++/WinRT を使用した API の作成では、API を実装する前に IDL を使用してその形状を定義する必要があるため、使用よりも少し複雑になります。 「[XAML コントロール: C++/WinRT プロパティへのバインド](/windows/uwp/cpp-and-winrt-apis/binding-property)」に、それを実行するチュートリアルがあります。
+C++/WinRT を使用した API の作成では、API を実装する前に IDL を使用してその形状を定義する必要があるため、使用よりも少し複雑になります。 「[XAML コントロール: C++/WinRT プロパティへのバインド](./binding-property.md)」に、それを実行するチュートリアルがあります。
 
 ### <a name="xaml-applications"></a>XAML アプリケーション
 
 このシナリオは、XAML UI フレームワークでのアプリケーションとコントロールのビルドに関するものです。 XAML アプリケーションでの作業は、使用と作成の組み合わせです。 ただし、XAML は、現在 Windows の主要な UI フレームワークであり、Windows ランタイムに対するその影響はそれに比例しているため、独自のカテゴリのシナリオになる価値があります。
 
-XAML は、リフレクションを提供するプログラミング言語で最適に動作することに注意してください。 C++/WinRT では、XAML フレームワークと相互運用するために、多少の追加作業を実行しなければならない場合があります。 これらのすべてのケースをこのドキュメントで説明します。 開始するのに適しているのは、「[XAML コントロール: C++/WinRT プロパティへのバインド](/windows/uwp/cpp-and-winrt-apis/binding-property)」と「[C++/WinRT による XAML カスタム (テンプレート化) コントロール](/windows/uwp/cpp-and-winrt-apis/xaml-cust-ctrl)」です。
+XAML は、リフレクションを提供するプログラミング言語で最適に動作することに注意してください。 C++/WinRT では、XAML フレームワークと相互運用するために、多少の追加作業を実行しなければならない場合があります。 これらのすべてのケースをこのドキュメントで説明します。 開始するのに適しているのは、「[XAML コントロール: C++/WinRT プロパティへのバインド](./binding-property.md)」と「[C++/WinRT による XAML カスタム (テンプレート化) コントロール](./xaml-cust-ctrl.md)」です。
+
+## <a name="sample-apps-written-in-cwinrt"></a>C++/WinRT で記述されたサンプル アプリ
+
+「[C++/WinRT サンプル アプリはどこにありますか?](/windows/uwp/cpp-and-winrt-apis/faq#where-can-i-find-cwinrt-sample-apps)」を参照してください。
 
 ## <a name="important-apis"></a>重要な API
 * [SyndicationClient::RetrieveFeedAsync メソッド](/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync)

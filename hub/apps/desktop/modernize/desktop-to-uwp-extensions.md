@@ -1,30 +1,30 @@
 ---
-Description: 拡張機能を使用すると、あらかじめ定義された方法で Windows 10 にパッケージ デスクトップ アプリを統合できます。
+description: 拡張機能を使用すると、あらかじめ定義された方法で Windows 10 にパッケージ デスクトップ アプリを統合できます。
 title: デスクトップ ブリッジを使用して既存のデスクトップ アプリを最新化する
-ms.date: 04/18/2018
+ms.date: 09/11/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 0a8cedac-172a-4efd-8b6b-67fd3667df34
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: d9f5ca95678a8b31ed53cfdf2c4e6433bca504c8
-ms.sourcegitcommit: 4df8c04fc6c22ec76cdb7bb26f327182f2dacafa
+ms.openlocfilehash: e0a8a7bf38fbf44fd3544d7912729bbd42672f34
+ms.sourcegitcommit: 7c49f789f5b382b5b12efed6a81cbb4a25d44bd9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85334453"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90026327"
 ---
 # <a name="integrate-your-desktop-app-with-windows-10-and-uwp"></a>Windows 10 と UWP にデスクトップ アプリを統合する
 
-デスクトップ アプリに[パッケージ ID](modernize-packaged-apps.md) がある場合は、[パッケージ マニフェスト](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/schema-root)内で定義済みの拡張機能を使用することによって、拡張機能を使用してアプリを Windows 10 と統合できます。
+デスクトップ アプリに[パッケージ ID](modernize-packaged-apps.md) がある場合は、[パッケージ マニフェスト](/uwp/schemas/appxpackage/uapmanifestschema/schema-root)内で定義済みの拡張機能を使用することによって、拡張機能を使用してアプリを Windows 10 と統合できます。
 
 たとえば、ファイアウォール例外を作成する、アプリを特定のファイルの種類の既定アプリケーションにする、アプリをスタート タイルの参照先に指定する、などの操作を拡張機能で行うことができます。 拡張機能は、アプリのパッケージ マニフェスト ファイルに XML を追加するだけで使用できます。 コードは必要ありません。
 
 この記事では、これらの拡張機能について、また、拡張機能を使って実行できるタスクについて説明します。
 
 > [!NOTE]
-> この記事で説明されている機能を使用するには、[デスクトップ アプリを MSIX パッケージにパッケージ化する](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-root)か、または[スパース パッケージを使用してアプリ ID を付与する](grant-identity-to-nonpackaged-apps.md)ことで、デスクトップ アプリに[パッケージ ID ](modernize-packaged-apps.md)がある状態にする必要があります。
+> この記事で説明されている機能を使用するには、[デスクトップ アプリを MSIX パッケージにパッケージ化する](/windows/msix/desktop/desktop-to-uwp-root)か、または[スパース パッケージを使用してアプリ ID を付与する](grant-identity-to-nonpackaged-apps.md)ことで、デスクトップ アプリに[パッケージ ID ](modernize-packaged-apps.md)がある状態にする必要があります。
 
 ## <a name="transition-users-to-your-app"></a>ユーザーをアプリに移行する
 
@@ -57,7 +57,7 @@ ms.locfileid: "85334453"
 </Extension>
 ```
 
-完全なスキーマ リファレンスについては、[こちら](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-rescap3-desktopappmigration)をご覧ください。
+完全なスキーマ リファレンスについては、[こちら](/uwp/schemas/appxpackage/uapmanifestschema/element-rescap3-desktopappmigration)をご覧ください。
 
 |名前 | 説明 |
 |-------|-------------|
@@ -98,7 +98,7 @@ ms.locfileid: "85334453"
 
 ユーザーが特定の種類のファイルを開くときに、アプリのデスクトップ バージョンではなく、新しいパッケージ アプリケーションが既定で開くように設定できます。
 
-これを行うには、ファイルの関連付けを継承するために、関連付けされている各アプリケーションの[プログラム識別子 (ProgID)](https://docs.microsoft.com/windows/desktop/shell/fa-progids) を指定します。
+これを行うには、ファイルの関連付けを継承するために、関連付けされている各アプリケーションの[プログラム識別子 (ProgID)](/windows/desktop/shell/fa-progids) を指定します。
 
 #### <a name="xml-namespaces"></a>XML 名前空間
 
@@ -117,13 +117,13 @@ ms.locfileid: "85334453"
 </Extension>
 ```
 
-完全なスキーマ リファレンスについては、[こちら](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation)をご覧ください。
+完全なスキーマ リファレンスについては、[こちら](/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation)をご覧ください。
 
 |名前 |説明 |
 |-------|-------------|
 |カテゴリ |常に ``windows.fileTypeAssociation`` です。
 |名前 |ファイルの種類の関連付けの名前。 この名前を使用して、ファイルの種類を整理およびグループ化することができます。 名前は、すべて小文字でスペースを含まないようにする必要があります。 |
-|MigrationProgId |ファイルの関連付けを継承するための、元のデスクトップ アプリケーションの用途、コンポーネント、およびバージョンを示す[プログラム識別子 (ProgID)](https://docs.microsoft.com/windows/desktop/shell/fa-progids)。|
+|MigrationProgId |ファイルの関連付けを継承するための、元のデスクトップ アプリケーションの用途、コンポーネント、およびバージョンを示す[プログラム識別子 (ProgID)](/windows/desktop/shell/fa-progids)。|
 
 #### <a name="example"></a>例
 
@@ -176,7 +176,7 @@ ms.locfileid: "85334453"
 </Extension>
 ```
 
-完全なスキーマ リファレンスについては、[こちら](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation)をご覧ください。
+完全なスキーマ リファレンスについては、[こちら](/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation)をご覧ください。
 
 |名前 |説明 |
 |-------|-------------|
@@ -237,7 +237,7 @@ ms.locfileid: "85334453"
 </Extension>
 ```
 
-完全なスキーマ リファレンスについては、[こちら](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation)をご覧ください。
+完全なスキーマ リファレンスについては、[こちら](/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation)をご覧ください。
 
 |名前 |説明 |
 |-------|-------------|
@@ -301,7 +301,7 @@ ms.locfileid: "85334453"
 </Extension>
 ```
 
-完全なスキーマ リファレンスについては、[こちら](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation)をご覧ください。
+完全なスキーマ リファレンスについては、[こちら](/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation)をご覧ください。
 
 |名前 |説明 |
 |-------|-------------|
@@ -367,7 +367,7 @@ ms.locfileid: "85334453"
 </Extension>
 ```
 
-完全なスキーマ リファレンスについては、[こちら](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-desktop2-firewallrules)をご覧ください。
+完全なスキーマ リファレンスについては、[こちら](/uwp/schemas/appxpackage/uapmanifestschema/element-desktop2-firewallrules)をご覧ください。
 
 |名前 |説明 |
 |-------|-------------|
@@ -406,11 +406,15 @@ ms.locfileid: "85334453"
 
 ### <a name="place-your-dll-files-into-any-folder-of-the-package"></a>DLL ファイルをパッケージの任意のフォルダーに配置します。
 
-拡張機能を使ってそれらのフォルダーを指定します。 これにより、システムは配置したファイルを見つけて読み込むことができます。 この拡張機能は、 _%PATH%_ 環境変数の置き換えと考えてください。
+[uap6:LoaderSearchPathOverride](/uwp/schemas/appxpackage/uapmanifestschema/element-uap6-loadersearchpathoverride) 拡張機能を使用すると、アプリ パッケージで最大 5 つのフォルダー パスを、アプリ パッケージのルート パスから見た相対パスとして宣言できます。これらは、アプリのプロセスのローダー検索パスで使用されます。
 
-この拡張機能を使わない場合、システムはプロセスのパッケージの依存関係グラフ、パッケージ ルート フォルダー、システム ディレクトリ ( _%SystemRoot%\system32_) の順で検索します。 詳しくは、[Windows アプリの検索順序に関するページ](https://docs.microsoft.com/windows/desktop/Dlls/dynamic-link-library-search-order)をご覧ください。
+パッケージに実行権限がある場合、Windows アプリの [DLL 検索順序](/windows/win32/dlls/dynamic-link-library-search-order)には、パッケージの依存関係グラフのパッケージが含まれます。 既定で、これにはメイン、オプション、フレームワークの各パッケージが含まれます。ただし、これはパッケージ マニフェストの [uap6:AllowExecution](/uwp/schemas/appxpackage/uapmanifestschema/element-uap6-allowexecution) 要素によって上書きされる場合があります。
 
-各パッケージには、これらの拡張機能を 1 つだけ含めることができます。 つまり、1 つをメイン パッケージに追加し、他の拡張機能は[オプション パッケージと関連するセット](/windows/msix/package/optional-packages)それぞれに 1 つずつ追加できます。
+DLL 検索順序に含まれるパッケージには、既定で、その "*有効パス*" が含まれます。 有効パスの詳細については、[EffectivePath](/uwp/api/windows.applicationmodel.package.effectivepath) プロパティ (WinRT) および [PackagePathType](/windows/win32/api/appmodel/ne-appmodel-packagepathtype) 列挙 (Win32) を参照してください。
+
+パッケージで [uap6:LoaderSearchPathOverride](/uwp/schemas/appxpackage/uapmanifestschema/element-uap6-loadersearchpathoverride) が指定されている場合、パッケージの有効パスの代わりにこの情報が使用されます。
+
+各パッケージには、1 つの [uap6:LoaderSearchPathOverride](/uwp/schemas/appxpackage/uapmanifestschema/element-uap6-loadersearchpathoverride) 拡張機能のみを含めることができます。 つまり、1 つをメイン パッケージに追加し、他の拡張機能は[オプション パッケージと関連するセット](/windows/msix/package/optional-packages)それぞれに 1 つずつ追加できます。
 
 #### <a name="xml-namespace"></a>XML 名前空間
 
@@ -431,8 +435,8 @@ ms.locfileid: "85334453"
 
 |名前 | 説明 |
 |-------|-------------|
-|カテゴリ |常に ``windows.loaderSearchPathOverride`` です。
-|FolderPath | dll ファイルが含まれているフォルダーのパス。 パッケージのルート フォルダーの相対パスを指定します。 1 つの拡張機能で最大 5 つのパスを指定できます。 システムがパッケージのルート フォルダーにあるファイルを検索するようにする場合、これらのパスのいずれかに空の文字列を使用します。 重複するパスを含めないでください。パスの先頭と末尾にスラッシュや円記号を使わないでください。 <br><br> システムはサブフォルダーを検索しないため、システムが読み込む DLL ファイルが含まれている各フォルダーを明示的に一覧表示してください。|
+|カテゴリ |常に ``windows.loaderSearchPathOverride``。
+|FolderPath | DLL ファイルが格納されているフォルダーのパス。 パッケージのルート フォルダーの相対パスを指定します。 1 つの拡張機能で最大 5 つのパスを指定できます。 システムがパッケージのルート フォルダーにあるファイルを検索するようにする場合、これらのパスのいずれかに空の文字列を使用します。 重複するパスを含めないでください。また、パスの先頭と末尾にスラッシュやバックスラッシュを使用しないでください。 <br><br> システムはサブフォルダーを検索しないため、システムが読み込む DLL ファイルが含まれている各フォルダーを明示的に一覧表示してください。|
 
 #### <a name="example"></a>例
 
@@ -459,7 +463,7 @@ ms.locfileid: "85334453"
 ユーザーが慣れた方法でファイルを整理し操作できるようになります。
 
 * [ユーザーが複数のファイルを同時に選択して開いた場合のアプリケーションの動作を定義する](#define)
-* [エクスプローラーにサムネイル画像のファイル内容を表示する](#show)
+* [エクスプ ローラーでサムネイル画像のファイル内容を表示する](#show)
 * [エクスプローラーのプレビュー ウィンドウにファイル内容を表示する](#preview)
 * [ユーザーがエクスプローラーの [種類] 列を使用してファイルをグループ化できるようにする](#enable)
 * [ファイルのプロパティを検索、インデックス、プロパティ ダイアログ、詳細ウィンドウに利用できるようにする](#make-file-properties)
@@ -492,13 +496,13 @@ ms.locfileid: "85334453"
 </Extension>
 ```
 
-完全なスキーマ リファレンスについては、[こちら](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation)をご覧ください。
+完全なスキーマ リファレンスについては、[こちら](/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation)をご覧ください。
 
 |名前 |説明 |
 |-------|-------------|
-|カテゴリ |常に ``windows.fileTypeAssociation`` です。
+|カテゴリ |常に ``windows.fileTypeAssociation``。
 |名前 |ファイルの種類の関連付けの名前。 この名前を使用して、ファイルの種類を整理およびグループ化することができます。 名前は、すべて小文字でスペースを含まないようにする必要があります。 |
-|MultiSelectModel |下を参照 |
+|MultiSelectModel |下記参照 |
 |FileType |関連するファイル拡張子。 |
 
 **MultiSelectModel**
@@ -567,11 +571,11 @@ ms.locfileid: "85334453"
 </Extension>
 ```
 
-完全なスキーマ リファレンスについては、[こちら](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation)をご覧ください。
+完全なスキーマ リファレンスについては、[こちら](/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation)をご覧ください。
 
 |名前 |説明 |
 |-------|-------------|
-|カテゴリ |常に ``windows.fileTypeAssociation`` です。
+|カテゴリ |常に ``windows.fileTypeAssociation``。
 |名前 |ファイルの種類の関連付けの名前。 この名前を使用して、ファイルの種類を整理およびグループ化することができます。 名前は、すべて小文字でスペースを含まないようにする必要があります。 |
 |FileType |関連するファイル拡張子。 |
 |Clsid   |アプリのクラス ID。 |
@@ -629,11 +633,11 @@ ms.locfileid: "85334453"
 </Extension>
 ```
 
-完全なスキーマ リファレンスについては、[こちら](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation)をご覧ください。
+完全なスキーマ リファレンスについては、[こちら](/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation)をご覧ください。
 
 |名前 |説明 |
 |-------|-------------|
-|カテゴリ |常に ``windows.fileTypeAssociation`` です。
+|カテゴリ |常に ``windows.fileTypeAssociation``。
 |名前 |ファイルの種類の関連付けの名前。 この名前を使用して、ファイルの種類を整理およびグループ化することができます。 名前は、すべて小文字でスペースを含まないようにする必要があります。 |
 |FileType |関連するファイル拡張子。 |
 |Clsid   |アプリのクラス ID。 |
@@ -672,7 +676,7 @@ ms.locfileid: "85334453"
 
 ユーザーはエクスプローラーでこのフィールドを使用して、ファイルをグループ化できます。 また、このフィールドは、システム コンポーネントによって、インデックス作成などのさまざまな目的にも使用されます。
 
-**Kind** フィールドの詳細と、このフィールドに使用できる値については、「[種類名の使用](https://docs.microsoft.com/windows/desktop/properties/building-property-handlers-user-friendly-kind-names)」をご覧ください。
+**Kind** フィールドの詳細と、このフィールドに使用できる値については、「[種類名の使用](/windows/desktop/properties/building-property-handlers-user-friendly-kind-names)」をご覧ください。
 
 #### <a name="xml-namespaces"></a>XML 名前空間
 
@@ -694,14 +698,14 @@ ms.locfileid: "85334453"
 </Extension>
 ```
 
-完全なスキーマ リファレンスについては、[こちら](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation)をご覧ください。
+完全なスキーマ リファレンスについては、[こちら](/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation)をご覧ください。
 
 |名前 |説明 |
 |-------|-------------|
-|カテゴリ |常に ``windows.fileTypeAssociation`` です。
+|カテゴリ |常に ``windows.fileTypeAssociation``。
 |名前 |ファイルの種類の関連付けの名前。 この名前を使用して、ファイルの種類を整理およびグループ化することができます。 名前は、すべて小文字でスペースを含まないようにする必要があります。 |
 |FileType |関連するファイル拡張子。 |
-|value |有効な [Kind 値](https://docs.microsoft.com/windows/desktop/properties/building-property-handlers-user-friendly-kind-names)。 |
+|value |有効な [Kind 値](/windows/desktop/properties/building-property-handlers-user-friendly-kind-names)。 |
 
 #### <a name="example"></a>例
 
@@ -755,11 +759,11 @@ ms.locfileid: "85334453"
 </uap:Extension>
 ```
 
-完全なスキーマ リファレンスについては、[こちら](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation)をご覧ください。
+完全なスキーマ リファレンスについては、[こちら](/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation)をご覧ください。
 
 |名前 |説明 |
 |-------|-------------|
-|カテゴリ |常に ``windows.fileTypeAssociation`` です。
+|カテゴリ |常に ``windows.fileTypeAssociation``。
 |名前 |ファイルの種類の関連付けの名前。 この名前を使用して、ファイルの種類を整理およびグループ化することができます。 名前は、すべて小文字でスペースを含まないようにする必要があります。 |
 |FileType |関連するファイル拡張子。 |
 |Clsid  |アプリのクラス ID。 |
@@ -793,7 +797,7 @@ ms.locfileid: "85334453"
 
 ### <a name="specify-a-context-menu-handler-for-a-file-type"></a>ファイルの種類のコンテキスト メニュー ハンドラーを指定する
 
-デスクトップ アプリケーションで[コンテキスト メニュー ハンドラー](https://docs.microsoft.com/windows/desktop/shell/context-menu-handlers)が定義されている場合は、この拡張機能を使用してメニュー ハンドラーを登録します。
+デスクトップ アプリケーションで[コンテキスト メニュー ハンドラー](/windows/desktop/shell/context-menu-handlers)が定義されている場合は、この拡張機能を使用してメニュー ハンドラーを登録します。
 
 #### <a name="xml-namespaces"></a>XML 名前空間
 
@@ -821,19 +825,19 @@ ms.locfileid: "85334453"
 </Extensions>
 ```
 
-詳細なスキーマ リファレンスについては、[com:ComServer](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-com-comserver) と [desktop4:FileExplorerContextMenus](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-desktop4-fileexplorercontextmenus) を参照してください。
+詳細なスキーマ リファレンスについては、[com:ComServer](/uwp/schemas/appxpackage/uapmanifestschema/element-com-comserver) と [desktop4:FileExplorerContextMenus](/uwp/schemas/appxpackage/uapmanifestschema/element-desktop4-fileexplorercontextmenus) を参照してください。
 
-#### <a name="instructions"></a>手順
+#### <a name="instructions"></a>Instructions
 
 コンテキスト メニュー ハンドラーを登録するには、次の手順に従います。
 
-1. デスクトップ アプリケーションで、[IExplorerCommand](https://docs.microsoft.com/windows/desktop/api/shobjidl_core/nn-shobjidl_core-iexplorercommand) または [IExplorerCommandState](https://docs.microsoft.com/windows/desktop/api/shobjidl_core/nn-shobjidl_core-iexplorercommandstate) インターフェイスを実装することによって、[コンテキスト メニュー ハンドラー](https://docs.microsoft.com/windows/desktop/shell/context-menu-handlers)を実装します。 サンプルについては、[ExplorerCommandVerb](https://github.com/microsoft/Windows-classic-samples/tree/master/Samples/Win7Samples/winui/shell/appshellintegration/ExplorerCommandVerb) のコード サンプルを参照してください。 各実装オブジェクトのクラス GUID を必ず定義します。 たとえば、次のコードでは [IExplorerCommand](https://docs.microsoft.com/windows/desktop/api/shobjidl_core/nn-shobjidl_core-iexplorercommand) の実装のクラス ID を定義しています。
+1. デスクトップ アプリケーションで、[IExplorerCommand](/windows/desktop/api/shobjidl_core/nn-shobjidl_core-iexplorercommand) または [IExplorerCommandState](/windows/desktop/api/shobjidl_core/nn-shobjidl_core-iexplorercommandstate) インターフェイスを実装することによって、[コンテキスト メニュー ハンドラー](/windows/desktop/shell/context-menu-handlers)を実装します。 サンプルについては、[ExplorerCommandVerb](https://github.com/microsoft/Windows-classic-samples/tree/master/Samples/Win7Samples/winui/shell/appshellintegration/ExplorerCommandVerb) のコード サンプルを参照してください。 各実装オブジェクトのクラス GUID を必ず定義します。 たとえば、次のコードでは [IExplorerCommand](/windows/desktop/api/shobjidl_core/nn-shobjidl_core-iexplorercommand) の実装のクラス ID を定義しています。
 
     ```cpp
     class __declspec(uuid("d0c8bceb-28eb-49ae-bc68-454ae84d6264")) CExplorerCommandVerb;
     ```
 
-2. パッケージ マニフェストで、COM サロゲート サーバーとコンテキスト メニュー ハンドラーの実装のクラス ID を登録する [com:ComServer](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-com-comserver) アプリケーション拡張機能を指定します。
+2. パッケージ マニフェストで、COM サロゲート サーバーとコンテキスト メニュー ハンドラーの実装のクラス ID を登録する [com:ComServer](/uwp/schemas/appxpackage/uapmanifestschema/element-com-comserver) アプリケーション拡張機能を指定します。
 
     ```xml
     <com:Extension Category="windows.comServer">
@@ -845,7 +849,7 @@ ms.locfileid: "85334453"
     </com:Extension>
     ```
 
-2. パッケージ マニフェストで、コンテキスト メニュー ハンドラーの実装を登録する [desktop4:FileExplorerContextMenus](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-desktop4-fileexplorercontextmenus) アプリケーション拡張機能を指定します。
+2. パッケージ マニフェストで、コンテキスト メニュー ハンドラーの実装を登録する [desktop4:FileExplorerContextMenus](/uwp/schemas/appxpackage/uapmanifestschema/element-desktop4-fileexplorercontextmenus) アプリケーション拡張機能を指定します。
 
     ```xml
     <desktop4:Extension Category="windows.fileExplorerContextMenus">
@@ -915,12 +919,12 @@ ms.locfileid: "85334453"
 
 |名前 |説明 |
 |-------|-------------|
-|カテゴリ |常に ``windows.cloudfiles`` です。
+|カテゴリ |常に ``windows.cloudfiles``。
 |iconResource |クラウド ファイル プロバイダー サービスを表すアイコン。 このアイコンは、エクスプローラーのナビゲーション ウィンドウに表示されます。  ユーザーは、このアイコンを選んでクラウド サービスのファイルを表示します。 |
 |CustomStateHandler Clsid |CustomStateHandler を実装するアプリケーションのクラス ID。 システムは、このクラス ID を使ってクラウド ファイルのカスタム状態と列を要求します。 |
 |ThumbnailProviderHandler Clsid |ThumbnailProviderHandler を実装するアプリケーションのクラス ID。 システムは、このクラス ID を使ってクラウド ファイルの縮小版イメージを要求します。 |
 |ExtendedPropertyHandler Clsid |ExtendedPropertyHandler を実装するアプリケーションのクラス ID。  システムは、このクラス ID を使ってクラウド ファイルの拡張プロパティを要求します。 |
-|Verb |クラウド サービスによって提供されるファイルのエクスプローラー コンテキスト メニューに表示される名前です。 |
+|動詞 |クラウド サービスによって提供されるファイルのエクスプローラー コンテキスト メニューに表示される名前です。 |
 |Id |動詞の一意の ID。 |
 
 #### <a name="example"></a>例
@@ -981,11 +985,11 @@ ms.locfileid: "85334453"
 </Extension>
 ```
 
-完全なスキーマ リファレンスについては、[こちら](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap-protocol)をご覧ください。
+完全なスキーマ リファレンスについては、[こちら](/uwp/schemas/appxpackage/uapmanifestschema/element-uap-protocol)をご覧ください。
 
 |名前 |説明 |
 |-------|-------------|
-|カテゴリ |常に ``windows.protocol`` です。
+|カテゴリ |常に ``windows.protocol``。
 |名前 |プロトコルの名前。 |
 |パラメーター |アプリケーションがアクティブ化されたときにイベント引数としてアプリケーションに渡すパラメーターや値のリスト。 変数にファイル パスが含まれる可能性がある場合は、パラメーター値を引用符で囲みます。 これにより、パスにスペースが含まれている場合に発生する問題を回避できます。 |
 
@@ -1037,8 +1041,8 @@ ms.locfileid: "85334453"
 
 |名前 |説明 |
 |-------|-------------|
-|カテゴリ |常に ``windows.appExecutionAlias`` です。
-|実行可能ファイル |エイリアスが呼び出されたときに起動する実行可能ファイルの相対パス。 |
+|カテゴリ |常に ``windows.appExecutionAlias``。
+|[実行可能ファイル] |エイリアスが呼び出されたときに起動する実行可能ファイルの相対パス。 |
 |エイリアス |アプリの短い名前。 常に、拡張子 ".exe" で終わっている必要があります。 パッケージ内のアプリケーションごとにアプリの実行エイリアスは 1 つだけ指定できます。 複数のアプリで同じエイリアスが登録されている場合、システムは最後に登録されたアプリを呼び出します。したがって、他のアプリが上書きする可能性が低い一意のエイリアスを選んでください。
 |
 
@@ -1065,7 +1069,7 @@ ms.locfileid: "85334453"
 </Package>
 ```
 
-完全なスキーマ リファレンスについては、[こちら](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation)をご覧ください。
+完全なスキーマ リファレンスについては、[こちら](/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation)をご覧ください。
 
 <a id="executable"></a>
 
@@ -1100,11 +1104,11 @@ ms.locfileid: "85334453"
 
 |名前 |説明 |
 |-------|-------------|
-|カテゴリ |常に ``windows.startupTask`` です。|
-|実行可能ファイル |起動する実行可能ファイルへの相対パス。 |
-|TaskId |タスクの一意の識別子。 この識別子を使用してアプリケーションで [Windows.ApplicationModel.StartupTask](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.StartupTask) クラスの API を呼び出し、スタートアップ タスクをプログラムで有効または無効にすることができます。 |
+|カテゴリ |常に ``windows.startupTask``。|
+|[実行可能ファイル] |起動する実行可能ファイルへの相対パス。 |
+|TaskId |タスクの一意の識別子。 この識別子を使用してアプリケーションで [Windows.ApplicationModel.StartupTask](/uwp/api/Windows.ApplicationModel.StartupTask) クラスの API を呼び出し、スタートアップ タスクをプログラムで有効または無効にすることができます。 |
 |Enabled |初めて起動したタスクを有効にするか、無効にするかを指定します。 有効になっているタスクは、(ユーザーが無効にしていない限り) 次回ユーザーがログオンするときに実行されます。 |
-|表示名 |タスク マネージャーに表示されるタスクの名前。 この文字列は、```ms-resource``` を使用してローカライズできます。 |
+|DisplayName |タスク マネージャーに表示されるタスクの名前。 この文字列は、```ms-resource``` を使用してローカライズできます。 |
 
 #### <a name="example"></a>例
 
@@ -1155,16 +1159,16 @@ ms.locfileid: "85334453"
 
 |名前 |説明 |
 |-------|-------------|
-|カテゴリ |常に ``windows.autoPlayHandler`` です。
-|ActionDisplayName |ユーザーが PC に接続するデバイスで実行できるアクションを表す文字列 (例: "ファイルのインポート" や "ビデオの再生")。 |
+|カテゴリ |常に ``windows.autoPlayHandler``。
+|ActionDisplayName |ユーザーが PC に接続したときにデバイスで実行できるアクションを表す文字列 (例: "ファイルのインポート" や "ビデオの再生")。 |
 |ProviderDisplayName | アプリケーションまたはサービスを表す文字列 (例: "Contoso ビデオ プレーヤー")。 |
-|ContentEvent |ユーザーに ``ActionDisplayName`` と ``ProviderDisplayName`` をプロンプト表示する原因となるコンテンツ イベントの名前。 コンテンツ イベントは、カメラのメモリ カード、サム ドライブ、DVD などのボリューム デバイスが PC に挿入されたときに発生します。 これらのイベントの詳しい一覧については、[ここ](https://docs.microsoft.com/windows/uwp/launch-resume/auto-launching-with-autoplay#autoplay-event-reference)をご覧ください。  |
-|Verb |[動詞] 設定では、選択されたオプションに応じてアプリケーションに渡される値を指定します。 自動再生のイベントの起動アクションは複数指定できます。また、[動詞] 設定を使って、ユーザーがアプリで選んだアクションを確認できます。 アプリに渡される起動イベント引数の verb プロパティを調べることでユーザーが選んだオプションを確認できます。 [動詞] 設定には任意の値を使うことができます。ただし、予約されている open を除きます。 |
-|DropTargetHandler |[IDropTarget](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017) インターフェイスを実装するアプリケーションのクラス ID。 リムーバブル メディアのファイルは、[IDropTarget](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017) 実装の [Drop](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget.drop?view=visualstudiosdk-2017#Microsoft_VisualStudio_OLE_Interop_IDropTarget_Drop_Microsoft_VisualStudio_OLE_Interop_IDataObject_System_UInt32_Microsoft_VisualStudio_OLE_Interop_POINTL_System_UInt32__) メソッドに渡されます。  |
-|パラメーター |すべてのコンテンツ イベントで [IDropTarget](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017) インターフェイスを実装する必要はありません。 どのコンテンツ イベントにも、[IDropTarget](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017) インターフェイスを実装する代わりにコマンド ライン パラメーターを指定することができます。 このようなイベントでは、これらのコマンド ライン パラメーターを使うことで自動再生によってアプリケーションが起動します。 アプリの初期化コードでそれらのパラメーターを解析して、自動再生によって起動したかどうかを判断し、カスタム実装を提供することができます。 |
-|DeviceEvent |ユーザーに ``ActionDisplayName`` と ``ProviderDisplayName`` をプロンプト表示する原因となるデバイス イベントの名前。 デバイス イベントは、デバイスが PC に接続されると発生します。 デバイス イベントの先頭は文字列 ``WPD`` です。一覧については[ここ](https://docs.microsoft.com/windows/uwp/launch-resume/auto-launching-with-autoplay#autoplay-event-reference)をご覧ください。 |
-|HWEventHandler |[IHWEventHandler](https://docs.microsoft.com/windows/desktop/api/shobjidl/nn-shobjidl-ihweventhandler) インターフェイスを実装するアプリケーションのクラス ID。 |
-|InitCmdLine |[IHWEventHandler](https://docs.microsoft.com/windows/desktop/api/shobjidl/nn-shobjidl-ihweventhandler) インターフェイスの [Initialize](https://docs.microsoft.com/windows/desktop/api/shobjidl/nf-shobjidl-ihweventhandler-initialize) メソッドに渡す文字列パラメーター。 |
+|ContentEvent |ユーザーに ``ActionDisplayName`` と ``ProviderDisplayName`` をプロンプト表示する原因となるコンテンツ イベントの名前。 コンテンツ イベントは、カメラのメモリ カード、サム ドライブ、DVD などのボリューム デバイスが PC に挿入されたときに発生します。 これらのイベントの詳しい一覧については、[ここ](/windows/uwp/launch-resume/auto-launching-with-autoplay#autoplay-event-reference)をご覧ください。  |
+|動詞 |[動詞] 設定では、選択されたオプションに応じてアプリケーションに渡される値を指定します。 自動再生のイベントの起動アクションは複数指定できます。また、[動詞] 設定を使って、ユーザーがアプリで選んだアクションを確認できます。 アプリに渡される起動イベント引数の verb プロパティを調べることでユーザーが選んだオプションを確認できます。 [動詞] 設定には任意の値を使うことができます。ただし、予約されている open を除きます。 |
+|DropTargetHandler |[IDropTarget](/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget) インターフェイスを実装するアプリケーションのクラス ID。 リムーバブル メディアのファイルは、[IDropTarget](/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget) 実装の [Drop](/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget.drop#Microsoft_VisualStudio_OLE_Interop_IDropTarget_Drop_Microsoft_VisualStudio_OLE_Interop_IDataObject_System_UInt32_Microsoft_VisualStudio_OLE_Interop_POINTL_System_UInt32__) メソッドに渡されます。  |
+|パラメーター |すべてのコンテンツ イベントで [IDropTarget](/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget) インターフェイスを実装する必要はありません。 どのコンテンツ イベントにも、[IDropTarget](/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget) インターフェイスを実装する代わりにコマンド ライン パラメーターを指定することができます。 このようなイベントでは、これらのコマンド ライン パラメーターを使うことで自動再生によってアプリケーションが起動します。 アプリの初期化コードでそれらのパラメーターを解析して、自動再生によって起動したかどうかを判断し、カスタム実装を提供することができます。 |
+|DeviceEvent |ユーザーに ``ActionDisplayName`` と ``ProviderDisplayName`` をプロンプト表示する原因となるデバイス イベントの名前。 デバイス イベントは、デバイスが PC に接続されると発生します。 デバイス イベントの先頭は文字列 ``WPD`` です。一覧については[ここ](/windows/uwp/launch-resume/auto-launching-with-autoplay#autoplay-event-reference)をご覧ください。 |
+|HWEventHandler |[IHWEventHandler](/windows/desktop/api/shobjidl/nn-shobjidl-ihweventhandler) インターフェイスを実装するアプリケーションのクラス ID。 |
+|InitCmdLine |[IHWEventHandler](/windows/desktop/api/shobjidl/nn-shobjidl-ihweventhandler) インターフェイスの [Initialize](/windows/desktop/api/shobjidl/nf-shobjidl-ihweventhandler-initialize) メソッドに渡す文字列パラメーター。 |
 
 ### <a name="example"></a>例
 
@@ -1195,14 +1199,14 @@ ms.locfileid: "85334453"
 
 ユーザーが更新プログラムをインストールするときにアプリケーションが開いている場合は、アプリケーションが終了します。
 
-更新の完了後にアプリケーションを再起動させる場合は、再起動するすべてのプロセスで [RegisterApplicationRestart](https://docs.microsoft.com/windows/desktop/api/winbase/nf-winbase-registerapplicationrestart) 関数を呼び出します。
+更新の完了後にアプリケーションを再起動させる場合は、再起動するすべてのプロセスで [RegisterApplicationRestart](/windows/desktop/api/winbase/nf-winbase-registerapplicationrestart) 関数を呼び出します。
 
-[WM_QUERYENDSESSION](https://docs.microsoft.com/windows/desktop/Shutdown/wm-queryendsession) メッセージを受け取るアプリケーションの各アクティブ ウィンドウ。 この時点で、アプリケーションで [RegisterApplicationRestart](https://docs.microsoft.com/windows/desktop/api/winbase/nf-winbase-registerapplicationrestart) 関数を再度呼び出して、必要に応じてコマンド ラインを更新することができます。
+[WM_QUERYENDSESSION](/windows/desktop/Shutdown/wm-queryendsession) メッセージを受け取るアプリケーションの各アクティブ ウィンドウ。 この時点で、アプリケーションで [RegisterApplicationRestart](/windows/desktop/api/winbase/nf-winbase-registerapplicationrestart) 関数を再度呼び出して、必要に応じてコマンド ラインを更新することができます。
 
-アプリケーションの各アクティブ ウィンドウで [WM_ENDSESSION](https://docs.microsoft.com/windows/desktop/Shutdown/wm-endsession) メッセージを受け取ったら、アプリケーションでデータを保存してシャットダウンする必要があります。
+アプリケーションの各アクティブ ウィンドウで [WM_ENDSESSION](/windows/desktop/Shutdown/wm-endsession) メッセージを受け取ったら、アプリケーションでデータを保存してシャットダウンする必要があります。
 
 >[!NOTE]
-> また、アプリケーションで [WM_ENDSESSION](https://docs.microsoft.com/windows/desktop/Shutdown/wm-endsession) メッセージが処理されない場合は、アクティブ ウィンドウには [WM_CLOSE](https://docs.microsoft.com/windows/desktop/winmsg/wm-close) メッセージも届きます。
+> また、アプリケーションで [WM_ENDSESSION](/windows/desktop/Shutdown/wm-endsession) メッセージが処理されない場合は、アクティブ ウィンドウには [WM_CLOSE](/windows/desktop/winmsg/wm-close) メッセージも届きます。
 
 この時点で、アプリケーションのプロセスがアプリケーション自体によって 30 秒内に終了されない場合、プロセスはプラットフォームによって強制終了されます。
 
@@ -1238,12 +1242,12 @@ ms.locfileid: "85334453"
 </Extension>
 ```
 
-完全なスキーマ リファレンスについては、[こちら](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-desktop2-appprinter)をご覧ください。
+完全なスキーマ リファレンスについては、[こちら](/uwp/schemas/appxpackage/uapmanifestschema/element-desktop2-appprinter)をご覧ください。
 
 |名前 |説明 |
 |-------|-------------|
-|カテゴリ |常に ``windows.appPrinter`` です。
-|表示名 |アプリの印刷先一覧に表示する名前。 |
+|カテゴリ |常に ``windows.appPrinter``。
+|DisplayName |アプリの印刷先一覧に表示する名前。 |
 |パラメーター |要求を正しく処理するためにアプリケーションが必要とするパラメーター。 |
 
 #### <a name="example"></a>例
@@ -1274,6 +1278,9 @@ ms.locfileid: "85334453"
 
 他の Windows アプリケーションとカスタム フォントを共有できます。
 
+> [!NOTE]
+> この拡張機能を使用するアプリを Microsoft Store に送信するには、まず Microsoft Store チームから承認を得る必要があります。 承認を得るには、[https://aka.ms/storesupport](https://aka.ms/storesupport) にアクセスし、 **[お問い合わせ先]** をクリックして、ダッシュボードへのアプリの送信に関連するオプションを選択します。 この承認プロセスにより、アプリによってインストールされたフォントと、OS と共にインストールされたフォントの間で競合が発生しないようにすることができます。 承認を得ていない場合は、アプリを送信するときに次のようなエラーが表示されます。「パッケージ受領の検証エラー:このアカウントでは拡張機能 windows.sharedFonts を使用できません。 この拡張機能を使うためのアクセス許可を申請する場合は、サポート チームにお問い合わせください。」
+
 #### <a name="xml-namespaces"></a>XML 名前空間
 
 `http://schemas.microsoft.com/appx/manifest/desktop/windows10/2`
@@ -1292,7 +1299,7 @@ ms.locfileid: "85334453"
 
 |名前 |説明 |
 |-------|-------------|
-|カテゴリ |常に ``windows.sharedFonts`` です。
+|カテゴリ |常に ``windows.sharedFonts``。
 |ファイル |共有するフォントが格納されたファイル。 |
 
 #### <a name="example"></a>例
@@ -1338,7 +1345,7 @@ ms.locfileid: "85334453"
 
 |名前 |説明 |
 |-------|-------------|
-|カテゴリ |常に ``windows.fullTrustProcess`` です。
+|カテゴリ |常に ``windows.fullTrustProcess``。
 |GroupID |実行可能ファイルに渡すパラメーターのセットを識別するための文字列。 |
 |パラメーター |実行可能ファイルに渡すパラメーター。 |
 
@@ -1371,8 +1378,8 @@ ms.locfileid: "85334453"
 
 この拡張機能は、すべてのデバイスで実行できるユニバーサル Windows プラットフォームのユーザー インターフェイスを作成する一方で、Win32 アプリケーションのコンポーネントについては完全信頼での実行を継続する場合に便利です。
 
-Win32 アプリ向けに Windows アプリ パッケージを作成します。 そのうえで、この拡張機能を UWP アプリのパッケージ ファイルに追加してください。 この拡張機能は、Windows アプリ パッケージで実行可能ファイルを開始することを示します。  UWP アプリと Win32 アプリの間でやり取りを行うには、1 つまたは複数の[アプリ サービス](/windows/uwp/launch-resume/app-services)を設定します。 このシナリオについては詳しくは、[こちら](https://blogs.msdn.microsoft.com/appconsult/2016/12/19/desktop-bridge-the-migrate-phase-invoking-a-win32-process-from-a-uwp-app/)をご覧ください。
+Win32 アプリ向けに Windows アプリ パッケージを作成します。 そのうえで、この拡張機能を UWP アプリのパッケージ ファイルに追加してください。 この拡張機能は、Windows アプリ パッケージで実行可能ファイルを開始することを示します。  UWP アプリと Win32 アプリの間でやり取りを行うには、1 つまたは複数の[アプリ サービス](/windows/uwp/launch-resume/app-services)を設定します。 このシナリオについては詳しくは、[こちら](/archive/blogs/appconsult/desktop-bridge-the-migrate-phase-invoking-a-win32-process-from-a-uwp-app)をご覧ください。
 
-## <a name="next-steps"></a>次の手順
+## <a name="next-steps"></a>次のステップ
 
 ご質問があるでしょうか。 Stack Overflow でお問い合わせください。 Microsoft のチームでは、これらの[タグ](https://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge)をチェックしています。 [こちら](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D)から質問することもできます。

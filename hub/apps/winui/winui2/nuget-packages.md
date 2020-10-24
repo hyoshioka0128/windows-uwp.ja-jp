@@ -2,14 +2,14 @@
 title: Windows UI ライブラリの NuGet パッケージの一覧
 description: Windows UI ライブラリの NuGet パッケージの一覧を示します
 ms.topic: article
-ms.date: 04/15/2020
+ms.date: 07/15/2020
 keywords: windows 10, uwp, ツールキット sdk
-ms.openlocfilehash: 2bda405977733a6191c4434fd8bd2c63b2ce10ce
-ms.sourcegitcommit: d0f479f1955881afb62c2af249db5d0b053b63e5
+ms.openlocfilehash: ca3f2915d77bb83f45744e90bd86e82edba013b8
+ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83580709"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86492887"
 ---
 # <a name="windows-ui-library-nuget-packages"></a>Windows UI ライブラリ NuGet パッケージ
 
@@ -25,7 +25,7 @@ NuGet は、Visual Studio に組み込まれている .Net アプリケーショ
 
 Visual Studio パッケージ マネージャー内で検索すると、このような一覧が表示されます (バージョン番号は異なる可能性がありますが、名前は同じです)。
 
-![](images/NugetPackages.png)
+![NuGet パッケージ マネージャー](images/NugetPackages.png)
 
 ## <a name="update-nuget-packages"></a>NuGet パッケージの更新
 

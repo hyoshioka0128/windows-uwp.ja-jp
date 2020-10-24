@@ -1,25 +1,25 @@
 ---
 ms.assetid: F90686F5-641A-42D9-BC44-EC6CA11B8A42
 title: 加速度計の使用
-description: 加速度計を使ってユーザーの動きに応答する方法を説明します。
+description: 1つのセンサー (加速度計) に依存してユーザーの動きに応答する基本的なアプリを作成する方法について説明します。
 ms.date: 06/06/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b2fe6fe4c7fe22d71e2154be2db082bb43cc4ed1
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 4bed5ad24c1478d47456d1e35a83ba4c54f99406
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66369694"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89159546"
 ---
 # <a name="use-the-accelerometer"></a>加速度計の使用
 
 
 **重要な API**
 
--   [**Windows.Devices.Sensors**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors)
--   [**加速度計**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Accelerometer)
+-   [**Windows.Devices.Sensors**](/uwp/api/Windows.Devices.Sensors)
+-   [**加速度計**](/uwp/api/Windows.Devices.Sensors.Accelerometer)
 
 **サンプル**
 
@@ -31,7 +31,7 @@ ms.locfileid: "66369694"
 
 ## <a name="prerequisites"></a>前提条件
 
-Extensible Application Markup Language (XAML)、Microsoft Visual 知っておくべきC#、およびイベント。
+Extensible Application Markup Language (XAML)、Microsoft Visual C#、イベントについて理解している必要があります。
 
 使うデバイスやエミュレーターが加速度計をサポートしている必要があります。
 
@@ -39,7 +39,7 @@ Extensible Application Markup Language (XAML)、Microsoft Visual 知っておく
 
 このセクションは、次の 2 つのサブセクションに分かれています。 最初のサブセクションでは、シンプルな加速度計アプリケーションを最初から作成するために必要な手順を示します。 次のサブセクションでは、作成したアプリについて説明します。
 
-### <a name="instructions"></a>手順
+### <a name="instructions"></a>Instructions
 
 -   **[Visual C#]** プロジェクト テンプレートから **[空白のアプリ (ユニバーサル Windows]** を選んで、新しいプロジェクトを作成します。
 
@@ -136,11 +136,11 @@ Extensible Application Markup Language (XAML)、Microsoft Visual 知っておく
 
 元のスニペットのクラス名の最初の部分を、自分のアプリの名前空間に置き換える必要があります。 たとえば、作成したプロジェクトの名前が **AccelerometerCS** だとすると、`x:Class="App1.MainPage"` を `x:Class="AccelerometerCS.MainPage"` に置き換えます。 また、`xmlns:local="using:App1"` を `xmlns:local="using:AccelerometerCS"` に置き換える必要があります。
 
--   F5 キーを押すか、選択**デバッグ** &gt; **デバッグの開始**をビルドするには、展開、およびアプリを実行します。
+-   F5 キーを押すか **、[デバッグ**] [デバッグの開始] を選択してアプリを &gt; **Start Debugging**ビルド、デプロイ、実行します。
 
 アプリを実行した後、デバイスを移動するか、エミュレーター ツールを使うことによって、加速度計の値を変更できます。
 
--   Visual Studio に戻ると、shift キーを押しながら f5 キーを押してアプリを停止または選択**デバッグ** &gt; **デバッグの停止**アプリを停止します。
+-   アプリを停止するには、Visual Studio に戻り、Shift キーを押しながら F5 キーを押すか、**[デバッグ]** &gt; **[デバッグの停止]** の順にクリックします。
 
 ### <a name="explanation"></a>説明
 

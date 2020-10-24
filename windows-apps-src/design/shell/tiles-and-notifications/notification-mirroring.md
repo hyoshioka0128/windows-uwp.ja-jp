@@ -1,18 +1,18 @@
 ---
-Description: トースト通知で通知ミラーリングを使用する方法について説明します。
+description: クラウドのアクションセンターで動作する通知ミラーリングを使用して、PC で電話のトースト通知を確認する方法について説明します。
 title: 通知のミラーリング
 label: Notification mirroring
 template: detail.hbs
-ms.date: 12/15/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp, トースト, クラウド環境にあるアクション センター, 通知のミラーリング, 通知, クロス デバイス
 ms.localizationpriority: medium
-ms.openlocfilehash: b897c6574f6cbfe78406d1c624f2e3b7286ef582
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 6add4799a810a0b7216b6292bf5f172ddb8a3ee2
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82971057"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91219915"
 ---
 # <a name="notification-mirroring"></a>通知のミラーリング
 

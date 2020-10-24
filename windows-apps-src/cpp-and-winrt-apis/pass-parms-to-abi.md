@@ -5,16 +5,16 @@ ms.date: 07/10/2019
 ms.topic: article
 keywords: windows 10, uwp, 標準, c++, cpp, winrt, プロジェクション, 受け渡し, パラメーター, ABI
 ms.localizationpriority: medium
-ms.openlocfilehash: 9c5ce6a30e68fe6fc26316bc2f41c6e2556b98ef
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 05a627349ad2c4fda890a4f5280f5d33454ea910
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82255256"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89154456"
 ---
 # <a name="passing-parameters-into-the-abi-boundary"></a>ABI 境界へのパラメーターの受け渡し
 
-C++/WinRT の **winrt::param** 名前空間の型では、一般的なケースの自動変換が提供されることにより、ABI 境界へのパラメーターの受け渡しが簡略化されます。 詳細およびコード例については、「[文字列の処理](/windows/uwp/cpp-and-winrt-apis/strings)」および「[標準的な C++ のデータ型と C++/WinRT](/windows/uwp/cpp-and-winrt-apis/std-cpp-data-types)」をご覧ください。
+C++/WinRT の **winrt::param** 名前空間の型では、一般的なケースの自動変換が提供されることにより、ABI 境界へのパラメーターの受け渡しが簡略化されます。 詳細およびコード例については、「[文字列の処理](./strings.md)」および「[標準的な C++ のデータ型と C++/WinRT](./std-cpp-data-types.md)」をご覧ください。
 
 > [!IMPORTANT]
 > **winrt::param** 名前空間内の型を自分では使用しないでください。 それらはプロジェクションのためのものです。
@@ -57,7 +57,7 @@ Windows ランタイム コレクションは、既に **IIterable** です。
 
 **U** が **T** に変換可能であっても、**IIterable\<U\>** と **std::vector\<U\>** は許可されないことに注意してください。**std::vector\<U\>** の場合は、二重反復子バージョン (詳細は後述) を使用できます。
 
-場合によっては、お使いのオブジェクトで必要な **IIterable** が実際に実装されている可能性があります。 たとえば、[**FileOpenPicker.PickMultipleFilesAsync**](/uwp/api/windows.storage.pickers.fileopenpicker.pickmultiplefilesasync) によって生成される **IVectorView\<StorageFile\>** では、**IIterable<StorageFile>** が実装されています。 ただし、**IIterable<IStorageItem>** も実装されています。それを明示的に要求する必要があります。
+場合によっては、お使いのオブジェクトで必要な **IIterable** が実際に実装されている可能性があります。 たとえば、[**FileOpenPicker.PickMultipleFilesAsync**](/uwp/api/windows.storage.pickers.fileopenpicker.pickmultiplefilesasync) によって生成される **IVectorView\<StorageFile\>** では、**IIterable\<StorageFile\>** が実装されています。 ただし、**IIterable\<IStorageItem\>** も実装されています。それを明示的に要求する必要があります。
 
 ```cppwinrt
 IVectorView<StorageFile> pickedFiles{ co_await filePicker.PickMultipleFilesAsync() };
@@ -154,7 +154,7 @@ requestData.SetStorageItems({ storageFiles.begin(), storageFiles.end() }); // Bu
 
 ## <a name="array-parameters"></a>配列のパラメーター
 
-**winrt::array_view\<T\>** は **winrt::param** 名前空間内にありませんが、C スタイルの配列 ("*準拠する配列*" とも呼ばれます) であるパラメーターに使用されます。
+**winrt::array_view\<T\>** は **winrt::param** 名前空間内にありませんが、C スタイルの配列&mdash; ("*準拠する配列*" とも呼ばれます) であるパラメーターに使用されます。
 
 |渡すことができる型|メモ|
 |-|-|

@@ -4,19 +4,19 @@ title: セマンティック ズーム
 ms.assetid: B5C21FE7-BA83-4940-9CC1-96F6A2DC28C7
 label: Semantic zoom
 template: detail.hbs
-ms.date: 05/19/2017
+ms.date: 08/07/2020
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: predavid
 design-contact: kimsea
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 35613366078531a9e342df0b4314d049fde844e9
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: f2fea27bf44e2e7f199c6c04f045f2cda6663315
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80081571"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174446"
 ---
 # <a name="semantic-zoom"></a>セマンティック ズーム
 
@@ -29,7 +29,7 @@ ms.locfileid: "80081571"
 
 たとえば、アドレス帳を表示しているときに、表示を縮小して "W" の文字にすばやく移動したり、文字を拡大表示して、その文字に関連付けられた名前を調べたりすることができます。 
 
-> **重要な API**: [SemanticZoom クラス](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SemanticZoom)、[ListView クラス](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView)、[GridView クラス](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView)
+> **重要な API**: [SemanticZoom クラス](/uwp/api/Windows.UI.Xaml.Controls.SemanticZoom)、[ListView クラス](/uwp/api/Windows.UI.Xaml.Controls.ListView)、[GridView クラス](/uwp/api/Windows.UI.Xaml.Controls.GridView)
 
 **機能**:
 
@@ -41,7 +41,7 @@ ms.locfileid: "80081571"
 
 **SemanticZoom** コントロールは、グループ化されたデータ セットを表示する際、データが大きすぎて 1 ページや 2 ページでは表示しきれない場合に使用します。
 
-セマンティック ズームと光学式ズームを混同しないように気を付けてください。 操作方法と基本的な動作 (ズーム係数に基づいて詳しく表示したり簡単に表示したりする動作) は同じですが、光学式ズームでは、コンテンツ領域またはオブジェクトの倍率調整を写真のように行います。 光学式ズームを行うコントロールについて詳しくは、[ScrollViewer](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer) コントロールの説明をご覧ください。
+セマンティック ズームと光学式ズームを混同しないように気を付けてください。 操作方法と基本的な動作 (ズーム係数に基づいて詳しく表示したり簡単に表示したりする動作) は同じですが、光学式ズームでは、コンテンツ領域またはオブジェクトの倍率調整を写真のように行います。 光学式ズームを行うコントロールについて詳しくは、[ScrollViewer](/uwp/api/windows.ui.xaml.controls.scrollviewer) コントロールの説明をご覧ください。
 
 ## <a name="examples"></a>例
 
@@ -59,21 +59,21 @@ ms.locfileid: "80081571"
 </tr>
 </table>
 
+**XAML コントロール ギャラリー**
+
+コントロール ギャラリー内の SemanticZoom セクションは、コントロールの種類がグループ化されたセクションをユーザーがすばやく拡大および縮小できるナビゲーション エクスペリエンスを示しています。 
+
+![XAMl コントロール ギャラリーで使用されているセマンティック ズームの例](images/semanticzoom-gallery.gif)
+
 **フォト アプリ**
 
 フォト アプリで使われるセマンティック ズームの例です。 写真は月ごとにグループ化されています。 既定のグリッド ビューで月ヘッダーを選択すると、月の一覧ビューにズームアウトして、すばやく移動できます。
 
 ![フォト アプリで使われるセマンティック ズーム](images/control-examples/semantic-zoom-photos.png)
 
-**アドレス帳**
-
-セマンティック ズームを使って簡単にナビゲートできるデータ セットの例として、アドレス帳があります。 縮小表示ビューを使用すると、必要な文字にすばやく移動できます (左の画像)。拡大表示ビューには、個別のデータ項目が表示されます (右の画像)。
-
-![連絡先の一覧で使用されているセマンティック ズームの例](images/semanticzoom-win10.png)
-
 ## <a name="create-a-semantic-zoom"></a>セマンティック ズームの作成
 
-**SemanticZoom** コントロールには、独自の視覚的表現はありません。 SemanticZoom は、コンテンツを表示する 2 つのコントロール (通常は **ListView** コントロールと **GridView** コントロール) 間の切り替えを管理する、ホスト コントロールです。  開発者は、これらのビュー コントロールを SemanticZoom の [ZoomedInView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.semanticzoom.zoomedinview) プロパティと [ZoomedOutView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.semanticzoom.zoomedoutview) プロパティに設定します。
+**SemanticZoom** コントロールには、独自の視覚的表現はありません。 SemanticZoom は、コンテンツを表示する 2 つのコントロール (通常は **ListView** コントロールと **GridView** コントロール) 間の切り替えを管理する、ホスト コントロールです。  開発者は、これらのビュー コントロールを SemanticZoom の [ZoomedInView](/uwp/api/windows.ui.xaml.controls.semanticzoom.zoomedinview) プロパティと [ZoomedOutView](/uwp/api/windows.ui.xaml.controls.semanticzoom.zoomedoutview) プロパティに設定します。
 
 セマンティック ズームに必要な 3 つの要素は次のとおりです。
 - グループ化されたデータ ソース。 (グループは、拡大表示されたビューの GroupStyle 定義によって定義されます。)
@@ -82,7 +82,7 @@ ms.locfileid: "80081571"
 
 セマンティック ズームを使用する前に、グループ化されたデータに対してリスト ビューを使用する方法を理解する必要があります。 詳細については、「[リスト ビューとグリッド ビュー](listview-and-gridview.md)」を参照してください。 
 
-> **注**&nbsp;&nbsp; SemanticZoom コントロールの拡大表示ビューと縮小表示ビューを定義するには、[ISemanticZoomInformation](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ISemanticZoomInformation) インターフェイスを実装する任意のコントロールを 2 つ使用できます。 XAML フレームワークには、このインターフェイスを実装するコントロールが 3 つ用意されています。ListView、GridView、および Hub です。
+> **注**&nbsp;&nbsp; SemanticZoom コントロールの拡大表示ビューと縮小表示ビューを定義するには、[ISemanticZoomInformation](/uwp/api/Windows.UI.Xaml.Controls.ISemanticZoomInformation) インターフェイスを実装する任意のコントロールを 2 つ使用できます。 XAML フレームワークには、このインターフェイスを実装するコントロールが 3 つ用意されています。ListView、GridView、および Hub です。
  
  この XAML は、SemanticZoom コントロールの構造を示したものです。 ZoomedInView プロパティと ZoomedOutView プロパティに、他のコントロールを割り当てます。
  
@@ -163,11 +163,11 @@ ms.locfileid: "80081571"
 
 **表示の同期**
 
-拡大表示と縮小表示は同期する必要があります。したがって、ユーザーが縮小表示のグループを選択した場合、同じグループの詳細が拡大表示されることになります。 [CollectionViewSource](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.CollectionViewSource) を使うか、または表示を同期するためのコードを追加できます。
+拡大表示と縮小表示は同期する必要があります。したがって、ユーザーが縮小表示のグループを選択した場合、同じグループの詳細が拡大表示されることになります。 [CollectionViewSource](/uwp/api/Windows.UI.Xaml.Data.CollectionViewSource) を使うか、または表示を同期するためのコードを追加できます。
 
-同じ CollectionViewSource にバインドするコントロールには、常に同じ現在の項目が含まれます。 両表示でデータ ソースとして同じ CollectionViewSource を使っている場合、CollectionViewSource により表示が自動的に同期されます。 詳しくは、[CollectionViewSource](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.CollectionViewSource) をご覧ください。
+同じ CollectionViewSource にバインドするコントロールには、常に同じ現在の項目が含まれます。 両表示でデータ ソースとして同じ CollectionViewSource を使っている場合、CollectionViewSource により表示が自動的に同期されます。 詳しくは、[CollectionViewSource](/uwp/api/Windows.UI.Xaml.Data.CollectionViewSource) をご覧ください。
 
-表示の同期のために CollectionViewSource を使わない場合は、[ViewChangeStarted](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.semanticzoom.viewchangestarted) のイベントを処理し、次のようなイベント ハンドラーで項目を同期化する必要があります。
+表示の同期のために CollectionViewSource を使わない場合は、[ViewChangeStarted](/uwp/api/windows.ui.xaml.controls.semanticzoom.viewchangestarted) のイベントを処理し、次のようなイベント ハンドラーで項目を同期化する必要があります。
 
 ```xaml
 <SemanticZoom x:Name="semanticZoom" ViewChangeStarted="SemanticZoom_ViewChangeStarted">
@@ -183,7 +183,7 @@ private void SemanticZoom_ViewChangeStarted(object sender, SemanticZoomViewChang
 }
 ```
 
-## <a name="recommendations"></a>推奨事項
+## <a name="recommendations"></a>Recommendations
 
 -   アプリでセマンティック ズームを使うときは、ズーム レベルごとに項目のレイアウトとパン方向が変わらないようにする必要があります。 レイアウトとパン操作は、ズーム レベルに関係なく一貫して予測できるものにしてください。
 -   セマンティック ズームを使ってすばやくコンテンツにジャンプできるようにするため、縮小モードでのページや画面の数は 3 つまでに制限します。 パンが多すぎると、セマンティック ズームの実用性が損なわれます。
@@ -193,7 +193,7 @@ private void SemanticZoom_ViewChangeStarted(object sender, SemanticZoomViewChang
 -   グループ化せずに並べ替えたコレクションには並べ替え順序を使います (日付の場合は時系列順、名前の一覧の場合はアルファベット順など)。
 
 
-## <a name="get-the-sample-code"></a>サンプル コードを入手する
+## <a name="get-the-sample-code"></a>サンプル コードの入手
 
 - [XAML コントロール ギャラリー サンプル](https://github.com/Microsoft/Xaml-Controls-Gallery) - インタラクティブな形で XAML コントロールのすべてを参照できます。
 
@@ -202,9 +202,4 @@ private void SemanticZoom_ViewChangeStarted(object sender, SemanticZoomViewChang
 
 - [ナビゲーション デザインの基本](../basics/navigation-basics.md)
 - [リスト ビューとグリッド ビュー](listview-and-gridview.md)
-- [項目コンテナーとテンプレート](item-containers-templates.md)
-
-
-
-
-
+- [項目コンテナーやテンプレート](item-containers-templates.md)

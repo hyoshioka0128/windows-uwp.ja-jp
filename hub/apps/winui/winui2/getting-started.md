@@ -2,23 +2,23 @@
 title: Windows UI ライブラリの概要
 description: Windows UI ライブラリをインストールして使用する方法。
 ms.topic: reference
-ms.date: 05/08/2020
+ms.date: 07/15/2020
 keywords: windows 10, uwp, ツールキット sdk
-ms.openlocfilehash: d96efb2f3de3084d74e06e70ff2811a944604f56
-ms.sourcegitcommit: 47899c30a39087bca1f058a4395cf58daacf5ae9
+ms.openlocfilehash: 94c23ab9573df576af89d9211ced70938fd5105f
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85345476"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174136"
 ---
-# <a name="getting-started-with-the-windows-ui-library"></a>Windows UI ライブラリの概要
+# <a name="getting-started-with-the-windows-ui-2x-library"></a>Windows UI 2.x ライブラリの概要
 
 [WinUI 2.4](release-notes/winui-2.4.md) は、WinUI の最新の安定したバージョンであり、生産中のアプリで使用する必要があります。
 
 ライブラリは、新規または既存の任意の Visual Studio プロジェクトに追加できる NuGet パッケージとして提供されています。
 
 > [!NOTE]
-> WinUI 3.0 の早期プレビューを試す方法の詳細については、「[WinUI 3.0 プレビュー 1](../winui3/index.md)」を参照してください。
+> WinUI 3 の早期プレビューを試す方法の詳細については、「[Windows UI ライブラリ 3 Preview 2 (2020 年 7 月)](../winui3/index.md)」を参照してください。
 
 ## <a name="download-and-install-the-windows-ui-library"></a>Windows UI ライブラリのダウンロードとインストール
 
@@ -64,7 +64,7 @@ ms.locfileid: "85345476"
     ```
 
     > [!IMPORTANT]
-    > ResourceDictionary にリソースが追加される順序は、それらが適用される順序に影響します。 `XamlControlsResources` ディクショナリによって多くの既定リソース キーがオーバーライドされるため、アプリ内の他のカスタム スタイルやリソースがオーバーライドされないように、まずこのディクショナリを `Application.Resources` に追加する必要があります。 リソースの読み込みについて詳しくは、「[ResourceDictionary と XAML リソースの参照](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/resourcedictionary-and-xaml-resource-references)」をご覧ください。
+    > ResourceDictionary にリソースが追加される順序は、それらが適用される順序に影響します。 `XamlControlsResources` ディクショナリによって多くの既定リソース キーがオーバーライドされるため、アプリ内の他のカスタム スタイルやリソースがオーバーライドされないように、まずこのディクショナリを `Application.Resources` に追加する必要があります。 リソースの読み込みについて詳しくは、「[ResourceDictionary と XAML リソースの参照](/windows/uwp/design/controls-and-patterns/resourcedictionary-and-xaml-resource-references)」をご覧ください。
 
 5. ツールキットへの参照を XAML ページと分離コード ページに追加します。
 

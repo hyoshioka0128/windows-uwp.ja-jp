@@ -1,5 +1,5 @@
 ---
-Description: ユーザーが入力するときに、検索候補を表示するテキスト入力ボックスです。
+description: ドロップダウン リストとも呼ばれるリスト ボックスとコンボ ボックスを使用して、ユーザーが選択できる項目の一覧を表示する方法について説明します。
 title: コンボ ボックスとリスト ボックス
 label: Combo box and list box
 template: detail.hbs
@@ -10,12 +10,12 @@ pm-contact: stmoy
 design-contact: ''
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: f484df97c6d29281941c8eed7b91fd0b156fff60
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 911585d4e00c5e6c6aea66a72488c48f4d6ffb6d
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82968787"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173496"
 ---
 # <a name="combo-box-and-list-box"></a>コンボ ボックスとリスト ボックス
 
@@ -23,7 +23,7 @@ ms.locfileid: "82968787"
 
 コンボ ボックスを閉じると、現在の選択が表示されるか、選択された項目がない場合は空です。 ユーザーがコンボ ボックスを展開すると、選択可能な項目の一覧が表示されます。
 
-![コンパクトな状態のドロップダウン リストの例](images/combo_box_collapsed.png)
+![コンパクトな状態のドロップダウン リストの例](images/combo-box-expand.gif)
 
 > _ヘッダーが表示されたコンパクトな状態のコンボ ボックス。_
 
@@ -31,7 +31,7 @@ ms.locfileid: "82968787"
 
 |  |  |
 | - | - |
-| ![WinUI ロゴ](images/winui-logo-64x64.png) | Windows UI ライブラリ 2.2 以降には、丸めた角を使用するこのコントロールの新しいテンプレートが含まれます。 詳しくは、「[角の半径](/windows/uwp/design/style/rounded-corner)」をご覧ください。 WinUI は、Windows アプリの新しいコントロールと UI 機能が含まれる NuGet パッケージです。 インストール手順などについて詳しくは、「[Windows UI Library (Windows UI ライブラリ)](https://docs.microsoft.com/uwp/toolkits/winui/)」をご覧ください。 |
+| ![WinUI ロゴ](images/winui-logo-64x64.png) | Windows UI ライブラリ 2.2 以降には、丸めた角を使用するこのコントロールの新しいテンプレートが含まれます。 詳しくは、「[角の半径](../style/rounded-corner.md)」をご覧ください。 WinUI は、Windows アプリの新しいコントロールと UI 機能が含まれる NuGet パッケージです。 インストール手順などについて詳しくは、「[Windows UI Library (Windows UI ライブラリ)](/uwp/toolkits/winui/)」をご覧ください。 |
 
 > **プラットフォーム API:** [ComboBox クラス](/uwp/api/Windows.UI.Xaml.Controls.ComboBox)、[IsEditable プロパティ](/uwp/api/windows.ui.xaml.controls.combobox.iseditable)、[Text プロパティ](/uwp/api/Windows.UI.Xaml.Controls.ComboBox)、[TextSubmitted イベント](/uwp/api/Windows.UI.Xaml.Controls.ComboBox)
 
@@ -337,6 +337,6 @@ bool IsValid(string Text)
 - [テキスト コントロール](text-controls.md)
 - [スペル チェック](text-controls.md)
 - [検索](search.md)
-- [TextBox クラス](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox)
-- [Windows.UI.Xaml.Controls PasswordBox クラス](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.PasswordBox)
-- [String.Length プロパティ](https://docs.microsoft.com/dotnet/api/system.string.length)
+- [TextBox クラス](/uwp/api/Windows.UI.Xaml.Controls.TextBox)
+- [Windows.UI.Xaml.Controls PasswordBox クラス](/uwp/api/Windows.UI.Xaml.Controls.PasswordBox)
+- [String.Length プロパティ](/dotnet/api/system.string.length)

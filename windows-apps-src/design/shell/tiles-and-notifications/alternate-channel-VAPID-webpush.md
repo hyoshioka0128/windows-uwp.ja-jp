@@ -1,16 +1,16 @@
 ---
-title: UWP で VAPID を使用する代替プッシュチャネル
+title: UWP で VAPID を使用する代替プッシュ チャネル
 description: Windows アプリから VAPID プロトコルで代替プッシュチャネルを使用する方法
-ms.date: 01/10/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10、uwp、WinRT API、WNS
 localizationpriority: medium
-ms.openlocfilehash: 382dca376e2393d83c2803043b61db76226b3995
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 79ea88cb457e9a0d7ba33ef51a184e6f52ab19c4
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970867"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91219275"
 ---
 # <a name="alternate-push-channels-using-vapid-in-windows"></a>Windows で VAPID を使用する代替プッシュチャネル 
 Windows アプリでは、VAPID 認証を使用してプッシュ通知を送信できるようになります。  
@@ -18,7 +18,7 @@ Windows アプリでは、VAPID 認証を使用してプッシュ通知を送信
 > [!NOTE]
 > これらの Api は、他の web サイトをホストし、その代わりにチャネルを作成する web ブラウザーを対象としています。  Web アプリに web プッシュ通知を追加する場合は、サービスワーカーを作成して通知を送信するための W3C および WhatWG 標準に従うことをお勧めします。
 
-## <a name="introduction"></a>はじめに
+## <a name="introduction"></a>概要
 Web プッシュ標準の導入により、web サイトがアプリのように動作し、ユーザーが web サイトにいない場合でも通知を送信できるようになります。
 
 VAPID 認証プロトコルが作成され、web サイトがベンダーに依存しない方法でプッシュサーバーで認証できるようになりました。 VAPID プロトコルを使用しているすべてのベンダーが、web サイトが実行されているブラウザーがわからなくてもプッシュ通知を送信できます。 これは、プラットフォームごとに異なるプッシュプロトコルを実装した場合よりも大幅に改善されています。 
@@ -26,7 +26,7 @@ VAPID 認証プロトコルが作成され、web サイトがベンダーに依�
 Windows アプリは、VAPID を使用して、これらの利点も含めてプッシュ通知を送信できます。 これらのプロトコルを使用すると、新しいアプリの開発時間を短縮し、既存のアプリのクロスプラットフォームサポートを簡素化できます。 さらに、enterprise apps またはサイドロードアプリでは、Microsoft Store に登録しなくても通知を送信できるようになりました。 これにより、すべてのプラットフォームでユーザーと連携する新しい方法が開きます。  
 
 ## <a name="alternate-channels"></a>代替チャネル 
-UWP では、これらの VAPID チャネルは代替チャネルと呼ばれ、web プッシュチャネルに同様の機能を提供します。 アプリのバックグラウンドタスクをトリガーして、メッセージの暗号化を有効にし、1つのアプリから複数のチャネルを許可することができます。 チャネルの種類の違いの詳細については、「[適切なチャネルの選択](channel-types.md)」を参照してください。
+UWP では、これらの VAPID チャネルは代替チャネルと呼ばれ、web プッシュチャネルに同様の機能を提供します。 アプリのバックグラウンドタスクをトリガーして、メッセージの暗号化を有効にし、1つのアプリから複数のチャネルを許可することができます。 チャネルの種類の違いの詳細については、「 [適切なチャネルの選択](channel-types.md)」を参照してください。
 
 アプリでプライマリチャネルを使用できない場合や、web サイトとアプリの間でコードを共有する場合は、代替チャネルを使用してプッシュ通知にアクセスすることをお勧めします。 チャネルの設定は、web プッシュ標準を使用しているユーザー、または以前に Windows プッシュ通知を使用していたユーザーにとって、簡単で使いやすいものです。
 
@@ -111,7 +111,5 @@ protected override void OnBackgroundActivated(BackgroundActivatedEventArgs args)
 ## <a name="related-topics"></a>関連トピック
 - [通知チャンネルの種類](channel-types.md)
 - [Windows プッシュ通知サービス (WNS)](windows-push-notification-services--wns--overview.md)
-- [PushNotificationChannel クラス](https://docs.microsoft.com/uwp/api/windows.networking.pushnotifications.pushnotificationchannel)
-- [PushNotificationChannelManager クラス](https://docs.microsoft.com/uwp/api/windows.networking.pushnotifications.pushnotificationchannelmanager)
-
-
+- [PushNotificationChannel クラス](/uwp/api/windows.networking.pushnotifications.pushnotificationchannel)
+- [PushNotificationChannelManager クラス](/uwp/api/windows.networking.pushnotifications.pushnotificationchannelmanager)

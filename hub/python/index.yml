@@ -3,19 +3,19 @@ title: Windows での Python に関するドキュメント
 summary: 開発環境のセットアップ、スクリプト作成と自動化、Web アプリのビルド、および FAQ など、Windows を使用した Python による開発を始めましょう。
 metadata:
   author: mattwojo
-  description: Windows での Python を使用した開発を始めましょう。
+  description: Windows での Python を使用した開発を始めましょう。 開発環境の設定、Web アプリのビルド、またデータベースへの接続のためのリソースをご確認ください。
   manager: jken
   ms.author: mattwoj
   ms.date: 09/15/2019
   ms.prod: dev-environment
   ms.technology: windows-python
   ms.topic: landing-page
-  ms.openlocfilehash: 42ca85644c0759e3c3bb561d3decfe42560d95c9
-  ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
+  ms.openlocfilehash: 4f7d016a58f49efa28dae10f3f8d76e452522465
+  ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 04/29/2020
-  ms.locfileid: "72517804"
+  ms.lasthandoff: 08/31/2020
+  ms.locfileid: "89174116"
 landingContent:
 - title: 初心者向けスタートアップ ガイド
   linkLists:
@@ -57,26 +57,20 @@ landingContent:
       url: ./scripting.md#example-script-to-modify-all-files-in-a-directory
 - title: データベースの概要
   linkLists:
-  - linkListType: concept
-    links:
-    - text: MongoDB と PostgreSQL
-      url: ./databases.md
   - linkListType: quickstart
     links:
-    - text: PostgreSQL をインストールして実行する
-      url: ./databases.md#install-postgresql
-    - text: MongoDB をインストールして実行する
-      url: ./databases.md#install-mongodb
+    - text: MySQL、PostgreSQL、SQLite、Microsoft SQL Server、MongoDB、または Redis をインストールして実行する
+      url: /windows/wsl/tutorials/wsl-database
 - title: その他の資料
   linkLists:
   - linkListType: reference
     links:
-    - text: 'AppLocker: Frequently Asked Questions (AppLocker: よく寄せられる質問)'
+    - text: よく寄せられる質問
       url: faqs.md
   - linkListType: learn
     links:
     - text: この入門コースで (何もインストールせずに) Python を試してみる
-      url: https://docs.microsoft.com/learn/modules/intro-to-python/
+      url: /learn/modules/intro-to-python/
     - text: 推奨リンク
       url: resources.md
     - text: 推奨されるオンライン コース

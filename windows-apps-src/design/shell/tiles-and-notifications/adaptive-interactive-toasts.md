@@ -4,16 +4,16 @@ title: トーストのコンテンツ
 ms.assetid: 1FCE66AF-34B4-436A-9FC9-D0CF4BDA5A01
 label: Toast content
 template: detail.hbs
-ms.date: 11/20/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp, トースト通知, 対話型トースト, アダプティブ トースト, トーストのコンテンツ, トースト ペイロード
 ms.localizationpriority: medium
-ms.openlocfilehash: bda62b76973adb7b6cfe068cdd9ca33b1a54454c
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: b08b34a88533d06ac7fc2f967bfc4e50e9fd8f0f
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970927"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91219447"
 ---
 # <a name="toast-content"></a>トーストのコンテンツ
 
@@ -22,7 +22,7 @@ ms.locfileid: "82970927"
 > **重要な API**: [UWP Community Toolkit Notifications NuGet パッケージ](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)
 
 > [!NOTE]
-> Windows 8.1 や Windows Phone 8.1 の従来のテンプレートについては、「[トースト テンプレート カタログ (Windows ランタイム アプリ)](https://docs.microsoft.com/previous-versions/windows/apps/hh761494(v=win.10))」をご覧ください。
+> Windows 8.1 や Windows Phone 8.1 の従来のテンプレートについては、「[トースト テンプレート カタログ (Windows ランタイム アプリ)](/previous-versions/windows/apps/hh761494(v=win.10))」をご覧ください。
 
 
 ## <a name="getting-started"></a>作業の開始
@@ -148,7 +148,7 @@ new ToastBindingGeneric()
 
 <img alt="Toast with app logo override" src="images/toast-applogooverride.jpg" width="364"/>
 
-**HintCrop** プロパティを使って、画像のトリミングを変更できます。 たとえば、**円**は円でトリミングされたイメージになります。 その他の場合、画像は正方形です。 画像サイズは 100% のスケーリングで 48x48 ピクセルです。
+**HintCrop** プロパティを使って、画像のトリミングを変更できます。 たとえば、 **円** は円でトリミングされたイメージになります。 その他の場合、画像は正方形です。 画像サイズは 100% のスケーリングで 48x48 ピクセルです。
 
 ```csharp
 new ToastBindingGeneric()
@@ -318,12 +318,12 @@ ToastContent toastContent = new ToastContent()
 
 この追加コンテンツは Adaptive を使って指定されます。詳しくは、[アダプティブ タイルのドキュメント](create-adaptive-tiles.md)をご覧ください。
 
-すべてのアダプティブ コンテンツは [**AdaptiveGroup**](https://docs.microsoft.com/windows/uwp/design/shell/tiles-and-notifications/toast-schema#adaptivegroup) 内に含める必要があることに注意してください。 それ以外の場合、Adaptive を使ってレンダリングされません。
+すべてのアダプティブ コンテンツは [**AdaptiveGroup**](./toast-schema.md#adaptivegroup) 内に含める必要があることに注意してください。 それ以外の場合、Adaptive を使ってレンダリングされません。
 
 
 ### <a name="columns-and-text-elements"></a>列とテキスト要素
 
-列といくつかの詳細なアダプティブ テキスト要素が使われている例を次に示します。 テキスト要素は**AdaptiveGroup**内にあるため、すべてのリッチアダプティブスタイルプロパティをサポートしています。
+列といくつかの詳細なアダプティブ テキスト要素が使われている例を次に示します。 テキスト要素は **AdaptiveGroup**内にあるため、すべてのリッチアダプティブスタイルプロパティをサポートしています。
 
 <img alt="Toast with additional text" src="images/toast-additionaltext.jpg" width="364"/>
 

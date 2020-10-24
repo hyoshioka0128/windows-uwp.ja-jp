@@ -8,12 +8,12 @@ ms.topic: article
 keywords: python, windows 10, microsoft, python の学習, windows での python (初心者向け), microsoft store から python をインストール, python と vs code, windows での pygame
 ms.localizationpriority: medium
 ms.date: 07/19/2019
-ms.openlocfilehash: 688ae004dad8653e70d86b3b91652b6898c1e9d3
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 076c62658431ba75bdbd7f385ced86f27fb2f7d0
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "74881287"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174146"
 ---
 # <a name="get-started-using-python-on-windows-for-beginners"></a>Windows で Python を使ってみる (初心者向け)
 
@@ -75,7 +75,7 @@ Microsoft Store を使用して Python をインストールするには:
 
 Python はインタープリター言語です。 コンピューターのプロセッサで実行するために、記述したコードをマシン コードに変換する必要があるコンパイラ言語とは異なり、Python のコードはインタープリターにそのまま渡され、直接実行されます。 コードを入力して実行するだけです。 試してみましょう。
 
-1. PowerShell コマンド ラインを開いた状態で、`python` と入力して Python 3 インタープリターを実行します  (`py` または `python3` コマンドの使用が優先される命令もあり、これらのコマンドでも機能します)。 3 つの大なり記号 (>>>) のプロンプトが表示されれば成功です。
+1. PowerShell コマンド ラインを開いた状態で、`python` と入力して Python 3 インタープリターを実行します (`py` または `python3` コマンドの使用が優先される命令もあり、これらのコマンドでも機能します)。 3 つの大なり記号 (>>>) のプロンプトが表示されれば成功です。
 
 2. Python には、文字列の変更に使用できる組み込みのメソッドが複数あります。 変数を作成するには、`variable = 'Hello World!'` のようにします。 Enter キーを押して改行します。
 
@@ -190,7 +190,7 @@ Windows での Python 開発について学習を続けるために役立つ、�
 
 ### <a name="online-courses-for-learning-python"></a>オンラインの Python 学習コース
 
-- [Microsoft Learn の Python 入門](https://docs.microsoft.com/learn/modules/intro-to-python/):対話型の Microsoft Learn プラットフォームで、簡単な Python コードを記述し、変数を宣言し、コンソール入出力を操作する方法を基礎から学びましょう。このモジュールを完了すると経験ポイントを獲得できます。 Python 開発環境をまだセットアップしていない場合、対話型のサンドボックス環境は学習を始めるのに最適な場所です。
+- [Microsoft Learn の Python 入門](/learn/modules/intro-to-python/):対話型の Microsoft Learn プラットフォームで、簡単な Python コードを記述し、変数を宣言し、コンソール入出力を操作する方法を基礎から学びましょう。このモジュールを完了すると経験ポイントを獲得できます。 Python 開発環境をまだセットアップしていない場合、対話型のサンドボックス環境は学習を始めるのに最適な場所です。
 
 - [Pluralsight で Python を学ぶ:8 コース、29 時間](https://app.pluralsight.com/paths/skills/python):Pluralsight の Python ラーニング パスは、スキルを測定してギャップを見つけるためのツールなど、Python 関連のさまざまなトピックをカバーしたオンライン コースを提供します。
 
@@ -208,4 +208,4 @@ Windows での Python 開発について学習を続けるために役立つ、�
 
 - [Python のデバッグ](https://code.visualstudio.com/docs/python/debugging):デバッグは、コンピューター プログラムのエラーを識別して除去するプロセスです。 この記事では、VS Code で Python のデバッグを初期化および構成する方法、ブレークポイントを設定および検証する方法、ローカル スクリプトをアタッチする方法、さまざまなアプリの種類に対して、またはリモート コンピューターでデバッグを実行する方法、および、いくつかの基本的なトラブルシューティングについて説明します。
 
-- [Python の単体テスト](https://code.visualstudio.com/docs/python/unit-testing):単体テストの意味、チュートリアルの例、テスト フレームワークの有効化、テストの作成と実行、テストのデバッグ、構成設定のテストなど、いくつかの背景について説明します。 
+- [Python の単体テスト](https://code.visualstudio.com/docs/python/unit-testing):単体テストの意味、チュートリアルの例、テスト フレームワークの有効化、テストの作成と実行、テストのデバッグ、構成設定のテストなど、いくつかの背景について説明します。

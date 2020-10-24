@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 keywords: windows win32, デスクトップ開発
-ms.openlocfilehash: c14b092b9cce9ce7e3b180eaedef657e2d3d03db
-ms.sourcegitcommit: d0f479f1955881afb62c2af249db5d0b053b63e5
+ms.openlocfilehash: d4415bc703acf0b94f6f8a6fe8aab053620336c6
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83580009"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89168906"
 ---
 # <a name="choose-your-app-platform"></a>アプリ プラットフォームの選択
 
@@ -39,6 +39,7 @@ UWP は、Windows PC 用のデスクトップ アプリケーションを作成�
 UWP の詳細については、次の記事を参照してください。
 
 * [作業開始](/windows/uwp/get-started/)
+* [プロジェクト テンプレート](visual-studio-templates.md#uwp-templates)
 * [設計と UI](/windows/uwp/design/)
 * [テクノロジと機能](/windows/uwp/develop/)
 * [API リファレンス](/uwp/)
@@ -50,11 +51,12 @@ WPF は、.NET Core にアクセスできるか、.NET Framework にフル ア�
 
 WPF の詳細については、次の記事を参照してください。
 
-* [使ってみる (WPF)](https://docs.microsoft.com/dotnet/framework/wpf/getting-started/)。
+* [概要 (WPF)](/dotnet/framework/wpf/getting-started/)
+* [プロジェクト テンプレート](visual-studio-templates.md#net-templates)
 * [初めてのアプリの作成 (.NET Core)](/visualstudio/get-started/csharp/tutorial-wpf/)
 * [初めてのアプリの作成 (.NET Framework)](/dotnet/framework/wpf/getting-started/walkthrough-my-first-wpf-desktop-application/)
 * [WPF アプリを .NET Core に移行する](/dotnet/desktop-wpf/migration/convert-project-from-net-framework/)
-* [API リファレンス (.NET)](https://docs.microsoft.com/dotnet/api/index)
+* [API リファレンス (.NET)](/dotnet/api/index)
 * [サンプル](https://github.com/Microsoft/WPF-Samples)
 
 ## <a name="windows-forms"></a>Windows フォーム
@@ -63,10 +65,11 @@ Windows フォームは、軽量 UI モデルや、.NET Core へのアクセス�
 
 Windows フォームの詳細については、次の記事を参照してください。
 
-* [Windows フォームについて](https://docs.microsoft.com/dotnet/framework/winforms/getting-started-with-windows-forms)
+* [Windows フォームについて](/dotnet/framework/winforms/getting-started-with-windows-forms)
+* [プロジェクト テンプレート](visual-studio-templates.md#net-templates)
 * [初めての Windows フォーム アプリの作成](/dotnet/framework/winforms/creating-a-new-windows-form)
 * [チュートリアル: ピクチャ ビューアーの作成](/visualstudio/ide/tutorial-1-create-a-picture-viewer?view=vs-2019)
-* [API リファレンス (.NET)](https://docs.microsoft.com/dotnet/api/index)
+* [API リファレンス (.NET)](/dotnet/api/index)
 * [Windows フォーム アプリの拡張](/dotnet/framework/winforms/advanced/)
 
 ## <a name="win32"></a>Win32
@@ -84,6 +87,7 @@ C++ で Win32 API を使用すると、WinRT や .NET などのマネージド �
 詳細については、以下の記事を参照してください。
 
 * [作業開始](/windows/win32/desktop-programming/)
+* [プロジェクト テンプレート](visual-studio-templates.md#cwin32-templates)
 * [初めての Win32 および C++ アプリの作成](/windows/win32/learnwin32/learn-to-program-for-windows/)
 * [テクノロジと機能](/windows/win32/desktop-app-technologies)
 * [API リファレンス](/windows/win32/apiindex/windows-api-list/)
@@ -97,7 +101,7 @@ Windows 10 では、メインのデスクトップ プラットフォームそ�
 
 * UWP アプリでは、Windows SDK によって提供される UWP コントロールの代わりに、WinUI コントロールを使用できます。
 * WPF、Windows フォーム、および C++/Win32 の既存のアプリを更新して、これらのアプリで [XAML Islands](modernize/xaml-islands.md) を使用して WinUI 2.x コントロールをホストできます。
-* [WinUi 3.0 Preview 1](../winui/winui3/index.md) からは、[全面的に WinUI ベースの UI を使用する .NET アプリと C++/Win32 アプリ](../winui/winui3/get-started-winui3-for-desktop.md)を作成できます。
+* [WinUi 3.0](../winui/winui3/index.md) 以降では、[全面的に WinUI ベースの UI を使用する .NET アプリと C++/Win32 アプリ](../winui/winui3/get-started-winui3-for-desktop.md)を作成できます。
 
 ## <a name="platform-comparison-uwp-wpf-and-windows-forms"></a>プラットフォームの比較:UWP、WPF、Windows フォーム
 
@@ -121,8 +125,12 @@ Windows 10 では、メインのデスクトップ プラットフォームそ�
 
 ### <a name="progressive-web-apps-pwas"></a>プログレッシブ Web アプリ (PWA)
 
-PWA により、開発者は Web サイト コードをパッケージ化し、Windows 10 の PC 上のアプリケーションのようにインストールして実行できるようになります。 詳細については、[プログレッシブ Web アプリ](https://docs.microsoft.com/microsoft-edge/progressive-web-apps/get-started)に関する記事を参照してください。
+PWA により、開発者は Web サイト コードをパッケージ化し、Windows 10 の PC 上のアプリケーションのようにインストールして実行できるようになります。 詳細については、[プログレッシブ Web アプリ](/microsoft-edge/progressive-web-apps/get-started)に関する記事を参照してください。
 
 ### <a name="xamarin"></a>Xamarin
 
 Xamarin は、Windows 10 用でありながら iOS および Android でも実行できるクロスプラットフォーム アプリケーションの作成に使用します。 詳細については、[Xamarin](https://docs.microsoft.com/xamarin/xamarin-forms/get-started/index)に関する記事を参照してください。
+
+### <a name="uno-platform"></a>Uno Platform
+
+Uno Platform は、Windows UWP ベースのコード (C# および XAML) を iOS、Android、WebAssembly で実行できるようにします。 [Windows 10 2004 (19041)](/windows/uwp/whats-new/windows-10-build-19041) での UWP に対する完全な API 定義と、[Windows.UI.Xaml](/uwp/api/windows.ui.xaml.documents?view=winrt-19041) などの UWP API のパーツの実装を提供し、UWP アプリケーションをこれらのプラットフォームで実行できるようにします。 詳しくは、[Uno Platform に関するドキュメント](https://platform.uno/docs/articles/intro.html)をご覧ください。

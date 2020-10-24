@@ -4,16 +4,16 @@ title: エッジに基づく UI アニメーション
 ms.assetid: 5A8F73B1-F4F6-424b-9EDF-A9766C5DEAE8
 label: Motion--edge-based UI
 template: detail.hbs
-ms.date: 05/19/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 02108ad2926fc1514ca94f08d11f565bc342a62d
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: b36f609308d559f5f0cbb56c90420f2381fb8e53
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970317"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91220175"
 ---
 # <a name="edge-based-ui-animations"></a>エッジに基づく UI アニメーション
 
@@ -23,7 +23,7 @@ ms.locfileid: "82970317"
 
 エッジに基づく UI アニメーションでは、画面の端を起点とする UI の表示と非表示を切り替えられます。 この表示と非表示のアクションは、ユーザーが開始することも、アプリから開始することもできます。 UI は、アプリの手前に表示するか、メイン アプリ サーフェスの一部として表示することができます。 UI をアプリ サーフェスの一部として表示する場合は、UI を表示できるようにアプリの残りの部分のサイズを調整する必要があります。
 
-> **重要な API**: [**EdgeUIThemeTransition クラス**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.EdgeUIThemeTransition)
+> **重要な API**: [**EdgeUIThemeTransition クラス**](/uwp/api/Windows.UI.Xaml.Media.Animation.EdgeUIThemeTransition)
 
 
 ## <a name="dos-and-donts"></a>推奨と非推奨
@@ -45,18 +45,14 @@ ms.locfileid: "82970317"
 
 
 **開発者向け**
-* [アニメーションの概要](https://docs.microsoft.com/windows/uwp/graphics/animations-overview)
-* [エッジに基づく UI のアニメーション化](https://docs.microsoft.com/previous-versions/windows/apps/jj649428(v=win.10))
-* [クイック スタート: ライブラリのアニメーションを使った UI のアニメーション化](https://docs.microsoft.com/previous-versions/windows/apps/hh452703(v=win.10))
-* [**EdgeUIThemeTransition クラス**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.EdgeUIThemeTransition)
-* [**PaneThemeTransition クラス**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.PaneThemeTransition)
-* [フェードのアニメーション化](https://docs.microsoft.com/previous-versions/windows/apps/jj649429(v=win.10))
-* [位置変更のアニメーション化](https://docs.microsoft.com/previous-versions/windows/apps/jj649434(v=win.10))
+* [アニメーションの概要](./xaml-animation.md)
+* [エッジに基づく UI のアニメーション化](/previous-versions/windows/apps/jj649428(v=win.10))
+* [クイック スタート: ライブラリのアニメーションを使った UI のアニメーション化](/previous-versions/windows/apps/hh452703(v=win.10))
+* [**EdgeUIThemeTransition クラス**](/uwp/api/Windows.UI.Xaml.Media.Animation.EdgeUIThemeTransition)
+* [**PaneThemeTransition クラス**](/uwp/api/Windows.UI.Xaml.Media.Animation.PaneThemeTransition)
+* [フェードのアニメーション化](/previous-versions/windows/apps/jj649429(v=win.10))
+* [位置変更のアニメーション化](/previous-versions/windows/apps/jj649434(v=win.10))
 
  
 
  
-
-
-
-

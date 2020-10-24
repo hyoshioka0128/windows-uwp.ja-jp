@@ -4,16 +4,16 @@ ms.assetid: 59FA3B87-75A6-4B30-BA7C-A0E769D68050
 title: ストア内のアクセシビリティ
 label: Accessibility in the Store
 template: detail.hbs
-ms.date: 02/08/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: ad128aca1a633c5ce33830b5ee9231f7a794a60c
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: b554adbcc074112604b8713409ee4d05e21dcc0f
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82969677"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91216455"
 ---
 # <a name="accessibility-in-the-store"></a>ストア内のアクセシビリティ  
 
@@ -40,7 +40,7 @@ Microsoft Store で認定を受けるためにアプリを提出している間�
     * キーボード ショートカットを使ってアプリの主な機能を利用する。
     * キーボードがないデバイスで、タブと矢印を同等に扱うためにナレーターのタッチ ジェスチャを使う。
 * アプリの UI が視覚上のアクセシビリティに対応している。最低でも 4.5:1 のテキスト コントラスト比がある、情報を伝えるときに色だけに依存していない、など。
-* [**Inspect**](https://docs.microsoft.com/windows/desktop/WinAuto/inspect-objects)、[**UIAVerify**](https://docs.microsoft.com/windows/desktop/WinAuto/ui-automation-verify) などのアクセシビリティ テスト ツールを使ってアクセシビリティの実装が検証されていて、このようなツールで報告される優先度 1 のエラーをすべて解決している。
+* [**Inspect**](/windows/desktop/WinAuto/inspect-objects)、[**UIAVerify**](/windows/desktop/WinAuto/ui-automation-verify) などのアクセシビリティ テスト ツールを使ってアクセシビリティの実装が検証されていて、このようなツールで報告される優先度 1 のエラーをすべて解決している。
 * ナレーター、拡大鏡、スクリーン キーボード、ハイ コントラスト テーマ、調整された DPI 設定を使って、エンド ツー エンドでアプリの主なシナリオを検証している。
 
 これらの手順と、その実行に役立つリソースへのリンクを確認する場合は、「[アクセシビリティのチェック リスト](accessibility-checklist.md)」をご覧ください。
@@ -48,4 +48,4 @@ Microsoft Store で認定を受けるためにアプリを提出している間�
 <span id="related_topics"/>
 
 ## <a name="related-topics"></a>関連トピック    
-* [ユーザー補助](accessibility.md) 
+* [アクセシビリティ](accessibility.md)

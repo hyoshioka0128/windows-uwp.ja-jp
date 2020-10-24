@@ -1,5 +1,5 @@
 ---
-Description: Windows ランタイム API を使用して Windows 10 ユーザー向けデスクトップ アプリケーションを強化します。
+description: Windows ランタイム API を使用して Windows 10 ユーザー向けデスクトップ アプリケーションを強化します。
 title: デスクトップ アプリで Windows ランタイム API を呼び出す
 ms.date: 08/20/2019
 ms.topic: article
@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: fd561096dc53f85186698c981693693a6d3b9e64
-ms.sourcegitcommit: d95ccb47c616bd32c56e491490a6baf30185c8c5
+ms.openlocfilehash: e58315ed70b889e1369e8c13a563f320c0ca1948
+ms.sourcegitcommit: a222ad0e2d97e35a60000c473808c678395376ee
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85295539"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89479082"
 ---
 # <a name="call-windows-runtime-apis-in-desktop-apps"></a>デスクトップ アプリで Windows ランタイム API を呼び出す
 
@@ -36,7 +36,7 @@ Windows ランタイム API を使用するには、プロジェクトにいく�
 
 #### <a name="to-use-the-nuget-option"></a>NuGet オプションを使用するには
 
-1. [パッケージ参照](https://docs.microsoft.com/nuget/consume-packages/package-references-in-project-files)が有効になっていることを確認します。
+1. [パッケージ参照](/nuget/consume-packages/package-references-in-project-files)が有効になっていることを確認します。
 
     1. Visual Studio で、 **[ツール] -> [NuGet パッケージ マネージャー] -> [パッケージ マネージャー設定]** の順にクリックします。
     2. **[既定のパッケージ管理形式]** に **[PackageReference]** が選択されていることを確認します。
@@ -76,7 +76,7 @@ Windows ランタイム API を使用するには、プロジェクトにいく�
 
 ### <a name="modify-a-c-win32-project-to-use-windows-runtime-apis"></a>Windows ランタイム API を使用するように C++ Win32 プロジェクトを変更する
 
-Windows ランタイム API を使用するには、[C++/WinRT](https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/) を使います。 C++/WinRT は Windows ランタイム (WinRT) API の標準的な最新の C++17 言語プロジェクションで、ヘッダー ファイル ベースのライブラリとして実装され、最新の Windows API への最上位アクセス権を提供するように設計されています。
+Windows ランタイム API を使用するには、[C++/WinRT](/windows/uwp/cpp-and-winrt-apis/) を使います。 C++/WinRT は Windows ランタイム (WinRT) API の標準的な最新の C++17 言語プロジェクションで、ヘッダー ファイル ベースのライブラリとして実装され、最新の Windows API への最上位アクセス権を提供するように設計されています。
 
 C++/WinRT 用にプロジェクトを構成するには:
 
@@ -93,7 +93,7 @@ C++/WinRT 用にプロジェクトを構成するには:
 
 選択肢はたくさんあります。 たとえば、[収益化 API](/windows/uwp/monetize) を使用して発注フローを簡略化できます。また、別のユーザーが投稿した新しい写真など、共有すべき興味深いコンテンツがある場合に、[アプリケーションへの注目を促す](/windows/uwp/design/shell/tiles-and-notifications/adaptive-interactive-toasts)ことができます。
 
-![トースト](images/desktop-to-uwp/toast.png)
+![トースト通知](images/desktop-to-uwp/toast.png)
 
 ユーザーがメッセージを無視したり、非表示にした場合でも、ユーザーはアクション センターで再度メッセージを表示し、クリックすることで、アプリを開くことができます。 これにより、アプリケーションの利用度が高まります。さらに、アプリケーションがオペレーティング システムと密接に統合されているように見えるというメリットがあります。 この記事では、そのエクスペリエンスのコードについて後で少し紹介します。
 
@@ -156,7 +156,41 @@ private void ShowToast()
 }
 ```
 
-```C++
+```cppwinrt
+#include <sstream>
+#include <winrt/Windows.Data.Xml.Dom.h>
+#include <winrt/Windows.UI.Notifications.h>
+
+using namespace winrt::Windows::Foundation;
+using namespace winrt::Windows::System;
+using namespace winrt::Windows::UI::Notifications;
+using namespace winrt::Windows::Data::Xml::Dom;
+
+void UWP::ShowToast()
+{
+    std::wstring const title = L"featured picture of the day";
+    std::wstring const content = L"beautiful scenery";
+    std::wstring const image = L"https://picsum.photos/360/180?image=104";
+    std::wstring const logo = L"https://picsum.photos/64?image=883";
+
+    std::wostringstream xmlString;
+    xmlString << L"<toast><visual><binding template='ToastGeneric'>" <<
+        L"<text>" << title << L"</text>" <<
+        L"<text>" << content << L"</text>" <<
+        L"<image src='" << image << L"'/>" <<
+        L"<image src='" << logo << L"'" <<
+        L" placement='appLogoOverride' hint-crop='circle'/>" <<
+        L"</binding></visual></toast>";
+
+    XmlDocument toastXml;
+
+    toastXml.LoadXml(xmlString.str().c_str());
+
+    ToastNotificationManager::CreateToastNotifier().Show(ToastNotification(toastXml));
+}
+```
+
+```cppcx
 using namespace Windows::Foundation;
 using namespace Windows::System;
 using namespace Windows::UI::Notifications;
@@ -186,7 +220,7 @@ void UWP::ShowToast()
 }
 ```
 
-通知の詳細については、「[アダプティブ トースト通知と対話型トースト通知](https://docs.microsoft.com/windows/uwp/design/shell/tiles-and-notifications/adaptive-interactive-toasts)」を参照してください。
+通知の詳細については、「[アダプティブ トースト通知と対話型トースト通知](/windows/uwp/design/shell/tiles-and-notifications/adaptive-interactive-toasts)」を参照してください。
 
 ## <a name="support-windows-xp-windows-vista-and-windows-78-install-bases"></a>Windows XP、Windows Vista、および Windows 7/8 インストール ベースのサポート
 
@@ -208,33 +242,29 @@ Windows 10 ユーザー向けに個別のバイナリをビルドする場合は
 
 .NET ベースのプロジェクトの場合、この定数は**条件付きコンパイル定数**と呼ばれます。
 
-![プリプロセッサ](images/desktop-to-uwp/compilation-constants.png)
+![条件付きコンパイル定数](images/desktop-to-uwp/compilation-constants.png)
 
 C++ ベースのプロジェクトの場合、この定数は**プリプロセッサ定義**と呼ばれます。
 
-![プリプロセッサ](images/desktop-to-uwp/pre-processor.png)
+![プリプロセッサ定義定数](images/desktop-to-uwp/pre-processor.png)
 
 この定数を、任意の UWP コードのブロックの前に追加します。
 
 ```csharp
-
 [System.Diagnostics.Conditional("_UWP")]
 private void ShowToast()
 {
  ...
 }
-
 ```
 
 ```C++
-
 #if _UWP
 void UWP::ShowToast()
 {
  ...
 }
 #endif
-
 ```
 
 この定数がアクティブなビルド構成で定義されている場合のみ、コンパイラでこのコードがビルドされます。
@@ -243,7 +273,7 @@ void UWP::ShowToast()
 
 ユーザーが実行する Windows のバージョンに関係なく、1 組のバイナリをすべての Windows ユーザー向けにコンパイルできます。 アプリケーションでは、ユーザーが Windows 10 上でアプリケーションをパッケージ化されたアプリケーションとして実行している場合にのみ、Windows ランタイム API を呼び出します。
 
-コードにランタイム チェックを追加する最も簡単な方法は、Nuget パッケージである [Desktop Bridge Helpers](https://www.nuget.org/packages/DesktopBridge.Helpers/) をインストールしてから、``IsRunningAsUWP()`` メソッドを使用して、Windows ランタイム API を呼び出すすべてのコードを利用することです。 詳細については、こちらのブログ投稿「[デスクトップ ブリッジ - アプリケーションのコンテキストの識別](https://blogs.msdn.microsoft.com/appconsult/2016/11/03/desktop-bridge-identify-the-applications-context/)」を参照してください。
+コードにランタイム チェックを追加する最も簡単な方法は、Nuget パッケージである [Desktop Bridge Helpers](https://www.nuget.org/packages/DesktopBridge.Helpers/) をインストールしてから、``IsRunningAsUWP()`` メソッドを使用して、Windows ランタイム API を呼び出すすべてのコードを利用することです。 詳細については、こちらのブログ投稿「[デスクトップ ブリッジ - アプリケーションのコンテキストの識別](/archive/blogs/appconsult/desktop-bridge-identify-the-applications-context)」を参照してください。
 
 ## <a name="related-samples"></a>関連するサンプル
 

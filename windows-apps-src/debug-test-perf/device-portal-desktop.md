@@ -2,20 +2,24 @@
 ms.assetid: 5c34c78e-9ff7-477b-87f6-a31367cd3f8b
 title: Windows デスクトップ用 Device Portal
 description: Windows デスクトップで Windows Device Portal の診断と自動化を利用する方法について説明します。
-ms.date: 02/06/2019
+ms.date: 08/20/2020
 ms.topic: article
+ms.custom: contperfq1
 keywords: windows 10, uwp, デバイス ポータル
 ms.localizationpriority: medium
-ms.openlocfilehash: 73f7e827c0ec8ca289d3523da06601de978a91d2
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: f06a3c933060a7309604ae8dec49455ac3bd02ab
+ms.sourcegitcommit: 41dbee78d827107c224a9136c26f90be4dfe12ad
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "79210188"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90845571"
 ---
 # <a name="device-portal-for-windows-desktop"></a>Windows デスクトップ用 Device Portal
 
-Windows Device Portal では、診断情報を表示し、ブラウザー ウィンドウから HTTP 経由でデスクトップを操作することができます。 Device Portal を使用すると、次の操作を実行できます。
+Windows デバイス ポータルは、診断情報の表示や、Web ブラウザーを使用して HTTP 経由でデスクトップ PC 操作を行えるようにするデバッグ ツールです。 他のデバイスをデバッグするには、「[Windows デバイス ポータルの概要](device-portal.md)」を参照してください。
+
+
+Device Portal を使用すると、次の操作を実行できます。
 - 実行されているプロセスの一覧を確認して操作する
 - アプリをインストール、削除、起動、および終了する
 - Wi-Fi プロファイルの変更、シグナルの強さの表示、ipconfig の確認を行う
@@ -31,48 +35,63 @@ Windows Device Portal では、診断情報を表示し、ブラウザー ウィ
 Windows 10 バージョン 1607 以降では、デスクトップ用の新しい機能の一部は開発者モードが有効なときだけ利用できます。 開発者モードを有効にする方法については、「[デバイスを開発用に有効にする](../get-started/enable-your-device-for-development.md)」をご覧ください。
 
 > [!IMPORTANT]
-> ネットワークや互換性の問題により、お使いのデバイスに開発者モードが正しくインストールされないことがあります。 これらの問題のトラブルシューティングについては、「[デバイスを開発用に有効にする](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development#failure-to-install-developer-mode-package)」の関連セクションをご覧ください。
+> ネットワークや互換性の問題により、お使いのデバイスに開発者モードが正しくインストールされないことがあります。 これらの問題のトラブルシューティングについては、「[デバイスを開発用に有効にする](../get-started/enable-your-device-for-development.md#failure-to-install-developer-mode-package)」の関連セクションをご覧ください。
 
 ### <a name="turn-on-device-portal"></a>Device Portal をオンにする
 
-**[設定]** の **[開発者向け]** セクションで、Device Portal を有効にすることができます。 Device Portal を有効にするときは、対応するユーザー名とパスワードも作成する必要があります。 Microsoft アカウントやその他の Windows の資格情報を使わないでください。 
+**[設定]** の **[開発者向け]** セクションで、Device Portal を有効にすることができます。 Device Portal を有効にするときは、対応するユーザー名とパスワードも作成する必要があります。 Microsoft アカウントやその他の Windows の資格情報を使わないでください。
 
-![設定アプリの [Device Portal] セクション](images/device-portal/device-portal-desk-settings.png) 
+![設定アプリの [Device Portal] セクション](images/device-portal/device-portal-desk-settings.png)
 
-Device Portal が有効になると、セクション下部に Web リンクが表示されます。 表示される URL の末尾に付加されたポート番号をメモします。このポート番号は、Device Portal が有効になるとランダムに生成されるものですが、デスクトップを再起動するまで同じ番号を使う必要があります。 
+Device Portal が有効になると、セクション下部に Web リンクが表示されます。 表示される URL の末尾に付加されたポート番号をメモします。このポート番号は、Device Portal が有効になるとランダムに生成されるものですが、デスクトップを再起動するまで同じ番号を使う必要があります。
 
-これらのリンクから、ローカル ネットワーク (VPN を含む) 経由、またはローカル ホスト経由のいずれかの方法で Device Portal に接続できます。
+これらのリンクから、ローカル ネットワーク (VPN を含む) 経由、またはローカル ホスト経由のいずれかの方法で Device Portal に接続できます。 接続すると、次のように表示されます。
+
+![デバイス ポータル](images/device-portal/device-portal-example.png)
+
+
+### <a name="turn-off-device-portal"></a>デバイス ポータルをオフにする
+
+**[設定]** の **[開発者向け]** セクションで、デバイス ポータルを無効にすることができます。
 
 ### <a name="connect-to-device-portal"></a>Device Portal に接続する
 
-ローカル ホスト経由で接続するには、ブラウザー ウィンドウを開き、使用している接続の種類に関して次に示すアドレスを入力します。
+ローカル ホスト経由で接続するには、ブラウザー ウィンドウを開き、使用している接続の種類に応じて次に示すアドレスを入力します。
 
 * Localhost: `http://127.0.0.1:<PORT>` または `http://localhost:<PORT>`
 * Local Network: `https://<IP address of the desktop>:<PORT>`
 
 認証とセキュリティで保護された通信には HTTPS が必要です。
 
-テスト ラボなど、保護された環境で Device Portal を使っている場合、ローカル ネットワーク上のすべてのユーザーを信頼していて、デバイス上に個人情報が保存されておらず、固有の要件もない場合は、[認証] オプションを無効にできます。 これにより、暗号化されていない通信が有効化され、コンピューターの IP アドレスを知っているすべてのユーザーが接続して制御できるようになります。
+テスト ラボなど、保護された環境でデバイス ポータルを使用している場合、ローカル ネットワーク上のすべてのユーザーを信頼していて、デバイス上に個人情報が保存されておらず、固有の要件があるのであれば、この認証オプションを無効にできます。 これにより、暗号化されていない通信が有効化され、コンピューターの IP アドレスを知っているすべてのユーザーが接続して制御できるようになります。
 
 ## <a name="device-portal-content-on-windows-desktop"></a>Windows デスクトップ上の Device Portal のコンテンツ
 
-Windows デスクトップの Device Portal では、標準のページのセットが提供されます。 これらの詳しい説明については、「[Windows Device Portal の概要](device-portal.md)」をご覧ください。
+Windows デスクトップのデバイス ポータルには、「[Windows デバイス ポータルの概要](device-portal.md)」で説明されている一連のページが表示されます。
 
 - アプリ マネージャー
+- Xbox Live
 - エクスプローラー
 - 実行中のプロセス
-- [パフォーマンス]
-- Debug
-- Windows イベント トレーシング (ETW)
+- パフォーマンス
+- デバッグ
+- ETW (Windows イベント トレーシング) ログ
 - パフォーマンス トレース
 - デバイス マネージャー
+- Bluetooth
 - ネットワーク
 - クラッシュ データ
-- 機能
+- 特徴
 - Mixed Reality
 - ストリーミング インストール デバッガー
-- インストール先
+- 場所
 - スクラッチ
+
+## <a name="using-device-portal-for-windows-desktop-to-test-and-debug-msix-apps"></a>Windows デスクトップ用のデバイス ポータルを使用した MSIX アプリのテストとデバッグ
+
+
+> [!VIDEO https://www.youtube.com/embed/PdgXeOMt4hk]
+
 
 ## <a name="more-device-portal-options"></a>Device Portal のその他のオプション
 
@@ -81,9 +100,9 @@ Windows デスクトップの Device Portal では、標準のページのセッ
 デバイス ポータルのポート番号 (80、443 など) を選択する場合は、次のレジストリ キーを設定することができます。
 
 - `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\WebManagement\Service` の下
-    - `UseDynamicPorts`:必須の DWORD。 選択したポート番号を保持するには、これを 0 に設定します。
-    - `HttpPort`:必須の DWORD。 Device Portal が HTTP 接続をリッスンするポート番号を指定します。    
-    - `HttpsPort`:必須の DWORD。 Device Portal が HTTPS 接続をリッスンするポート番号を指定します。
+    - `UseDynamicPorts`: 必須の DWORD。 選択したポート番号を保持するには、これを 0 に設定します。
+    - `HttpPort`: 必須の DWORD。 Device Portal が HTTP 接続をリッスンするポート番号を指定します。    
+    - `HttpsPort`: 必須の DWORD。 Device Portal が HTTPS 接続をリッスンするポート番号を指定します。
     
 同じレジストリ キー パスの下で、認証要件をオフにすることもできます。
 - `UseDefaultAuthorizer` - `0` (無効)、`1` (有効)。  
@@ -99,13 +118,13 @@ Windows デスクトップの Device Portal では、標準のページのセッ
 - `-DeleteSSL` 
     - このオプションを指定すると、HTTPS 接続に使用される SSL 証明書のキャッシュがリセットされます。 予期される証明書の警告ではなく、バイパスすることができない TLS 接続エラーが発生した場合は、このオプションで問題が解決される可能性があります。 
 - `-SetCert <pfxPath> <pfxPassword>`
-    - 詳しくは、「[カスタムの SSL 証明書で Device Portal をプロビジョニングする](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-ssl)」をご覧ください。  
+    - 詳しくは、「[カスタムの SSL 証明書で Device Portal をプロビジョニングする](./device-portal-ssl.md)」をご覧ください。  
     - このオプションを指定すると、独自の SSL 証明書をインストールして、通常 Device Portal に表示される SSL 警告ページを修正することができます。 
 - `-Debug <various options for authentication, port selection, and tracing level>`
-    - 特定の構成と視覚的なデバッグ メッセージを使用して、Device Portal のスタンドアロン バージョンを実行します。 これは、[パッケージ プラグイン](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-plugin)を構築するときに最も役立ちます。 
-    - これをシステムとして実行して、パッケージ プラグインを完全にテストする方法について詳しくは、[MSDN Magazine の記事](https://msdn.microsoft.com/magazine/mt826332.aspx)をご覧ください。
+    - 特定の構成と視覚的なデバッグ メッセージを使用して、Device Portal のスタンドアロン バージョンを実行します。 これは、[パッケージ プラグイン](./device-portal-plugin.md)を構築するときに最も役立ちます。 
+    - これをシステムとして実行して、パッケージ プラグインを完全にテストする方法について詳しくは、[MSDN Magazine の記事](/archive/msdn-magazine/2017/october/windows-device-portal-write-a-windows-device-portal-packaged-plug-in)をご覧ください。
 
-## <a name="common-errors-and-issues"></a>一般的なエラーと問題
+## <a name="troubleshooting"></a>トラブルシューティング
 
 デバイス ポータルの設定時に発生する可能性のある一般的なエラーを次に示します。
 
@@ -131,5 +150,5 @@ Windows 10 のプレリリース ビルドで開発者パッケージをイン�
 
 ## <a name="see-also"></a>関連項目
 
-* [Windows デバイス ポータルの概要](device-portal.md)
-* [デバイス ポータル コア API リファレンス](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-api-core)
+* [Windows Device Portal の概要](device-portal.md)
+* [デバイス ポータル コア API リファレンス](./device-portal-api-core.md)

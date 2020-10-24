@@ -5,15 +5,15 @@ ms.assetid: 4C11A7CF-DA26-4CA1-A9B9-FE52670101F5
 label: Cortana
 template: detail.hbs
 keywords: Cortana, Cortana のキャンバス, Cortana の設計, ユーザー インターフェイス, 音声コマンド, VCD
-ms.date: 02/08/2017
+ms.date: 09/24/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 09a2ed3b3f12b47b7b6d8665225ee9d830827839
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 2d79f62a98e30ef67743abd6a6dd00ce24d3fa13
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970897"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91220595"
 ---
 # <a name="cortana-interactions-in-windows-apps"></a>Windows アプリにおける Cortana のやり取り
 
@@ -23,24 +23,20 @@ Cortana には堅牢かつ包括的な機能拡張フレームワークが用意
 
 Cortanaの機能とサービスに関する開発者向けドキュメントはすべて、[Cortana デベロッパー センター](https://developer.microsoft.com/cortana)で参照できるようになりました。
 
-最初に、「[Cortana Skills Kit overview](https://docs.microsoft.com/cortana/skills/overview)」(Cortana スキル キットの概要) をご覧ください。
+最初に、「[Cortana Skills Kit overview](/cortana/skills/overview)」(Cortana スキル キットの概要) をご覧ください。
 
-音声コマンドを使用して Windows アプリから Cortana を拡張する方法については、「 [cortana voice コマンド](https://docs.microsoft.com/cortana/voice-commands/vcd)」を参照してください。 
+音声コマンドを使用して Windows アプリから Cortana を拡張する方法については、「 [cortana voice コマンド](/cortana/voice-commands/vcd)」を参照してください。 
 
 ## <a name="related-articles"></a>関連記事
 
-* [**VCD 要素および属性 v1.2**](https://docs.microsoft.com/uwp/schemas/voicecommands/voice-command-elements-and-attributes-1-2)
+* [**VCD 要素および属性 v1.2**](/uwp/schemas/voicecommands/voice-command-elements-and-attributes-1-2)
 
 **デザイナー**
 * [音声認識のデザイン ガイドライン](speech-interactions.md)
-* [音声コマンド用の Cortana の設計ガイドライン](https://docs.microsoft.com/cortana/voice-commands/voicecommand-design-guidelines)
+* [音声コマンド用の Cortana の設計ガイドライン](/cortana/voice-commands/voicecommand-design-guidelines)
 
 **サンプル**
 * [Cortana 音声コマンドのサンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CortanaVoiceCommand)
  
 
  
-
-
-
-

@@ -3,16 +3,16 @@ Description: Windows アプリでセカンダリタイルを使用するタイ�
 title: セカンダリタイルの設計ガイダンス
 label: Secondary tiles
 template: detail.hbs
-ms.date: 05/25/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: Windows 10、UWP、セカンダリ タイル、ガイダンス、ガイドライン、ベスト プラクティス
 ms.localizationpriority: medium
-ms.openlocfilehash: 400b0d48fd68c720d613325d1938c0c4a70931a7
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 5414c9d8437ee77e2a4a584dea26f7bf1fadef4a
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82971027"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91220235"
 ---
 # <a name="secondary-tile-guidance"></a>セカンダリ タイルのガイダンス
 
@@ -49,6 +49,6 @@ ms.locfileid: "82971027"
 
 * [セカンダリ タイルの概要](secondary-tiles.md)
 * [セカンダリ タイルをピン留めする](secondary-tiles-pinning.md)
-* [タイル アセット](app-assets.md)
+* [タイル アセット](../../style/app-icons-and-logos.md)
 * [タイル コンテンツのドキュメント](create-adaptive-tiles.md)
 * [ローカル タイル通知の送信](sending-a-local-tile-notification.md)

@@ -3,36 +3,36 @@ Description: Windows アプリのキーボード、ゲームパッド、およ�
 title: キーボード、ゲームパッド、アクセシビリティ ツールでのプログラムによるフォーカス ナビゲーション
 label: Programmatic focus navigation
 keywords: キーボード, ゲーム コントローラー, リモコン, ナビゲーション, ナビゲーション方法, 入力, ユーザーの操作, アクセシビリティ, 操作性
-ms.date: 03/19/2018
+ms.date: 09/24/2020
 ms.topic: article
 pm-contact: miguelrb
 design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 6b66363588ddad01b05ccc9cc6b3b7912fa21594
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: ef2e62404766d822343537cea2aca8e512482093
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970147"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91220535"
 ---
 # <a name="programmatic-focus-navigation"></a>プログラムによるフォーカス ナビゲーション
 
 ![キーボード、リモート、および方向パッド](images/dpad-remote/dpad-remote-keyboard.png)
 
-Windows アプリケーションでプログラムによってフォーカスを移動するには、 [system.windows.input.focusmanager>](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.focusmanager#Windows_UI_Xaml_Input_FocusManager_TryMoveFocus_Windows_UI_Xaml_Input_FocusNavigationDirection_)メソッドまたは[FindNextElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.focusmanager#Windows_UI_Xaml_Input_FocusManager_FindNextElement_Windows_UI_Xaml_Input_FocusNavigationDirection_)メソッドを使用します。
+Windows アプリケーションでプログラムによってフォーカスを移動するには、 [system.windows.input.focusmanager>](/uwp/api/windows.ui.xaml.input.focusmanager#Windows_UI_Xaml_Input_FocusManager_TryMoveFocus_Windows_UI_Xaml_Input_FocusNavigationDirection_) メソッドまたは [FindNextElement](/uwp/api/windows.ui.xaml.input.focusmanager#Windows_UI_Xaml_Input_FocusManager_FindNextElement_Windows_UI_Xaml_Input_FocusNavigationDirection_) メソッドを使用します。
 
-[TryMoveFocus](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.focusmanager#Windows_UI_Xaml_Input_FocusManager_TryMoveFocus_Windows_UI_Xaml_Input_FocusNavigationDirection_) は、フォーカスを持つ要素から、指定された方向にあるフォーカス可能な次の要素にフォーカスを移動します。[FindNextElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.focusmanager#Windows_UI_Xaml_Input_FocusManager_FindNextElement_Windows_UI_Xaml_Input_FocusNavigationDirection_) は、指定されたナビゲーションの方向に基づいてフォーカスを受け取る要素 ([DependencyObject](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyobject)) を取得します (方向ナビゲーションのみ、タブ ナビゲーションのエミュレートには使用できません)。
+[TryMoveFocus](/uwp/api/windows.ui.xaml.input.focusmanager#Windows_UI_Xaml_Input_FocusManager_TryMoveFocus_Windows_UI_Xaml_Input_FocusNavigationDirection_) は、フォーカスを持つ要素から、指定された方向にあるフォーカス可能な次の要素にフォーカスを移動します。[FindNextElement](/uwp/api/windows.ui.xaml.input.focusmanager#Windows_UI_Xaml_Input_FocusManager_FindNextElement_Windows_UI_Xaml_Input_FocusNavigationDirection_) は、指定されたナビゲーションの方向に基づいてフォーカスを受け取る要素 ([DependencyObject](/uwp/api/windows.ui.xaml.dependencyobject)) を取得します (方向ナビゲーションのみ、タブ ナビゲーションのエミュレートには使用できません)。
 
 > [!NOTE]
-> [FindNextFocusableElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.focusmanager#Windows_UI_Xaml_Input_FocusManager_FindNextFocusableElement_Windows_UI_Xaml_Input_FocusNavigationDirection_) ではなく、[FindNextElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.focusmanager#Windows_UI_Xaml_Input_FocusManager_FindNextElement_Windows_UI_Xaml_Input_FocusNavigationDirection_) メソッドの使用をお勧めします。FindNextFocusableElement は UIElement を取得し、この UIElement はフォーカス可能な次の要素が UIElement ではない場合 (Hyperlink オブジェクトなどの場合) に null を返すためです。 
+> [FindNextFocusableElement](/uwp/api/windows.ui.xaml.input.focusmanager#Windows_UI_Xaml_Input_FocusManager_FindNextFocusableElement_Windows_UI_Xaml_Input_FocusNavigationDirection_) ではなく、[FindNextElement](/uwp/api/windows.ui.xaml.input.focusmanager#Windows_UI_Xaml_Input_FocusManager_FindNextElement_Windows_UI_Xaml_Input_FocusNavigationDirection_) メソッドの使用をお勧めします。FindNextFocusableElement は UIElement を取得し、この UIElement はフォーカス可能な次の要素が UIElement ではない場合 (Hyperlink オブジェクトなどの場合) に null を返すためです。 
 
 ## <a name="find-a-focus-candidate-within-a-scope"></a>スコープ内でフォーカス候補を見つける
 
-[TryMoveFocus](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.focusmanager#Windows_UI_Xaml_Input_FocusManager_TryMoveFocus_Windows_UI_Xaml_Input_FocusNavigationDirection_) と [FindNextElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.focusmanager#Windows_UI_Xaml_Input_FocusManager_FindNextElement_Windows_UI_Xaml_Input_FocusNavigationDirection_) のどちらについても、フォーカス ナビゲーションの動作をカスタマイズできます。たとえば、特定の UI ツリー内にある次のフォーカス候補を検索したり、特定の要素を対象から除外したりすることができます。
+[TryMoveFocus](/uwp/api/windows.ui.xaml.input.focusmanager#Windows_UI_Xaml_Input_FocusManager_TryMoveFocus_Windows_UI_Xaml_Input_FocusNavigationDirection_) と [FindNextElement](/uwp/api/windows.ui.xaml.input.focusmanager#Windows_UI_Xaml_Input_FocusManager_FindNextElement_Windows_UI_Xaml_Input_FocusNavigationDirection_) のどちらについても、フォーカス ナビゲーションの動作をカスタマイズできます。たとえば、特定の UI ツリー内にある次のフォーカス候補を検索したり、特定の要素を対象から除外したりすることができます。
 
-次の例では、三目並べゲームを使用して、[TryMoveFocus](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.focusmanager#Windows_UI_Xaml_Input_FocusManager_TryMoveFocus_Windows_UI_Xaml_Input_FocusNavigationDirection_) メソッドと [FindNextElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.focusmanager#Windows_UI_Xaml_Input_FocusManager_FindNextElement_Windows_UI_Xaml_Input_FocusNavigationDirection_) メソッドの使用例を示します。
+次の例では、三目並べゲームを使用して、[TryMoveFocus](/uwp/api/windows.ui.xaml.input.focusmanager#Windows_UI_Xaml_Input_FocusManager_TryMoveFocus_Windows_UI_Xaml_Input_FocusNavigationDirection_) メソッドと [FindNextElement](/uwp/api/windows.ui.xaml.input.focusmanager#Windows_UI_Xaml_Input_FocusManager_FindNextElement_Windows_UI_Xaml_Input_FocusNavigationDirection_) メソッドの使用例を示します。
 
 ```xaml
 <StackPanel Orientation="Horizontal"
@@ -123,23 +123,23 @@ private void OnKeyDown(object sender, KeyRoutedEventArgs e)
 }
 ```
 
-[FindNextElementOptions](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.findnextelementoptions) を使用して、フォーカス候補の識別方法をさらにカスタマイズします。 このオブジェクトは、次のプロパティを提供します。
+[FindNextElementOptions](/uwp/api/windows.ui.xaml.input.findnextelementoptions) を使用して、フォーカス候補の識別方法をさらにカスタマイズします。 このオブジェクトは、次のプロパティを提供します。
 
-- [SearchRoot](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.findnextelementoptions#Windows_UI_Xaml_Input_FindNextElementOptions_SearchRoot) - フォーカス ナビゲーションの候補を検索するスコープを、この DependencyObject の子に設定します。 Null は、ビジュアル ツリーのルートから検索を開始することを示します。
+- [SearchRoot](/uwp/api/windows.ui.xaml.input.findnextelementoptions#Windows_UI_Xaml_Input_FindNextElementOptions_SearchRoot) - フォーカス ナビゲーションの候補を検索するスコープを、この DependencyObject の子に設定します。 Null は、ビジュアル ツリーのルートから検索を開始することを示します。
 
 > [!Important] 
 > **SearchRoot** の子孫に 1 つ以上の変換が適用され、子孫が方向領域の外側に配置される場合でも、これらの要素 (子孫) が候補と見なされます。
 
-- [ExclusionRect](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.findnextelementoptions#Windows_UI_Xaml_Input_FindNextElementOptions_ExclusionRect) - フォーカス ナビゲーションの候補は、"架空の" 四角形領域を使用して識別されます。この四角形領域では、領域に重なるすべてのオブジェクトがフォーカスのナビゲーションから除外されます。 この四角形領域は、計算にのみ使用され、ビジュアル ツリーには追加されません。
-- [HintRect](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.findnextelementoptions#Windows_UI_Xaml_Input_FindNextElementOptions_HintRect) - フォーカス ナビゲーションの候補は、"架空の" 四角形領域を使用して識別されます。この四角形領域では、フォーカスを受け取る可能性が最も高い要素が特定されます。 この四角形領域は、計算にのみ使用され、ビジュアル ツリーには追加されません。
-- [XYFocusNavigationStrategyOverride](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.findnextelementoptions#Windows_UI_Xaml_Input_FindNextElementOptions_XYFocusNavigationStrategyOverride) - フォーカスを受け取る最も適切な候補となる要素を識別するために使用されるナビゲーション方法です。
+- [ExclusionRect](/uwp/api/windows.ui.xaml.input.findnextelementoptions#Windows_UI_Xaml_Input_FindNextElementOptions_ExclusionRect) - フォーカス ナビゲーションの候補は、"架空の" 四角形領域を使用して識別されます。この四角形領域では、領域に重なるすべてのオブジェクトがフォーカスのナビゲーションから除外されます。 この四角形領域は、計算にのみ使用され、ビジュアル ツリーには追加されません。
+- [HintRect](/uwp/api/windows.ui.xaml.input.findnextelementoptions#Windows_UI_Xaml_Input_FindNextElementOptions_HintRect) - フォーカス ナビゲーションの候補は、"架空の" 四角形領域を使用して識別されます。この四角形領域では、フォーカスを受け取る可能性が最も高い要素が特定されます。 この四角形領域は、計算にのみ使用され、ビジュアル ツリーには追加されません。
+- [XYFocusNavigationStrategyOverride](/uwp/api/windows.ui.xaml.input.findnextelementoptions#Windows_UI_Xaml_Input_FindNextElementOptions_XYFocusNavigationStrategyOverride) - フォーカスを受け取る最も適切な候補となる要素を識別するために使用されるナビゲーション方法です。
 
 次の図は、これらの概念の一部を示しています。 
 
 要素 B にフォーカスがある場合、右に移動すると、FindNextElement によって I がフォーカス候補として識別されます。 これには次の理由があります。
-- A に対する [HintRect](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.findnextelementoptions#Windows_UI_Xaml_Input_FindNextElementOptions_HintRect) によって、参照の開始が A となり、B ではないため
-- MyPanel が [SearchRoot](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.findnextelementoptions#Windows_UI_Xaml_Input_FindNextElementOptions_SearchRoot) として指定されているため、C は候補にはならない
-- [ExclusionRect](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.findnextelementoptions#Windows_UI_Xaml_Input_FindNextElementOptions_ExclusionRect) が F に重なっているため、F は候補にはならない
+- A に対する [HintRect](/uwp/api/windows.ui.xaml.input.findnextelementoptions#Windows_UI_Xaml_Input_FindNextElementOptions_HintRect) によって、参照の開始が A となり、B ではないため
+- MyPanel が [SearchRoot](/uwp/api/windows.ui.xaml.input.findnextelementoptions#Windows_UI_Xaml_Input_FindNextElementOptions_SearchRoot) として指定されているため、C は候補にはならない
+- [ExclusionRect](/uwp/api/windows.ui.xaml.input.findnextelementoptions#Windows_UI_Xaml_Input_FindNextElementOptions_ExclusionRect) が F に重なっているため、F は候補にはならない
 
 ![ナビゲーション ヒントを使用したカスタム フォーカス ナビゲーションの動作](images/keyboard/navigation-hints.png)
 
@@ -149,13 +149,13 @@ private void OnKeyDown(object sender, KeyRoutedEventArgs e)
 
 ### <a name="nofocuscandidatefound-event"></a>NoFocusCandidateFound イベント
 
-[UIElement.NoFocusCandidateFound](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement#Windows_UI_Xaml_UIElement_NoFocusCandidateFound) イベントは、ユーザーが Tab キーまたは方向キーを押したが、指定された方向にフォーカス候補がない場合に発生します。 このイベントは、[TryMoveFocus](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.focusmanager#Windows_UI_Xaml_Input_FocusManager_TryMoveFocus_Windows_UI_Xaml_Input_FocusNavigationDirection_) に対しては発生しません。
+[UIElement.NoFocusCandidateFound](/uwp/api/windows.ui.xaml.uielement#Windows_UI_Xaml_UIElement_NoFocusCandidateFound) イベントは、ユーザーが Tab キーまたは方向キーを押したが、指定された方向にフォーカス候補がない場合に発生します。 このイベントは、[TryMoveFocus](/uwp/api/windows.ui.xaml.input.focusmanager#Windows_UI_Xaml_Input_FocusManager_TryMoveFocus_Windows_UI_Xaml_Input_FocusNavigationDirection_) に対しては発生しません。
 
 これはルーティング イベントであるため、フォーカスのある要素から、連続する親オブジェクトを通ってオブジェクト ツリーのルートまでバブル アップします。 これにより、適切な場合はいつでもイベントを処理することができます。
 
 <a name="split-view-code-sample"></a>
 
-ユーザーがフォーカス可能な一番左のコントロールの左側にフォーカスを移動しようとしたときに、Grid がどのようにして [SplitView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.splitview) を開くかを次に示します ([「Xbox およびテレビ向け設計」](../devices/designing-for-tv.md#navigation-pane)をご覧ください)。
+ユーザーがフォーカス可能な一番左のコントロールの左側にフォーカスを移動しようとしたときに、Grid がどのようにして [SplitView](/uwp/api/windows.ui.xaml.controls.splitview) を開くかを次に示します ([「Xbox およびテレビ向け設計」](../devices/designing-for-tv.md#navigation-pane)をご覧ください)。
 
 ```xaml
 <Grid NoFocusCandidateFound="OnNoFocusCandidateFound">
@@ -180,32 +180,32 @@ private void OnNoFocusCandidateFound (
 ```
 
 ### <a name="gotfocus-and-lostfocus-events"></a>GotFocus イベントと LostFocus events イベント
-[UIElement.GotFocus](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_GotFocus) イベントと [UIElement.LostFocus](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_LostFocus) イベントは、それぞれ要素がフォーカスを取得したとき、およびフォーカスを失ったときに発生します。 このイベントは、[TryMoveFocus](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.focusmanager#Windows_UI_Xaml_Input_FocusManager_TryMoveFocus_Windows_UI_Xaml_Input_FocusNavigationDirection_) に対しては発生しません。
+[UIElement.GotFocus](/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_GotFocus) イベントと [UIElement.LostFocus](/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_LostFocus) イベントは、それぞれ要素がフォーカスを取得したとき、およびフォーカスを失ったときに発生します。 このイベントは、[TryMoveFocus](/uwp/api/windows.ui.xaml.input.focusmanager#Windows_UI_Xaml_Input_FocusManager_TryMoveFocus_Windows_UI_Xaml_Input_FocusNavigationDirection_) に対しては発生しません。
 
 これらのイベントはルーティング イベントであるため、フォーカスのある要素から、連続する親オブジェクトを通ってオブジェクト ツリーのルートまでバブル アップします。 これにより、適切な場合はいつでもイベントを処理することができます。
 
 ### <a name="gettingfocus-and-losingfocus-events"></a>GettingFocus イベントと LosingFocus イベント
 
-[UIElement.GettingFocus](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_GettingFocus) イベントと [UIElement.LosingFocus](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_LosingFocus) イベントは、それぞれに対応する [UIElement.GotFocus](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_GotFocus) や [UIElement.LostFocus](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_LostFocus) の前に発生します。 
+[UIElement.GettingFocus](/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_GettingFocus) イベントと [UIElement.LosingFocus](/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_LosingFocus) イベントは、それぞれに対応する [UIElement.GotFocus](/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_GotFocus) や [UIElement.LostFocus](/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_LostFocus) の前に発生します。 
 
 これらのイベントはルーティング イベントであるため、フォーカスのある要素から、連続する親オブジェクトを通ってオブジェクト ツリーのルートまでバブル アップします。 これはフォーカスの移動前に行われるため、フォーカスの移動をリダイレクトしたり、キャンセルしたりすることができます。
 
-[GettingFocus](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_GettingFocus) と [LosingFocus](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_LosingFocus) は同期イベントであるため、これらのイベントのバブル中はフォーカスが移動しません。 ただし、[GotFocus](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_GotFocus) と [LostFocus](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_LostFocus) は非同期イベントであるため、ハンドラーが実行される前にフォーカスがもう一度移動しないことは保証されません。
+[GettingFocus](/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_GettingFocus) と [LosingFocus](/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_LosingFocus) は同期イベントであるため、これらのイベントのバブル中はフォーカスが移動しません。 ただし、[GotFocus](/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_GotFocus) と [LostFocus](/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_LostFocus) は非同期イベントであるため、ハンドラーが実行される前にフォーカスがもう一度移動しないことは保証されません。
 
-[Control.Focus](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control#Windows_UI_Xaml_Controls_Control_Focus_Windows_UI_Xaml_FocusState_) の呼び出しを経由してフォーカスが移動した場合、その呼び出し時に [GettingFocus](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_GettingFocus) が発生しますが、[GotFocus](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_GotFocus) は、その呼び出しの後に発生します。
+[Control.Focus](/uwp/api/windows.ui.xaml.controls.control#Windows_UI_Xaml_Controls_Control_Focus_Windows_UI_Xaml_FocusState_) の呼び出しを経由してフォーカスが移動した場合、その呼び出し時に [GettingFocus](/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_GettingFocus) が発生しますが、[GotFocus](/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_GotFocus) は、その呼び出しの後に発生します。
 
-[GettingFocus](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_GettingFocus) イベントや [LosingFocus](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_LosingFocus) イベントが発生しているとき (フォーカスが移動する前) に、[GettingFocusEventArgs.NewFocusedElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.gettingfocuseventargs#Windows_UI_Xaml_Input_GettingFocusEventArgs_NewFocusedElement) プロパティを使用することで、フォーカス ナビゲーションのターゲットを変更できます。 ターゲットが変更されている場合でも、イベントはバブルし、ターゲットをもう一度変更できます。
+[GettingFocus](/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_GettingFocus) イベントや [LosingFocus](/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_LosingFocus) イベントが発生しているとき (フォーカスが移動する前) に、[GettingFocusEventArgs.NewFocusedElement](/uwp/api/windows.ui.xaml.input.gettingfocuseventargs#Windows_UI_Xaml_Input_GettingFocusEventArgs_NewFocusedElement) プロパティを使用することで、フォーカス ナビゲーションのターゲットを変更できます。 ターゲットが変更されている場合でも、イベントはバブルし、ターゲットをもう一度変更できます。
 
-再入の問題を回避するために、これらのイベントのバブル中にフォーカスを移動しようとした場合 ([TryMoveFocus](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.focusmanager#Windows_UI_Xaml_Input_FocusManager_TryMoveFocus_Windows_UI_Xaml_Input_FocusNavigationDirection_) または [Control.Focus](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control#Windows_UI_Xaml_Controls_Control_Focus_Windows_UI_Xaml_FocusState_) を使用)、例外がスローされます。
+再入の問題を回避するために、これらのイベントのバブル中にフォーカスを移動しようとした場合 ([TryMoveFocus](/uwp/api/windows.ui.xaml.input.focusmanager#Windows_UI_Xaml_Input_FocusManager_TryMoveFocus_Windows_UI_Xaml_Input_FocusNavigationDirection_) または [Control.Focus](/uwp/api/windows.ui.xaml.controls.control#Windows_UI_Xaml_Controls_Control_Focus_Windows_UI_Xaml_FocusState_) を使用)、例外がスローされます。
 
 これらのイベントは、フォーカスの移動理由 (たとえば、タブ ナビゲーション、方向ナビゲーション、プログラムによるナビゲーションなど) に関係なく発生します。
 
 フォーカス イベントの実行順序を以下に示します。
 
-1.  [LosingFocus](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_LosingFocus): フォーカスを失った要素にフォーカスがリセットされるか、[TryCancel](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.losingfocuseventargs#Windows_UI_Xaml_Input_LosingFocusEventArgs_TryCancel) が成功した場合、それ以上イベントは発生しません。
-2.  [GettingFocus](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_GettingFocus): フォーカスを失った要素にフォーカスがリセットされるか、[TryCancel](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.gettingfocuseventargs#Windows_UI_Xaml_Input_GettingFocusEventArgs_TryCancel) が成功した場合、それ以上イベントは発生しません。
-3.  [LostFocus](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_LostFocus)
-4.  [GotFocus](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_GotFocus)
+1.  [LosingFocus](/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_LosingFocus): フォーカスを失った要素にフォーカスがリセットされるか、[TryCancel](/uwp/api/windows.ui.xaml.input.losingfocuseventargs#Windows_UI_Xaml_Input_LosingFocusEventArgs_TryCancel) が成功した場合、それ以上イベントは発生しません。
+2.  [GettingFocus](/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_GettingFocus): フォーカスを失った要素にフォーカスがリセットされるか、[TryCancel](/uwp/api/windows.ui.xaml.input.gettingfocuseventargs#Windows_UI_Xaml_Input_GettingFocusEventArgs_TryCancel) が成功した場合、それ以上イベントは発生しません。
+3.  [LostFocus](/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_LostFocus)
+4.  [GotFocus](/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_GotFocus)
 
 次の図は、A から右に移動するとき、XYFocus では B4 がどのようにして候補として選択されるかを示しています。 候補として選択された後、B4 によって GettingFocus イベントが発生し、ListView が B3 にフォーカスを再割り当てすることができます。
 
@@ -213,7 +213,7 @@ private void OnNoFocusCandidateFound (
 
 *GettingFocus イベントでフォーカス ナビゲーションのターゲットを変更する*
 
-[GettingFocus](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_GettingFocus) イベントを処理し、フォーカスをリダイレクトする方法を次に示します。
+[GettingFocus](/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_GettingFocus) イベントを処理し、フォーカスをリダイレクトする方法を次に示します。
 
 ```XAML
 <StackPanel Orientation="Horizontal">
@@ -250,7 +250,7 @@ private void OnGettingFocus(UIElement sender, GettingFocusEventArgs args)
 }
 ```
 
-[CommandBar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.commandbar) の [LosingFocus](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_LosingFocus) イベントを処理し、メニューが閉じたときにフォーカスを設定する方法を次に示します。
+[CommandBar](/uwp/api/windows.ui.xaml.controls.commandbar) の [LosingFocus](/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_LosingFocus) イベントを処理し、メニューが閉じたときにフォーカスを設定する方法を次に示します。
 
 ```XAML
 <CommandBar x:Name="MyCommandBar" LosingFocus="OnLosingFocus">
@@ -282,7 +282,7 @@ private void OnLosingFocus(UIElement sender, LosingFocusEventArgs args)
 
 ## <a name="find-the-first-and-last-focusable-element"></a>フォーカス可能な最初と最後の要素を見つける
 
-[FocusManager.FindFirstFocusableElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.focusmanager#Windows_UI_Xaml_Input_FocusManager_FindFirstFocusableElement_Windows_UI_Xaml_DependencyObject_) メソッドと [FocusManager.FindLastFocusableElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.focusmanager#Windows_UI_Xaml_Input_FocusManager_FindLastFocusableElement_Windows_UI_Xaml_DependencyObject_) メソッドでは、オブジェクトのスコープ内にあるフォーカス可能な最初または最後の要素にフォーカスが移動されます ([UIElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement) の要素ツリーや [TextElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.documents.textelement) のテキスト ツリー)。 スコープは呼び出しで指定されます (引数が null の場合、スコープは現在のウィンドウになります)。
+[FocusManager.FindFirstFocusableElement](/uwp/api/windows.ui.xaml.input.focusmanager#Windows_UI_Xaml_Input_FocusManager_FindFirstFocusableElement_Windows_UI_Xaml_DependencyObject_) メソッドと [FocusManager.FindLastFocusableElement](/uwp/api/windows.ui.xaml.input.focusmanager#Windows_UI_Xaml_Input_FocusManager_FindLastFocusableElement_Windows_UI_Xaml_DependencyObject_) メソッドでは、オブジェクトのスコープ内にあるフォーカス可能な最初または最後の要素にフォーカスが移動されます ([UIElement](/uwp/api/windows.ui.xaml.uielement) の要素ツリーや [TextElement](/uwp/api/windows.ui.xaml.documents.textelement) のテキスト ツリー)。 スコープは呼び出しで指定されます (引数が null の場合、スコープは現在のウィンドウになります)。
 
 スコープ内でフォーカス候補を識別できない場合、null が返されます。
 
@@ -329,4 +329,4 @@ private void OnLosingFocus(UIElement sender, LosingFocusEventArgs args)
 
 - [キーボード、ゲームパッド、リモコン、アクセシビリティ ツールのフォーカス ナビゲーション](focus-navigation.md)
 - [キーボード操作](keyboard-interactions.md)
-- [キーボードのアクセシビリティ](../accessibility/keyboard-accessibility.md)
+- [キーボードアクセシビリティ](../accessibility/keyboard-accessibility.md)

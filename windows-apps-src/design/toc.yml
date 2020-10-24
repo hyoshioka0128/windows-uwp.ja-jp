@@ -96,7 +96,7 @@
           href: controls-and-patterns/rating.md
         - name: スライダー
           href: controls-and-patterns/slider.md
-        - name: トグル
+        - name: トグル スイッチ
           href: controls-and-patterns/toggles.md
     - name: コレクション
       items:
@@ -360,7 +360,7 @@
                   items:
                     - name: 概要
                       href: shell/tiles-and-notifications/toast-desktop-apps.md
-                    - name: 'C# アプリ'
+                    - name: C# アプリ
                       href: shell/tiles-and-notifications/send-local-toast-desktop.md
                     - name: C++ WRL アプリ
                       href: shell/tiles-and-notifications/send-local-toast-desktop-cpp-wrl.md
@@ -450,6 +450,18 @@
           href: input/respond-to-the-presence-of-the-touch-keyboard.md
         - name: 入力値の種類を使ったタッチ キーボードの変更
           href: input/use-input-scope-to-change-the-touch-keyboard.md
+    - name: テキスト入力
+      items:
+        - name: カスタム テキスト入力
+          href: input/custom-text-input.md
+        - name: テキストの拡大縮小
+          href: input/text-scaling.md
+        - name: テキストと画像の選択
+          href: input/guidelines-for-textselection.md
+        - name: 入力方式エディター
+          href: input/input-method-editors.md
+        - name: 入力方式エディターの要件
+          href: input/input-method-editor-requirements.md
     - name: ゲームパッドとリモート制御
       href: input/gamepad-and-remote-interactions.md
     - name: Touchpad
@@ -478,29 +490,25 @@
       href: input/cortana-interactions.md
       items:
         - name: 設計ガイドライン
-          href: 'https://docs.microsoft.com/cortana/voice-commands/voicecommand-design-guidelines'
+          href: /cortana/voice-commands/voicecommand-design-guidelines
         - name: フォアグラウンド アプリのアクティブ化
-          href: 'https://docs.microsoft.com/cortana/voice-commands/launch-a-foreground-app-with-voice-commands-in-cortana'
+          href: /cortana/voice-commands/launch-a-foreground-app-with-voice-commands-in-cortana
         - name: 音声コマンド定義 (VCD) の語句一覧の動的変更
-          href: 'https://docs.microsoft.com/cortana/voice-commands/dynamically-modify-voice-command-definition-vcd-phrase-lists'
+          href: /cortana/voice-commands/dynamically-modify-voice-command-definition-vcd-phrase-lists
         - name: バックグラウンド アプリの起動
-          href: 'https://docs.microsoft.com/cortana/voice-commands/launch-a-background-app-with-voice-commands-in-cortana'
+          href: /cortana/voice-commands/launch-a-background-app-with-voice-commands-in-cortana
         - name: バックグラウンド アプリの操作
-          href: 'https://docs.microsoft.com/cortana/voice-commands/interact-with-a-background-app-in-cortana'
+          href: /cortana/voice-commands/interact-with-a-background-app-in-cortana
         - name: バックグラウンド アプリからのディープ リンク
-          href: 'https://docs.microsoft.com/cortana/voice-commands/deep-link-into-your-app-from-cortana'
+          href: /cortana/voice-commands/deep-link-into-your-app-from-cortana
         - name: 自然言語音声コマンドのサポート
-          href: 'https://docs.microsoft.com/cortana/voice-commands/support-natural-language-voice-commands-in-cortana'
+          href: /cortana/voice-commands/support-natural-language-voice-commands-in-cortana
     - name: 複数の入力
       href: input/multiple-input-design-guidelines.md
     - name: 入力の挿入
       href: input/input-injection.md
     - name: 入力デバイスの識別
       href: input/identify-input-devices.md
-    - name: カスタム テキスト入力
-      href: input/custom-text-input.md
-    - name: テキストの拡大縮小
-      href: input/text-scaling.md
     - name: ドラッグ アンド ドロップ
       href: input/drag-and-drop.md
     - name: 光学式ズームとサイズ変更
@@ -509,8 +517,6 @@
       href: input/guidelines-for-panning.md
     - name: 回転
       href: input/guidelines-for-rotation.md
-    - name: テキストと画像の選択
-      href: input/guidelines-for-textselection.md
     - name: ターゲット
       href: input/guidelines-for-targeting.md
     - name: 視覚的なフィードバック
@@ -527,7 +533,7 @@
   items:
     - name: 概要
       href: usability/index.md
-    - name: アクセシビリティ
+    - name: ユーザー補助
       href: accessibility/accessibility.md
       items:
         - name: 概要

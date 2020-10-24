@@ -1,19 +1,19 @@
 ---
-description: ペン、Surface Dial、その他の種類の入力に合わせて、アプリを最適化します。
+description: ペン、Surface dial、音声など、特定の種類の入力を操作するユニバーサル Windows プラットフォーム (UWP) アプリをカスタマイズする方法について説明します。
 title: 入力と操作
 keywords: アプリの入力, UWP アプリケーションのカスタマイズ
 label: Input and interactions
 template: detail.hbs
-ms.date: 02/08/2017
+ms.date: 09/24/2020
 ms.topic: article
 ms.assetid: b771d452-c3ac-4d97-8482-eaf81bf34306
 ms.localizationpriority: medium
-ms.openlocfilehash: 83c6fc59d1161352eda636c91c89f34d87391545
-ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
+ms.openlocfilehash: afaaa13110df78ad68c2cca1200f7c4d8931c4d6
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83234600"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91220615"
 ---
 # <a name="input-and-interactions"></a>入力と操作
 

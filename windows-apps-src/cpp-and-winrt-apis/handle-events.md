@@ -5,16 +5,16 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: Windows 10、uwp、標準、c++、cpp、winrt、プロジェクション、プロジェクション、処理、イベント、デリゲート
 ms.localizationpriority: medium
-ms.openlocfilehash: eae966c130c52305b53cc4122844aeae49ecab92
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 2d2470b1aa52f8aa4be7e07bf1dfe5213054b005
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82267495"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89166246"
 ---
 # <a name="handle-events-by-using-delegates-in-cwinrt"></a>C++/WinRT でのデリゲートを使用したイベントの処理
 
-このトピックでは、[C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) を使用したイベント処理デリゲートの登録方法と取り消し方法について説明します。 標準的な C++ 関数のようなオブジェクトを使用してイベントを処理できます。
+このトピックでは、[C++/WinRT](./intro-to-using-cpp-with-winrt.md) を使用したイベント処理デリゲートの登録方法と取り消し方法について説明します。 標準的な C++ 関数のようなオブジェクトを使用してイベントを処理できます。
 
 > [!NOTE]
 > C++/WinRT Visual Studio Extension (VSIX) と NuGet パッケージ (両者が連携してプロジェクト テンプレートとビルドをサポート) のインストールと使用については、[Visual Studio での C++/WinRT のサポート](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)に関する記事を参照してください。
@@ -39,10 +39,14 @@ XAML デザイナーにより、適切なイベント ハンドラー関数の�
 
 ```cppwinrt
 // MainPage.h
-void ClickHandler(winrt::Windows::Foundation::IInspectable const& sender, winrt::Windows::UI::Xaml::RoutedEventArgs const& args);
+void ClickHandler(
+    winrt::Windows::Foundation::IInspectable const& sender,
+    winrt::Windows::UI::Xaml::RoutedEventArgs const& args);
 
 // MainPage.cpp
-void MainPage::ClickHandler(IInspectable const& /* sender */, RoutedEventArgs const& /* args */)
+void MainPage::ClickHandler(
+    IInspectable const& /* sender */,
+    RoutedEventArgs const& /* args */)
 {
     Button().Content(box_value(L"Clicked"));
 }
@@ -67,7 +71,9 @@ MainPage::MainPage()
 
 ```cppwinrt
 // MainPage.h
-static void ClickHandler(winrt::Windows::Foundation::IInspectable const& sender, winrt::Windows::UI::Xaml::RoutedEventArgs const& args);
+static void ClickHandler(
+    winrt::Windows::Foundation::IInspectable const& sender,
+    winrt::Windows::UI::Xaml::RoutedEventArgs const& args);
 
 // MainPage.cpp
 MainPage::MainPage()
@@ -76,7 +82,9 @@ MainPage::MainPage()
 
     Button().Click( MainPage::ClickHandler );
 }
-void MainPage::ClickHandler(IInspectable const& /* sender */, RoutedEventArgs const& /* args */) { ... }
+void MainPage::ClickHandler(
+    IInspectable const& /* sender */,
+    RoutedEventArgs const& /* args */) { ... }
 ```
 
 **RoutedEventHandler** の作成には他の方法もあります。 次に、[**RoutedEventHandler**](/uwp/api/windows.ui.xaml.routedeventhandler) のドキュメント内にある構文ブロックを示します (Web ページの右上の **[言語]** ドロップダウンから [*C++/WinRT*] を選択します)。 さまざまなコンストラクターがあることに注意してください。ラムダ、自由関数、メンバー関数へのオブジェクトとポインター (上記で使用したもの) を受け取ります。
@@ -106,7 +114,9 @@ struct RoutedEventHandler : winrt::Windows::Foundation::IUnknown
 > その情報から、**UIElement.KeyDown** イベント (現在のトピック) には **KeyEventHandler** のデリゲート型があることがわかります。これは、このイベント型にデリゲートを登録するときに渡す型だからです。 次は、このトピックの [KeyEventHandler デリゲート](/uwp/api/windows.ui.xaml.input.keyeventhandler)型のリンクをたどりましょう。 この構文ブロックには関数呼び出し演算子が含まれています。 また、前述のように、必要なデリケートのパラメーターを通知します。
 > 
 > ```cppwinrt
-> void operator()(winrt::Windows::Foundation::IInspectable const& sender, winrt::Windows::UI::Xaml::Input::KeyRoutedEventArgs const& e) const;
+> void operator()(
+    winrt::Windows::Foundation::IInspectable const& sender,
+    winrt::Windows::UI::Xaml::Input::KeyRoutedEventArgs const& e) const;
 > ```
 >
 >  ご覧のとおり、送信者として **IInspectable** を、引数として [KeyRoutedEventArgs クラス](/uwp/api/windows.ui.xaml.input.keyroutedeventargs)のインスタンスを受け取るようにデリゲートを宣言する必要があります。
@@ -182,7 +192,10 @@ struct Example : ExampleT<Example>
 {
     Example(winrt::Windows::UI::Xaml::Controls::Button button)
     {
-        m_event_revoker = button.Click(winrt::auto_revoke, [this](IInspectable const& /* sender */, RoutedEventArgs const& /* args */)
+        m_event_revoker = button.Click(
+            winrt::auto_revoke,
+            [this](IInspectable const& /* sender */,
+            RoutedEventArgs const& /* args */)
         {
             // ...
         });
@@ -193,7 +206,7 @@ private:
 };
 ```
 
-次の構文ブロックは、[**ButtonBase::Click**](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) イベントのドキュメント トピックからの抜粋です。 3 つの異なる登録と取り消し関数を示しています。 3 番目のオーバーロードから宣言する必要があるイベント リボーカーの型を正確に確認できます。
+次の構文ブロックは、[**ButtonBase::Click**](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) イベントのドキュメント トピックからの抜粋です。 3 つの異なる登録と取り消し関数を示しています。 3 番目のオーバーロードから宣言する必要があるイベント リボーカーの型を正確に確認できます。 そして、同じ種類のデリゲートを、*register* と *revoke with event_revoker* の両方のオーバーロードに渡すことができます。
 
 ```cppwinrt
 // Register
@@ -236,14 +249,20 @@ void ProcessFeedAsync()
     auto async_op_with_progress = syndicationClient.RetrieveFeedAsync(rssFeedUri);
 
     async_op_with_progress.Progress(
-        [](IAsyncOperationWithProgress<SyndicationFeed, RetrievalProgress> const& /* sender */, RetrievalProgress const& args)
+        [](
+            IAsyncOperationWithProgress<SyndicationFeed,
+            RetrievalProgress> const& /* sender */,
+            RetrievalProgress const& args)
         {
             uint32_t bytes_retrieved = args.BytesRetrieved;
             // use bytes_retrieved;
         });
 
     async_op_with_progress.Completed(
-        [](IAsyncOperationWithProgress<SyndicationFeed, RetrievalProgress> const& sender, AsyncStatus const /* asyncStatus */)
+        [](
+            IAsyncOperationWithProgress<SyndicationFeed,
+            RetrievalProgress> const& sender,
+            AsyncStatus const /* asyncStatus */)
         {
             SyndicationFeed syndicationFeed = sender.GetResults();
             // use syndicationFeed;
@@ -295,6 +314,6 @@ winrt::hstring f(ListView listview)
 * [winrt::implements::get_strong 関数](/uwp/cpp-ref-for-winrt/implements#implementsget_strong-function)
 
 ## <a name="related-topics"></a>関連トピック
-* [C++/WinRT でのイベントの作成](author-events.md)
-* [C++/WinRT を使用した同時開催操作と非同期操作](concurrency.md)
-* [C++/WinRT の強参照と弱参照](weak-references.md)
+* [C++/WinRT でのイベントの作成](./author-events.md)
+* [C++/WinRT を使用した同時開催操作と非同期操作](./concurrency.md)
+* [C++/WinRT の強参照と弱参照](./weak-references.md)
