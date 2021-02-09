@@ -1,5 +1,5 @@
 ---
-Description: ユーザー入力を使用してコレクション内の項目をフィルター処理します。
+description: ユーザー入力を使用してコレクション内の項目をフィルター処理します。
 title: コレクションのフィルター処理
 label: Filtering collections
 template: detail.hbs
@@ -7,15 +7,15 @@ ms.date: 12/3/2019
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: anawish
-ms.openlocfilehash: b1ffa6374753343321f34d388eb994a62614cb15
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: cd78d46abacd57be5b08d6caf057e9c703b32560
+ms.sourcegitcommit: 4cafc1c55511741dd1e5bfe4496d9950a9b4de1b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89172606"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97860374"
 ---
 # <a name="filtering-collections-and-lists-through-user-input"></a>ユーザー入力によるコレクションとリストのフィルター処理
-コレクションの表示項目数が多い場合や、コレクションがユーザーの対話に強く紐付いている場合、フィルター処理は実装すると便利な機能です。 この記事で説明する方法を使用したフィルター処理は、[ListView](/uwp/api/Windows.UI.Xaml.Controls.ListView)、[GridView](/uwp/api/windows.ui.xaml.controls.gridview)、[ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater?view=winui-2.2) など、ほとんどのコレクション コントロールに実装できます。 コレクションのフィルター処理には、チェック ボックス、ラジオ ボタン、スライダーなど、さまざまなユーザー入力を使用できますが、この記事では、テキスト ベースのユーザー入力を取得し、それを使用して、ユーザーの検索に従って ListView をリアルタイムで更新する方法について説明します。 
+コレクションの表示項目数が多い場合や、コレクションがユーザーの対話に強く紐付いている場合、フィルター処理は実装すると便利な機能です。 この記事で説明する方法を使用したフィルター処理は、[ListView](/uwp/api/Windows.UI.Xaml.Controls.ListView)、[GridView](/uwp/api/windows.ui.xaml.controls.gridview)、[ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater?view=winui-2.2&preserve-view=true) など、ほとんどのコレクション コントロールに実装できます。 コレクションのフィルター処理には、チェック ボックス、ラジオ ボタン、スライダーなど、さまざまなユーザー入力を使用できますが、この記事では、テキスト ベースのユーザー入力を取得し、それを使用して、ユーザーの検索に従って ListView をリアルタイムで更新する方法について説明します。 
 
 > [!NOTE]
 > この記事では、ListView を使用したフィルター処理に焦点を当てます。 フィルター処理の手法は、GridView、ItemsRepeater、TreeView など、その他のコレクション コントロールにも応用できることに注意してください。

@@ -1,408 +1,286 @@
 ---
-Description: Windows 開発者向けドキュメントへの最新の追加事項について説明します。
+description: Windows 開発者向けドキュメントへの最新の追加事項について説明します。
 title: Windows 開発者向けドキュメントの最新の更新
 ms.topic: article
-ms.date: 08/3/2020
+ms.date: 1/15/2021
 ms.localizationpriority: medium
 ms.author: quradic
 author: QuinnRadich
-ms.openlocfilehash: 368056619ebc544e109f34cde4bc9310ec6478fa
-ms.sourcegitcommit: 696f90cc95311ee3a74ce70881c7bb277b666e46
+ms.openlocfilehash: a8f2b199143c3d882bb88d60af6f58d19916208e
+ms.sourcegitcommit: 375cf20e0583335805ec246d65819dc1674a2e32
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89429133"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98240992"
 ---
 # <a name="latest-updates-to-the-windows-developer-docs"></a>Windows 開発者向けドキュメントの最新の更新
 
-Windows 開発者向けドキュメントは、新しい強化された情報とコンテンツによって定期的に更新されます。 2020 年 9 月 3 日時点での変更の概要を以下に示します。
+Windows 開発者向けドキュメントは、新しい強化された情報とコンテンツによって定期的に更新されます。 2021 年 1 月 15 日時点での変更の概要を以下に示します。
 
 注: Windows 10 ビルド19041 (2004 とも呼ばれます) の一部として追加された API の特定のリストについては、[こちらのリスト](/windows/uwp/whats-new/windows-10-build-19041-api-diff)を参照してください。
 
+Windows 開発者向けドキュメントの最新情報について、またはコメントや質問がある場合、弊社の Twitter ハンドルは [@WindowsDocs](https://twitter.com/windowsdocs) です。
 
-## <a name="news"></a>ニュース
-
-今月、Microsoft は、ナビゲーションを高速化し、オフライン ブック エクスペリエンスを向上させるために、数千個の絶対リンクを相対リンクに変換しました。 壊れたリンクが見つかった場合は、お知らせください。 ほとんどのページからフィードバックを提供できます。また、ハンドル **WindowsDocs** を使用して Twitter で連絡していただくこともできます。
+Microsoft ドキュメントに寄稿する方法の詳細については、[投稿のガイド](https://docs.microsoft.com/contribute/)を参照してください。
 
 今月のハイライトには以下が含まれます。
 
-* WinUI [UI](https://docs.microsoft.com/windows/uwp/design/basics/xaml-basics-ui)、[データ バインディング](https://docs.microsoft.com/windows/uwp/data-binding/xaml-basics-data-binding)、[サンプル コード](https://github.com/microsoft/Windows-appsample-photo-lab/tree/master/xaml-basics-starting-points)を使用するための 4 部構成のチュートリアル シリーズの更新。 
-
-* [Windows ターミナル 1.2](https://docs.microsoft.com/windows/terminal/) およびプレビュー 1.3 のドキュメントの更新。
-
-* [開発環境の設定](https://docs.microsoft.com/windows/dev-environment/overview)に関する新しいページ。
-
-* [AI と機械学習](https://docs.microsoft.com/windows/win32/direct3d12/gpu-faq)に関する FAQ のいくつかの新しい更新。
-
-* [非同期性、および C++/WinRT と C++/CX 間の相互運用](https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/interop-winrt-cx-async)に関する新しい WinRT/C++ トピック。
+### <a name="new-content"></a>新しい内容:
 
 
-## <a name="other-updates"></a>その他の更新内容
+* [WinUI 2.5](https://docs.microsoft.com/windows/apps/winui/winui2/)
+* [PowerToys に関するドキュメント](https://docs.microsoft.com/windows/powertoys/)
 
-次のトピックは、過去 1 か月間に最新の重要な更新がなされたものの一部です。
 
-### <a name="win32"></a>Win32
+* [IMsRdpClientNonScriptable6](https://docs.microsoft.com/windows/win32/termserv/imsrdpclientnonscriptable6)
+* [IMsRdpClientNonScriptable7](https://docs.microsoft.com/windows/win32/termserv/imsrdpclientnonscriptable7)
+* [IMsRdpCameraRedirConfigCollection](https://docs.microsoft.com/windows/win32/termserv/imsrdpcameraredirconfigcollection)
+* [IMsRdpCameraRedirConfig](https://docs.microsoft.com/windows/win32/termserv/imsrdpcameraredirconfigcollection)
+* [IMsRdpClipboard](https://docs.microsoft.com/windows/win32/termserv/imsrdpclipboard)
+
+### <a name="updated-topics"></a>更新されたトピック
+
+* [イメージ トピックのキャプチャ](https://docs.microsoft.com/windows/win32/gdi/capturing-an-image)
+* [RASENTRY](https://docs.microsoft.com/previous-versions/windows/desktop/legacy/aa377274(v=vs.85))
+* [Segoe MDL2 アセットのアイコン](https://docs.microsoft.com/windows/uwp/design/style/segoe-ui-symbol-font)
+
+
+### <a name="other-content-of-interest"></a>その他の価値がある内容
+
+
+
+* サンプル - C++/CX サンプルの C++/WinRT への更新を続行中です ([IDirect3DSurface Interface](https://docs.microsoft.com/uwp/api/windows.graphics.directx.direct3d11.idirect3dsurface) など)。 ページの右上にある言語セレクターを使用して、C++/WinRT を選択してください。
+
+
+次のリファレンス トピックでは、過去 1 か月に重要な更新が行われました。
+
+## <a name="winrt-conceptual"></a>WinRT の概念
+
 <ul>
-<li><a href="https://docs.microsoft.com/windows/desktop/AD/security-properties">ユーザー セキュリティ属性</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/AD/user-object-user-interface-mapping">ユーザー オブジェクトのユーザー インターフェイス マッピング</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/CIMWin32Prov/operating-system-classes">オペレーティング システム クラス</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/CIMWin32Prov/win32-cachememory">Win32_CacheMemory クラス</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/CIMWin32Prov/win32-cdromdrive">Win32_CDROMDrive クラス</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/CIMWin32Prov/win32-computersystem">Win32_ComputerSystem クラス</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/CIMWin32Prov/win32-diskdrive">Win32_DiskDrive クラス</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/CIMWin32Prov/win32-networkadapterconfiguration">Win32_NetworkAdapterConfiguration クラス</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/CIMWin32Prov/win32-operatingsystem">Win32_OperatingSystem クラス</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/CIMWin32Prov/win32-potsmodem">Win32_POTSModem クラス</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/CIMWin32Prov/win32-printer">Win32_Printer クラス</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/CIMWin32Prov/win32-process">Win32_Process クラス</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/CIMWin32Prov/win32-videocontroller">Win32_VideoController クラス</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/DMWmiBridgeProv/mdm-policy-config01-internetexplorer02">MDM_Policy_Config01_InternetExplorer02 クラス</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/DMWmiBridgeProv/mdm-policy-config01-privacy02">MDM_Policy_Config01_Privacy02 クラス</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/DMWmiBridgeProv/mdm-policy-config01-update02">MDM_Policy_Config01_Update02 クラス</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/DMWmiBridgeProv/mdm-policy-result01-internetexplorer02">MDM_Policy_Result01_InternetExplorer02 クラス</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/DMWmiBridgeProv/mdm-policy-result01-privacy02">MDM_Policy_Result01_Privacy02 クラス</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/DMWmiBridgeProv/mdm-policy-result01-update02">MDM_Policy_Result01_Update02 クラス</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/DMWmiBridgeProv/mdm-policy-user-config01-internetexplorer02">MDM_Policy_User_Config01_InternetExplorer02 クラス</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/DMWmiBridgeProv/mdm-policy-user-result01-internetexplorer02">MDM_Policy_User_Result01_InternetExplorer02 クラス</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/Debug/pe-format">PE 形式</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/DevIO/registering-for-device-notification">デバイス通知の登録</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/Direct2D/custom-effects">カスタム効果</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/Direct2D/interfaces">Direct2D インターフェイス</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/DirectWrite/custom-font-sets-win10">カスタム フォント セット</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/DirectWrite/interfaces">DirectWrite インターフェイス</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/FileIO/file-management-control-codes">ファイル管理の制御コード</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/FileIO/volume-management-control-codes">ボリューム管理の制御コード</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/HyperV_v2/msvm-diskdrive">Msvm_DiskDrive クラス</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/HyperV_v2/msvm-diskettedrive">Msvm_DisketteDrive クラス</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/HyperV_v2/msvm-dvddrive">Msvm_DVDDrive クラス</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/HyperV_v2/msvm-emulatedethernetport">Msvm_EmulatedEthernetPort クラス</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/HyperV_v2/msvm-ethernetswitchport">Msvm_EthernetSwitchPort クラス</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/HyperV_v2/msvm-externalethernetport">Msvm_ExternalEthernetPort クラス</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/HyperV_v2/msvm-externalfcport">Msvm_ExternalFcPort クラス</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/HyperV_v2/msvm-fcswitchport">Msvm_FcSwitchPort クラス</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/HyperV_v2/msvm-internalethernetport">Msvm_InternalEthernetPort クラス</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/HyperV_v2/msvm-logicaldisk">Msvm_LogicalDisk クラス</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/HyperV_v2/msvm-memory">Msvm_Memory クラス</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/HyperV_v2/msvm-processor">Msvm_Processor クラス</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/HyperV_v2/msvm-s3displaycontroller">Msvm_S3DisplayController クラス</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/HyperV_v2/msvm-serialcontroller">Msvm_SerialController クラス</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/HyperV_v2/msvm-synthetic3ddisplaycontroller">Msvm_Synthetic3DDisplayController クラス</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/HyperV_v2/msvm-syntheticdisplaycontroller">Msvm_SyntheticDisplayController クラス</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/HyperV_v2/msvm-syntheticethernetport">Msvm_SyntheticEthernetPort クラス</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/HyperV_v2/msvm-syntheticfcport">Msvm_SyntheticFcPort クラス</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/HyperV_v2/msvm-videohead">Msvm_VideoHead クラス</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/HyperV_v2/msvm-wifiport">Msvm_WiFiPort クラス</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/Multimedia/midi-reference">MIDI リファレンス</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/Multimedia/multimedia-functions">マルチメディア関数</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/Multimedia/waveform-audio-reference">波形オーディオ リファレンス</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/PerfCtrs/about-performance-counters">パフォーマンス カウンターについて</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/PerfCtrs/adding-counter-names-and-descriptions-to-the-registry">レジストリへのカウンター名と説明の追加</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/PerfCtrs/calculating-counter-values">カウンター値の計算</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/PerfCtrs/ctrpp">CTRPP</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/PerfCtrs/pdh-error-codes">パフォーマンス データ ヘルパーのエラー コード</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/PerfCtrs/performance-counters-functions">パフォーマンス カウンター関数</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/PerfCtrs/performance-counters-schema">パフォーマンス カウンター スキーマ</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/PerfCtrs/performance-counters-structures">パフォーマンス カウンター構造体</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/PerfCtrs/using-the-perflib-functions-to-consume-counter-data">PerfLib 関数を使用したカウンター データの使用</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/ProcThread/process-and-thread-functions">プロセス関数とスレッド関数</a></li>
 
-<li><a href="https://docs.microsoft.com/windows/desktop/SecAuthN/authentication-functions">認証関数</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/SecAuthN/authentication-structures">認証構造体</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/SecAuthN/initializesecuritycontext--general">InitializeSecurityContext (General) 関数 (Sspi.h)</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/SecAuthN/querycontextattributes--general">QueryContextAttributes (General) 関数 (Sspi.h)</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/SecAuthZ/authorization-functions">承認関数 (Authorization)</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/SecCrypto/cryptography-functions">暗号化関数</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/SecCrypto/cryptography-structures">暗号化構造体</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/SrvNodes/wmi-mi-omi-providers">WMI/MI/OMI プロバイダー</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/Sync/synchronization-functions">同期関数</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/SysInfo/acquiring-high-resolution-time-stamps">高解像度タイム スタンプの取得</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/Tapi/tspi-line-device-functions">TSPI 回線デバイス関数</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/TermServ/win32-terminalservice">Win32_TerminalService クラス</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/VDS/what-s-new-in-vds-in-windows-server-2008-r2-and-windows-7">Windows Server 2008 R2 と Windows 7 における VDS の新機能</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/WinRT/functions">関数</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/WinRT/interfaces">インターフェイス</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/WinSock/what-s-new-for-windows-sockets-2">Windows Socketsソケットの新機能</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/WmiSdk/cimclas">CIM クラス (WMI)</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/WmiSdk/win32-serverfeature">Win32_ServerFeature クラス</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/apiindex/umbrella-lib-onecore-alpha">OneCore.lib アンブレラ ライブラリ (アルファベット順)</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/apiindex/umbrella-lib-onecore">OneCore.lib アンブレラ ライブラリ (モジュールごと)</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/apiindex/umbrella-lib-onecoreuap-alpha">OneCoreUap.lib アンブレラ ライブラリ (アルファベット順)</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/apiindex/umbrella-lib-onecoreuap">OneCoreUap.lib アンブレラ ライブラリ (モジュールごと)</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/apiindex/windows-8-api-sets">Windows 8 API セット</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/apiindex/windows-81-api-sets">Windows 8.1 API セット</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/apiindex/windows-api-list">Windows API インデックス</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/apiindex/winrt-apis-for-desktop-apps">デスクトップ アプリ用 Windows ランタイム 8.x API</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/direct3d11/overviews-direct3d-11-devices-downlevel-intro">Direct3D の機能レベル</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/direct3d12/recording-command-lists-and-bundles">コマンド一覧およびバンドルの作成と記録</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/direct3d9/accurately-profiling-direct3d-api-calls">Direct3D API 呼び出しの正確なプロファイリング (Direct3D 9)</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/direct3darticles/surface-sharing-between-windows-graphics-apis">Windows グラフィックス API 間のサーフェス共有</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/dlgbox/dlgbox-programming-considerations">ダイアログ ボックスのプログラミングに関する考慮事項</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/dxmath/ovw-xnamath-reference-functions-load">DirectXMath ライブラリ ベクターの読み込み関数</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/dxmath/ovw-xnamath-reference-functions-storage">DirectXMath ライブラリ ベクターの格納関数</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/dxmath/pg-xnamath-migration-d3dx">D3DXMath の操作</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/gdiplus/-gdiplus-class-graphics-methods">グラフィックス メソッド</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/gdiplus/-gdiplus-class-graphicspath-methods">GraphicsPath メソッド</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/gdiplus/-gdiplus-graphics-flat">グラフィックス関数</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/lwef/nse-folderview">フォルダー ビューの実装</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/medfound/metadata-properties-for-media-files">メディア ファイル用のメタデータ プロパティ</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/menurc/using-menus">メニューの使用</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/printdocs/printing-and-print-spooler-functions">印刷スプーラー API 関数</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/properties/contact-bumper">連絡先</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/properties/core-bumper">Core</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/properties/devices-bumper">デバイス (Windows プロパティ システム)</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/properties/functions-propvarutil">PROPVARIANT および VARIANT 関数</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/properties/functions">関数 (Windows プロパティ システム)</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/properties/gps-bumper">GPS</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/properties/photo-bumper">写真</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/shell/band-objects">カスタムのエクスプローラー バー、ツール バンド、デスク バンドの作成</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/shell/dataobject">シェル データ オブジェクト</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/shell/datascenarios">シェル データ転送シナリオの処理</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/shell/shlwapi-wrappers">SHLWAPI ラッパー関数</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/tablet/plug-in-data-and-the-realtimestylus-class">プラグイン データと RealTimeStylus クラス</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/winmsg/about-messages-and-message-queues">メッセージとメッセージ キューについて</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/winmsg/window-features">ウィンドウ機能</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/winmsg/window-functions">ウィンドウ関数</a></li>
-<li><a href="https://docs.microsoft.com/windows/desktop/winmsg/windows">Windows (Windows とメッセージ)</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/move-to-winrt-from-csharp">C# から C++/WinRT への移行</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/move-to-winrt-from-cx">C++/CX から C++/WinRT への移行</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/news">C++/WinRT の新機能</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/weak-references">C++/WinRT の強参照と弱参照</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/csharp-winrt/index">C#/WinRT</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/csharp-winrt/net-projection-from-cppwinrt-component">チュートリアル: C++/WinRT コンポーネントから .NET 5 プロジェクションを生成し、NuGet を配布する</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/data-access/sqlite-databases">UWP アプリでの SQLite データベースの使用</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-api-core">Windows デバイス ポータル コア REST API リファレンス</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-desktop">デスクトップ用 Windows デバイス ポータル</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-mobile">モバイル用 Windows デバイス ポータル</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-plugin">Windows デバイス ポータルのカスタム プラグインの作成</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal">Windows Device Portal の概要</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/design/basics/xaml-basics-adaptive-layout">アダプティブ レイアウトの作成のチュートリアル</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/infobar">InfoBar</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/design/devices/designing-for-tv">Xbox およびテレビ向け設計</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/design/layout/layouts-with-xaml">XAML でのレスポンシブ レイアウト</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/design/style/segoe-ui-symbol-font">Segoe MDL2 アセットのアイコン</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/design/style/typography">Windows アプリの文字体裁</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/gaming/about-the-uwp-user-interface-and-directx">アプリ オブジェクトと DirectX</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/gaming/missing-dot-net-apis-in-unity-and-uwp">Unity や UWP で不足している .NET API</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/gaming/monetization-for-games">ゲームの収益化</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide">ユニバーサル Windows プラットフォーム (UWP) アプリとは</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/get-started/your-first-app">初めてのアプリの作成</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/graphics-concepts/graphics-pipeline">グラフィックス パイプライン</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/launch-resume/launch-default-app">URI に応じた既定のアプリの起動</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/monetize/acquisitions-data">ゲームとアプリの入手データを取得する</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/monetize/index">収益化、エンゲージメント、Microsoft Store サービス</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/monetize/manage-add-ons">アドオンの管理</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/monetize/view-and-grant-products-from-a-service">サービスによる製品の権利の管理</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/networking/httpclient">HttpClient</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/networking/sockets">ソケット</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/packaging/auto-build-package-uwp-apps">UWP アプリの自動ビルドを設定する</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-migrate">デスクトップ アプリケーションと UWP アプリでのコードの共有</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/publish/acquisitions-report">[取得] レポート</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/publish/add-on-acquisitions-report">アドオン取得レポート</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/publish/organizational-licensing">組織のライセンス オプション</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/publish/set-and-schedule-app-pricing">アプリの価格の設定とスケジュール</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/publish/set-custom-permissions-for-account-users">アカウント ユーザーの役割またはカスタムのアクセス許可の設定</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/publish/store-policies">Microsoft Store ポリシー</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps">C++ での非同期プログラミング</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/threading-async/asynchronous-programming-universal-windows-platform-apps">非同期プログラミング</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/whats-new/windows-10-build-18362">Windows 10 ビルド 18362 の新着情報</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/whats-new/windows-10-build-19041">Windows 10 ビルド 19041 の新着情報</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/winrt-components/creating-windows-runtime-components-in-cpp">C++/CX を使用した Windows ランタイム コンポーネント</a></li>
+
 </ul>
 
-### <a name="win32-api-reference"></a>Win32 API リファレンス
+## <a name="win32-conceptual"></a>Win32 の概念
+
 <ul>
-<li><a href="https://docs.microsoft.com/windows/win32/api/bits1_5/ns-bits1_5-bg_basic_credentials">BG_BASIC_CREDENTIALS </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/bthledef/ns-bthledef-bth_le_gatt_characteristic_value">BTH_LE_GATT_CHARACTERISTIC_VALUE (bthledef.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/bthledef/ns-bthledef-bth_le_gatt_descriptor_value">BTH_LE_GATT_DESCRIPTOR_VALUE (bthledef.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/cfapi/ns-cfapi-cf_placeholder_basic_info">CF_PLACEHOLDER_BASIC_INFO (cfapi.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/cfapi/ns-cfapi-cf_placeholder_standard_info">CF_PLACEHOLDER_STANDARD_INFO (cfapi.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/cfapi/ns-cfapi-cf_sync_root_provider_info">CF_SYNC_ROOT_PROVIDER_INFO (cfapi.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/cfapi/ns-cfapi-cf_sync_root_standard_info">CF_SYNC_ROOT_STANDARD_INFO (cfapi.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/clusapi/nf-clusapi-getcurrentclusternodeid">GetCurrentClusterNodeId マクロ (clusapi.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/commctrl/nf-commctrl-listview_getitemtext">ListView_GetItemText マクロ (commctrl.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/commctrl/nf-commctrl-listview_getnextitemindex">ListView_GetNextItemIndex マクロ (commctrl.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/commctrl/nf-commctrl-listview_setitemtext">ListView_SetItemText マクロ (commctrl.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/commctrl/ns-commctrl-litem">LITEM (commctrl.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/commctrl/ns-commctrl-lvgroup">LVGROUP (commctrl.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/commctrl/ns-commctrl-lvgroupmetrics">LVGROUPMETRICS (commctrl.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/commctrl/ns-commctrl-lvtileviewinfo">LVTILEVIEWINFO (commctrl.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/commctrl/ns-commctrl-nmpghotitem">NMPGHOTITEM (commctrl.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/commctrl/ns-commctrl-tbbutton">TBBUTTON (commctrl.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/compressapi/ne-compressapi-compress_information_class">COMPRESS_INFORMATION_CLASS (compressapi.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/compressapi/nf-compressapi-closecompressor">CloseCompressor 関数 (compressapi.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/compressapi/nf-compressapi-closedecompressor">CloseDecompressor 関数 (compressapi.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/compressapi/nf-compressapi-compress">Compress 関数 (compressapi.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/compressapi/nf-compressapi-createcompressor">CreateCompressor 関数 (compressapi.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/compressapi/nf-compressapi-createdecompressor">CreateDecompressor 関数 (compressapi.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/compressapi/nf-compressapi-decompress">Decompress 関数 (compressapi.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/compressapi/nf-compressapi-querycompressorinformation">QueryCompressorInformation 関数 (compressapi.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/compressapi/nf-compressapi-querydecompressorinformation">QueryDecompressorInformation 関数 (compressapi.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/compressapi/nf-compressapi-resetcompressor">ResetCompressor 関数 (compressapi.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/compressapi/nf-compressapi-resetdecompressor">ResetDecompressor 関数 (compressapi.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/compressapi/nf-compressapi-setcompressorinformation">SetCompressorInformation 関数 (compressapi.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/compressapi/nf-compressapi-setdecompressorinformation">SetDecompressorInformation 関数 (compressapi.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/compressapi/ns-compressapi-compress_allocation_routines">COMPRESS_ALLOCATION_ROUTINES (compressapi.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/d3d10/ns-d3d10-d3d10_buffer_desc">D3D10_BUFFER_DESC (d3d10.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/d3d10/ns-d3d10-d3d10_texture1d_desc">D3D10_TEXTURE1D_DESC (d3d10.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/d3d10/ns-d3d10-d3d10_texture2d_desc">D3D10_TEXTURE2D_DESC (d3d10.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/d3d10/ns-d3d10-d3d10_texture3d_desc">D3D10_TEXTURE3D_DESC (d3d10.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/d3d10effect/ns-d3d10effect-d3d10_state_block_mask">D3D10_STATE_BLOCK_MASK (d3d10effect.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/d3d11/nf-d3d11-id3d11videocontext-videoprocessorblt">ID3D11VideoContext::VideoProcessorBlt (d3d11.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/d3d11_1/ns-d3d11_1-d3d11_rasterizer_desc1">D3D11_RASTERIZER_DESC1 (d3d11_1.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/d3d11_3/ns-d3d11_3-d3d11_query_desc1">D3D11_QUERY_DESC1 (d3d11_3.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/d3d11_3/ns-d3d11_3-d3d11_rasterizer_desc2">D3D11_RASTERIZER_DESC2 (d3d11_3.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/d3d11_3/ns-d3d11_3-d3d11_render_target_view_desc1">D3D11_RENDER_TARGET_VIEW_DESC1 (d3d11_3.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/d3d11_3/ns-d3d11_3-d3d11_shader_resource_view_desc1">D3D11_SHADER_RESOURCE_VIEW_DESC1 (d3d11_3.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/d3d11_3/ns-d3d11_3-d3d11_texture2d_desc1">D3D11_TEXTURE2D_DESC1 (d3d11_3.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/d3d11_3/ns-d3d11_3-d3d11_texture3d_desc1">D3D11_TEXTURE3D_DESC1 (d3d11_3.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/d3d11_3/ns-d3d11_3-d3d11_unordered_access_view_desc1">D3D11_UNORDERED_ACCESS_VIEW_DESC1 (d3d11_3.h) </a></li>
 
-<li><a href="https://docs.microsoft.com/windows/win32/api/d3d12/nf-d3d12-id3d12device1-createpipelinelibrary">ID3D12Device1::CreatePipelineLibrary (d3d12.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/d3d12/nf-d3d12-id3d12device5-removedevice">ID3D12Device5::RemoveDevice </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/d3dcommon/nn-d3dcommon-id3ddestructionotifier">ID3DDestructionNotifier (d3dcommon.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/dbghelp/nf-dbghelp-symgetlinefromaddrw64">SymGetLineFromAddrW64 関数 (dbghelp.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/dbghelp/nf-dbghelp-symgetlinefrominlinecontextw">SymGetLineFromInlineContextW 関数 (dbghelp.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/dbghelp/nf-dbghelp-symgetmoduleinfow64">SymGetModuleInfoW64 関数 (dbghelp.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/dbghelp/ns-dbghelp-imagehlp_deferred_symbol_load64">IMAGEHLP_DEFERRED_SYMBOL_LOAD64 (dbghelp.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/dbghelp/ns-dbghelp-imagehlp_deferred_symbol_loadw64">IMAGEHLP_DEFERRED_SYMBOL_LOADW64 (dbghelp.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/dbghelp/ns-dbghelp-imagehlp_module64">IMAGEHLP_MODULE64 (dbghelp.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/dbghelp/ns-dbghelp-imagehlp_modulew64">IMAGEHLP_MODULEW64 (dbghelp.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/dcommon/ns-dcommon-d2d_matrix_4x3_f">D2D_MATRIX_4X3_F (dcommon.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/dcommon/ns-dcommon-d2d_matrix_4x4_f">D2D_MATRIX_4X4_F (dcommon.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/dcommon/ns-dcommon-d2d_matrix_5x4_f">D2D_MATRIX_5X4_F (dcommon.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/ddeml/nc-ddeml-pfncallback">PFNCALLBACK (ddeml.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/ddraw/ns-ddraw-ddbltfx">DDBLTFX (ddraw.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/ddraw/ns-ddraw-ddcaps_dx5">DDCAPS_DX5 (ddraw.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/ddraw/ns-ddraw-ddcaps_dx6">DDCAPS_DX6 (ddraw.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/ddraw/ns-ddraw-ddcaps_dx7">DDCAPS_DX7 (ddraw.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/ddraw/ns-ddraw-ddoverlayfx">DDOVERLAYFX (ddraw.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/ddraw/ns-ddraw-ddpixelformat">DDPIXELFORMAT (ddraw.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/dhcpsapi/ns-dhcpsapi-dhcp_failover_relationship">DHCP_FAILOVER_RELATIONSHIP (dhcpsapi.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/dhcpsapi/ns-dhcpsapi-dhcp_failover_statistics">DHCP_FAILOVER_STATISTICS (dhcpsapi.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/dhcpsapi/ns-dhcpsapi-dhcpv4_failover_client_info">DHCPV4_FAILOVER_CLIENT_INFO (dhcpsapi.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/directxpackedvector/ns-directxpackedvector-xmfloat3pk">XMFLOAT3PK (directxpackedvector.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/directxpackedvector/ns-directxpackedvector-xmfloat3se">XMFLOAT3SE (directxpackedvector.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/directxpackedvector/ns-directxpackedvector-xmu555">XMU555 (directxpackedvector.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/directxpackedvector/ns-directxpackedvector-xmu565">XMU565 (directxpackedvector.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/directxpackedvector/ns-directxpackedvector-xmunibble4">XMUNIBBLE4 (directxpackedvector.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/dmusics/nf-dmusics-idirectmusicsynth-close">IDirectMusicSynth::Close (dmusics.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/dwmapi/nf-dwmapi-dwmenableblurbehindwindow">DwmEnableBlurBehindWindow 関数 (dwmapi.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/dwrite_1/ns-dwrite_1-dwrite_panose">DWRITE_PANOSE (dwrite_1.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/dxgi/ne-dxgi-dxgi_swap_effect">DXGI_SWAP_EFFECT (dxgi.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/evntprov/nf-evntprov-eventwrite">EventWrite 関数 (evntprov.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/faxdev/ns-faxdev-fax_dev_status">FAX_DEV_STATUS (faxdev.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/faxdev/ns-faxdev-fax_receive">FAX_RECEIVE (faxdev.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/faxdev/ns-faxdev-fax_send">FAX_SEND (faxdev.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/isysmon/ne-isysmon-sysmonbatchreason">SysmonBatchReason (isysmon.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/lpmapi/ns-lpmapi-policy_element">POLICY_ELEMENT (lpmapi.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/magnification/ns-magnification-magcoloreffect">MAGCOLOREFFECT (magnification.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/mbnapi/ns-mbnapi-mbn_provider2">MBN_PROVIDER2 (mbnapi.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/memoryapi/nf-memoryapi-virtualalloc2">VirtualAlloc2 関数 (memoryapi.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/mi/ns-mi-mi_applicationft">MI_ApplicationFT (mi.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/mi/ns-mi-mi_classft">MI_ClassFT (mi.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/mi/ns-mi-mi_contextft">MI_ContextFT (mi.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/mi/ns-mi-mi_deserializerft">MI_DeserializerFT (mi.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/mi/ns-mi-mi_destinationoptionsft">MI_DestinationOptionsFT (mi.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/mi/ns-mi-mi_filterft">MI_FilterFT (mi.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/mi/ns-mi-mi_hostedproviderft">MI_HostedProviderFT (mi.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/mi/ns-mi-mi_instanceft">MI_InstanceFT (mi.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/mi/ns-mi-mi_operationft">MI_OperationFT (mi.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/mi/ns-mi-mi_operationoptionsft">MI_OperationOptionsFT (mi.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/mi/ns-mi-mi_parametersetft">MI_ParameterSetFT (mi.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/mi/ns-mi-mi_propertysetft">MI_PropertySetFT (mi.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/mi/ns-mi-mi_qualifiersetft">MI_QualifierSetFT (mi.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/mi/ns-mi-mi_serializerft">MI_SerializerFT (mi.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/mi/ns-mi-mi_serverft">MI_ServerFT (mi.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/mi/ns-mi-mi_sessioncallbacks">MI_SessionCallbacks (mi.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/mi/ns-mi-mi_sessionft">MI_SessionFT (mi.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/mi/ns-mi-mi_subscriptiondeliveryoptionsft">MI_SubscriptionDeliveryOptionsFT (mi.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/mi/ns-mi-mi_utilitiesft">MI_UtilitiesFT (mi.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/mscat/nf-mscat-cryptcatopen">CryptCATOpen 関数 (mscat.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/msclus/ne-msclus-cluster_node_enum">CLUSTER_NODE_ENUM (msclus.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/msinkaut/ne-msinkaut-inkpersistenceformat">InkPersistenceFormat (msinkaut.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/mtpext/ns-mtpext-mtp_command_data_in">MTP_COMMAND_DATA_IN (mtpext.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/mtpext/ns-mtpext-mtp_command_data_out">MTP_COMMAND_DATA_OUT (mtpext.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/nb30/ns-nb30-session_buffer">SESSION_BUFFER (nb30.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/ntddkbd/index">Ntddkbd.h ヘッダー </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/ntddkbd/ni-ntddkbd-ioctl_keyboard_query_attributes">IOCTL_KEYBOARD_QUERY_ATTRIBUTES (ntddkbd.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/ntddkbd/ns-ntddkbd-keyboard_attributes">KEYBOARD_ATTRIBUTES (ntddkbd.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/ntddkbd/ns-ntddkbd-keyboard_extended_attributes">KEYBOARD_EXTENDED_ATTRIBUTES (ntddkbd.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/ntdsapi/nf-ntdsapi-dsquerysitesbycostw">DsQuerySitesByCostW 関数 (ntdsapi.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/oaidl/nf-oaidl-ienumvariant-clone">IEnumVARIANT::Clone (oaidl.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/oaidl/nf-oaidl-ienumvariant-next">IEnumVARIANT::Next (oaidl.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/oaidl/nf-oaidl-ienumvariant-reset">IEnumVARIANT::Reset (oaidl.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/oaidl/nf-oaidl-ienumvariant-skip">IEnumVARIANT::Skip (oaidl.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/oaidl/nn-oaidl-ienumvariant">IEnumVARIANT (oaidl.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/ocidl/nf-ocidl-ifont-get_weight">IFont::get_Weight (ocidl.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/ole2/nf-ole2-olecreate">OleCreate 関数 (ole2.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/ole2/nf-ole2-olecreatefromfile">OleCreateFromFile 関数 (ole2.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/ole2/nf-ole2-oledraw">OleDraw 関数 (ole2.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/ole2/nf-ole2-oleloadfromstream">OleLoadFromStream 関数 (ole2.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/ole2/nf-ole2-olesavetostream">OleSaveToStream 関数 (ole2.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/oleauto/nf-oleauto-varr4cmpr8">VarR4CmpR8 関数 (oleauto.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/processenv/nf-processenv-getenvironmentvariablea">GetEnvironmentVariableA 関数 (processenv.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/processenv/nf-processenv-setenvironmentvariablew">SetEnvironmentVariableW 関数 (processenv.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/projectedfslib/ns-projectedfslib-prj_placeholder_info">PRJ_PLACEHOLDER_INFO (projectedfslib.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/propsys/nf-propsys-ipropertystore-commit">IPropertyStore::Commit (propsys.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/richedit/ns-richedit-charformat2a">CHARFORMAT2A (richedit.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/richedit/ns-richedit-charformat2w">CHARFORMAT2W (richedit.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/richedit/ns-richedit-paraformat2">PARAFORMAT2 (richedit.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/richedit/ns-richedit-tablecellparms">TABLECELLPARMS (richedit.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/richedit/ns-richedit-tablerowparms">TABLEROWPARMS (richedit.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/schannel/ns-schannel-secpkgcontext_cipherinfo">SecPkgContext_CipherInfo (schannel.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/sdoias/ne-sdoias-attributeid">ATTRIBUTEID (sdoias.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/searchapi/nn-searchapi-ienumsearchroots">IEnumSearchRoots (searchapi.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/searchapi/nn-searchapi-ienumsearchscoperules">IEnumSearchScopeRules (searchapi.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/searchapi/nn-searchapi-isearchcrawlscopemanager">ISearchCrawlScopeManager (searchapi.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/searchapi/nn-searchapi-isearchcrawlscopemanager2">ISearchCrawlScopeManager2 (searchapi.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/searchapi/nn-searchapi-isearchroot">ISearchRoot (searchapi.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/searchapi/nn-searchapi-isearchscoperule">ISearchScopeRule (searchapi.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/setupapi/ns-setupapi-sp_drvinfo_data_v1_w">SP_DRVINFO_DATA_V1_W (setupapi.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/setupapi/ns-setupapi-sp_drvinfo_data_v2_a">SP_DRVINFO_DATA_V2_A (setupapi.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/setupapi/ns-setupapi-sp_drvinfo_data_v2_w">SP_DRVINFO_DATA_V2_W (setupapi.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/shdeprecated/ns-shdeprecated-basebrowserdataxp">BASEBROWSERDATAXP (shdeprecated.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/shlwapi/nf-shlwapi-shregcreateuskeyw">SHRegCreateUSKeyW 関数 (shlwapi.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/shlwapi/nf-shlwapi-shregsetusvaluew">SHRegSetUSValueW 関数 (shlwapi.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/shlwapi/nf-shlwapi-shregwriteusvaluew">SHRegWriteUSValueW 関数 (shlwapi.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/sspi/ne-sspi-secpkg_cred_class">SECPKG_CRED_CLASS (sspi.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/tapi/nf-tapi-tapigetlocationinfow">tapiGetLocationInfoW 関数 (tapi.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/tbs/ns-tbs-tbs_context_params2">TBS_CONTEXT_PARAMS2 (tbs.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/tlhelp32/nf-tlhelp32-module32firstw">Module32FirstW 関数 (tlhelp32.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/tlhelp32/nf-tlhelp32-module32nextw">Module32NextW 関数 (tlhelp32.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/tlhelp32/nf-tlhelp32-process32firstw">Process32FirstW 関数 (tlhelp32.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/tlhelp32/nf-tlhelp32-process32nextw">Process32NextW 関数 (tlhelp32.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/tom/nf-tom-itextpara-reset">ITextPara::Reset (tom.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/tom/nf-tom-itextpara-sethyphenation">ITextPara::SetHyphenation (tom.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/tom/nf-tom-itextpara-setkeeptogether">ITextPara::SetKeepTogether (tom.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/tom/nf-tom-itextpara-setkeepwithnext">ITextPara::SetKeepWithNext (tom.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/tom/nf-tom-itextpara-setnolinenumber">ITextPara::SetNoLineNumber (tom.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/tom/nf-tom-itextpara-setwidowcontrol">ITextPara::SetWidowControl (tom.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/tom/nf-tom-itextrange-copy">ITextRange::Copy (tom.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/tsgpolicyengine/nn-tsgpolicyengine-itsgaccountingengine">ITSGAccountingEngine (tsgpolicyengine.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/uxtheme/nf-uxtheme-drawthemeedge">DrawThemeEdge 関数 (uxtheme.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/uxtheme/nf-uxtheme-enablethemedialogtexture">EnableThemeDialogTexture 関数 (uxtheme.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/uxtheme/nf-uxtheme-enabletheming">EnableTheming 関数 (uxtheme.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/uxtheme/nf-uxtheme-setthemeappproperties">SetThemeAppProperties 関数 (uxtheme.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/virtdisk/nf-virtdisk-openvirtualdisk">OpenVirtualDisk 関数 (virtdisk.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/virtdisk/ns-virtdisk-open_virtual_disk_parameters">OPEN_VIRTUAL_DISK_PARAMETERS (virtdisk.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/wbemdisp/ne-wbemdisp-wbemauthenticationlevelenum">WbemAuthenticationLevelEnum (wbemdisp.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/wincodec/nf-wincodec-iwiccolorcontext-getexifcolorspace">IWICColorContext::GetExifColorSpace (wincodec.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/wincodec/nf-wincodec-iwicimagingfactory-createdecoder">IWICImagingFactory::CreateDecoder (wincodec.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/wincodec/nf-wincodec-iwicimagingfactory-createencoder">IWICImagingFactory::CreateEncoder (wincodec.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/wincred/nf-wincred-credpackauthenticationbuffera">CredPackAuthenticationBufferA 関数 (wincred.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/wincred/nf-wincred-credpackauthenticationbufferw">CredPackAuthenticationBufferW 関数 (wincred.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/wincred/nf-wincred-creduipromptforwindowscredentialsa">CredUIPromptForWindowsCredentialsA 関数 (wincred.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/wincred/nf-wincred-creduipromptforwindowscredentialsw">CredUIPromptForWindowsCredentialsW 関数 (wincred.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/wincrypt/ns-wincrypt-cert_revocation_crl_info">CERT_REVOCATION_CRL_INFO (wincrypt.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/windns/nf-windns-dnsnamecompare_a">DnsNameCompare_A 関数 (windns.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/windns/nf-windns-dnsnamecompare_w">DnsNameCompare_W 関数 (windns.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/windns/nf-windns-dnsvalidatename_a">DnsValidateName_A 関数 (windns.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/windns/nf-windns-dnsvalidatename_utf8">DnsValidateName_UTF8 関数 (windns.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/windns/nf-windns-dnsvalidatename_w">DnsValidateName_W 関数 (windns.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/windows.foundation/ns-windows-foundation-point">Point (windows.foundation.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/windows.foundation/ns-windows-foundation-rect">Rect (windows.foundation.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/windows.foundation/ns-windows-foundation-size">Size (windows.foundation.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/wingdi/ns-wingdi-emrgdicomment">EMRGDICOMMENT (wingdi.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winioctl/ne-winioctl-storage_property_id">STORAGE_PROPERTY_ID </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winioctl/ns-winioctl-ntfs_volume_data_buffer">NTFS_VOLUME_DATA_BUFFER </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winioctl/ns-winioctl-storage_adapter_serial_number">STORAGE_ADAPTER_SERIAL_NUMBER </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winioctl/ns-winioctl-storage_physical_adapter_data">STORAGE_PHYSICAL_ADAPTER_DATA </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winioctl/ns-winioctl-storage_physical_node_data">STORAGE_PHYSICAL_NODE_DATA </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winioctl/ns-winioctl-storage_physical_topology_descriptor">STORAGE_PHYSICAL_TOPOLOGY_DESCRIPTOR </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winioctl/ns-winioctl-storage_protocol_command">STORAGE_PROTOCOL_COMMAND </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winioctl/ns-winioctl-storage_temperature_data_descriptor">STORAGE_TEMPERATURE_DATA_DESCRIPTOR </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winnls/nf-winnls-resolvelocalename">ResolveLocaleName 関数 (winnls.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winreg/nf-winreg-reggetvaluea">RegGetValueA 関数 (winreg.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winreg/nf-winreg-reggetvaluew">RegGetValueW 関数 (winreg.h) </a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/DevNotes/msdelta-applydeltab">ApplyDeltaB 関数</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/DevNotes/msdelta-createdeltab">CreateDeltaB 関数</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/DevNotes/msdelta-deltafree">DeltaFree 関数</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/DirectWrite/direct-write-portal">DirectWrite (DWrite)</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/DirectWrite/dwrite/ne-dwrite-dwrite_factory_type">DWRITE_FACTORY_TYPE (dwrite.h)</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/DirectWrite/dwrite_3/nf-dwrite_3-idwritebitmaprendertarget2-getbitmapdata">IDWriteBitmapRenderTarget2::GetBitmapData (dwrite_3.h)</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/DirectWrite/dwrite_3/nn-dwrite_3-idwritebitmaprendertarget2">IDWriteBitmapRenderTarget2 (dwrite_3.h)</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/DirectWrite/dwrite_3/ns-dwrite_3-dwrite_bitmap_data_bgra32">DWRITE_BITMAP_DATA_BGRA32 (dwrite_3.h)</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/DirectWrite/dwritecore-overview">DWriteCore の概要</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/SecAuthN/tls-cipher-suites-in-windows-10-v21H1">Windows 10 v21H1 の TLS 暗号スイート</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/SecCNG/cng-named-elliptic-curves">CNG 名前付き楕円曲線 (Bcrypt.h)</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/TermServ/imsrdpcameraredirconfig-deviceexists">IMsRdpCameraRedirConfig DeviceExists プロパティ</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/TermServ/imsrdpcameraredirconfig-friendlyname">IMsRdpCameraRedirConfig FriendlyName プロパティ</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/TermServ/imsrdpcameraredirconfig-instanceid">IMsRdpCameraRedirConfig InstanceId プロパティ</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/TermServ/imsrdpcameraredirconfig-parentinstanceid">IMsRdpCameraRedirConfig ParentInstanceId プロパティ</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/TermServ/imsrdpcameraredirconfig-redirected">IMsRdpCameraRedirConfig Redirected プロパティ</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/TermServ/imsrdpcameraredirconfig-symboliclink">IMsRdpCameraRedirConfig SymbolicLink プロパティ</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/TermServ/imsrdpcameraredirconfig">IMsRdpCameraRedirConfig インターフェイス</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/TermServ/imsrdpcameraredirconfigcollection-addconfig">IMsRdpCameraRedirConfigCollection AddConfig メソッド</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/TermServ/imsrdpcameraredirconfigcollection-byindex">IMsRdpCameraRedirConfigCollection ByIndex プロパティ</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/TermServ/imsrdpcameraredirconfigcollection-byinstanceid">IMsRdpCameraRedirConfigCollection ByInstanceId プロパティ</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/TermServ/imsrdpcameraredirconfigcollection-bysymboliclink">IMsRdpCameraRedirConfigCollection BySymbolicLink プロパティ</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/TermServ/imsrdpcameraredirconfigcollection-count">IMsRdpCameraRedirConfigCollection Count プロパティ</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/TermServ/imsrdpcameraredirconfigcollection-encodevideo">IMsRdpCameraRedirConfigCollection EncodeVideo プロパティ</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/TermServ/imsrdpcameraredirconfigcollection-encodingquality">IMsRdpCameraRedirConfigCollection EncodingQuality プロパティ</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/TermServ/imsrdpcameraredirconfigcollection-redirectbydefault">IMsRdpCameraRedirConfigCollection RedirectByDefault プロパティ</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/TermServ/imsrdpcameraredirconfigcollection-rescan">IMsRdpCameraRedirConfigCollection Rescan メソッド</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/TermServ/imsrdpcameraredirconfigcollection">IMsRdpCameraRedirConfigCollection インターフェイス</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/TermServ/imsrdpclientnonscriptable6-sendlocation2d">IMsRdpClientNonScriptable6 SendLocation2D メソッド</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/TermServ/imsrdpclientnonscriptable6-sendlocation3d">IMsRdpClientNonScriptable6 SendLocation3D メソッド</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/TermServ/imsrdpclientnonscriptable6">IMsRdpClientNonScriptable6 インターフェイス</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/TermServ/imsrdpclientnonscriptable7-cameraredirconfigcollection">IMsRdpClientNonScriptable7 CameraRedirConfigCollection プロパティ</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/TermServ/imsrdpclientnonscriptable7-clipboard">IMsRdpClientNonScriptable7 Clipboard プロパティ</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/TermServ/imsrdpclientnonscriptable7-disabledpicursorscalingforprocess">IMsRdpClientNonScriptable7 DisableDpiCursorScalingForProcess メソッド</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/TermServ/imsrdpclientnonscriptable7">IMsRdpClientNonScriptable7 インターフェイス</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/TermServ/imsrdpclipboard-cansynclocalclipboardtoremotesession">IMsRdpClipboard CanSyncLocalClipboardToRemoteSession メソッド</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/TermServ/imsrdpclipboard-cansyncremoteclipboardtolocalsession">IMsRdpClipboard CanSyncRemoteClipboardToLocalSession メソッド</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/TermServ/imsrdpclipboard-synclocalclipboardtoremotesession">IMsRdpClipboard SyncLocalClipboardToRemoteSession メソッド</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/TermServ/imsrdpclipboard-syncremoteclipboardtolocalsession">IMsRdpClipboard SyncRemoteClipboardToLocalSession メソッド</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/TermServ/imsrdpclipboard">IMsRdpClipboard インターフェイス</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/TermServ/imsrdpextendedsettings-property">IMsRdpExtendedSettings Property プロパティ</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/UpdateOrchestrator/universalorchestrator-hasmoratoriumpassed">IUniversalOrchestrator::HasMoratoriumPassed</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/UpdateOrchestrator/universalorchestrator-schedulework">IUniversalOrchestrator::ScheduleWork</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/UpdateOrchestrator/universalorchestrator-workcompleted">IUniversalOrchestrator::WorkCompleted</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/cossdk/applications">アプリケーション コレクション</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/cossdk/components">コンポーネント コレクション</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/cossdk/localcomputer">LocalComputer コレクション</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/gdi/capturing-an-image">イメージのキャプチャ</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/wic/hdphoto-format-overview">HD Photo フォーマットの概要</a></li>
 
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-dlgdirlista">DlgDirListA 関数 (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-messagebox">MessageBox 関数 (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-messageboxa">MessageBoxA 関数 (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/winuser/nf-winuser-messageboxw">MessageBoxW 関数 (winuser.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/wlanapi/nc-wlanapi-wlan_notification_callback">WLAN_NOTIFICATION_CALLBACK (wlanapi.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/wofapi/ns-wofapi-wim_external_file_info">WIM_EXTERNAL_FILE_INFO (wofapi.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/wow64apiset/nf-wow64apiset-wow64suspendthread">Wow64SuspendThread </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/wsipv6ok/nf-wsipv6ok-gethostbyaddr">gethostbyaddr マクロ (wsipv6ok.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/wsipv6ok/nf-wsipv6ok-wsaasyncgethostbyaddr">WSAAsyncGetHostByAddr マクロ (wsipv6ok.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/wsipv6ok/nf-wsipv6ok-wsaasyncgethostbyname">WSAAsyncGetHostByName マクロ (wsipv6ok.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/xaudio2/nf-xaudio2-ixaudio2-createmasteringvoice">IXAudio2::CreateMasteringVoice (xaudio2.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/xaudio2/nf-xaudio2-ixaudio2-createsourcevoice">IXAudio2::CreateSourceVoice (xaudio2.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/xaudio2/nf-xaudio2-ixaudio2-createsubmixvoice">IXAudio2::CreateSubmixVoice (xaudio2.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/xaudio2/nf-xaudio2-ixaudio2sourcevoice-start">IXAudio2SourceVoice::Start (xaudio2.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/xaudio2/nf-xaudio2-ixaudio2sourcevoice-stop">IXAudio2SourceVoice::Stop (xaudio2.h) </a></li>
-<li><a href="https://docs.microsoft.com/windows/win32/api/xaudio2/nf-xaudio2-xaudio2create">XAudio2Create 関数 (xaudio2.h) </a></li>
 </ul>
 
-### <a name="uwp-api-reference"></a>UWP API リファレンス
+## <a name="win32-api-reference"></a>Win32 API リファレンス
+
 <ul>
-<li><a href="https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.bluetoothdevice">Windows.Devices.Bluetooth.BluetoothDevice</a></li>
-<li><a href="https://docs.microsoft.com/uwp/api/windows.devices.enumeration.idevicepairingsettings">Windows.Devices.Enumeration.IDevicePairingSettings</a></li>
-<li><a href="https://docs.microsoft.com/uwp/api/windows.devices.geolocation.windows.devices.geolocation">N:Windows.Devices.Geolocation</a></li>
-<li><a href="https://docs.microsoft.com/uwp/api/windows.graphics.imaging.softwarebitmap">Windows.Graphics.Imaging.SoftwareBitmap</a></li>
-<li><a href="https://docs.microsoft.com/uwp/api/windows.networking.sockets.streamsocket.inputstream">Windows.Networking.Sockets.StreamSocket.InputStream</a></li>
-<li><a href="https://docs.microsoft.com/uwp/api/windows.networking.sockets.streamsocket.outputstream">Windows.Networking.Sockets.StreamSocket.OutputStream</a></li>
-<li><a href="https://docs.microsoft.com/uwp/api/windows.storage.streams.datawriter.storeasync.728695948">Windows.Storage.Streams.DataWriter.StoreAsync</a></li>
-<li><a href="https://docs.microsoft.com/uwp/api/windows.storage.streams.iinputstream.readasync.1012630619">Windows.Storage.Streams.IInputStream.ReadAsync(Windows.Storage.Streams.IBuffer,System.UInt32,Windows.Storage.Streams.InputStreamOptions)</a></li>
-<li><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.iconsourceelement">Windows.UI.Xaml.Controls.IconSourceElement</a></li>
-<li><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.focusvisualsecondarybrush">Windows.UI.Xaml.FrameworkElement.FocusVisualSecondaryBrush</a></li>
-<li><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.focusvisualsecondarythickness">Windows.UI.Xaml.FrameworkElement.FocusVisualSecondaryThickness</a></li>
-<li><a href="https://docs.microsoft.com/uwp/api/windows.web.http.httpresponsemessage.ensuresuccessstatuscode.1729229786">Windows.Web.Http.HttpResponseMessage.EnsureSuccessStatusCode</a></li>
+
+<li><a href="https://docs.microsoft.com/windows/win32/api/d3d12/ne-d3d12-d3d12_resource_flags">D3D12_RESOURCE_FLAGS (d3d12.h) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/dxcore_interface/ne-dxcore_interface-dxcoreadapterproperty">DXCoreAdapterProperty </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/shellapi/ns-shellapi-shellexecuteinfoa">SHELLEXECUTEINFOA (shellapi.h) </a></li>
+
 </ul>
+
+## <a name="uwp-api-reference"></a>UWP API リファレンス
+
+<ul>
+
+<li><a href="https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.listinginformation">Windows.ApplicationModel.Store.ListingInformation</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.productlicense">Windows.ApplicationModel.Store.ProductLicense</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.productlisting">Windows.ApplicationModel.Store.ProductListing</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.desiredaccuracy">Windows.Devices.Geolocation.Geolocator.DesiredAccuracy</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.devices.portable.storagedevice">Windows.Devices.Portable.StorageDevice</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.devices.wifidirect.windows.devices.wifidirect">N:Windows.Devices.WiFiDirect</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.foundation.propertytype">Windows.Foundation.PropertyType</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.foundation.rect">Windows.Foundation.Rect</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.foundation.size">Windows.Foundation.Size</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.globalization.fonts.languagefont">Windows.Globalization.Fonts.LanguageFont</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.globalization.fonts.languagefontgroup">Windows.Globalization.Fonts.LanguageFontGroup</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.graphics.directx.direct3d11.idirect3ddevice">Windows.Graphics.DirectX.Direct3D11.IDirect3DDevice</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.graphics.directx.direct3d11.idirect3dsurface">Windows.Graphics.DirectX.Direct3D11.IDirect3DSurface</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.graphics.imaging.bitmapdecoder">Windows.Graphics.Imaging.BitmapDecoder</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.graphics.imaging.bitmapencoder">Windows.Graphics.Imaging.BitmapEncoder</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.media.devices.callcontrol">Windows.Media.Devices.CallControl</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.media.protection.componentrenewal">Windows.Media.Protection.ComponentRenewal</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.media.protection.mediaprotectionmanager">Windows.Media.Protection.MediaProtectionManager</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.media.protection.revocationandrenewalinformation">Windows.Media.Protection.RevocationAndRenewalInformation</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.media.protection.revocationandrenewalitem">Windows.Media.Protection.RevocationAndRenewalItem</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.media.speechsynthesis.speechsynthesizer">Windows.Media.SpeechSynthesis.SpeechSynthesizer</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.media.mediacontrol">Windows.Media.MediaControl</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.media.videoeffects">Windows.Media.VideoEffects</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.networking.backgroundtransfer.backgrounddownloader">Windows.Networking.BackgroundTransfer.BackgroundDownloader</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.networking.backgroundtransfer.backgrounduploader">Windows.Networking.BackgroundTransfer.BackgroundUploader</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.networking.backgroundtransfer.downloadoperation">Windows.Networking.BackgroundTransfer.DownloadOperation</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.networking.backgroundtransfer.uploadoperation">Windows.Networking.BackgroundTransfer.UploadOperation</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.networking.sockets.datagramsocketcontrol">Windows.Networking.Sockets.DatagramSocketControl</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.networking.sockets.messagewebsocketcontrol">Windows.Networking.Sockets.MessageWebSocketControl</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.networking.sockets.streamsocketcontrol">Windows.Networking.Sockets.StreamSocketControl</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.networking.sockets.streamsocketlistenercontrol">Windows.Networking.Sockets.StreamSocketListenerControl</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.networking.sockets.streamwebsocketcontrol">Windows.Networking.Sockets.StreamWebSocketControl</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.perception.spatial.spatialanchortransfermanager.tryexportanchorsasync">Windows.Perception.Spatial.SpatialAnchorTransferManager.TryExportAnchorsAsync(Windows.Foundation.Collections.IIterable{Windows.Foundation.Collections.IKeyValuePair{System.String,Windows.Perception.Spatial.SpatialAnchor}},Windows.Storage.Streams.IOutputStream)</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.security.authentication.onlineid.onlineidauthenticator.authenticatedsafecustomerid">Windows.Security.Authentication.OnlineId.OnlineIdAuthenticator.AuthenticatedSafeCustomerId</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.security.credentials.ui.userconsentverifier.checkavailabilityasync">Windows.Security.Credentials.UI.UserConsentVerifier.CheckAvailabilityAsync</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.storage.accesscache.accesslistentryview">Windows.Storage.AccessCache.AccessListEntryView</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.storage.accesscache.storageitemaccesslist">Windows.Storage.AccessCache.StorageItemAccessList</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.storage.fileproperties.basicproperties">Windows.Storage.FileProperties.BasicProperties</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.storage.fileproperties.storageitemcontentproperties">Windows.Storage.FileProperties.StorageItemContentProperties</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.storage.fileproperties.storageitemthumbnail">Windows.Storage.FileProperties.StorageItemThumbnail</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.storage.pickers.provider.fileopenpickerui">Windows.Storage.Pickers.Provider.FileOpenPickerUI</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.storage.pickers.provider.fileopenpickerui.fileremoved">Windows.Storage.Pickers.Provider.FileOpenPickerUI.FileRemoved</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.storage.pickers.provider.fileremovedeventargs">Windows.Storage.Pickers.Provider.FileRemovedEventArgs</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.storage.pickers.provider.targetfilerequest.getdeferral">Windows.Storage.Pickers.Provider.TargetFileRequest.GetDeferral</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.storage.pickers.provider.targetfilerequestedeventargs">Windows.Storage.Pickers.Provider.TargetFileRequestedEventArgs</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.storage.provider.fileupdaterequest">Windows.Storage.Provider.FileUpdateRequest</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.storage.search.queryoptions">Windows.Storage.Search.QueryOptions</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.storage.search.storagefilequeryresult">Windows.Storage.Search.StorageFileQueryResult</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.storage.search.storagefilequeryresult.findstartindexasync">Windows.Storage.Search.StorageFileQueryResult.FindStartIndexAsync(System.Object)</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.storage.search.storagefolderqueryresult">Windows.Storage.Search.StorageFolderQueryResult</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.storage.search.storagefolderqueryresult.findstartindexasync">Windows.Storage.Search.StorageFolderQueryResult.FindStartIndexAsync(System.Object)</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.storage.search.storageitemqueryresult">Windows.Storage.Search.StorageItemQueryResult</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.storage.search.storageitemqueryresult.findstartindexasync">Windows.Storage.Search.StorageItemQueryResult.FindStartIndexAsync(System.Object)</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.storage.streams.datareader">Windows.Storage.Streams.DataReader</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.storage.streams.datawriter">Windows.Storage.Streams.DataWriter</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.storage.applicationdata">Windows.Storage.ApplicationData</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.datachanged">Windows.Storage.ApplicationData.DataChanged</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.localsettings">Windows.Storage.ApplicationData.LocalSettings</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.storage.applicationdatacompositevalue">Windows.Storage.ApplicationDataCompositeValue</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.storage.applicationdatacontainer">Windows.Storage.ApplicationDataContainer</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.storage.cachedfilemanager">Windows.Storage.CachedFileManager</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.storage.fileio">Windows.Storage.FileIO</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.storage.fileio.readbufferasync">Windows.Storage.FileIO.ReadBufferAsync(Windows.Storage.IStorageFile)</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.storage.fileio.writebufferasync">Windows.Storage.FileIO.WriteBufferAsync(Windows.Storage.IStorageFile,Windows.Storage.Streams.IBuffer)</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.storage.knownfolders">Windows.Storage.KnownFolders</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.storage.pathio">Windows.Storage.PathIO</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.storage.storagefile">Windows.Storage.StorageFile</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.storage.storagefile.properties">Windows.Storage.StorageFile.Properties</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.storage.storagefolder.createfileasync">Windows.Storage.StorageFolder.CreateFileAsync(System.String)</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.storage.storagefolder.createfilequery">Windows.Storage.StorageFolder.CreateFileQuery</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.storage.storagefolder.createfilequerywithoptions">Windows.Storage.StorageFolder.CreateFileQueryWithOptions(Windows.Storage.Search.QueryOptions)</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.storage.storagefolder.createfolderasync">Windows.Storage.StorageFolder.CreateFolderAsync(System.String)</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.storage.storagefolder.createitemquery">Windows.Storage.StorageFolder.CreateItemQuery</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.storage.storagefolder.deleteasync">Windows.Storage.StorageFolder.DeleteAsync</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.storage.storagefolder.getfileasync">Windows.Storage.StorageFolder.GetFileAsync(System.String)</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.storage.storagefolder.getfilesasync">Windows.Storage.StorageFolder.GetFilesAsync</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.storage.storagefolder.getfolderasync">Windows.Storage.StorageFolder.GetFolderAsync(System.String)</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.storage.storagefolder.getfolderfrompathasync">Windows.Storage.StorageFolder.GetFolderFromPathAsync(System.String)</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.storage.storagefolder.getfoldersasync">Windows.Storage.StorageFolder.GetFoldersAsync</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.storage.storagefolder.getitemasync">Windows.Storage.StorageFolder.GetItemAsync(System.String)</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.storage.storagefolder.trygetitemasync">Windows.Storage.StorageFolder.TryGetItemAsync(System.String)</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.storage.storagestreamtransaction">Windows.Storage.StorageStreamTransaction</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.system.display.displayrequest">Windows.System.Display.DisplayRequest</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.system.profile.hardwareidentification">Windows.System.Profile.HardwareIdentification</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.system.launcher.launchfileasync">Windows.System.Launcher.LaunchFileAsync(Windows.Storage.IStorageFile,Windows.System.LauncherOptions)</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync">Windows.System.Launcher.LaunchUriAsync(Windows.Foundation.Uri,Windows.System.LauncherOptions)</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.system.launcheroptions.contenttype">Windows.System.LauncherOptions.ContentType</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.system.launcheroptions.fallbackuri">Windows.System.LauncherOptions.FallbackUri</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.system.launcheroptions.preferredapplicationdisplayname">Windows.System.LauncherOptions.PreferredApplicationDisplayName</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkdrawingattributes">Windows.UI.Input.Inking.InkDrawingAttributes</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.ui.popups.messagedialog">Windows.UI.Popups.MessageDialog</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationviewswitchingoptions">Windows.UI.ViewManagement.ApplicationViewSwitchingOptions</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.inputpane.hiding">Windows.UI.ViewManagement.InputPane.Hiding</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.inputpane.showing">Windows.UI.ViewManagement.InputPane.Showing</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.inputpane.tryhide">Windows.UI.ViewManagement.InputPane.TryHide</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.inputpane.tryshow">Windows.UI.ViewManagement.InputPane.TryShow</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.projectionmanager">Windows.UI.ViewManagement.ProjectionManager</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource">Windows.UI.Xaml.Controls.ItemsControl.ItemsSource</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.doubleanimation">Windows.UI.Xaml.Media.Animation.DoubleAnimation</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.debugsettings.enableframeratecounter">Windows.UI.Xaml.DebugSettings.EnableFrameRateCounter</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.thickness">Windows.UI.Xaml.Thickness</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.addhandler">Windows.UI.Xaml.UIElement.AddHandler(Windows.UI.Xaml.RoutedEvent,System.Object,System.Boolean)</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.web.http.windows.web.http">N:Windows.Web.Http</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationitem">Windows.Web.Syndication.SyndicationItem</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.web.weberrorstatus">Windows.Web.WebErrorStatus</a></li>
+</ul>
+
 
 

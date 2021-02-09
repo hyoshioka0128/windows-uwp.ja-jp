@@ -6,12 +6,12 @@ ms.date: 09/12/2019
 keywords: Windows 10、音声、音声、会話、win32 speech アプリ、UWP speech アプリ、WPF speech apps、WinForms speech apps の音声
 ms.author: kbridge
 author: Karl-Bridge-Microsoft
-ms.openlocfilehash: d810f08a2db60309e4528167bcb4bddc95d850c6
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 0051ecb0556b72f768c142f04c38f3f34b2dd334
+ms.sourcegitcommit: 99a3f996a57ecc5df7382fb46bc9b8ba75614a53
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89174156"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99579013"
 ---
 # <a name="speech-voice-and-conversation-in-windows-10"></a>Windows 10 の音声、音声、および会話
 
@@ -43,7 +43,8 @@ ms.locfileid: "89174156"
 
       [会話担当者](/uwp/api/windows.applicationmodel.conversationalagent)
 
-      [Cortana 音声コマンド](/cortana/voice-commands/vcd)
+      [Cortana 音声コマンド](/cortana/voice-commands/vcd)<br>
+      (Windows 10 では2020更新プログラム以降ではサポートされていません)
    :::column-end:::
    :::column:::
       ![Win32 プラットフォーム アプリ](images/platform-win32.png)
@@ -72,13 +73,15 @@ ms.locfileid: "89174156"
 
       **Azure speech services**
 
-      Azure speech services を使用して、アクセス可能な web サイトを設計、構築、テストします。
+      音声処理をアプリとサービスに統合します。
 
       [音声テキスト変換](https://azure.microsoft.com/services/cognitive-services/speech-to-text/)
 
       [テキスト読み上げ](https://azure.microsoft.com/services/cognitive-services/text-to-speech/)
       
       [音声翻訳](https://azure.microsoft.com/services/cognitive-services/speech-translation/)
+
+      [Speaker Recognition](https://azure.microsoft.com/en-us/services/cognitive-services/speaker-recognition/)
 
       [音声優先の仮想アシスタント](/azure/cognitive-services/speech-service/voice-first-virtual-assistants)
    :::column-end:::
@@ -87,16 +90,21 @@ ms.locfileid: "89174156"
    :::column span="2":::
       **従来の機能**
 
-      Microsoft Speech テクノロジのレガシ、非推奨、またはサポートされていないバージョン。
+      Microsoft speech and メッセージ交換テクノロジのレガシ、非推奨、またはサポートされていないバージョン。
    :::column-end:::
 :::row-end:::
 :::row:::
    :::column:::
+      [Cortana Skills Kit](/cortana/skills/)
+
+      Cortana を [Microsoft 365](/microsoft-365/admin/misc/cortana-integration)に埋め込むことによって最新の生産性向上エクスペリエンスを変革することの目標の一環として、Cortana のスキルキット開発者プラットフォームと、このプラットフォーム上に構築されたすべてのスキルを廃止します。
+   :::column-end:::
+   :::column:::
+
       [Microsoft エージェント](/windows/win32/lwef/microsoft-agent)
 
       [Microsoft Speech アプリケーションソフトウェア開発キット (SASDK) バージョン1.0](https://www.microsoft.com/download/details.aspx?id=2200)
-   :::column-end:::
-   :::column:::
+
       [Microsoft Speech API (SAPI) 5.3](/previous-versions/windows/desktop/ms723627(v=vs.85))
 
       [Microsoft Speech API (SAPI) 5.4](/previous-versions/windows/desktop/ee125663(v=vs.85))

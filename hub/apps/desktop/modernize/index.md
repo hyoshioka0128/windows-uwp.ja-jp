@@ -1,17 +1,17 @@
 ---
-Description: 最新の XAML ユーザー インターフェイスを追加し、MSIX パッケージを作成し、その他のモダン コンポーネントをお使いのデスクトップ アプリケーションに組み込みます。
+description: 最新の XAML ユーザー インターフェイスを追加し、MSIX パッケージを作成し、その他のモダン コンポーネントをお使いのデスクトップ アプリケーションに組み込みます。
 title: Windows 用デスクトップ アプリの現代化
 ms.topic: article
-ms.date: 04/17/2019
+ms.date: 10/02/2020
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: d2ae73cc32fd4e3717fe40b8a6ec8c3397b40619
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 99bb68ff7d990b0b633df0c4efa2d8eafad759cd
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89161536"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93031065"
 ---
 # <a name="modernize-your-desktop-apps"></a>デスクトップ アプリの現代化
 
@@ -24,7 +24,7 @@ Windows 10 とユニバーサル Windows プラットフォーム (UWP) に用�
 
 ## <a name="windows-ui-library"></a>Windows UI ライブラリ
 
-Windows UI ライブラリは、Windows 10 アプリ用のコントロールとその他のユーザー インターフェイス要素を提供する NuGet パッケージのセットです。 WinUI は、ダウンレベル バージョンの Windows 10 を対象とする UWP アプリ用の UWP コントロールの新しいバージョンと更新バージョンを提供するツールキットとして開始されました。 WinUI のスコープが拡張されて、UWP、.NET、Win32 において Windows 10 アプリ向けの最新のネイティブ ユーザー インターフェイス (UI) プラットフォームになりました。
+Windows UI ライブラリは、Windows 10 アプリ用のコントロールとその他のユーザー インターフェイス要素を提供する NuGet パッケージのセットです。 WinUI は、ダウンレベル バージョンの Windows 10 を対象とする UWP アプリ用の WinRT XAML コントロールの新しいバージョンと更新バージョンを提供するツールキットとして開始されました。 WinUI のスコープが拡張されて、UWP、.NET、ネイティブ Win32 において Windows 10 アプリ向けの最新のネイティブ ユーザー インターフェイス (UI) プラットフォームになりました。
 
 デスクトップ アプリでは、次の方法で WinUI を使用できます。
 
@@ -43,7 +43,7 @@ MSIX パッケージにデスクトップ Windows アプリをパッケージ化
 
 ## <a name="net-core-3"></a>.NET Core 3
 
-.NET Core 3 は、.NET Core の最新のメジャー リリースです。 このリリースのハイライトは、Windows フォーム、WPF アプリを含む Windows デスクトップ アプリのサポートです。 .NET Core 3 で新規および既存の Windows デスクトップ アプリを実行し、.NET Core で提供されるすべての特典を利用することができます。 [XAML Islands](xaml-islands.md)でホストされている UWP コントロールを、.NET Core 3 を対象とする Windows フォームや WPF アプリでも使用できます。
+.NET Core 3 は、.NET Core の最新のメジャー リリースです。 このリリースのハイライトは、Windows フォーム、WPF アプリを含む Windows デスクトップ アプリのサポートです。 .NET Core 3 で新規および既存の Windows デスクトップ アプリを実行し、.NET Core で提供されるすべての特典を利用することができます。 [XAML Islands](xaml-islands.md) でホストされている WinRT XAML コントロールを、.NET Core 3 を対象とする Windows フォームや WPF アプリでも使用できます。
 
 詳細については、「[.NET Core 3.0 の新機能](/dotnet/core/whats-new/dotnet-core-3-0)」をご覧ください。
 
@@ -53,15 +53,15 @@ MSIX パッケージにデスクトップ Windows アプリをパッケージ化
 
 詳しくは、[デスクトップ アプリでの Windows ランタイム API の使用](desktop-to-uwp-enhance.md)に関する記事をご覧ください。
 
-## <a name="host-uwp-controls-xaml-islands"></a>UWP コントロールのホスト (XAML Islands)
+## <a name="host-winrt-xaml-controls-xaml-islands"></a>WinRT XAML コントロールのホスト (XAML Islands)
 
-Windows 10、バージョン 1903 以降では、ウィンドウ ハンドル (HWND) に関連付けられた WPF、Windows フォーム、または C++ Win32 アプリ内の任意の UI 要素に直接 [UWP XAML コントロール](/windows/uwp/design/controls-and-patterns/controls-by-function)を追加できます。 つまり、[Windows Ink](/windows/uwp/design/input/pen-and-stylus-interactions)、[Fluent Design System](/windows/uwp/design/fluent-design-system/index) をサポートするコントロールなど最新の UWP 機能を、デスクトップ アプリのウィンドウやその他のディスプレイ サーフェスに完全に統合できます。 この開発者シナリオは "*XAML Islands*" とも呼ばれます。
+Windows 10、バージョン 1903 以降では、ウィンドウ ハンドル (HWND) に関連付けられた WPF、Windows フォーム、または C++ Win32 アプリ内の任意の UI 要素に直接 [UWP XAML コントロール](/windows/uwp/design/controls-and-patterns/controls-by-function)を追加できます。 つまり、[Windows Ink](/windows/uwp/design/input/pen-and-stylus-interactions)、[Fluent Design System](/windows/uwp/design/fluent-design-system/index) をサポートするコントロールなど最新の UWP 機能を、デスクトップ アプリのウィンドウやその他のディスプレイ サーフェスに完全に統合できます。 この開発者シナリオは " *XAML Islands* " とも呼ばれます。
 
-詳細については、「[UWP controls in desktop apps (デスクトップ アプリでの UWP コントロール)](xaml-islands.md)」を参照してください。
+詳細については、[デスクトップ アプリでの WinRT XAML コントロール](xaml-islands.md)をご覧ください
 
 ## <a name="use-the-visual-layer-in-desktop-apps"></a>デスクトップ アプリでのビジュアル レイヤーの使用
 
-UWP 以外のデスクトップ アプリで Windows ランタイム API を使用して WPF、Windows フォーム、C++ Win32 アプリの外観や機能を高めたり、UWP でのみ利用可能な最新の Windows 10 UI 機能を活用したりできるようになりました。 これは、XAML  Islands を使用してホストできる組み込みの UWP コントロールだけにとどまらないカスタム エクスペリエンスを作成する必要がある場合に便利です。
+UWP 以外のデスクトップ アプリで Windows ランタイム API を使用して WPF、Windows フォーム、C++ Win32 アプリの外観や機能を高めたり、UWP でのみ利用可能な最新の Windows 10 UI 機能を活用したりできるようになりました。 これは、XAML Islands を使用してホストできる組み込みの WinRT XAML コントロールだけにとどまらないカスタム エクスペリエンスを作成する必要がある場合に便利です。
 
 詳しくは、「[Modernize your desktop app using the Visual layer (ビジュアル レイヤーを使用したデスクトップ アプリの現代化)](visual-layer-in-desktop-apps.md)」をご覧ください。
 
@@ -72,17 +72,17 @@ UWP 以外のデスクトップ アプリで Windows ランタイム API を使�
 デスクトップ アプリに ID を付与する方法はいくつかあります。
 
 * [MSIX パッケージ](/windows/msix/desktop/desktop-to-uwp-root)でパッケージ化します。 MSIX は、すべての Windows アプリ、WPF、Windows フォーム、Win32 アプリ用のユニバーサルなパッケージ化エクスペリエンスを提供するモダンなアプリ パッケージ形式です。 これは、堅牢なインストールと更新のエクスペリエンス、柔軟な機能システムによる管理されたセキュリティ モデル、Microsoft Store のサポート、エンタープライズ管理、および多くのカスタム配布モデルを提供します。 詳しくは、MSIX ドキュメントの「[デスクトップ アプリケーションのパッケージ化](/windows/msix/desktop/desktop-to-uwp-root)」をご覧ください。
-* デスクトップ アプリを配置するために MSIX パッケージを導入できない場合、Windows 10 バージョン 2004 以降では、パッケージ マニフェストのみを含む "*スパース MSIX パッケージ*" を作成することでパッケージ ID を付与できます。 詳細については、「[パッケージ化されていないデスクトップ アプリに ID を付与する](grant-identity-to-nonpackaged-apps.md)」を参照してください。
+* デスクトップ アプリを配置するために MSIX パッケージを導入できない場合、Windows 10 バージョン 2004 以降では、パッケージ マニフェストのみを含む " *スパース MSIX パッケージ* " を作成することでパッケージ ID を付与できます。 詳細については、「[パッケージ化されていないデスクトップ アプリに ID を付与する](grant-identity-to-nonpackaged-apps.md)」を参照してください。
 
 <a id="desktop-uwp-controls"></a>
 
-## <a name="uwp-controls-optimized-for-desktop-apps"></a>デスクトップ アプリ用に最適化された UWP コントロール
+## <a name="winrt-xaml-controls-optimized-for-desktop-apps"></a>デスクトップ アプリ用に最適化された WinRT XAML コントロール
 
-デスクトップ デバイス ファミリを排他的にターゲットとする UWP アプリを構築する場合でも、WPF、Windows フォーム、または C++ Win32 デスクトップ アプリで UWP コントロールを使用する場合でも、次の新しい、または更新された UWP コントロールは [Fluent Design System](/windows/uwp/design/fluent-design-system/index) を使用してデスクトップ最適化されたエクスペリエンスを提供するように設計されています。 これらのコントロールは、Windows 10、バージョン 1809 (October 2018 Update、またはバージョン 10.0.17763) で導入されました。
+デスクトップ デバイス ファミリを排他的にターゲットとする UWP アプリを構築する場合でも、WPF、Windows フォーム、または C++ Win32 デスクトップ アプリで WinRT XAML コントロールを使用する場合でも、次の新しい、または更新された WinRT XAML コントロールは [Fluent Design System](/windows/uwp/design/fluent-design-system/index) を使用してデスクトップ最適化されたエクスペリエンスを提供するように設計されています。 これらのコントロールは、Windows 10、バージョン 1809 (October 2018 Update、またはバージョン 10.0.17763) で導入されました。
 
 | Control |  説明 |
 |------ |--------------|
-| [MenuBar](/windows/uwp/design/controls-and-patterns/menus#create-a-menu-bar) | **CommandBar** で許容されるよりも多くの組織またはグループ化が必要になる可能性があるアプリ用のコマンド セットを公開する簡単でシンプルな方法を提供します。 |
+| [MenuBar](/windows/uwp/design/controls-and-patterns/menus#create-a-menu-bar) | **CommandBar** で許容されるよりも多くの組織またはグループ化が必要になる可能性があるアプリ用のコマンド セットをすばやく簡単に公開できます。 |
 | [DropDownButton](/windows/uwp/design/controls-and-patterns/buttons#create-a-drop-down-button) | その他のオプションを含むアタッチされたポップアップのある視覚インジケータとして山かっこを示します。  |
 | [SplitButton](/windows/uwp/design/controls-and-patterns/buttons#create-a-split-button) | 個別に呼び出せる 2 つのパーツを持つボタンを指定します。 1 つのパーツは標準のボタンのように動作し、即座にアクションを呼び出します。 もう一方のパーツは、ユーザーが選択できる追加オプションを含むポップアップを呼び出します。|
 | [ToggleSplitButton](/windows/uwp/design/controls-and-patterns/buttons#create-a-toggle-split-button) | 個別に呼び出せる 2 つのパーツを持つボタンを指定します。 1 つのパーツは、オンまたはオフにできるトグル ボタンのように動作します。 もう一方のパーツは、ユーザーが選択できる追加オプションを含むポップアップを呼び出します。 |

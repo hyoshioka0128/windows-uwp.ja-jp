@@ -8,12 +8,12 @@ ms.topic: article
 keywords: python, windows 10, microsoft, windows での python , wsl を使用した python web , linux 用 windows サブシステムを使用した python web アプリ, windows での python web 開発, windows での flask アプリ, windows での django アプリ, python web, windows での flask web 開発, windows での django web 開発, python を使用した windows web 開発, vs code python web 開発, リモート wsl 拡張機能, ubuntu, wsl, venv, pip, microsoft python 拡張機能, windows での python の実行, windows での python の使用, windows での python を使用した構築
 ms.localizationpriority: medium
 ms.date: 07/19/2019
-ms.openlocfilehash: fedfb42e4c1604b3570c2b4db21b12926bea3762
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 3b5ed80b746d0aa1441bf77e6468101deee320a6
+ms.sourcegitcommit: 3fafc6b6d548a03e6191fa95ebf9384c42396a30
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89174566"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97880555"
 ---
 # <a name="get-started-using-python-for-web-development-on-windows"></a>Windows で Web 開発に Python を使用する
 
@@ -60,7 +60,7 @@ VS Code を使用して、[IntelliSense](https://code.visualstudio.com/docs/edit
 ![Ubuntu ターミナル](../images/ubuntu-terminal.png)
 
 > [!TIP]
-> Linux 用 Windows サブシステム (WSL) を使用する際に覚えておく必要がある重要な点は、**2 つの異なるファイル システムをまたいで作業している**ことです。1 つは Windows ファイル システム、もう 1 つは Linux ファイル システム (WSL)、この例では Ubuntu です。 パッケージをインストールおよびファイルを保存する場所に注意する必要があります。 あるバージョンのツールまたはパッケージを Windows ファイル システムにインストールし、まったく別のバージョンを Linux ファイル システムにインストールすることが可能です。 Windows ファイル システムでツールを更新しても Linux ファイル システムのツールには影響がなく、逆も同様です。 WSL は、お使いのコンピューター上の固定ドライブを、お使いの Linux ディストリビューションの `/mnt/<drive>` フォルダー配下にマウントします。 たとえば、Windows の C: ドライブは `/mnt/c/` 配下にマウントされます。 Ubuntu ターミナルから Windows のファイルにアクセスし、それらのファイルに対して Linux のアプリやツールを使用することが可能であり、逆も同様です。 多くの Web ツールは元々 Linux 向けに開発され、Linux の運用環境に配置されるため、Python Web 開発では Linux のファイル システムで作業することをお勧めします。 そうすることで、(Windows でファイル名の大文字と小文字が区別されないといった) ファイル システムのセマンティクスが混在することも回避できます。 とはいえ、WSL は Linux と Windows の両ファイル システム間の行き来をサポートするようになったため、どちらのファイル システムでもファイルをホストできます。 [詳しくはこちらをご覧ください](https://devblogs.microsoft.com/commandline/do-not-change-linux-files-using-windows-apps-and-tools/)。
+> Linux 用 Windows サブシステム (WSL) を使用する際に覚えておく必要がある重要な点は、**2 つの異なるファイル システムをまたいで作業している** ことです。1 つは Windows ファイル システム、もう 1 つは Linux ファイル システム (WSL)、この例では Ubuntu です。 パッケージをインストールおよびファイルを保存する場所に注意する必要があります。 あるバージョンのツールまたはパッケージを Windows ファイル システムにインストールし、まったく別のバージョンを Linux ファイル システムにインストールすることが可能です。 Windows ファイル システムでツールを更新しても Linux ファイル システムのツールには影響がなく、逆も同様です。 WSL は、お使いのコンピューター上の固定ドライブを、お使いの Linux ディストリビューションの `/mnt/<drive>` フォルダー配下にマウントします。 たとえば、Windows の C: ドライブは `/mnt/c/` 配下にマウントされます。 Ubuntu ターミナルから Windows のファイルにアクセスし、それらのファイルに対して Linux のアプリやツールを使用することが可能であり、逆も同様です。 多くの Web ツールは元々 Linux 向けに開発され、Linux の運用環境に配置されるため、Python Web 開発では Linux のファイル システムで作業することをお勧めします。 そうすることで、(Windows でファイル名の大文字と小文字が区別されないといった) ファイル システムのセマンティクスが混在することも回避できます。 とはいえ、WSL は Linux と Windows の両ファイル システム間の行き来をサポートするようになったため、どちらのファイル システムでもファイルをホストできます。 [詳しくはこちらをご覧ください](https://devblogs.microsoft.com/commandline/do-not-change-linux-files-using-windows-apps-and-tools/)。
 
 ## <a name="install-python-pip-and-venv"></a>Python、pip、venv をインストールする
 
@@ -83,7 +83,7 @@ Ubuntu 18.04 LTS には Python 3.6 が既にインストールされています
     ![仮想環境を作成する](../images/wsl-venv.png)
 
 > [!TIP]
-> プロジェクトを配置する予定のディレクトリ内に仮想環境を作成することをお勧めします。 プロジェクトごとに独自の独立したディレクトリを設ける必要があり、各プロジェクトが独自の仮想環境を持つことになるため、一意の名前付けは必要ありません。 ここでは、Python の規則に従うために **.venv** という名前を使用することを提案します。 プロジェクト ディレクトリにインストールした場合、(pipenv などの) 一部のツールも既定でこの名前になります。 **.env** は環境変数の定義ファイルと競合するため、使用しないでください。 ディレクトリが存在することが `ls` から常に通知される必要はないため、一般的には、ドットで始まらない名前は推奨されません。 .gitignore ファイルに **.venv** を追加することもお勧めします。 (参考までに、[GitHub の既定の Python 用 gitignore テンプレート](https://github.com/github/gitignore/blob/50e42aa1064d004a5c99eaa72a2d8054a0d8de55/Python.gitignore#L99-L106)はこちらです。)VS Code での仮想環境を使用した作業の詳細については、[VS Code での Python 環境の使用](https://code.visualstudio.com/docs/python/environments)に関するページを参照してください。
+> プロジェクトを配置する予定のディレクトリ内に仮想環境を作成することをお勧めします。 プロジェクトごとに独自の独立したディレクトリを設ける必要があり、それぞれが独自の仮想環境を持つことになるため、一意の名前付けは必要ありません。 ここでは、Python の規則に従うために **.venv** という名前を使用することを提案します。 プロジェクト ディレクトリにインストールした場合、(pipenv などの) 一部のツールも既定でこの名前になります。 **.env** は環境変数の定義ファイルと競合するため、使用しないでください。 ディレクトリが存在することが `ls` から常に通知される必要はないため、一般的には、ドットで始まらない名前は推奨されません。 .gitignore ファイルに **.venv** を追加することもお勧めします。 (参考までに、[GitHub の既定の Python 用 gitignore テンプレート](https://github.com/github/gitignore/blob/50e42aa1064d004a5c99eaa72a2d8054a0d8de55/Python.gitignore#L99-L106)はこちらです。)VS Code での仮想環境を使用した作業の詳細については、[VS Code での Python 環境の使用](https://code.visualstudio.com/docs/python/environments)に関するページを参照してください。
 
 ## <a name="open-a-wsl---remote-window"></a>WSL - Remote ウィンドウを開く
 
@@ -200,9 +200,9 @@ Python はインタープリター言語であり、さまざまな種類のイ�
      * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
     ```
 
-14. 既定の Web ブラウザーを開き、ターミナル内の http://127.0.0.1:5000/ URL を **Ctrl キーを押しながらクリック**して、レンダリングされたページを表示します。 次のメッセージがブラウザーに表示されるはずです。
+14. 既定の Web ブラウザーを開き、ターミナル内の http://127.0.0.1:5000/ URL を **Ctrl キーを押しながらクリック** して、レンダリングされたページを表示します。 次のメッセージがブラウザーに表示されるはずです。
 
-    ![Hello, Flask!](../images/hello-flask.png)
+    ![Hello World! I'm using Flask.](../images/hello-flask.png)
 
 15. "/" のような URL にアクセスすると、HTTP 要求を示すメッセージがデバッグ ターミナルに表示されることを確認します。
 
@@ -264,7 +264,7 @@ Python はインタープリター言語であり、さまざまな種類のイ�
     Quit the server with CONTROL-C.
     ```
 
-    サーバーを初めて実行すると、サーバーは既定の SQLite データベースをファイル `db.sqlite3` に作成します。開発用途が想定されていますが、小規模な Web アプリであれば運用環境で使用できます。 また、Django の組み込み Web サーバーはローカル開発用途*のみ*を想定しています。 ただし、Web ホストに配置する場合、Django はホストの Web サーバーを代わりに使用します。 Django プロジェクトの `wsgi.py` モジュールは、実稼働サーバーへのフックを処理します。
+    サーバーを初めて実行すると、サーバーは既定の SQLite データベースをファイル `db.sqlite3` に作成します。開発用途が想定されていますが、小規模な Web アプリであれば運用環境で使用できます。 また、Django の組み込み Web サーバーはローカル開発用途 *のみ* を想定しています。 ただし、Web ホストに配置する場合、Django はホストの Web サーバーを代わりに使用します。 Django プロジェクトの `wsgi.py` モジュールは、実稼働サーバーへのフックを処理します。
 
     既定の 8000 以外のポートを使用する場合、`python3 manage.py runserver 5000` のようにコマンド ラインでポート番号を指定します。
 

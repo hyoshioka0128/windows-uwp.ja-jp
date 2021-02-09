@@ -6,12 +6,12 @@ ms.date: 05/14/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 2965eb3196f2a19f7d5351ee422013c6c22ba88a
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 9cda36c6027ae74df9beb5d1de68f69f273dc5f0
+ms.sourcegitcommit: 4cafc1c55511741dd1e5bfe4496d9950a9b4de1b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89174306"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97860107"
 ---
 # <a name="windows-runtime-components-with-ccx"></a>C++/CX を使用した Windows ランタイム コンポーネント
 
@@ -24,7 +24,7 @@ C++ で Windows ランタイムコンポーネントを構築するには、い�
 - 複雑な操作または負荷の高い操作で C++ のパフォーマンス上のメリットを得る。
 - 既に作成されテストされている既存のコードを再利用する。
 
-JavaScript プロジェクトまたは .NET プロジェクト、および Windows ランタイム コンポーネント プロジェクトを含むソリューションを構築すると、JavaScript プロジェクト ファイルとコンパイル済みの DLL が 1 つのパッケージにマージされます。これを、シミュレーターを使ってローカルでデバッグしたり、テザリングされたデバイス上でリモートでデバッグしたりすることができます。 また、拡張 SDK としてコンポーネント プロジェクトだけを配布することもできます。 詳しくは、「[Creating a Software Development Kit](/visualstudio/extensibility/creating-a-software-development-kit?view=vs-2015)」(ソフトウェア開発キットの作成) をご覧ください。
+JavaScript プロジェクトまたは .NET プロジェクト、および Windows ランタイム コンポーネント プロジェクトを含むソリューションを構築すると、JavaScript プロジェクト ファイルとコンパイル済みの DLL が 1 つのパッケージにマージされます。これを、シミュレーターを使ってローカルでデバッグしたり、テザリングされたデバイス上でリモートでデバッグしたりすることができます。 また、拡張 SDK としてコンポーネント プロジェクトだけを配布することもできます。 詳しくは、「[Creating a Software Development Kit](/visualstudio/extensibility/creating-a-software-development-kit)」(ソフトウェア開発キットの作成) をご覧ください。
 
 一般に、C++/CX コンポーネントのコードを記述するときは、通常の C++ ライブラリと組み込み型を使用します。ただし、別の winmd パッケージ内のコードとの間でデータをやり取りする抽象バイナリインターフェイス (ABI) の境界は除きます。 ここでは、これらの型を作成および操作するために C++/CX でサポートされている Windows ランタイム型と特殊な構文を使用します。 さらに、C++/CX コードでは、デリゲートやイベントなどの型を使用して、コンポーネントから発生させ、JavaScript、Visual Basic、C++、または C# で処理できるイベントを実装します。 C++/CX 構文の詳細については、「 [Visual C++ 言語リファレンス (c++/cx)](/cpp/cppcx/visual-c-language-reference-c-cx)」を参照してください。
 
@@ -185,7 +185,7 @@ public:
 };
 ```
 
-ただし、以下のシグネチャの相違は区別できません。
+しかし、次のような違いはわかりません。
 
 ```cpp
 int GetNumber(int i);
@@ -345,7 +345,7 @@ private void GetDictionary()
 }
 ```
 
-## <a name="properties"></a>プロパティ
+## <a name="properties"></a>Properties
 C++/CX コンポーネント拡張のパブリック ref クラスは、property キーワードを使用して、パブリックデータメンバーをプロパティとして公開します。 概念は .NET プロパティと同じです。 単純プロパティは機能が暗黙的であるため、データ メンバーに似ています。 非単純プロパティには、明示的な get アクセサーと set アクセサーがあり、値の "バッキング ストア" である名前付きのプライベート変数があります。 この例では、プライベートメンバー変数 \_ propertyAValue は PropertyA のバッキングストアです。 プロパティの値が変化するときにイベントを生成できます。またクライアント アプリは、そのイベントを受け取るように登録することができます。
 
 ```cpp
@@ -543,7 +543,7 @@ C# と Visual Basic のどちらの言語でも列挙型がサポートされま
 ## <a name="asynchronous-methods"></a>非同期メソッド
 他の Windows ランタイム オブジェクトによって公開される非同期メソッドを利用するには、[task クラス (同時実行ランタイム)](/cpp/parallel/concrt/reference/task-class) を使います。 詳しくは、「[タスクの並列処理 (同時実行ランタイム)](/cpp/parallel/concrt/task-parallelism-concurrency-runtime)」をご覧ください。
 
-C++/CX で非同期メソッドを実装するには、ppltasks.h で定義されている [create \_ async](/cpp/parallel/concrt/reference/concurrency-namespace-functions?view=vs-2017) 関数を使用します。 詳細については、「 [C++/cx での UWP アプリ用の非同期操作の作成](/cpp/parallel/concrt/creating-asynchronous-operations-in-cpp-for-windows-store-apps)」を参照してください。 例については、「 [C++/cx Windows ランタイムコンポーネントの作成」および「JavaScript または C# からの呼び出し](walkthrough-creating-a-basic-windows-runtime-component-in-cpp-and-calling-it-from-javascript-or-csharp.md)」を参照してください。 .NET 言語では、.NET で定義されている非同期メソッドと同様に、C++/CX 非同期メソッドが使用されます。
+C++/CX で非同期メソッドを実装するには、ppltasks.h で定義されている [create \_ async](/cpp/parallel/concrt/reference/concurrency-namespace-functions?view=vs-2017&preserve-view=true) 関数を使用します。 詳細については、「 [C++/cx での UWP アプリ用の非同期操作の作成](/cpp/parallel/concrt/creating-asynchronous-operations-in-cpp-for-windows-store-apps)」を参照してください。 例については、「 [C++/cx Windows ランタイムコンポーネントの作成」および「JavaScript または C# からの呼び出し](walkthrough-creating-a-basic-windows-runtime-component-in-cpp-and-calling-it-from-javascript-or-csharp.md)」を参照してください。 .NET 言語では、.NET で定義されている非同期メソッドと同様に、C++/CX 非同期メソッドが使用されます。
 
 ## <a name="exceptions"></a>例外
 Windows ランタイムによって定義された任意の例外の型をスローできます。 Windows ランタイムのどの例外の型からもカスタム型は取得できません。 ただし、COMException をスローし、例外をキャッチするコードがアクセスできるカスタム HRESULT を提供できます。 COMException でカスタム メッセージを指定する方法はありません。

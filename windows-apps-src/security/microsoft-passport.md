@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, セキュリティ
 ms.localizationpriority: medium
-ms.openlocfilehash: 152254e5b4c0bfb8aec1e88a8d370863df88fe85
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: bcb43748baeeb7f68ec246cb0277fbef0944fc47
+ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89170886"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91750357"
 ---
 # <a name="windows-hello"></a>Windows Hello
 
@@ -83,8 +83,6 @@ Windows Hello は、従来の 2FA システムの単なる代替機能ではあ�
 以上で、Windows Hello のしくみの基本について学習しました。次に、Windows Hello をアプリケーションに実装する方法について説明します。
 
 Windows Hello を使った実装については、さまざまなシナリオがあります。 たとえば、デバイスでアプリにログオンする場合が挙げられます。 他の一般的なシナリオとしては、サービスに対して認証を行うシナリオがあります。 ログオン名とパスワードを使う代わりに、Windows Hello を使います。 以降の章では、いくつかの異なるシナリオの実装について説明します。Windows Hello を使いサービスに対して認証する方法や、既にあるユーザー名/パスワード システムから Windows Hello システムへの変換方法などについて説明します。
-
-最後に、Windows Hello API については、アプリを使用するオペレーティング システムと一致する Windows 10 SDK を使用する必要があることに注意してください。 つまり、Windows 10 に展開するアプリには 10.0.10240 Windows SDK を使用する必要があり、Windows 10 バージョン 1511 に展開するアプリには 10.0.10586 を使用する必要があります。
 
 ## <a name="3-implementing-windows-hello"></a>3 Windows Hello の実装
 
@@ -413,8 +411,8 @@ Windows 10 には、簡単に実現できる、高いレベルのセキュリテ
 
 ### <a name="62-terminology"></a>6.2 用語
 
-| | |
-|-|-|
+| 期間 | 定義 |
+| ---- | ---------- |
 | AIK | 構成証明識別キー (AIK) を使って、暗号証明 (TPM キーの構成証明) などを提供します。そのためには、移行不可能なキーのプロパティに署名し、そのプロパティと署名を検証のために証明書利用者に提供します。 このプロパティへの署名は、"構成証明ステートメント" と呼ばれます。 署名は AIK 秘密キー (このキーを作成した TPM でのみ利用できます) を使って作成されるため、証明書利用者は、証明されたキーが実際に移行不可能であり、TPM の外部で利用できないことを信頼することができます。 |
 | AIK 証明書 | AIK 証明書は、TPM 内に AIK が存在すること証明するために使われます。 また、特定の TPM の AIK によって認証された他のキーを証明する場合にも使われます。 |
 | IDP | IDP とは ID プロバイダーを表します。 例として、Microsoft アカウント用に Microsoft が作成した IDP があります。 アプリケーションで MSA を使った認証を行うたびに、MSA IDP を呼び出すことができます。 |

@@ -1,5 +1,5 @@
 ---
-Description: Cortana の音声コマンド、音声認識、音声合成を使って、アプリに音声操作を組み込むことができます。
+description: Surface のダイヤルと、その使用方法について説明します。これにより、Windows アプリと Windows アプリで魅力的で一意のユーザー操作エクスペリエンスを実現できます。
 title: Surface Dial の操作
 label: Surface Dial interactions
 template: detail.hbs
@@ -8,12 +8,12 @@ ms.date: 09/24/2020
 ms.topic: article
 ms.assetid: e7deb1d6-feeb-471e-9a83-26386d1aaf37
 ms.localizationpriority: medium
-ms.openlocfilehash: e9a619fc58b1b84755e33fd36ebacd99f98d6b7f
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: e5b55f35e59779d5fb8dfd01caa843be5bcfa6a3
+ms.sourcegitcommit: 40b890c7b862f333879887cc22faff560c49eae6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91220415"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97598893"
 ---
 # <a name="surface-dial-interactions"></a>Surface Dial の操作
 
@@ -27,14 +27,22 @@ Surface Dial などの Windows Wheel デバイスは、Windows や Windows ア�
 > [!IMPORTANT]
 > このトピックでは、特に Surface Dial の操作について説明しますが、情報はすべての Windows Wheel デバイスに適用されます。 
 
-| ビデオ |   |
-| --- | --- |
-| <iframe src="https://www.youtube-nocookie.com/embed/WMklcdzcNcU" width="300" height="200" allowFullScreen="true" frameBorder="0"></iframe> | <iframe src="https://channel9.msdn.com/Blogs/One-Dev-Minute/Programming-the-Microsoft-Surface-Dial/player" width="300" height="200" allowFullScreen="true" frameBorder="0"></iframe> |
-| *Surface Dial のアプリ パートナー* | *開発者向けの Surface Dial* |
+:::row:::
+   :::column:::
+      <iframe src="https://www.youtube-nocookie.com/embed/WMklcdzcNcU" width="300" height="200" allowFullScreen="true" frameBorder="0"></iframe>
 
-*回転*動作 (またはジェスチャ) に基づくフォームファクタを持つ Surface Dial は、プライマリ デバイスからの入力を補完または変更する、セカンダリのマルチ モーダル入力デバイスとして設計されています。 このデバイスは多くの場合、ユーザーが利き手でタスクを実行している間に (たとえばペンでインク操作をするときなど)、利き手ではない手で操作されます。 高精度のポインター入力 (タッチ、ペン、マウスなど) 用に設計されていません。 
+      *Surface Dial のアプリ パートナー*
+   :::column-end:::
+   :::column:::
+      <iframe src="https://channel9.msdn.com/Blogs/One-Dev-Minute/Programming-the-Microsoft-Surface-Dial/player" width="300" height="200" allowFullScreen="true" frameBorder="0"></iframe>
 
-Surface Dial は、*長押し*アクションと*クリック*アクションもサポートしています。 長押しの機能は 1 つで、コマンドのメニューを表示します。 メニューがアクティブになっている場合、回転とクリックの入力はメニューによって処理されます。 それ以外の場合、入力は、処理のためにアプリに渡されます。 
+      *開発者向けの Surface Dial*
+   :::column-end:::
+:::row-end:::
+
+*回転* 動作 (またはジェスチャ) に基づくフォームファクタを持つ Surface Dial は、プライマリ デバイスからの入力を補完または変更する、セカンダリのマルチ モーダル入力デバイスとして設計されています。 このデバイスは多くの場合、ユーザーが利き手でタスクを実行している間に (たとえばペンでインク操作をするときなど)、利き手ではない手で操作されます。 高精度のポインター入力 (タッチ、ペン、マウスなど) 用に設計されていません。 
+
+Surface Dial は、*長押し* アクションと *クリック* アクションもサポートしています。 長押しの機能は 1 つで、コマンドのメニューを表示します。 メニューがアクティブになっている場合、回転とクリックの入力はメニューによって処理されます。 それ以外の場合、入力は、処理のためにアプリに渡されます。 
 
 **Windows の他の入力デバイスと同様に、アプリの機能に合わせて Surface Dial の操作エクスペリエンスをカスタマイズおよび調整できます。**
 
@@ -45,9 +53,18 @@ Surface Dial は、*長押し*アクションと*クリック*アクションも
 >
 >Surface Dial の接触位置と境界の両方を検出することにより、システムはこの情報を使用してデバイスによるオクルージョンを処理し、Dial の外側を囲むように大きいバージョンのメニューを表示します。 この同じ情報をアプリで使用して、デバイスの存在とその予想される使用状況 (ユーザーの手や腕の配置など) の両方に合わせて UI を調整することもできます。
 
-| Surface Dial のオフスクリーン メニュー | | Surface Dial のオンスクリーン メニュー |
-| --- | --- | --- |
-| ![Surface Dial のオフスクリーン メニュー](images/windows-wheel/surface-dial-menu-offscreen.png) | | ![Surface Dial のオンスクリーン メニュー](images/windows-wheel/surface-dial-menu-onscreen.png) |
+:::row:::
+   :::column:::
+      **Surface Dial のオフスクリーン メニュー**
+
+      ![Surface のダイヤルオフ画面メニューのスクリーンショット。](images/windows-wheel/surface-dial-menu-offscreen.png)
+   :::column-end:::
+   :::column:::
+      **Surface Dial のオンスクリーン メニュー**
+
+      ![画面に表示された画面の画面のスクリーンショット。](images/windows-wheel/surface-dial-menu-onscreen.png)
+   :::column-end:::
+:::row-end:::
 
 ## <a name="system-integration"></a>システム統合
 
@@ -113,10 +130,23 @@ Surface Dial メニュー項目は無効な状態をサポートしていない�
 - アイコンは画像のほとんどの部分を占めている必要がある
 - 白いアイコンは、ハイ コントラスト モードで表示できるように黒い枠が必要である
 
-|   |   |   |
-| --- | --- | --- |
-| ![アルファによる背景付きのアイコン](images/windows-wheel/surface-dial-menu-icon1.png) | ![既定のテーマのアイコンでホイール メニューに表示されるアイコン](images/windows-wheel/surface-dial-menu-icon2.png) | ![Surface Dial のオンスクリーン メニュー](images/windows-wheel/surface-dial-menu-icon3.png) |
-| *アルファによる背景付きのアイコン* | *既定のテーマでホイール メニューに表示されるアイコン* | *ハイコントラスト白のテーマでホイール メニューに表示されるアイコン* |
+:::row:::
+   :::column:::
+      ![アルファ背景を持つアイコンのスクリーンショット。](images/windows-wheel/surface-dial-menu-icon1.png)
+
+      *アルファによる背景付きのアイコン*
+   :::column-end:::
+   :::column:::
+      ![既定のテーマを持つホイールメニューに表示されるアイコンのスクリーンショット。](images/windows-wheel/surface-dial-menu-icon2.png)
+
+      *既定のテーマでホイール メニューに表示されるアイコン*
+   :::column-end:::
+   :::column:::
+      ![ハイコントラスト白のテーマでホイールメニューに表示されるアイコンのスクリーンショット。](images/windows-wheel/surface-dial-menu-icon3.png)
+
+      *ハイコントラスト白のテーマでホイール メニューに表示されるアイコン*
+   :::column-end:::
+:::row-end:::
 
 **簡潔でわかりやすい名前を使う**  
 ツール名は、ツールのアイコンと共にツール メニューに表示され、スクリーン リーダーでも使用されます。 
@@ -141,7 +171,7 @@ Surface Dial メニュー項目は無効な状態をサポートしていない�
 
 1. まず、XAMLで UI (スライダーとトグル ボタンのみ) を宣言します。
 
-   ![サンプル アプリの UI の画像](images/windows-wheel/surface-dial-snippet-customtool1.png)  
+   ![水平スライダーが左側に設定されている放射状コントローラーサンプルのスクリーンショット。](images/windows-wheel/surface-dial-snippet-customtool1.png)  
    *サンプル アプリの UI*
 
     ```Xaml
@@ -242,7 +272,7 @@ Surface Dial メニュー項目は無効な状態をサポートしていない�
 
 アプリを実行するときに、Surface Dial を使用してアプリを操作します。 最初に、長押ししてメニューを開き、カスタム ツールを選択します。 カスタム ツールがアクティブ化されると、Dial を回転することでスライダー コントロールを調整でき、Dial をクリックしてスイッチを切り替えることができます。
 
-![Surface Dial のカスタム ツールを使用してアクティブ化されたサンプル アプリの UI の画像](images/windows-wheel/surface-dial-snippet-customtool2.png)  
+![水平スライダーが中央に設定されている放射状コントローラーサンプルのスクリーンショット。](images/windows-wheel/surface-dial-snippet-customtool2.png)  
 *Surface Dial のカスタム ツールを使用してアクティブ化されたサンプル アプリの UI*
 
 **組み込みのツールを指定する**
@@ -291,7 +321,7 @@ public MainPage()
 > [!NOTE]
 > Surface Dial を Surface Studio の画面上に配置している場合、Surface Dial の画面上の位置を中心として表示されます。
 
-### <a name="rotate"></a>回転
+### <a name="rotate"></a>Rotate
 
 Surface Dial は、アナログ値やコントロールのスムーズな増分の調整に関連する操作のための回転をサポートすることを主な目的として設計されています。
 
@@ -316,15 +346,30 @@ Surface Dial では使用されている手を検出できませんが、ユー�
 
 Dial メニューの組み込みのツールとコマンドは、回転ベースの操作について以下のガイドラインに従っています。
 
-|   |   |   |
-| --- | --- | --- |
-| Left<br/>上へ<br/>アウト | ![Surface Dial の画像](images/windows-wheel/surface-dial-rotate.png) | Right<br/>[下へ]<br/>/ |
-|   |   |   |
+:::row:::
+   :::column:::
+      左
+
+      ［上へ］
+
+      アウト 
+   :::column-end:::
+   :::column span="2":::
+      ![Surface Dial の画像](images/windows-wheel/surface-dial-rotate.png)
+   :::column-end:::
+   :::column:::
+      権限
+
+      ［下へ］
+
+      /
+   :::column-end:::
+:::row-end:::
 
 | 概念的な方向 | Surface Dial へのマッピング | 時計回りの回転 | 反時計回りの回転 |
 | --- | --- | --- | --- |
-| 水平 | Surface Dial の上部に基づいて左右のマッピング | Right | Left |
-| Vertical | Surface Dial の左側に基づいて上下のマッピング | [下へ] | 上へ |
+| 水平 | Surface Dial の上部に基づいて左右のマッピング | 権限 | 左 |
+| Vertical | Surface Dial の左側に基づいて上下のマッピング | ［下へ］ | ［上へ］ |
 | Z 軸 | 内 (またはより近い) が上/右にマップ<br/>外 (またはより遠い) が下/左にマップ | / | アウト |
 
 #### <a name="developer-guidance"></a>開発者ガイド
@@ -366,7 +411,7 @@ private void MyController_ButtonClicked(RadialController sender,
 }
 ```
 
-### <a name="click"></a>Click
+### <a name="click"></a>クリック
 
 Surface Dial のクリックは、マウスの左ボタンのクリックと似ています (デバイスの回転状態は、この操作に影響しません)。
 
@@ -435,7 +480,7 @@ Surface Dial が Surface Studio のデジタイザー サーフェス上に配�
 
 1. 最初に、XAMLで UI (4つのセクションと、それぞれのスライダーとトグル ボタン) を宣言します。
 
-   ![サンプル アプリの UI の画像](images/windows-wheel/surface-dial-snippet-customtool3.png)  
+   ![4つの水平スライダーが左に設定されている放射状コントローラーサンプルのスクリーンショット。](images/windows-wheel/surface-dial-snippet-customtool3.png)  
    *サンプル アプリの UI*
 
    ```xaml 
@@ -635,14 +680,12 @@ private void ActivateGridAtLocation(Point Location)
 
 アプリを実行するときに、Surface Dial を使用してアプリを操作します。 最初に、Surface Studio の画面にデバイスを配置します。アプリがデバイスを検出し、右下のセクションに関連付けます (画像を参照してください)。 次に Surface Dial を長押ししてメニューを開き、カスタム ツールを選択します。 カスタム ツールがアクティブ化されると、Surface Dial を回転することでスライダー コントロールを調整でき、Surface Dial をクリックしてスイッチを切り替えることができます。
 
-![Surface Dial のカスタム ツールを使用してアクティブ化されたサンプル アプリの UI の画像](images/windows-wheel/surface-dial-snippet-customtool4.png)  
+![4つの水平スライダーが左に、4番目のコントローラーが強調表示されている放射状コントローラーサンプルのスクリーンショット。](images/windows-wheel/surface-dial-snippet-customtool4.png)  
 *Surface Dial のカスタム ツールを使用してアクティブ化されたサンプル アプリの UI*
 
 ## <a name="summary"></a>まとめ
 
 このトピックでは、Surface Studio 入力デバイスの概要を、UX および開発者向けのガイダンスと共に示し、オフスクリーンのシナリオおよび Surface Studio と共に使用する場合のオンスクリーンのシナリオでユーザー エクスペリエンスをカスタマイズする方法について説明しました。
-
-## <a name="feedback"></a>フィードバック
 
 質問、提案、フィードバックをに送信してください [radialcontroller@microsoft.com](mailto:radialcontroller@microsoft.com) 。
 

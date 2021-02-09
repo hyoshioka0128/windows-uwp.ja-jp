@@ -1,5 +1,5 @@
 ---
-Description: パンとスクロールにより、ユーザーは単一ビュー内で移動し、ビューポートに収まらないビューのコンテンツを表示できます。 ビューの例として、コンピューターのフォルダー構造、ドキュメントのライブラリ、フォト アルバムなどがあります。
+description: パンとスクロールにより、ユーザーは単一ビュー内で移動し、ビューポートに収まらないビューのコンテンツを表示できます。 ビューの例として、コンピューターのフォルダー構造、ドキュメントのライブラリ、フォト アルバムなどがあります。
 title: パン
 ms.assetid: b419f538-c7fb-4e7c-9547-5fb2494c0b71
 label: Panning
@@ -8,19 +8,19 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 3a5e26d48ef74631e732fb043e909869945a6366
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: f8e1208f023a28621c3f98536f77d36a962343bb
+ms.sourcegitcommit: 4fffc66fac18fc4c80281e2a4afa9c4f2e1f7551
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91217052"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94513721"
 ---
 # <a name="guidelines-for-panning"></a>パンのガイドライン
 
 
 パンとスクロールにより、ユーザーは単一ビュー内で移動し、ビューポートに収まらないビューのコンテンツを表示できます。 ビューの例として、コンピューターのフォルダー構造、ドキュメントのライブラリ、フォト アルバムなどがあります。
 
-> **重要な API**: [**Windows.UI.Input**](/uwp/api/Windows.UI.Input)、[**Windows.UI.Xaml.Input**](/uwp/api/Windows.UI.Xaml.Input)
+> **重要な API** : [**Windows.UI.Input**](/uwp/api/Windows.UI.Input)、 [**Windows.UI.Xaml.Input**](/uwp/api/Windows.UI.Xaml.Input)
 
 
 ## <a name="dos-and-donts"></a>推奨と非推奨
@@ -32,9 +32,9 @@ ms.locfileid: "91217052"
 
 -   パン インジケーターとスクロール バーを表示して、位置とサイズがわかるようにします。カスタム ナビゲーション機能を提供する場合には、これらのコントロールを非表示にします。
 
-    **メモ**   標準のスクロールバーとは異なり、パンインジケーターは純粋な情報です。 入力デバイスには公開されず、一切操作できません。
+    **注:**  標準のスクロール バーとは異なり、パン インジケーターは情報提供のみを目的としています。 入力デバイスには公開されず、一切操作できません。
 
-     
+     
 
 **単一軸パン (1 次元のオーバーフロー)**
 
@@ -115,9 +115,9 @@ Windows 8 では 3 種類のパンがサポートされます。
 -   パン インジケーター (タッチを使う場合)。
 -   スクロール バー (マウス、タッチパッド、キーボード、スタイラスなど、その他の入力デバイスを使う場合)。
 
-**メモ**   パンインジケーターは、タッチの連絡先がパン可能領域内にある場合にのみ表示されます。 同様に、スクロール バーは、スクロール対応領域内にマウス カーソル、ペン/スタイラス カーソル、またはキーボード フォーカスがあるときにのみ表示されます。
+**注:**  パン インジケーターは、タッチによる接触がパン対応領域内であるときにだけ表示されます。 同様に、スクロール バーは、スクロール対応領域内にマウス カーソル、ペン/スタイラス カーソル、またはキーボード フォーカスがあるときにのみ表示されます。
 
- 
+ 
 
 **パン インジケーター** パン インジケーターは、スクロール バーのスクロール ボックスに似ています。 パン対応領域全体に対する表示されているコンテンツの比率と、パン対応領域内の表示されているコンテンツの相対的な位置を示します。
 
@@ -126,7 +126,7 @@ Windows 8 では 3 種類のパンがサポートされます。
 ![長さが異なる 2 つのパン対応領域とそれらのパン インジケーターを示す図](images/scrolling-indicators.png)
 
 **パン動作** 
-**スナップポイント**スワイプジェスチャを使用してパンすると、タッチの接触が解除されたときの操作に慣性の動作が導入されます。 慣性によって、コンテンツのパンは、ユーザーによる直接入力がなければ距離のしきい値に到達するまで継続されます。 この慣性の動作を変更するには、スナップ位置を使います。
+**スナップポイント** スワイプジェスチャを使用してパンすると、タッチの接触が解除されたときの操作に慣性の動作が導入されます。 慣性によって、コンテンツのパンは、ユーザーによる直接入力がなければ距離のしきい値に到達するまで継続されます。 この慣性の動作を変更するには、スナップ位置を使います。
 
 スナップ位置は、アプリのコンテンツの論理的な停止を指定します。 スナップ位置は、認識に基づくユーザー用のページング メカニズムとして機能し、ユーザーが大きなパン対応領域でスライドまたはスワイプしすぎて疲れるのを防ぎます。 これらを使用すると、不正確なユーザー入力を処理し、コンテンツの特定の部分や主要な情報がビューポートに確実に表示されるようにすることができます。
 
@@ -139,12 +139,23 @@ Windows 8 では 3 種類のパンがサポートされます。
 
 次の図は、特定の位置にパンして離すことでコンテンツを論理的な位置に自動的にパンする方法を示しています。
 
-|                                                                |                                                                                         |                                                                                                                 |
-|----------------------------------------------------------------|-----------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------|
-| ![パン対応領域を示す図](images/ux-panning-snap1.png) | ![左にパンされているパン対応領域を示す図](images/ux-panning-snap2.png) | ![論理的なスナップ位置でパンを停止したパン対応領域を示す図](images/ux-panning-snap3.png) |
-| スワイプしてパンします。                                                  | タッチによる接触を離します。                                                                     | パン対応領域は、タッチによる接触が離れた場所ではなく、スナップ位置で停止します。                                |
+:::row:::
+   :::column:::
+      ![パン対応領域を示す図](images/ux-panning-snap1.png)
 
- 
+      スワイプしてパンします。
+   :::column-end:::
+   :::column:::
+      ![左にパンされているパン対応領域を示す図](images/ux-panning-snap2.png)
+
+      タッチによる接触を離します。
+   :::column-end:::
+   :::column:::
+      ![論理的なスナップ位置でパンを停止したパン対応領域を示す図](images/ux-panning-snap3.png)
+
+      パン対応領域は、タッチによる接触が離れた場所ではなく、スナップ位置で停止します。
+   :::column-end:::
+:::row-end:::
 
 **レール** コンテンツは、ディスプレイ デバイスのサイズと解像度より広かったり高かったりする場合があります。 このため、2 次元のパン (水平方向と垂直方向) が必要になることがよくあります。 レールは、このような場合に動作の主軸 (垂直方向または水平方向) に沿ってパンを強調表示することで、ユーザー エクスペリエンスを向上させます。
 
@@ -172,7 +183,7 @@ Windows 8 では 3 種類のパンがサポートされます。
 
 - [カスタム ユーザー操作](../layout/index.md)
 - [ListView と GridView の最適化](../../debug-test-perf/optimize-gridview-and-listview.md)
-- [キーボードアクセシビリティ](../accessibility/keyboard-accessibility.md)
+- [キーボードのアクセシビリティ](../accessibility/keyboard-accessibility.md)
 
 **サンプル**
 - [基本的な入力のサンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicInput)
@@ -186,6 +197,5 @@ Windows 8 では 3 種類のパンがサポートされます。
 - [入力: タッチのヒット テストのサンプルに関するページ](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20desktop%20samples/%5BC%2B%2B%5D-Windows%208%20desktop%20samples/C%2B%2B/Windows%208%20desktop%20samples/Input%20Touch%20hit%20testing%20sample)
 - [XAML のスクロール、パン、ズームのサンプル](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Universal%20Windows%20app%20samples/111487-Universal%20Windows%20app%20samples/XAML%20scrolling%2C%20panning%2C%20and%20zooming%20sample)
 - [入力: 簡略化されたインクのサンプル](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Input%20Simplified%20ink%20sample)
-- [入力: Windows 8 のジェスチャのサンプルに関するページ](/samples/browse/?redirectedfrom=MSDN-samples)
 - [入力: 操作とジェスチャのサンプル](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Input%20Gestures%20and%20manipulations%20with%20GestureRecognizer)
 - [DirectX タッチ入力のサンプル](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%2B%2B%5D-Windows%208%20app%20samples/C%2B%2B/Windows%208%20app%20samples/DirectX%20touch%20input%20sample%20(Windows%208))

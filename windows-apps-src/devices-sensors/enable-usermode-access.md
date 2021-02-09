@@ -6,23 +6,23 @@ ms.topic: article
 keywords: windows 10, UWP, ACPI, GPIO, I2C, SPI, UEFI
 ms.assetid: 2fbdfc78-3a43-4828-ae55-fd3789da7b34
 ms.localizationpriority: medium
-ms.openlocfilehash: a5841a8a53c18969e8ca9171bb7b3e1af0273170
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 0fc07cf45fc4762b202698c07b7cf2088e260e1b
+ms.sourcegitcommit: 40b890c7b862f333879887cc22faff560c49eae6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91216796"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97598843"
 ---
 # <a name="enable-user-mode-access-to-gpio-i2c-and-spi"></a>GPIO、I2C、SPI へのユーザー モード アクセスの有効化
 
-Windows 10 には、汎用入出力 (GPIO)、統合された回線 (I2C)、シリアル周辺機器インターフェイス (SPI)、およびユニバーサル非同期受信機 (UART) のユーザーモードから直接アクセスできる新しい Api が含まれています。 Raspberry Pi 2 などの開発ボードには、これらの接続のサブセットが公開されています。これにより、カスタム回路で基本コンピューティングモジュールを拡張し、特定のアプリケーションに対処できます。 通常、これらの低レベル バスはその他の重要なオンボード機能と共有され、GPIO ピンのサブセットとバスのみがヘッダーで公開されます。 システムの安定性を維持するには、ユーザーモードアプリケーションによって変更が安全な pin とバスを指定する必要があります。
+Windows 10 には、汎用入出力 (GPIO)、Inter-Integrated 回線 (I2C)、シリアル周辺機器インターフェイス (SPI)、および universal 非同期受信機 (UART) のユーザーモードから直接アクセスするための新しい Api が含まれています。 Raspberry Pi 2 などの開発ボードには、これらの接続のサブセットが公開されています。これにより、カスタム回路で基本コンピューティングモジュールを拡張し、特定のアプリケーションに対処できます。 通常、これらの低レベル バスはその他の重要なオンボード機能と共有され、GPIO ピンのサブセットとバスのみがヘッダーで公開されます。 システムの安定性を維持するには、ユーザーモードアプリケーションによって変更が安全な pin とバスを指定する必要があります。
 
 このドキュメントでは、詳細構成と電源インターフェイス (ACPI) でこの構成を指定する方法について説明し、構成が正しく指定されたことを検証するためのツールを提供します。
 
 > [!IMPORTANT]
 > このドキュメントの対象読者は、Unified Extensible Firmware Interface (UEFI) および ACPI 開発者です。 ACPI、ACPI ソース言語 (ASL) のオーサリング、SpbCx/GpioClx に関する知識があることを前提としています。
 
-Windows での低レベルのバスへのユーザーモードアクセスは、既存のおよびフレームワークによって組み込まれてい `GpioClx` `SpbCx` ます。 Windows IoT Core と Windows Enterprise で利用できる *RhProxy*という名前の新しいドライバーにより、 `GpioClx` `SpbCx` ユーザーモードにリソースが公開されます。 Api を有効にするには、rhproxy のデバイスノードを、ユーザーモードに公開する必要がある各 GPIO および SPB リソースを使用して、ACPI テーブル内で宣言する必要があります。 このドキュメントでは、ASL の作成と検証について説明します。
+Windows での低レベルのバスへのユーザーモードアクセスは、既存のおよびフレームワークによって組み込まれてい `GpioClx` `SpbCx` ます。 Windows IoT Core と Windows Enterprise で利用できる *RhProxy* という名前の新しいドライバーにより、 `GpioClx` `SpbCx` ユーザーモードにリソースが公開されます。 Api を有効にするには、rhproxy のデバイスノードを、ユーザーモードに公開する必要がある各 GPIO および SPB リソースを使用して、ACPI テーブル内で宣言する必要があります。 このドキュメントでは、ASL の作成と検証について説明します。
 
 ## <a name="asl-by-example"></a>ASL の例
 
@@ -46,6 +46,9 @@ Device(RHPX)
 ### <a name="spi"></a>SPI
 
 Raspberry Pi には 2 つの公開されている SPI バスがあります。 SPI0 には 2 つのハードウェア チップ選択線があり、SPI1 には 1 つのハードウェア チップ選択線があります。 各バスの各チップ選択線に 1 つの SPISerialBus() リソース宣言が必要です。 次の 2 つの SPISerialBus リソース宣言は、SPI0 の 2 つのチップ選択線用です。 DeviceSelection フィールドには、ドライバーがハードウェア チップ選択線識別子として解釈する一意の値が含まれます。 DeviceSelection フィールドに入れる正確な値は、ACPI 接続記述子のこのフィールドをドライバーがどのように解釈するかによって異なります。
+
+> [!NOTE]
+> この記事には、Microsoft が使用しなくなった "スレーブ" という用語への言及が含まれています。 ソフトウェアからこの用語が削除された時点で、この記事から削除します。
 
 ```cpp
 // Index 0
@@ -633,11 +636,11 @@ Windows 10 ビルド 14327 以降では、`SpbCx` および `SerCx` コントロ
 
 デバイスの初期化時に、`SpbCx` および `SerCx` フレームワークがハードウェア リソースとしてデバイスに提供されたすべての `MsftFunctionConfig()` リソースを解析します。 SpbCx/SerCx はその後、必要に応じてピンの多重化のリソースを取得および解放します。
 
-`SpbCx`クライアントドライバーの[Evtspbtargetconnect ()](/windows-hardware/drivers/ddi/content/spbcx/nc-spbcx-evt_spb_target_connect)コールバックを呼び出す直前に、 *IRP_MJ_CREATE*ハンドラーに pin マルチプレキシングの構成を適用します。 多重化構成を適用できなかった場合、コントローラー ドライバーの `EvtSpbTargetConnect()` コールバックは呼び出されません。 そのため、SPB コントローラー ドライバーは `EvtSpbTargetConnect()` が呼び出されたときまでにピンが SPB 機能に対して多重化されていると想定することができます。
+`SpbCx`クライアントドライバーの [Evtspbtargetconnect ()](/windows-hardware/drivers/ddi/content/spbcx/nc-spbcx-evt_spb_target_connect)コールバックを呼び出す直前に、 *IRP_MJ_CREATE* ハンドラーに pin マルチプレキシングの構成を適用します。 多重化構成を適用できなかった場合、コントローラー ドライバーの `EvtSpbTargetConnect()` コールバックは呼び出されません。 そのため、SPB コントローラー ドライバーは `EvtSpbTargetConnect()` が呼び出されたときまでにピンが SPB 機能に対して多重化されていると想定することができます。
 
-`SpbCx`コントローラードライバーの[Evtspbtargetdisconnect ()](/windows-hardware/drivers/ddi/content/spbcx/nc-spbcx-evt_spb_target_disconnect)コールバックを呼び出した直後に、 *IRP_MJ_CLOSE*ハンドラーのピンマルチプレキシング構成を元に戻します。 その結果、周辺機器ドライバーが SPB コントローラー ドライバーに対してハンドルを開くたびにピンが SPB 機能に対して多重化され、周辺機器ドライバーがハンドルを閉じると多重化が終了します。
+`SpbCx`コントローラードライバーの [Evtspbtargetdisconnect ()](/windows-hardware/drivers/ddi/content/spbcx/nc-spbcx-evt_spb_target_disconnect)コールバックを呼び出した直後に、 *IRP_MJ_CLOSE* ハンドラーのピンマルチプレキシング構成を元に戻します。 その結果、周辺機器ドライバーが SPB コントローラー ドライバーに対してハンドルを開くたびにピンが SPB 機能に対して多重化され、周辺機器ドライバーがハンドルを閉じると多重化が終了します。
 
-`SerCx` 同様に動作します。 `SerCx`コントローラードライバーの `MsftFunctionConfig()` [EvtSerCx2FileOpen ()](/windows-hardware/drivers/ddi/content/sercx/nc-sercx-evt_sercx2_fileopen)コールバックを呼び出す直前に*IRP_MJ_CREATE*ハンドラー内のすべてのリソースを取得し、コントローラードライバーの[EvtSerCx2FileClose](/windows-hardware/drivers/ddi/content/sercx/nc-sercx-evt_sercx2_fileclose)コールバックを呼び出した直後に、IRP_MJ_CLOSE ハンドラー内のすべてのリソースを解放します。
+`SerCx` 同様に動作します。 `SerCx`コントローラードライバーの `MsftFunctionConfig()` [EvtSerCx2FileOpen ()](/windows-hardware/drivers/ddi/content/sercx/nc-sercx-evt_sercx2_fileopen)コールバックを呼び出す直前に *IRP_MJ_CREATE* ハンドラー内のすべてのリソースを取得し、コントローラードライバーの [EvtSerCx2FileClose](/windows-hardware/drivers/ddi/content/sercx/nc-sercx-evt_sercx2_fileclose)コールバックを呼び出した直後に、IRP_MJ_CLOSE ハンドラー内のすべてのリソースを解放します。
 
 `SerCx` および `SpbCx` コントローラー ドライバーのための動的なピンの多重化の実装では、特定の時間で SPB/UART 機能のピンの多重化が終了することを許容できる必要があります。 コントローラー ドライバーは、`EvtSpbTargetConnect()` または `EvtSerCx2FileOpen()` が呼び出されるまでピンが多重化されないことを前提とする必要があります。 次のコールバック中に必ずしもピンが SPB/UART 機能に多重化される必要はありません。 次に示すのは完全な一覧ではありませんが、コントローラー ドライバーによって実装される最も一般的な PNP ルーチンを示しています。
 
@@ -823,11 +826,11 @@ HLK マネージャーで rhproxy デバイス ノードを選択すると、適
 
 HLK マネージャーで、[Resource Hub Proxy device] を選択します。
 
-![HLK マネージャーのスクリーンショット](images/usermode-hlk-1.png)
+![[リソースハブプロキシデバイス] オプションを選択した状態で [選択] タブが表示されている Windows ハードウェアラボキットのスクリーンショット。](images/usermode-hlk-1.png)
 
 その後、[テスト] タブをクリックし、I2C WinRT、Gpio WinRT、Spi WinRT のテストを選択します。
 
-![HLK マネージャーのスクリーンショット](images/usermode-hlk-2.png)
+![[テスト] タブと [G P I O Win R T 機能とストレステスト] オプションが選択された Windows ハードウェアラボキットのスクリーンショット。](images/usermode-hlk-2.png)
 
 [選択したテストの実行] をクリックします。 各テストに関するその他のドキュメントは、テストを右クリックして [テストの説明] をクリックすることで利用できます。
 

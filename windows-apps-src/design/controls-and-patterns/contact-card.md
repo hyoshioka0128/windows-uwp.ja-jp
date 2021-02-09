@@ -1,7 +1,7 @@
 ---
 description: 連絡先カードを使用して、ユーザーが名前、電話番号、住所などの連絡先情報を表示および編集できるようにする方法について説明します。
 title: 連絡先カード
-ms.date: 03/07/2018
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: kele
@@ -9,12 +9,12 @@ design-contact: tbd
 dev-contact: tbd
 doc-status: not-published
 ms.localizationpriority: medium
-ms.openlocfilehash: 2817977533b63df8498faa1ecbc5cc57a4987c30
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: d31c1a22260b8d98e767fba6b6d6e0db20fdbbb8
+ms.sourcegitcommit: 4f032d7bb11ea98783db937feed0fa2b6f9950ef
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89160596"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91829601"
 ---
 # <a name="contact-card"></a>連絡先カード
 
@@ -28,12 +28,12 @@ ms.locfileid: "89160596"
 
 
 <figure>
-    <img src="images/contact-card/contact-card-standard.png" alt="The full contact card">
+    <img src="images/contact-card/contact-card-standard.png" alt="Screenshot showing a standard contact card.">
     <figcaption>標準の連絡先カード</figcaption>
 </figure>
 
 <figure>
-    <img src="images/contact-card/contact-card-full.png" alt="The full contact card">
+    <img src="images/contact-card/contact-card-full.png" alt="Screenshot showing a full contact card.">
     <figcaption>完全な連絡先カード</figcaption>
 </figure>
 

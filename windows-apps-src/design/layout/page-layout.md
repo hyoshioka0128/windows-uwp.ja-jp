@@ -1,16 +1,16 @@
 ---
 title: Windows アプリのページ レイアウト
 description: アプリを設計する場合、最初に検討すべきことは、レイアウト構造です。 この記事では、必要な UI 要素およびそれらのページ上の配置場所など、基本的なページ レイアウトの一般的な構造について説明します。 Windows アプリの場合、通常、各ページは、ナビゲーション、コマンド、コンテンツの各要素で構成されます。
-ms.date: 03/19/2018
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 localizationpriority: medium
-ms.openlocfilehash: 551d937836f0dcf0094e54a503d2a8cd80a2f28b
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: e4875e7d34f36104cb5ed64bb56ea289de2db92e
+ms.sourcegitcommit: 6cb20dca1cb60b4f6b894b95dcc2cc3a166165ad
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89169526"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91636572"
 ---
 # <a name="page-layout"></a>ページのレイアウト
 
@@ -86,7 +86,7 @@ Windows アプリの場合、通常、各[**ページ**](/uwp/api/Windows.UI.Xam
 [マスター/詳細](../controls-and-patterns/master-details.md)モデルは、リスト ビュー (マスター) とコンテンツ ビュー (詳細) で構成されます。 両方のウィンドウは固定されていて、垂直方向にスクロールできます。 リスト ビュー内の項目が選択されると、それに対応して、コンテンツ ビューも更新されます。 
 
 ## <a name="forms"></a>フォーム
-![フォーム](images/form.svg)
+![空のテキスト ボックスとボタンが表示されたフォームのスクリーンショット。](images/form.svg)
 
 [フォーム](../controls-and-patterns/forms.md)は、ユーザーからデータを収集して送信するコントロールのグループです。 すべてではなくても、ほとんどのアプリが、設定ページ、ログイン ポータル、フィードバック Hub、アカウントの作成などのために、何らかのフォームを使用しています。 
 

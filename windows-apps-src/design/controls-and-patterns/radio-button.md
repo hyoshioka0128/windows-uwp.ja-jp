@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: ee933bd28594263e61e654b14b0541c6fa9ed41b
-ms.sourcegitcommit: 875bd348608547e7a66fa4b460efe64b3246807e
+ms.openlocfilehash: 9d6fe34d9f53142cfe2148f79bf936a473012a49
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/14/2020
-ms.locfileid: "90080844"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91219056"
 ---
 # <a name="radio-buttons"></a>ラジオ ボタン
 
@@ -45,7 +45,7 @@ RadioButtons グループのこの独特の動作は、複数選択や選択の�
 >ラジオ ボタン グループを作成するには、次の 2 つの方法があります。
 >
 >- WinUI 2.3 以降では、 **[RadioButtons](/uwp/api/microsoft.ui.xaml.controls.radiobuttons)** コントロールを使用することをお勧めします。 このコントロールでは、レイアウトの簡略化、キーボード ナビゲーションとアクセシビリティの処理、データ ソースへのバインドのサポートがなされています。
->- 個々の **[RadioButton](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RadioButton)** コントロールのグループを使用できます。 アプリで WinUI 2.3 以降が使用されていない場合は、これが唯一のオプションです。
+>- 個々の **[RadioButton](/uwp/api/Windows.UI.Xaml.Controls.RadioButton)** コントロールのグループを使用できます。 アプリで WinUI 2.3 以降が使用されていない場合は、これが唯一のオプションです。
 
 ## <a name="is-this-the-right-control"></a>これは適切なコントロールですか?
 

@@ -1,5 +1,5 @@
 ---
-Description: テレビで見栄えよく表示され適切に機能するアプリを設計します。
+description: テレビで見栄えよく表示され適切に機能するアプリを設計します。
 title: Xbox およびテレビ向け設計
 ms.assetid: 780209cb-3e8a-4cf7-8f80-8b8f449580bf
 label: Designing for Xbox and TV
@@ -13,18 +13,18 @@ design-contact: jeffarn
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: b0c278599c878e807ef8b2e2564ca9add31ea4ad
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: c7ac5b8c34f007e18e04eb8299d9ccddd583ad29
+ms.sourcegitcommit: 9378b1b2c2a5ba6e774ae76b53d755cbc5215af2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91220285"
+ms.lasthandoff: 12/21/2020
+ms.locfileid: "97709651"
 ---
 # <a name="designing-for-xbox-and-tv"></a>Xbox およびテレビ向け設計
 
 Windows アプリを設計して、Xbox One と tv 画面で適切に機能していることを確認します。
 
-*10 フィート*のエクスペリエンスにおける UWP アプリケーションの対話エクスペリエンスに関するガイダンスについては、「[ゲームパッドとリモートコントロールの対話](../input/gamepad-and-remote-interactions.md)」を参照してください。
+*10 フィート* のエクスペリエンスにおける UWP アプリケーションの対話エクスペリエンスに関するガイダンスについては、「[ゲームパッドとリモートコントロールの対話](../input/gamepad-and-remote-interactions.md)」を参照してください。
 
 ## <a name="overview"></a>概要
 
@@ -32,7 +32,7 @@ Windows アプリを設計して、Xbox One と tv 画面で適切に機能し�
 UWP フレームワークで提供される機能のほとんどは、追加の作業を行わなくても、これらのデバイス間で同じユーザー インターフェイス (UI) をアプリに使用できます。
 ただし、Xbox One とテレビ画面で快適に機能するようにアプリを調整し最適化するには、特別な注意事項があります。
 
-ソファーに座りながらゲームパッドやリモコンを使って部屋の反対側にあるテレビを操作することを、**10 フィート エクスペリエンス**といいます。
+ソファーに座りながらゲームパッドやリモコンを使って部屋の反対側にあるテレビを操作することを、**10 フィート エクスペリエンス** といいます。
 通常は画面から約 10 フィート (約 3 m) の距離に座るため、このように呼ばれています。
 この場合、たとえば PC の操作 (*2 フィート* エクスペリエンスと呼ばれます) には見られない、特有の課題があります。
 Xbox One や、コントローラーを使って入力しテレビ画面に出力するその他のデバイス向けアプリを開発している場合、この点を常に意識しておく必要があります。
@@ -70,16 +70,16 @@ _**スクリーンショットに示されているすべてのムービーは�
 | -------------------------------------------------------------- |--------------------------------|
 | [UI 要素のサイズ](#ui-element-sizing)  | ユニバーサル Windows プラットフォームは、[スケーリングと有効ピクセル](../basics/design-and-ui-intro.md#effective-pixels-and-scaling)を使い、視聴距離に合わせて UI をスケーリングします。 サイズについて理解し UI 全体に適用すれば、アプリを 10 フィート環境用に最適化するのに役立ちます。  |
 |  [テレビのセーフ エリア](#tv-safe-area) | UWP は既定で、テレビのセーフ エリア以外の領域 (画面の端に近い部分) に UI を表示することを自動的に避けます。 ただし、この場合、アスペクト比が変わり、UI がレターボックス化されてしまいます。 テレビでイマーシブなアプリにするには、サポートしているテレビで、画面の端まで広がるようにアプリを変更します。 |
-| [色](#colors)  |  UWP は配色テーマをサポートしています。システム テーマを引き継ぐアプリは、Xbox One では既定で**濃色**になります。 アプリに特定の配色テーマがある場合、テレビではうまく表示されないために一部の色を避ける必要があることに注意してください。 |
+| [色](#colors)  |  UWP は配色テーマをサポートしています。システム テーマを引き継ぐアプリは、Xbox One では既定で **濃色** になります。 アプリに特定の配色テーマがある場合、テレビではうまく表示されないために一部の色を避ける必要があることに注意してください。 |
 | [サウンド](../style/sound.md)    | サウンドは、ユーザーを没頭させたりユーザーにフィードバックを提供したりする上で役立ち、10 フィート エクスペリエンスで重要な役割を果たします。 UWP には、アプリが Xbox One で実行されているときは一般的なコントロールのサウンドを自動的に有効にする機能があります。 UWP に組み込まれているサウンド サポートの詳細とその活用方法について説明します。    |
 | [UI コントロールのガイドライン](#guidelines-for-ui-controls)  |  いくつかの UI コントロールは、複数のデバイスで問題なく動作しますが、テレビで使用する場合には特定の考慮事項があります。 10 フィート エクスペリエンスを設計する際にこのようなコントロールを使う場合のベスト プラクティスについて説明します。 |
-| [Xbox のカスタム表示状態トリガー](#custom-visual-state-trigger-for-xbox) | UWP アプリを 10 フィート エクスペリエンス用にカスタマイズする場合、カスタム*表示状態トリガー*を使用して、アプリが Xbox コンソールで起動されたことを検出したときにアプリのレイアウトが変わるようにすることをお勧めします。 |
+| [Xbox のカスタム表示状態トリガー](#custom-visual-state-trigger-for-xbox) | UWP アプリを 10 フィート エクスペリエンス用にカスタマイズする場合、カスタム *表示状態トリガー* を使用して、アプリが Xbox コンソールで起動されたことを検出したときにアプリのレイアウトが変わるようにすることをお勧めします。 |
 
 上記の設計とレイアウトの考慮事項に加えて、アプリをビルドするときに考慮する必要がある [ゲームパッドとリモートコントロールの対話](../input/gamepad-and-remote-interactions.md) の最適化がいくつかあります。
 
 | 機能        | 説明           |
 | -------------------------------------------------------------- |--------------------------------|
-| [XY フォーカス ナビゲーションと操作](../input/gamepad-and-remote-interactions.md#xy-focus-navigation-and-interaction) | ユーザーは、 **XY フォーカスナビゲーション**を使用して、アプリの UI 内を移動できます。 ただし、ユーザーの移動は上下左右に制限されます。 このセクションでは、この点に対応するための推奨事項とその他の考慮事項について説明します。 |
+| [XY フォーカス ナビゲーションと操作](../input/gamepad-and-remote-interactions.md#xy-focus-navigation-and-interaction) | ユーザーは、 **XY フォーカスナビゲーション** を使用して、アプリの UI 内を移動できます。 ただし、ユーザーの移動は上下左右に制限されます。 このセクションでは、この点に対応するための推奨事項とその他の考慮事項について説明します。 |
 | [[マウス モード]](../input/gamepad-and-remote-interactions.md#mouse-mode)|XY フォーカスナビゲーションは、マップ、描画、および描画アプリなど、一部の種類のアプリケーションでは実用的ではなく、可能でもありません。 このような場合、 **マウスモード** では、ユーザーは PC 上のマウスと同じように、ゲームパッドやリモコンで自由に移動できます。|
 | [フォーカスの視覚効果](../input/gamepad-and-remote-interactions.md#focus-visual)  | フォーカスのビジュアルは、現在フォーカスがある UI 要素を強調表示する境界線です。 これにより、ユーザーが移動または対話する UI をすばやく識別できます。  |
 | [取り組みに焦点を当てる](../input/gamepad-and-remote-interactions.md#focus-engagement) | フォーカスを操作するには、UI 要素にフォーカスがあるときに、ユーザーがゲームパッドまたはリモコンの [ **A/Select** ] ボタンを押す必要があります。 |
@@ -95,7 +95,7 @@ _**スクリーンショットに示されているすべてのムービーは�
 
 ### <a name="scale-factor-and-adaptive-layout"></a>拡大縮小率とアダプティブ レイアウト
 
-**拡大縮小率**は、アプリが実行されているデバイスにおける適切なサイズで UI 要素が表示されることを保証します。
+**拡大縮小率** は、アプリが実行されているデバイスにおける適切なサイズで UI 要素が表示されることを保証します。
 デスクトップでは、この設定は **[設定] > [システム] > [表示]** からスライダーで値を指定します。
 この設定が電話でサポートされている場合、電話にも同じ設定があります。
 
@@ -122,7 +122,7 @@ Xbox 用の設計では、1 つの解像度 (1920 x 1080) だけを考慮すれ�
 
 #### <a name="number-of-clicks"></a>クリックの回数
 
-UI を簡略化するために、ユーザーがテレビ画面の端から端まで移動するときに、**クリックは 6 回**以内になるようにします。 ここでも**簡潔さ**の原則が重要です。 
+UI を簡略化するために、ユーザーがテレビ画面の端から端まで移動するときに、**クリックは 6 回** 以内になるようにします。 ここでも **簡潔さ** の原則が重要です。 
 
 ![6 つのアイコン分の幅](images/designing-for-tv/six-clicks.png)
 
@@ -151,7 +151,7 @@ bool result =
 
 HTML/JavaScript のサンプル コードなどの詳細情報については、「[スケーリングを無効にする方法](../../xbox-apps/disable-scaling.md)」をご覧ください。
 
-UI 要素の適切なサイズを計算するときに、このトピックで説明した*有効*ピクセルの値を倍にして (または HTML アプリの場合は 1.5 倍にして) *実際*のピクセル値にすることを忘れないでください。
+UI 要素の適切なサイズを計算するときに、このトピックで説明した *有効* ピクセルの値を倍にして (または HTML アプリの場合は 1.5 倍にして) *実際* のピクセル値にすることを忘れないでください。
 
 ## <a name="tv-safe-area"></a>テレビのセーフ エリア
 
@@ -266,7 +266,7 @@ Windows.UI.ViewManagement.ApplicationView.GetForCurrentView().SetDesiredBoundsMo
 ```
 
 > [!NOTE]
-> この方法を使う場合、アイコンの下に `AppBarButton` のラベルを表示できるように、開いた状態の `CommandBar` の高さが **[その他]** ボタンによって必要に応じて変更されることに注意してください。 サイズ変更を避けるために、アイコンの*右側*へラベルを移動することをお勧めします。 詳しくは、「[CommandBar のラベル](#commandbar-labels)」をご覧ください。
+> この方法を使う場合、アイコンの下に `AppBarButton` のラベルを表示できるように、開いた状態の `CommandBar` の高さが **[その他]** ボタンによって必要に応じて変更されることに注意してください。 サイズ変更を避けるために、アイコンの *右側* へラベルを移動することをお勧めします。 詳しくは、「[CommandBar のラベル](#commandbar-labels)」をご覧ください。
 
 これらのアプローチはいずれも、このセクションに示されている他の種類のコントロールにも適用されます。
 
@@ -333,7 +333,7 @@ UWP にはフォーカス表示を [VisibleBounds](/uwp/api/windows.ui.viewmanag
 > [!NOTE]
 > このコード スニペットは `ListView` 専用です。`GridView` のスタイルの場合、[ControlTemplate](/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate) と [Style](/uwp/api/Windows.UI.Xaml.Style) の両方の [TargetType](/uwp/api/windows.ui.xaml.controls.controltemplate.targettype) 属性を `GridView` に設定します。
 
-項目をどのように表示するかを細かく制御するには、アプリケーションがバージョン1803以降を対象としている場合は、 [UIElement. Bringare View要求さ](/uwp/api/windows.ui.xaml.uielement.bringintoviewrequested)れたイベントを使用できます。 次のコードスニペットのように、 **ListView**GridView の[ItemsPanel](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemspanel)に配置して、 / **GridView**内部**ScrollViewer**の前にキャッチすることができます。
+項目をどのように表示するかを細かく制御するには、アプリケーションがバージョン1803以降を対象としている場合は、 [UIElement. Bringare View要求さ](/uwp/api/windows.ui.xaml.uielement.bringintoviewrequested)れたイベントを使用できます。 次のコードスニペットのように、 **ListView** GridView の [ItemsPanel](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemspanel)に配置して、 / 内部 **ScrollViewer** の前にキャッチすることができます。
 
 ```xaml
 <GridView x:Name="gridView">
@@ -387,16 +387,16 @@ private void ItemsWrapGrid_BringIntoViewRequested(UIElement sender, BringIntoVie
 
 ### <a name="application-theme"></a>アプリケーション テーマ
 
-アプリに合わせて適切な**アプリケーション テーマ** (濃色または淡色) を選ぶか、テーマを無効にすることができます。 テーマの一般的な推奨事項については、「[配色テーマ](../style/color.md)」をご覧ください。
+アプリに合わせて適切な **アプリケーション テーマ** (濃色または淡色) を選ぶか、テーマを無効にすることができます。 テーマの一般的な推奨事項については、「[配色テーマ](../style/color.md)」をご覧ください。
 
 UWP では、アプリが実行されているデバイスから提供されるシステム設定に基づいて、アプリでテーマを動的に設定することもできます。
 UWP では、ユーザーが指定したテーマ設定が常に適用されますが、各デバイスは、適切な既定のテーマも提供します。
-Xbox One はその性質上、*生産性*エクスペリエンスよりも*メディア* エクスペリエンスを期待されているため、既定で濃色のシステム テーマに設定されます。
+Xbox One はその性質上、*生産性* エクスペリエンスよりも *メディア* エクスペリエンスを期待されているため、既定で濃色のシステム テーマに設定されます。
 アプリのテーマがシステム設定を基にしている場合、Xbox One では既定で濃色に設定されるはずです。
 
 ### <a name="accent-color"></a>アクセント カラー
 
-UWP には、ユーザーがシステム設定から選んだ**アクセント カラー**を公開する便利な方法が用意されています。
+UWP には、ユーザーがシステム設定から選んだ **アクセント カラー** を公開する便利な方法が用意されています。
 
 PC でアクセント カラーを選べるように、ユーザーは Xbox One でユーザーの色を選ぶことができます。
 アプリでブラシやカラー リソースからこれらのアクセント カラーを呼び出していれば、ユーザーがシステム設定で選んだ色が使われます。 Xbox One ではアクセント カラーはシステムごとではなくユーザーごとであることに注意してください。
@@ -436,11 +436,13 @@ DirectX 11 または DirectX 12 を使ってアプリを開発し、UI または
 
 [Pivot.IsHeaderItemsCarouselEnabled](/uwp/api/windows.ui.xaml.controls.pivot.isheaderitemscarouselenabledproperty) プロパティを `true` に設定すると、選択したピボット ヘッダーが常に最初の位置に移動する代わりに、ピボットが常に同じ位置に固定されます。 ヘッダーの折り返しを煩わしいと感じるユーザーもいるため、これでテレビなどの大画面表示でエクスペリエンスが向上します。 すべてのピボット ヘッダーが同時に画面に収まらない場合、ユーザーは表示されるスクロール バーを使って他のヘッダーを表示できますが、最良のエクスペリエンスを提供するためには、すべてのピボット ヘッダーが画面に収まることを確認する必要があります。 詳しくは、「[タブとピボット](../controls-and-patterns/pivot.md)」をご覧ください。
 
-### <a name="navigation-pane"></a>ナビゲーション ウィンドウ <a name="navigation-pane" />
+<a name="navigation-pane"></a>
 
-ナビゲーション ウィンドウ (*ハンバーガー メニュー*とも呼ばれる) は、UWP アプリでよく使われるナビゲーション コントロールです。 通常、リスト スタイルのメニューから選択できる複数のオプションを表示するウィンドウであり、ユーザーに異なるページを表示します。 一般的に、このウィンドウは領域を節約するために折りたたまれた状態で表示され、ユーザーがボタンをクリックすることで開くことができます。
+### <a name="navigation-pane"></a>ナビゲーション ウィンドウ
 
-ナビゲーション ウィンドウは、マウスやタッチを使う場合に非常にアクセシビリティが高く、ゲームパッド/リモコンを使う場合はウィンドウを開くボタンに移動する必要があるためアクセシビリティは低くなります。 そのため、ユーザーがページの左端まで移動してナビゲーション ウィンドウを開くことができるだけでなく、**表示**ボタンでナビゲーション ウィンドウを開く操作を可能にすることをお勧めします。 この設計パターンを実装する方法を示すコード サンプルは、「[プログラムによるフォーカス ナビゲーション](../input/focus-navigation-programmatic.md#split-view-code-sample)」にあります。 これにより、ユーザーは非常に簡単にウィンドウの内容にアクセスすることができます。 さまざまな画面サイズでのナビゲーション ウィンドウの動作と、ゲームパッド/リモコンでのナビゲーションのベスト プラクティスについては、「[ナビゲーション ウィンドウ](../controls-and-patterns/navigationview.md)」をご覧ください。
+ナビゲーション ウィンドウ (*ハンバーガー メニュー* とも呼ばれる) は、UWP アプリでよく使われるナビゲーション コントロールです。 通常、リスト スタイルのメニューから選択できる複数のオプションを表示するウィンドウであり、ユーザーに異なるページを表示します。 一般的に、このウィンドウは領域を節約するために折りたたまれた状態で表示され、ユーザーがボタンをクリックすることで開くことができます。
+
+ナビゲーション ウィンドウは、マウスやタッチを使う場合に非常にアクセシビリティが高く、ゲームパッド/リモコンを使う場合はウィンドウを開くボタンに移動する必要があるためアクセシビリティは低くなります。 そのため、ユーザーがページの左端まで移動してナビゲーション ウィンドウを開くことができるだけでなく、**表示** ボタンでナビゲーション ウィンドウを開く操作を可能にすることをお勧めします。 この設計パターンを実装する方法を示すコード サンプルは、「[プログラムによるフォーカス ナビゲーション](../input/focus-navigation-programmatic.md#split-view-code-sample)」にあります。 これにより、ユーザーは非常に簡単にウィンドウの内容にアクセスすることができます。 さまざまな画面サイズでのナビゲーション ウィンドウの動作と、ゲームパッド/リモコンでのナビゲーションのベスト プラクティスについては、「[ナビゲーション ウィンドウ](../controls-and-patterns/navigationview.md)」をご覧ください。
 
 ### <a name="commandbar-labels"></a>CommandBar のラベル
 
@@ -468,7 +470,7 @@ DirectX 11 または DirectX 12 を使ってアプリを開発し、UI または
 
 ### <a name="mediatransportcontrols"></a>MediaTransportControls
 
-[MediaTransportControls](/uwp/api/Windows.UI.Xaml.Controls.MediaTransportControls) 要素によって、ユーザーが再生、一時停止、クローズド キャプションの有効化などの操作を実行できる既定の再生エクスペリエンスが提供され、ユーザーはメディアを操作することができます。 このコントロールは、[MediaPlayerElement](/uwp/api/Windows.UI.Xaml.Controls.MediaPlayerElement) のプロパティであり、*1 行*と *2 行*の 2 つのレイアウト オプションをサポートしています。 1 行のレイアウトでは、スライダーと再生ボタンはすべて 1 つの行に配置され、スライダーの左側に再生/一時停止ボタンが配置されます。 2 行のレイアウトでは、スライダーは独自の行に配置され、再生ボタンは下側の別の行に配置されます。 10 フィート エクスペリエンス向けに設計する場合は、ゲームパッドでのナビゲーションが向上するため、2 行のレイアウトを使用してください。 2 行のレイアウトを有効にするには、`MediaPlayerElement` の [TransportControls](/uwp/api/windows.ui.xaml.controls.mediaplayerelement.transportcontrols) プロパティの `MediaTransportControls` 要素で `IsCompact="False"` を設定します。
+[MediaTransportControls](/uwp/api/Windows.UI.Xaml.Controls.MediaTransportControls) 要素によって、ユーザーが再生、一時停止、クローズド キャプションの有効化などの操作を実行できる既定の再生エクスペリエンスが提供され、ユーザーはメディアを操作することができます。 このコントロールは、[MediaPlayerElement](/uwp/api/Windows.UI.Xaml.Controls.MediaPlayerElement) のプロパティであり、*1 行* と *2 行* の 2 つのレイアウト オプションをサポートしています。 1 行のレイアウトでは、スライダーと再生ボタンはすべて 1 つの行に配置され、スライダーの左側に再生/一時停止ボタンが配置されます。 2 行のレイアウトでは、スライダーは独自の行に配置され、再生ボタンは下側の別の行に配置されます。 10 フィート エクスペリエンス向けに設計する場合は、ゲームパッドでのナビゲーションが向上するため、2 行のレイアウトを使用してください。 2 行のレイアウトを有効にするには、`MediaPlayerElement` の [TransportControls](/uwp/api/windows.ui.xaml.controls.mediaplayerelement.transportcontrols) プロパティの `MediaTransportControls` 要素で `IsCompact="False"` を設定します。
 
 ```xml
 <MediaPlayerElement x:Name="mediaPlayerElement1"  
@@ -482,7 +484,8 @@ DirectX 11 または DirectX 12 を使ってアプリを開発し、UI または
 
 アプリにメディアを追加する方法について詳しくは、「[メディア再生](../controls-and-patterns/media-playback.md)」をご覧ください。
 
-> ![注] `MediaPlayerElement` は Windows 10 バージョン 1607 以降でのみ使用できます。 Windows 10 の以前のバージョン用にアプリを開発する場合は、代わりに [MediaElement](/uwp/api/Windows.UI.Xaml.Controls.MediaElement) を使用する必要があります。 上記の推奨事項は `MediaElement` にも適用され、`TransportControls` プロパティも同じ方法でアクセスされます。
+> [!NOTE]
+> `MediaPlayerElement` は、Windows 10 バージョン1607以降でのみ使用できます。 Windows 10 の以前のバージョン用にアプリを開発する場合は、代わりに [MediaElement](/uwp/api/Windows.UI.Xaml.Controls.MediaElement) を使用する必要があります。 上記の推奨事項は `MediaElement` にも適用され、`TransportControls` プロパティも同じ方法でアクセスされます。
 
 ### <a name="search-experience"></a>検索エクスペリエンス
 
@@ -499,7 +502,7 @@ DirectX 11 または DirectX 12 を使ってアプリを開発し、UI または
 
 ## <a name="custom-visual-state-trigger-for-xbox"></a>Xbox のカスタム表示状態トリガー
 
-UWP アプリを 10 フィート エクスペリエンス用にカスタマイズする場合、アプリが Xbox コンソールで起動されたことを検出したときにアプリのレイアウトが変わるようにすることをお勧めします。 これを行う方法の 1 つが、カスタム*表示状態トリガー*を使用することです。 表示状態トリガーは、**Blend for Visual Studio** で編集する場合に最も有用です。 次のコード スニペットは、Xbox の表示状態トリガーを作成する方法を示しています。
+UWP アプリを 10 フィート エクスペリエンス用にカスタマイズする場合、アプリが Xbox コンソールで起動されたことを検出したときにアプリのレイアウトが変わるようにすることをお勧めします。 これを行う方法の 1 つが、カスタム *表示状態トリガー* を使用することです。 表示状態トリガーは、**Blend for Visual Studio** で編集する場合に最も有用です。 次のコード スニペットは、Xbox の表示状態トリガーを作成する方法を示しています。
 
 ```xml
 <VisualStateManager.VisualStateGroups>

@@ -1,8 +1,8 @@
 ---
-Description: Pivot コントロールを使用すると、少数のコンテンツ セクション間のタッチ スワイプが可能になります。
+description: Pivot コントロールを使用すると、少数のコンテンツ セクション間のタッチ スワイプが可能になります。
 title: Pivot
 template: detail.hbs
-ms.date: 06/19/2018
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: yulikl
@@ -10,12 +10,12 @@ design-contact: kimsea
 dev-contact: llongley
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: a927e7fa81499ef9eb5a8b798679f13b6d838d17
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: eaef3bb57eb8719ac4183f21b764ece98cae22fe
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89174456"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93030855"
 ---
 # <a name="pivot"></a>Pivot
 
@@ -25,11 +25,19 @@ ms.locfileid: "89174456"
 
 **Windows UI ライブラリを入手する**
 
-|  |  |
-| - | - |
-| ![WinUI ロゴ](images/winui-logo-64x64.png) | Windows UI ライブラリ 2.2 以降には、丸めた角を使用するこのコントロールの新しいテンプレートが含まれます。 詳しくは、「[角の半径](../style/rounded-corner.md)」をご覧ください。 WinUI は、Windows アプリの新しいコントロールと UI 機能が含まれる NuGet パッケージです。 インストール手順などについて詳しくは、「[Windows UI Library (Windows UI ライブラリ)](/uwp/toolkits/winui/)」をご覧ください。 |
+:::row:::
+   :::column:::
+      ![WinUI ロゴ](images/winui-logo-64x64.png)
+   :::column-end:::
+   :::column span="3":::
+      Windows UI ライブラリ 2.2 以降には、丸めた角を使用するこのコントロールの新しいテンプレートが含まれます。 詳しくは、「[角の半径](../style/rounded-corner.md)」をご覧ください。 WinUI は、Windows アプリの新しいコントロールと UI 機能が含まれる NuGet パッケージです。 インストール手順などについて詳しくは、「[Windows UI Library (Windows UI ライブラリ)](/uwp/toolkits/winui/)」をご覧ください。
+   :::column-end:::
+   :::column:::
 
-> **プラットフォーム API**: [Pivot クラス](/uwp/api/Windows.UI.Xaml.Controls.Pivot)、[NavigationView クラス](/uwp/api/Windows.UI.Xaml.Controls.NavigationView)
+   :::column-end:::
+:::row-end:::
+
+> **プラットフォーム API** : [Pivot クラス](/uwp/api/Windows.UI.Xaml.Controls.Pivot)、 [NavigationView クラス](/uwp/api/Windows.UI.Xaml.Controls.NavigationView)
 
 ## <a name="examples"></a>例
 
@@ -191,7 +199,7 @@ Pivot は [ItemsControl](/uwp/api/Windows.UI.Xaml.Controls.ItemsControl) であ�
 - ピボット ラベルをタップすると対応するページに移動し、アクティブなピボット ラベルは最初の位置までカルーセル表示されます。
 - カルーセル内のピボット項目は、最後のピボット セクションから最初のピボット セクションにループします。
 
-> **注** ピボット ヘッダーを [10 フィート環境](../devices/designing-for-tv.md)でカルーセル表示しないでください。 Xbox 上でアプリを実行する場合は、[IsHeaderItemsCarouselEnabled](/uwp/api/Windows.UI.Xaml.Controls.Pivot.IsHeaderItemsCarouselEnabled) プロパティを **false** に設定します。
+> **注** ピボット ヘッダーを [10 フィート環境](../devices/designing-for-tv.md)でカルーセル表示しないでください。 Xbox 上でアプリを実行する場合は、 [IsHeaderItemsCarouselEnabled](/uwp/api/Windows.UI.Xaml.Controls.Pivot.IsHeaderItemsCarouselEnabled) プロパティを **false** に設定します。
 
 ## <a name="recommendations"></a>推奨事項
 

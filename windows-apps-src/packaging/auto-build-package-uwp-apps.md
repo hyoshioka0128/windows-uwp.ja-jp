@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: f9b0d6bd-af12-4237-bc66-0c218859d2fd
 ms.localizationpriority: medium
-ms.openlocfilehash: 32054a30e56102b9c0642392d78ac75b78fb99e9
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: eec20ffc02263383cdbe670771143a6403177e7b
+ms.sourcegitcommit: 4cafc1c55511741dd1e5bfe4496d9950a9b4de1b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89158226"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97860432"
 ---
 # <a name="set-up-automated-builds-for-your-uwp-app"></a>UWP アプリの自動ビルドを設定する
 
@@ -47,7 +47,7 @@ variables:
   appxPackageDir: '$(build.artifactStagingDirectory)\AppxPackages\\'
 
 steps:
-- task: NuGetToolInstaller@0
+- task: NuGetToolInstaller@1
 
 - task: NuGetCommand@2
   inputs:
@@ -73,12 +73,12 @@ steps:
 1. Azure Pipelines のナビゲーション ウィンドウで **[パイプライン]** を展開し、 **[ライブラリ]** をクリックします。
 2. **[セキュア ファイル]** タブをクリックし、 **[+ セキュア ファイル]** をクリックします。
 
-    ![セキュア ファイルのアップロード方法](images/secure-file1.png)
+    ![Azure で [ライブラリ] オプションが強調表示され、[セキュア ファイル] ページが表示されているスクリーンショット。](images/secure-file1.png)
 
 3. 証明書ファイルを参照し、 **[OK]** をクリックします。
 4. 証明書をアップロードしたら、それを選択してそのプロパティを表示します。 **[パイプラインのアクセス許可]** で、 **[すべてのパイプラインで使用するために承認します。]** を有効に切り替えます。
 
-    ![セキュア ファイルのアップロード方法](images/secure-file2.png)
+    ![[パイプラインのアクセス許可] セクションで [すべてのパイプラインで使用するために承認します] オプションが選択されているスクリーンショット。](images/secure-file2.png)
 
 5. 証明書の秘密キーにパスワードが含まれている場合は、パスワードを [Azure Key Vault](/azure/key-vault/about-keys-secrets-and-certificates) に保存し、パスワードを[変数グループ](/azure/devops/pipelines/library/variable-groups)にリンクすることをお勧めします。 その変数を使用して、パイプラインからパスワードにアクセスできます。 パスワードは秘密キーに対してのみサポートされていることに注意してください。パスワードで保護されている証明書ファイルを使用することは、現在サポートされていません。
 
@@ -98,7 +98,7 @@ steps:
 | UapAppxPackageBuildMode | CI | .msixupload/.appxupload ファイルのみが生成されます。 |
 | UapAppxPackageBuildMode | SideloadOnly | サイドローディング用の **_Test** フォルダーのみが生成されます。 |
 | AppxPackageSigningEnabled | true | パッケージの署名を有効にします。 |
-| PackageCertificateThumbprint | 証明書の拇印 | この値は、署名証明書の拇印と一致しているか、空の文字列である**必要があります**。 |
+| PackageCertificateThumbprint | 証明書の拇印 | この値は、署名証明書の拇印と一致しているか、空の文字列である **必要があります**。 |
 | PackageCertificateKeyFile | パス | 使用する証明書へのパス。 これは、セキュア ファイルのメタデータから取得されます。 |
 | PackageCertificatePassword | Password | 証明書の秘密キーのパスワード。 パスワードを [Azure Key Vault](/azure/key-vault/about-keys-secrets-and-certificates) に保存し、パスワードを[変数グループ](/azure/devops/pipelines/library/variable-groups)にリンクすることをお勧めします。 この引数に変数を渡すことができます。 |
 

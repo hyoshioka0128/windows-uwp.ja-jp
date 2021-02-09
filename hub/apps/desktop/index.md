@@ -2,17 +2,17 @@
 description: Windows PC 用のデスクトップ アプリの開発を開始する方法を説明します。これには、新しいアプリ用の適切なアプリ プラットフォームを選択する方法、Windows 10 用の既存のアプリを現代化する方法も含まれます。
 title: Windows PC 用のデスクトップ アプリの構築
 ms.topic: article
-ms.date: 9/10/2020
+ms.date: 02/03/2021
 keywords: windows win32, デスクトップ開発
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 34b860916b90d1adc8ae9e7ae8c8ac7950125ce7
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 2518d838ca41e5ca2faa6dbd5697d64ea9257922
+ms.sourcegitcommit: 382ae62f9d9bf980399a3f654e40ef4f85eae328
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91216745"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99534371"
 ---
 # <a name="build-desktop-apps-for-windows-pcs"></a>Windows PC 用のデスクトップ アプリの構築
 
@@ -20,10 +20,11 @@ ms.locfileid: "91216745"
 
 ## <a name="platforms-for-desktop-apps"></a>デスクトップ アプリのプラットフォーム
 
-Windows PC 用のデスクトップ アプリを構築するプラットフォームは、主に 4 つあります。 各プラットフォームには、アプリのライフサイクルを定義するアプリ モデルのほか、Word、Excel、Photoshop などのデスクトップ アプリの作成と、Windows 機能を使用するための包括的な一連のマネージド API またはネイティブ API へのアクセスを可能にする完全な UI フレームワークと UI コントロール セットが用意されています。 これらのプラットフォームと、各プラットフォームのその他のリソースの詳細な比較については、「[アプリのプラットフォームを選択する](choose-your-platform.md)」を参照してください。
+Windows PC 用のデスクトップ アプリを構築するプラットフォームは、主に 4 つあります。 各プラットフォームには、アプリのライフサイクルを定義するアプリ モデルのほか、Word、Excel、Photoshop などのデスクトップ アプリの作成と、Windows 機能を使用するための包括的な一連のマネージド API またはネイティブ API へのアクセスを可能にする完全な UI フレームワークと UI コントロール セットが用意されています。 
+
+これらのプラットフォームと、各プラットフォームのその他のリソースの詳細な比較については、「[アプリのプラットフォームを選択する](choose-your-platform.md)」を参照してください。
 
 <br/>
-
 <table>
 <colgroup>
 <col width="20%" />
@@ -61,8 +62,17 @@ Windows PC 用のデスクトップ アプリを構築するプラットフォ�
 </tbody>
 </table>
 
-> [!NOTE]
-> Windows 10 では、これらのプラットフォームのそれぞれで、Windows UI (WinUI) ライブラリを使用したユーザー インターフェイスの作成がサポートされています。 デスクトップ アプリ用の WinUI の詳細については、[こちらのセクション](choose-your-platform.md#windows-ui-library)を参照してください。
+### <a name="future-roadmap"></a>今後のロードマップ
+
+今後、Windows UI ライブラリ (WinUI) と Project Reunion により Windows アプリ開発プラットフォームは進化します。
+
+* **WinUI** は、Windows 10 アプリ用のネイティブ ユーザー エクスペリエンス (UX) フレームワークです。 WinUI は、ダウンレベル バージョンの Windows 10 を対象とする UWP アプリ用の WinRT コントロールの新しいバージョンと更新バージョンを提供するツールキットとして開始されました。 WinUI 3 (まだプレビュー段階) の時点で、WinUI は、UWP、.NET、および Win32 アプリ プラットフォームにわたって Windows 10 アプリのプレミア ネイティブ ユーザー インターフェイス (UI) フレームワークになるように範囲が拡大しています。
+
+    詳細については、「[Windows UI ライブラリ (WinUI)](../winui/index.md)」を参照してください。
+
+* **Project Reunion** (現在プレビュー段階) は、Windows アプリ開発プラットフォームの次世代の広範な新しい開発者向けコンポーネントおよびツール セットのコードネームです。 Project Reunion により、さまざまな一連の対象の Windows 10 OS バージョン上のあらゆるアプリによって一貫した方法で使用できる、統合された API とツールのセットが提供されます。 Project Reunion は、開発者がこれらのプラットフォーム間で利用できる API とツールの共通セットによって、既存の Windows アプリのプラットフォームとフレームワーク (UWP、ネイティブ Win32、.NET など) を補完します。 
+
+    詳細については、「[Project Reunion](../project-reunion/index.md)」を参照してください。
 
 ## <a name="update-existing-desktop-apps-for-windows-10"></a>Windows 10 用に既存のデスクトップ アプリを更新する
 

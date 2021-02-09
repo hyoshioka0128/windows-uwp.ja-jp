@@ -1,23 +1,23 @@
 ---
-Description: パスワード ボックスは、プライバシーの目的で入力文字が非表示になるテキスト入力ボックスです。
+description: パスワード ボックスは、プライバシーの目的で入力文字が非表示になるテキスト入力ボックスです。
 title: パスワード ボックスのガイドライン
 ms.assetid: 332B04D6-4FFE-42A4-8B3D-ABE8266C7C18
 dev.assetid: 4BFDECC6-9BC5-4FF5-8C63-BB36F6DDF2EF
 label: Password box
 template: detail.hbs
-ms.date: 05/19/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 2bca2777145dd513cd19bfe1b002b5ec81d78c62
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: cb5bce63243869db0f8d9ae46a4c3c2b3844086c
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89169736"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93030885"
 ---
 # <a name="password-box"></a>パスワード ボックス
 
@@ -27,11 +27,19 @@ ms.locfileid: "89169736"
 
 **Windows UI ライブラリを入手する**
 
-|  |  |
-| - | - |
-| ![WinUI ロゴ](images/winui-logo-64x64.png) | Windows UI ライブラリ 2.2 以降には、丸めた角を使用するこのコントロールの新しいテンプレートが含まれます。 詳しくは、「[角の半径](../style/rounded-corner.md)」をご覧ください。 WinUI は、Windows アプリの新しいコントロールと UI 機能が含まれる NuGet パッケージです。 インストール手順などについて詳しくは、「[Windows UI Library (Windows UI ライブラリ)](/uwp/toolkits/winui/)」をご覧ください。 |
+:::row:::
+   :::column:::
+      ![WinUI ロゴ](images/winui-logo-64x64.png)
+   :::column-end:::
+   :::column span="3":::
+      Windows UI ライブラリ 2.2 以降には、丸めた角を使用するこのコントロールの新しいテンプレートが含まれます。 詳しくは、「[角の半径](../style/rounded-corner.md)」をご覧ください。 WinUI は、Windows アプリの新しいコントロールと UI 機能が含まれる NuGet パッケージです。 インストール手順などについて詳しくは、「[Windows UI Library (Windows UI ライブラリ)](/uwp/toolkits/winui/)」をご覧ください。
+   :::column-end:::
+   :::column:::
 
-> **プラットフォーム API**: [PasswordBox クラス](/uwp/api/Windows.UI.Xaml.Controls.PasswordBox)、[Password プロパティ](/uwp/api/windows.ui.xaml.controls.passwordbox.password)、[PasswordChar プロパティ](/uwp/api/windows.ui.xaml.controls.passwordbox.passwordchar)、[PasswordRevealMode プロパティ](/uwp/api/windows.ui.xaml.controls.passwordbox.passwordrevealmode)、[PasswordChanged イベント](/uwp/api/windows.ui.xaml.controls.passwordbox.passwordchanged)
+   :::column-end:::
+:::row-end:::
+
+> **プラットフォーム API** : [PasswordBox クラス](/uwp/api/Windows.UI.Xaml.Controls.PasswordBox)、 [Password プロパティ](/uwp/api/windows.ui.xaml.controls.passwordbox.password)、 [PasswordChar プロパティ](/uwp/api/windows.ui.xaml.controls.passwordbox.passwordchar)、 [PasswordRevealMode プロパティ](/uwp/api/windows.ui.xaml.controls.passwordbox.passwordrevealmode)、 [PasswordChanged イベント](/uwp/api/windows.ui.xaml.controls.passwordbox.passwordchanged)
 
 ## <a name="is-this-the-right-control"></a>これは適切なコントロールですか?
 

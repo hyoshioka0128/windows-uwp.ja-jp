@@ -1,5 +1,5 @@
 ---
-Description: ResourceDictionary 要素とキーを持つリソースを定義する方法と、アプリまたはアプリ パッケージの一部として定義する他のリソースと XAML リソースの関連について説明します。
+description: ResourceDictionary 要素とキーを持つリソースを定義する方法と、アプリまたはアプリ パッケージの一部として定義する他のリソースと XAML リソースの関連について説明します。
 MS-HAID: dev\_ctrl\_layout\_txt.resourcedictionary\_and\_xaml\_resource\_references
 MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
@@ -7,19 +7,20 @@ title: ResourceDictionary と XAML リソースの参照
 ms.assetid: E3CBFA3D-6AF5-44E1-B9F9-C3D3EA8A25CE
 label: ResourceDictionary and XAML resource references
 template: detail.hbs
-ms.date: 05/19/2017
-ms.topic: article
+ms.date: 09/24/2020
+ms.topic: conceptual
+ms.custom: contperf-fy21q1
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 dev_langs:
 - csharp
 - cppwinrt
-ms.openlocfilehash: deef91e817d68c235c0af266b5fa7d22842c4cfe
-ms.sourcegitcommit: ef3cdca5e9b8f032f46174da4574cb5593d32d56
+ms.openlocfilehash: 93d2c7e3381315d370969b7d5789e92b649012b4
+ms.sourcegitcommit: c0da06081d6b9a0386e61facdf68b28f606367b2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90593446"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98577554"
 ---
 # <a name="resourcedictionary-and-xaml-resource-references"></a>ResourceDictionary と XAML リソースの参照
 
@@ -117,7 +118,7 @@ XAML リソースは、マークアップから 2 回以上参照されるオブ
 > [!WARNING]
 > コード内でこのリソース検索を実行すると、`Page.Resources` ディクショナリ内のリソースだけが検索されます。 [StaticResource マークアップ拡張](../../xaml-platform/staticresource-markup-extension.md)とは異なり、最初のディクショナリでリソースが見つからない場合に、コードは `Application.Resources` ディクショナリにフォールバックしません。
 
- 
+ 
 
 この例では、ページのリソース ディクショナリから `redButtonStyle` リソースを取得する方法を示します。
 
@@ -293,7 +294,7 @@ void App::OnLaunched(LaunchActivatedEventArgs const& e)
 
 ## <a name="merged-resource-dictionaries"></a>結合されたリソース ディクショナリ
 
-*結合されたリソース ディクショナリ*は、あるリソース ディクショナリを別のディクショナリ (通常は別のファイルのディクショナリ) に結合します。
+*結合されたリソース ディクショナリ* は、あるリソース ディクショナリを別のディクショナリ (通常は別のファイルのディクショナリ) に結合します。
 
 > **ヒント**&nbsp;&nbsp;Microsoft Visual Studio でリソース ディクショナリ ファイルを作成するには、 **[プロジェクト]** メニューの **[追加] &gt; [新しい項目] &gt; [リソース ディクショナリ] オプション** を使います。
 
@@ -431,7 +432,7 @@ XAML デザイン ツールを使ってスタイルとテンプレートのコ�
 
 ## <a name="lookup-behavior-for-xaml-resource-references"></a>XAML リソース参照の検索の動作
 
-*検索の動作*とは、XAML リソース システムが XAML リソースを見つける方法を指します。 検索は、キーがアプリの XAML 内のどこかから XAML リソースの参照として参照されるときに行われます。 最初に、リソース システムがスコープに基づいてリソースの存在をチェックする動作は予測可能です。 リソースが最初のスコープで見つからない場合は、スコープが広がります。 検索の動作は、XAML リソースがアプリまたはシステムで定義されている可能性のある場所とスコープで続けられます。 すべての可能なリソース検索の試みが失敗すると、多くの場合、エラーが発生します。 これらのエラーは通常、開発プロセス中に解消できます。
+*検索の動作* とは、XAML リソース システムが XAML リソースを見つける方法を指します。 検索は、キーがアプリの XAML 内のどこかから XAML リソースの参照として参照されるときに行われます。 最初に、リソース システムがスコープに基づいてリソースの存在をチェックする動作は予測可能です。 リソースが最初のスコープで見つからない場合は、スコープが広がります。 検索の動作は、XAML リソースがアプリまたはシステムで定義されている可能性のある場所とスコープで続けられます。 すべての可能なリソース検索の試みが失敗すると、多くの場合、エラーが発生します。 これらのエラーは通常、開発プロセス中に解消できます。
 
 XAML リソース参照の検索の動作は、実際に使用が適用されるオブジェクトとその固有の [Resources](/uwp/api/windows.ui.xaml.frameworkelement.resources) プロパティから開始します。 [ResourceDictionary](/uwp/api/Windows.UI.Xaml.ResourceDictionary) が存在する場合は、その **ResourceDictionary** で、要求されたキーを持つ項目が確認されます。 通常はリソースを同じオブジェクトで定義して参照することはないため、最初のレベルの検索に意味があることはめったにありません。 実際に、通常、**Resources** プロパティはここに存在しません。 XAML リソース参照は、XAML 内のほぼ任意の位置から作成できます。[FrameworkElement](/uwp/api/Windows.UI.Xaml.FrameworkElement) サブクラスのプロパティには限定されません。
 
@@ -439,7 +440,7 @@ XAML リソース参照の検索の動作は、実際に使用が適用される
 
 > **注**&nbsp;&nbsp;このリソース検索動作と共に XAML マークアップ スタイルの規則も利用するために、すべての即時リソースをページのルート レベルに定義するのは一般的なやり方です。
 
- 
+ 
 
 要求されたリソースが即時リソースに見つからない場合、次の検索手順では [Application.Resources](/uwp/api/windows.ui.xaml.application.resources) プロパティが確認されます。 **Application.Resources** は、アプリのナビゲーション構造で複数のページによって参照されるアプリ固有のリソースを挿入するのに最適な場所です。
 
@@ -463,7 +464,7 @@ XAML リソース参照の検索の動作は、実際に使用が適用される
 ## <a name="xaml-resources-must-be-shareable"></a>XAML リソースは共有できる必要がある
 
 
-オブジェクトが [ResourceDictionary](/uwp/api/Windows.UI.Xaml.ResourceDictionary) に存在するためには、そのオブジェクトが*共有可能*である必要があります。
+オブジェクトが [ResourceDictionary](/uwp/api/Windows.UI.Xaml.ResourceDictionary) に存在するためには、そのオブジェクトが *共有可能* である必要があります。
 
 共有できることが必要な理由は、アプリのオブジェクト ツリーが実行時に構築されて使われるときに、オブジェクトはツリー内の複数の位置に存在できないためです。 内部では、各 XAML リソースが要求されたときに、アプリのオブジェクト グラフで使うリソース値のコピーをリソース システムが作成します。
 
@@ -516,7 +517,7 @@ C\# または Microsoft Visual Basic コードでは、インデクサー ([Item
 
 高度なシナリオとして、このトピックで説明した XAML リソース参照の検索の動作とは異なる動作を持つクラスを実装できます。 そのためには、[CustomXamlResourceLoader](/uwp/api/Windows.UI.Xaml.Resources.CustomXamlResourceLoader) クラスを実装します。すると、[StaticResource](../../xaml-platform/staticresource-markup-extension.md) または [ThemeResource](../../xaml-platform/themeresource-markup-extension.md) を使う代わりにリソース参照に [CustomResource markup extension](../../xaml-platform/customresource-markup-extension.md) を使って、この動作にアクセスできるようになります。 ほとんどのアプリにこれを必要とするシナリオはありません。 詳しくは、「[CustomXamlResourceLoader](/uwp/api/Windows.UI.Xaml.Resources.CustomXamlResourceLoader)」をご覧ください。
 
- 
+ 
 ## <a name="related-topics"></a>関連トピック
 
 * [ResourceDictionary](/uwp/api/Windows.UI.Xaml.ResourceDictionary)
@@ -527,6 +528,6 @@ C\# または Microsoft Visual Basic コードでは、インデクサー ([Item
 * [コントロールのスタイル指定](xaml-styles.md)
 * [x:Key 属性](../../xaml-platform/x-key-attribute.md)
 
- 
+ 
 
- 
+ 

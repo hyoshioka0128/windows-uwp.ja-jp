@@ -9,12 +9,12 @@ ms.technology: windows-nodejs
 keywords: Windows の設定, 開発環境, 開発ツール, 開発パス, Microsoft, Windows, 開発者, ヒント, パフォーマンス, WSL, ターミナル, nodejs, Python
 ms.localizationpriority: medium
 ms.date: 07/24/2020
-ms.openlocfilehash: b1b13635da3b5b06b43d1e6b009399da5a916094
-ms.sourcegitcommit: ef3cdca5e9b8f032f46174da4574cb5593d32d56
+ms.openlocfilehash: 578bc10b26dfe04384ca8e8174e36497c20896cb
+ms.sourcegitcommit: 48702934676ae366fd46b7d952396c5e2fb2cbbe
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90593466"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97927815"
 ---
 # <a name="set-up-your-development-environment-on-windows-10"></a>Windows 10 で開発環境を設定する
 
@@ -57,9 +57,9 @@ ms.locfileid: "90593466"
         C# と .NET Core を使用してアプリを構築します。
     :::column-end:::
     :::column:::
-       [![Java 向け Azure アイコン](../images/java-logo.png)](/azure/developer/java/)<br>
-        **[Azure での Java の概要](/azure/developer/java/)**<br>
-        Java 開発者向けのこれらのチュートリアルとツールを使用して、クラウド向けのアプリを構築します。
+       [![Docker Desktop for Windows のアイコン](../images/docker-logo.png)](../dev-environment/docker/overview.md)<br>
+        **[Docker Desktop for Windows の概要](../dev-environment/docker/overview.md)**<br>
+        Visual Studio、VS Code、.NET、Linux 用 Windows サブシステムや様々な Azure サービスのサポートを活用して、リモート開発用コンテナーを作成します。
     :::column-end:::
     :::column:::
        [![PowerShell アイコン](../images/powershell.png)](/powershell/)<br>
@@ -92,9 +92,9 @@ ms.locfileid: "90593466"
     :::column-end:::
     :::column:::
        [![PowerToys アイコン](../images/powertoys.png)](https://github.com/microsoft/PowerToys)<br>
-        **[Windows PowerToys](https://github.com/microsoft/PowerToys)**<br>
+        **[Windows PowerToys](../PowerToys/index.md)**<br>
         この一連のパワー ユーザー ユーティリティを使用して、生産性が向上するように Windows のエクスペリエンスを調整して合理化します。<br>
-        [PowerToys のインストール (パブリック プレビュー)](https://github.com/microsoft/PowerToys#installing-and-running-microsoft-powertoys)
+        [PowerToys をインストールする](https://github.com/microsoft/PowerToys#installing-and-running-microsoft-powertoys)
     :::column-end:::
 :::row-end:::
 :::row:::

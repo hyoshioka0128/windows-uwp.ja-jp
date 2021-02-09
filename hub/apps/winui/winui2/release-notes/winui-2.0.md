@@ -3,16 +3,16 @@ title: WinUI 2.0 リリース ノート
 description: WinUI 2.0 のリリース ノート。
 ms.date: 07/15/2020
 ms.topic: article
-ms.openlocfilehash: eb1cde864427768ab1adb3b982e4acc5b58906db
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 0e6c1bed21619d9ab12f5699c6a446754576cc29
+ms.sourcegitcommit: b99fe39126fbb457c3690312641f57d22ba7c8b6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89154816"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96603819"
 ---
 # <a name="windows-ui-library-20"></a>Windows UI ライブラリ 2.0
 
-WinUI 2.0 は、Windows UI ライブラリの最初のパブリック リリースです。
+WinUI 2.0 は、Windows UI ライブラリの最初のパブリック リリースです (2018 年 10 月リリース)。
 
 WinUI は、Windows 向けの優れた Fluent Design エクスペリエンスを構築するための最も簡単な方法です。
 
@@ -76,4 +76,4 @@ https://github.com/Microsoft/Xaml-Controls-Gallery)でもあります
 
 Windows UI ライブラリ コントロールの操作方法に関する記事は、[ユニバーサル Windows プラットフォーム コントロール ドキュメント](/windows/uwp/design/controls-and-patterns/)に含まれています。
 
-API リファレンスのドキュメントがある場所は、[Windows UI ライブラリ API](/uwp/api/overview/winui/) です。
+API リファレンスのドキュメントがある場所は、[Windows UI ライブラリ API](/windows/winui/api/) です。

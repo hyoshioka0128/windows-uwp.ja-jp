@@ -3,16 +3,17 @@ description: Windows プッシュ通知サービス (WNS) を利用すること�
 title: Windows プッシュ通知サービス (WNS) の概要
 ms.assetid: 2125B09F-DB90-4515-9AA6-516C7E9ACCCD
 template: detail.hbs
-ms.date: 03/06/2020
+ms.date: 09/28/2020
 ms.topic: article
+ms.custom: contperf-fy21q1
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: bd910c42743577a83491386f5c667dd09722ba9b
-ms.sourcegitcommit: 8171695ade04a762f19723f0b88e46e407375800
+ms.openlocfilehash: 6003db167d2a36205ac02f98750295d32a03ca62
+ms.sourcegitcommit: 4cafc1c55511741dd1e5bfe4496d9950a9b4de1b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/05/2020
-ms.locfileid: "89494378"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97860265"
 ---
 # <a name="windows-push-notification-services-wns-overview"></a>Windows プッシュ通知サービス (WNS) の概要 
 
@@ -33,50 +34,7 @@ Windows プッシュ Notification Services (WNS) を使用すると、サード�
 
 ## <a name="registering-your-app-and-receiving-the-credentials-for-your-cloud-service"></a>アプリの登録とクラウド サービスの資格情報の取得
 
-WNS を使って通知を送るには、アプリをストア ダッシュボードに登録しておく必要があります。 
-
-アプリにはそれぞれ、クラウド サービスの独自の資格情報が割り当てられます。 これらの資格情報を使って他のアプリに通知を送ることはできません。
-
-### <a name="step-1-register-your-app-with-the-dashboard"></a>手順 1: ダッシュボードにアプリを登録する
-
-WNS を使用して通知を送信するには、アプリがパートナーセンターのダッシュボードに登録されている必要があります。 これにより、WNS に対する認証を行うときにクラウド サービスで使うアプリの資格情報が提供されます。 これらの資格情報は、パッケージ セキュリティ識別子 (SID) と秘密鍵で構成されます。 この登録を実行するには、 [パートナーセンター](https://partner.microsoft.com/dashboard)にサインインします。 アプリを作成した後、資格情報を取得する方法については、「 [製品管理-WNS/MPNS](https://apps.dev.microsoft.com/) for instrunctions」を参照してください (live services ソリューションを使用する場合は、このページの **live services サイト** リンクに従ってください)。
-
-登録するには、次の手順を実行します。
-1.    パートナーセンターの [Windows ストアアプリ] ページにアクセスし、個人の Microsoft アカウント (例:、) でサインインし johndoe@outlook.com janedoe@xboxlive.com ます。
-2.    サインインしたら、[ダッシュボード] リンクをクリックします。
-3.    ダッシュボードで、[新しいアプリの作成] を選択します。
-
-![wns アプリの登録](../images/wns-create-new-app.png)
-
-4.    アプリ名を予約してアプリを作成します。 アプリの一意の名前を指定します。 名前を入力し、[製品名の予約] ボタンをクリックします。 名前が使用可能な場合は、アプリ用に予約されています。 アプリの名前が正常に予約されたら、その他の詳細を変更できるようになります。そのためには、この時点で他の詳細を選択する必要があります。
-
-![wns 予約製品名](../images/wns-reserve-poduct-name.png)
- 
-### <a name="step-2-obtain-the-identity-values-and-credentials-for-your-app"></a>手順 2: アプリの id 値と資格情報を取得する
-
-アプリの名前を予約すると、Windows ストアによって、関連付けられた資格情報が作成されます。 また、アプリのマニフェストファイル (package.appxmanifest) に存在する必要がある、関連付けられた id 値 (name と publisher) も割り当てられています。 アプリを Windows ストアに既にアップロードしている場合は、これらの値が自動的にマニフェストに追加されます。 アプリをアップロードしていない場合は、id 値をマニフェストに手動で追加する必要があります。
-
-1.    製品管理のドロップダウン矢印を選択します。
-
-![wns 製品管理](../images/wns-product-management.png)
-
-2.    [製品管理] ドロップダウンで、[WNS/MPNS] リンクを選択します。
-
-![wns 製品管理](../images/wns-product-management2.png)
- 
-3.    [WNS/MPNS] ページで、[Windows プッシュ Notification Services (WNS) と Microsoft Azure Mobile Services] セクションの下にある [Live Services サイト] リンクをクリックします。
-
-![wns ライブサービス](../images/wns-live-services-page.png)
- 
-4.    アプリケーション登録ポータル (以前の [Live Services] ページ) ページには、アプリのマニフェストに含める id 要素が用意されています。 これには、アプリのシークレット、パッケージのセキュリティ識別子、およびアプリケーション Id が含まれます。 テキストエディターでマニフェストを開き、ページの指示に従ってその要素を追加します。    
-
-> [!NOTE]
-> AAD アカウントを使用してログインしている場合は、アプリを登録した Microsoft アカウント所有者に連絡して、関連付けられているアプリシークレットを取得する必要があります。 この連絡先ユーザーの検索について支援が必要な場合は、画面の右上隅にある歯車をクリックし、[開発者の設定] をクリックすると、Microsoft アカウントを使用してアプリを作成したユーザーの電子メールアドレスが表示されます。
- 
-5.    SID とクライアントシークレットをクラウドサーバーにアップロードします。
-
-> [!Important]
-> SID とクライアントシークレットは、クラウドサービスによって安全に格納され、アクセスされる必要があります。 この情報の開示または盗難によって、攻撃者はアクセス許可や知識がなくてもユーザーに通知を送信できる可能性があります。
+WNS を使用して通知を送信する前に、 [こちら](/azure/notification-hubs/notification-hubs-windows-store-dotnet-get-started-wns-push-notification)の説明に従って、アプリをストアダッシュボードに登録する必要があります。
 
 ## <a name="requesting-a-notification-channel"></a>通知チャネルの要求
 
@@ -107,7 +65,7 @@ WNS の認証方式は、[OAuth 2.0](https://tools.ietf.org/html/draft-ietf-oaut
 WNS に対する認証では、クラウド サービスからの HTTP 要求の送信に Secure Sockets Layer (SSL) を使います。 パラメーターの形式は "application/x-www-for-urlencoded" です。 次の例に示すように、[クライアント id] フィールドにパッケージ SID を指定し、 \_ [クライアントシークレット] フィールドに秘密キーを入力し \_ ます。 構文について詳しくは、[アクセス トークン要求](/previous-versions/windows/apps/hh465435(v=win.10))のリファレンスをご覧ください。
 
 > [!NOTE]
-> これはほんの一例です。独自のコードで正常に使用できる切り取りと貼り付けのコードではありません。 
+> これはほんの一例です。独自のコードで正常に使用できる切り取りと貼り付けのコードではありません。 
 
 ``` http
  POST /accesstoken.srf HTTP/1.1
@@ -199,12 +157,12 @@ WNS はクラウド サービスを認証し、成功した場合、"200 OK" と
 
 これら 2 つの設定の状態を確認する方法はありませんが、バッテリ セーバーの状態を確認することはできます。 Windows 10 では、[**EnergySaverStatus**](/uwp/api/Windows.System.Power.PowerManager.EnergySaverStatus) プロパティを使って、バッテリ セーバーの状態を確認します。 アプリでは、[**EnergySaverStatusChanged**](/uwp/api/Windows.System.Power.PowerManager.EnergySaverStatusChanged) イベントを使って、バッテリ セーバーの変更をリッスンすることもできます。
 
-アプリがプッシュ通知を多用している場合は、バッテリ セーバーがオンの時は通知を受け取らないことをユーザーに通知し、**バッテリ セーバーの設定**を簡単に調整できるようにすることをお勧めします。 Windows 10 でバッテリ セーバー設定の URI スキーム `ms-settings:batterysaver-settings` を使って、設定アプリへの便利なリンクを提供することができます。
+アプリがプッシュ通知を多用している場合は、バッテリ セーバーがオンの時は通知を受け取らないことをユーザーに通知し、**バッテリ セーバーの設定** を簡単に調整できるようにすることをお勧めします。 Windows 10 でバッテリ セーバー設定の URI スキーム `ms-settings:batterysaver-settings` を使って、設定アプリへの便利なリンクを提供することができます。
 
 > [!TIP]
 > バッテリの節約設定についてユーザーに通知する場合は、今後メッセージを表示しないようにする方法を用意することをお勧めします。 たとえば、次の例の [`dontAskMeAgainBox`] チェックボックスは、[**LocalSettings**](/uwp/api/Windows.Storage.ApplicationData.LocalSettings) でユーザーの設定を保持します。
 
-Windows 10 でバッテリ省が有効になっているかどうかを確認する方法の例を次に示します。 この例では、ユーザーに通知し、[設定] アプリを**バッテリ セーバー設定**で起動します。 `dontAskAgainSetting` により、ユーザーは再度通知を表示しないようにする場合に、メッセージを非表示にすることができます。
+Windows 10 でバッテリ省が有効になっているかどうかを確認する方法の例を次に示します。 この例では、ユーザーに通知し、[設定] アプリを **バッテリ セーバー設定** で起動します。 `dontAskAgainSetting` により、ユーザーは再度通知を表示しないようにする場合に、メッセージを非表示にすることができます。
 
 ```csharp
 using System;
@@ -327,7 +285,7 @@ winrt::fire_and_forget CheckForEnergySaving()
 </ContentDialog>
 ```
 
-## <a name="related-topics"></a>関連項目
+## <a name="related-topics"></a>関連トピック
 
 * [ローカル タイル通知の送信](sending-a-local-tile-notification.md)
 * [クイック スタート: プッシュ通知の送信](/previous-versions/windows/apps/hh868252(v=win.10))

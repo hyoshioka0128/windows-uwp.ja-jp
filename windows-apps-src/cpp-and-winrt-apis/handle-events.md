@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: Windows 10、uwp、標準、c++、cpp、winrt、プロジェクション、プロジェクション、処理、イベント、デリゲート
 ms.localizationpriority: medium
-ms.openlocfilehash: 2d2470b1aa52f8aa4be7e07bf1dfe5213054b005
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 884f61e877b1d7ff9f5c4567dfc329d59610b773
+ms.sourcegitcommit: 14e79119aacc75382de9940fb5abaf7a618ad843
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89166246"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92210606"
 ---
 # <a name="handle-events-by-using-delegates-in-cwinrt"></a>C++/WinRT でのデリゲートを使用したイベントの処理
 
@@ -34,7 +34,7 @@ XAML デザイナーにより、適切なイベント ハンドラー関数の�
 
 ```xaml
 // MainPage.xaml
-<Button x:Name="Button" Click="ClickHandler">Click Me</Button>
+<Button x:Name="myButton" Click="ClickHandler">Click Me</Button>
 ```
 
 ```cppwinrt
@@ -48,9 +48,14 @@ void MainPage::ClickHandler(
     IInspectable const& /* sender */,
     RoutedEventArgs const& /* args */)
 {
-    Button().Content(box_value(L"Clicked"));
+    myButton().Content(box_value(L"Clicked"));
 }
 ```
+
+上記のコードは、Visual Studio の **空のアプリ (C++/WinRT)** プロジェクトから取られたものです。 コード `myButton()` により、生成されたアクセサー関数が呼び出されます。これにより、*myButton* という名前が付けられた **Button** が返されます。 その **Button** 要素の `x:Name` を変更すると、生成されるアクセサー関数の名前も変更されます。
+
+> [!NOTE]
+> この場合、イベント ソース (イベントを発生させるオブジェクト) は、*myButton* という名前の **Button** です。 そして、イベント受信側 (イベントを処理するオブジェクト) は、**MainPage** のインスタンスです。 イベント ソースとイベント受信側の有効期間の管理については、このトピックの後半で詳しく説明します。
 
 マークアップで宣言する代わりに、イベントを処理するメンバー関数を命令を使って登録することができます。 以下のコード例からは分かりにくいかもしれませんが、[**ButtonBase::Click**](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) 呼び出しの引数は [**RoutedEventHandler**](/uwp/api/windows.ui.xaml.routedeventhandler) デリゲートのインスタンスです。 この場合、メンバー関数へのオブジェクトとポインターを取得する **RoutedEventHandler** コンストラクター オーバーロードを使用しています。
 
@@ -60,7 +65,7 @@ MainPage::MainPage()
 {
     InitializeComponent();
 
-    Button().Click({ this, &MainPage::ClickHandler });
+    myButton().Click({ this, &MainPage::ClickHandler });
 }
 ```
 
@@ -80,7 +85,7 @@ MainPage::MainPage()
 {
     InitializeComponent();
 
-    Button().Click( MainPage::ClickHandler );
+    myButton().Click( MainPage::ClickHandler );
 }
 void MainPage::ClickHandler(
     IInspectable const& /* sender */,
@@ -112,12 +117,12 @@ struct RoutedEventHandler : winrt::Windows::Foundation::IUnknown
 > ```
 >
 > その情報から、**UIElement.KeyDown** イベント (現在のトピック) には **KeyEventHandler** のデリゲート型があることがわかります。これは、このイベント型にデリゲートを登録するときに渡す型だからです。 次は、このトピックの [KeyEventHandler デリゲート](/uwp/api/windows.ui.xaml.input.keyeventhandler)型のリンクをたどりましょう。 この構文ブロックには関数呼び出し演算子が含まれています。 また、前述のように、必要なデリケートのパラメーターを通知します。
-> 
-> ```cppwinrt
-> void operator()(
-    winrt::Windows::Foundation::IInspectable const& sender,
-    winrt::Windows::UI::Xaml::Input::KeyRoutedEventArgs const& e) const;
-> ```
+>
+>```cppwinrt
+>void operator()(
+>   winrt::Windows::Foundation::IInspectable const& sender,
+>   winrt::Windows::UI::Xaml::Input::KeyRoutedEventArgs const& e) const;
+>```
 >
 >  ご覧のとおり、送信者として **IInspectable** を、引数として [KeyRoutedEventArgs クラス](/uwp/api/windows.ui.xaml.input.keyroutedeventargs)のインスタンスを受け取るようにデリゲートを宣言する必要があります。
 >
@@ -130,9 +135,9 @@ MainPage::MainPage()
 {
     InitializeComponent();
 
-    Button().Click([this](IInspectable const& /* sender */, RoutedEventArgs const& /* args */)
+    myButton().Click([this](IInspectable const& /* sender */, RoutedEventArgs const& /* args */)
     {
-        Button().Content(box_value(L"Clicked"));
+        myButton().Content(box_value(L"Clicked"));
     });
 }
 ```
@@ -148,7 +153,7 @@ MainPage::MainPage()
     {
         sender.as<winrt::Windows::UI::Xaml::Controls::Button>().Content(box_value(L"Clicked"));
     };
-    Button().Click(click_handler);
+    myButton().Click(click_handler);
     AnotherButton().Click(click_handler);
 }
 ```

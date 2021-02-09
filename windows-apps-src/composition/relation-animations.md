@@ -1,16 +1,16 @@
 ---
 title: 関係ベース アニメーション
 description: 式のアニメーションを使用して、モーションが別のオブジェクトのプロパティに依存している場合に、リレーションベースのアニメーションを作成する方法について説明します。
-ms.date: 10/10/2017
+ms.date: 10/16/2020
 ms.topic: article
 keywords: Windows 10, UWP, アニメーション
 ms.localizationpriority: medium
-ms.openlocfilehash: 57d2f3729430faefc7db31cad6a0ac91ddaa2e02
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 29fdffd2ab5c871fe2e455e8811615a96368259a
+ms.sourcegitcommit: 7e8dfd83b181fe720b4074cb42adc908e1ba5e44
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89166366"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98811243"
 ---
 # <a name="relation-based-animations"></a>関係ベース アニメーション
 
@@ -52,10 +52,10 @@ Expression では一連のキーワードもサポートされています。キ
 
 ### <a name="creating-expressions-with-expressionbuilder"></a>ExpressionBuilder を使用して Expression を作成する
 
-UWP アプリで Expression を作成するには、2 つの方法があります。
+UWP アプリで式を作成するには、次の2つのオプションがあります。
 
-1. 公式のパブリック API を使用し、文字列として式を作成する。
-1. オープンソースの ExpressionBuilder ツールを使用し、タイプ セーフなオブジェクト モデルで式を作成する。 [Github のソースとドキュメント](https://github.com/microsoft/WindowsCompositionSamples/tree/master/ExpressionBuilder)をご覧ください。
+1. 公式のパブリック API を使用して、式を文字列として構築します。
+1. [Windows Community Toolkit](/windows/communitytoolkit/animations/expressions)に含まれている式ビルダーツールを使用して、タイプセーフなオブジェクトモデルで式を作成します。
 
 このドキュメントのために、ここでは ExpressionBuilder を使用して Expression を定義します。
 
@@ -95,7 +95,7 @@ Expression を使用した例を確認してみましょう。具体的には、
 
 この式では、PropertySet から参照する必要がある 2 つのプロパティが使用されています。1 つは中心点のオフセット、もう 1 つは回転です。
 
-```
+```csharp
 var propSetCenterPoint =
 _propertySet.GetReference().GetVector3Property("CenterPointOffset");
 
@@ -105,18 +105,20 @@ var propSetRotation = _propertySet.GetReference().GetScalarProperty("Rotation");
 
 次に、実際の起動の周回を構成する Vector3 コンポーネントを定義する必要があります。
 
-```
+```csharp
 var orbitRotation = EF.Vector3(
     EF.Cos(EF.ToRadians(propSetRotation)) * 150,
     EF.Sin(EF.ToRadians(propSetRotation)) * 75, 0);
 ```
 
 > [!NOTE]
-> `EF` は、式ビルダーの式を定義するための省略形の "using" 表記です。
+> `EF` は、表現関数を定義するための省略形の "using" 表記です。
+>
+> `using EF = Microsoft.Toolkit.Uwp.UI.Animations.Expressions.ExpressionFunctions;`
 
 最後に、これらのコンポーネントを一緒に組み合わせ、赤い円の位置を参照して、数学的な関係を定義します。
 
-```
+```csharp
 var orbitExpression = redSprite.GetReference().Offset + propSetCenterPoint + orbitRotation;
 blueSprite.StartAnimation("Offset", orbitExpression);
 ```
@@ -125,7 +127,7 @@ blueSprite.StartAnimation("Offset", orbitExpression);
 
 この場合、前に作成した Expression を変更します。 CompositionObject への参照を "取得" するのではなく、名前を指定して参照を作成し、異なる値を割り当てます。
 
-```
+```csharp
 var orbitExpression = ExpressionValues.Reference.CreateVisualReference("orbitRoundVisual");
 orbitExpression.SetReferenceParameter("orbitRoundVisual", redSprite);
 blueSprite.StartAnimation("Offset", orbitExpression);
@@ -136,13 +138,13 @@ greenSprite.StartAnimation("Offset", orbitExpression);
 
 パブリック API 経由で String を使用して Expression を定義する場合のコードを次に示します。
 
-```
-ExpressionAnimation expressionAnimation =
-compositor.CreateExpressionAnimation("visual.Offset + " +
-"propertySet.CenterPointOffset + " +
-"Vector3(cos(ToRadians(propertySet.Rotation)) * 150," + "sin(ToRadians(propertySet.Rotation)) * 75, 0)");
- var propSetCenterPoint = _propertySet.GetReference().GetVector3Property("CenterPointOffset");
- var propSetRotation = _propertySet.GetReference().GetScalarProperty("Rotation");
+```csharp
+ExpressionAnimation expressionAnimation = compositor.CreateExpressionAnimation("visual.Offset + " +
+    "propertySet.CenterPointOffset + " +
+    "Vector3(cos(ToRadians(propertySet.Rotation)) * 150," + "sin(ToRadians(propertySet.Rotation)) * 75, 0)");
+    
+var propSetCenterPoint = _propertySet.GetReference().GetVector3Property("CenterPointOffset");
+var propSetRotation = _propertySet.GetReference().GetScalarProperty("Rotation");
 expressionAnimation.SetReferenceParameter("propertySet", _propertySet);
 expressionAnimation.SetReferenceParameter("visual", redSprite);
 ```

@@ -1,8 +1,8 @@
 ---
-Description: NavigationView は、ご利用のアプリの最上位のナビゲーション パターンを実装するアダプティブ コントロールです。
+description: NavigationView は、ご利用のアプリの最上位のナビゲーション パターンを実装するアダプティブ コントロールです。
 title: ナビゲーション ビュー
 template: detail.hbs
-ms.date: 05/02/2020
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: yulikl
@@ -11,25 +11,36 @@ dev-contact: ''
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 7f71a11c76bc6318c9000a9468c7bd9574e0c5d0
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+dev_langs:
+- csharp
+- cppwinrt
+ms.openlocfilehash: af52032a0ebdf60e72f8bad0dd853696b717a05a
+ms.sourcegitcommit: 9bd23e0e08ed834accebde4db96fc87f921d983d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89170036"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98949145"
 ---
 # <a name="navigation-view"></a>ナビゲーション ビュー
 
-NavigationView コントロールでは、ご利用のアプリの最上位のナビゲーションが提供されます。 これは、さまざまな画面サイズに適応し、_上部_のナビゲーション スタイルと_左側_のナビゲーション スタイルの両方をサポートしています。
+NavigationView コントロールでは、ご利用のアプリの最上位のナビゲーションが提供されます。 これは、さまざまな画面サイズに適応し、_上部_ のナビゲーション スタイルと _左側_ のナビゲーション スタイルの両方をサポートしています。
 
 ![上部のナビゲーション](images/nav-view-header.png)<br/>
 _ナビゲーション ビューでは上部と左側の両方のナビゲーションのウィンドウまたはメニューがサポートされます_
 
 **Windows UI ライブラリを入手する**
 
-|  |  |
-| - | - |
-| ![WinUI ロゴ](images/winui-logo-64x64.png) | **NavigationView** コントロールは、Windows アプリのための新しいコントロールと UI 機能を含む NuGet パッケージである Windows UI ライブラリの一部として含まれています。 インストール手順などの詳細については、[Windows UI ライブラリの概要](/uwp/toolkits/winui/)に関するページを参照してください。 |
+:::row:::
+   :::column:::
+      ![WinUI ロゴ](images/winui-logo-64x64.png)
+   :::column-end:::
+   :::column span="3":::
+      **NavigationView** コントロールは、Windows アプリのための新しいコントロールと UI 機能を含む NuGet パッケージである Windows UI ライブラリの一部として含まれています。 インストール手順などの詳細については、[Windows UI ライブラリの概要](/uwp/toolkits/winui/)に関するページを参照してください。
+   :::column-end:::
+   :::column:::
+
+   :::column-end:::
+:::row-end:::
 
 > **プラットフォーム API**: [Windows.UI.Xaml.Controls.NavigationView クラス](/uwp/api/windows.ui.xaml.controls.navigationview)
 >
@@ -80,7 +91,7 @@ PaneDisplayMode プロパティを使用すれば、NavigationView でさまざ�
     :::column-end:::
 :::row-end:::
 
-次の場合に_上部_ナビゲーションをお勧めします。
+次の場合に _上部_ ナビゲーションをお勧めします。
 
 - 同じ重要度の最上位ナビゲーション カテゴリが 5 個以下であり、ドロップダウン オーバーフロー メニューとなる追加の最上位ナビゲーション カテゴリはいずれも、それほど重要ではないと考えられる。
 - 画面上にナビゲーション オプションをすべて表示する必要がある。
@@ -98,7 +109,7 @@ PaneDisplayMode プロパティを使用すれば、NavigationView でさまざ�
     :::column-end:::
 :::row-end:::
 
-次の場合に_左側_のナビゲーションをお勧めします。
+次の場合に _左側_ のナビゲーションをお勧めします。
 
 - 同じ重要度の最上位ナビゲーション カテゴリが 5 から 10 個ある。
 - ナビゲーション カテゴリ以外のアプリ コンテンツ用のスペースを少なくして、ナビゲーション カテゴリを非常に目立つようにする。
@@ -134,7 +145,7 @@ _ナビゲーション ビューの既定のアダプティブ動作_
 
 ## <a name="anatomy"></a>構造
 
-これらのイメージは、_上部_または_左側_のナビゲーションが構成されている場合の、ウィンドウ、ヘッダー、およびコントロールのコンテンツ領域のレイアウトを示します。
+これらのイメージは、_上部_ または _左側_ のナビゲーションが構成されている場合の、ウィンドウ、ヘッダー、およびコントロールのコンテンツ領域のレイアウトを示します。
 
 ![上部のナビゲーション ビューのレイアウト](images/topnav-anatomy.png)<br/>
 _上部のナビゲーションのレイアウト_
@@ -183,9 +194,22 @@ NavigationView ウィンドウには、次のものを含めることができ�
 1. AutoSuggestBox (オプション)
 1. [設定] ボタン (オプション)
 
+#### <a name="footer-menu-items"></a>フッター メニュー項目
+[FooterMenuItems](/uwp/api/microsoft.ui.xaml.controls.navigationview.FooterMenuItems) を使用すると、ナビゲーション ペインの最後にナビゲーション項目を配置できるのに対し、[MenuItems](/uwp/api/microsoft.ui.xaml.controls.navigationview.MenuItems) プロパティを使用すると、ペインの先頭に項目が配置されます。
+
+FooterMenuItems は、既定では Settings 項目の前に表示されます。 Settings 項目は、[`IsSettingsVisible`](/uwp/api/microsoft.ui.xaml.controls.navigationview.IsSettingsVisible) プロパティを使用して切り替えることもできます。
+
+FooterMenuItems には Navigation 項目だけを配置する必要があります。ペインのフッターと位置を合わせる必要がある他のコンテンツは、[PaneFooter](/uwp/api/microsoft.ui.xaml.controls.navigationview.PaneFooter) に配置する必要があります。
+
+NavigationView に FooterMenuItems を追加する方法の例については、「[FooterMenuItems クラス](/uwp/api/microsoft.ui.xaml.controls.navigationview.FooterMenuItems)」を参照してください。 
+
+次に示す画像は、フッター メニューに [アカウント]、[カート]、[ヘルプ] の各ナビゲーション項目が含まれる NavigationView です。 
+
+![FooterMenuItems が含まれる NavigationView](images/footermenu-leftmode.png)
+
 #### <a name="pane-footer"></a>ウィンドウのフッター
 
-[PaneFooter](/uwp/api/windows.ui.xaml.controls.navigationview.PaneFooter) プロパティに自由形式のコンテンツを追加すると、それをウィンドウのフッターに配置することができます。
+[PaneFooter](/uwp/api/microsoft.ui.xaml.controls.navigationview.PaneFooter) プロパティに自由形式のコンテンツを追加すると、それをウィンドウのフッターに配置することができます。
 
 :::row:::
     :::column:::
@@ -250,7 +274,7 @@ _ナビゲーション ビューのコンテンツ_
 
 コンテンツ領域には、選んだナビゲーション カテゴリのほとんどの情報が表示されます。
 
-NavigationView が**Minimal** モードの場合はコンテンツ領域に 12 ピクセルの余白を設定し、それ以外の場合は 24 ピクセルの余白を設定することをお勧めします。
+NavigationView が **Minimal** モードの場合はコンテンツ領域に 12 ピクセルの余白を設定し、それ以外の場合は 24 ピクセルの余白を設定することをお勧めします。
 
 ## <a name="adaptive-behavior"></a>アダプティブ動作
 
@@ -372,6 +396,8 @@ _PaneDisplayMode が LeftMinimal に設定されたナビゲーション ビュ�
 
 **SelectionChanged** は、現在選択されていない項目をユーザーが呼び出すことで発生させることも、選択された項目をプログラムで変更することによって発生させることもできます。 ユーザーが項目を呼び出したために選択の変更が発生した場合は、最初に ItemInvoked イベントが発生します。 選択の変更がプログラムによるものである場合、ItemInvoked は発生しません。
 
+すべてのナビゲーション項目は、[MenuItems](/uwp/api/microsoft.ui.xaml.controls.navigationview.MenuItems) または [FooterMenuItems](/uwp/api/microsoft.ui.xaml.controls.navigationview.FooterMenuItems) の一部であるかどうかにかかわらず、同じ選択モデルの一部です。 選択できるナビゲーション項目は、一度に 1 つだけです。
+
 ### <a name="backwards-navigation"></a>逆方向のナビゲーション
 
 NavigationView には組み込みの [戻る] ボタンがありますが、前方ナビゲーションと同様に、後方ナビゲーションは自動的には実行されません。 ユーザーが [戻る] ボタンをタップすると、[BackRequested](/uwp/api/windows.ui.xaml.controls.navigationview.BackRequested) イベントが発生します。 このイベントを処理して、後方ナビゲーションを実行します。 詳細については、[ナビゲーション履歴と後方ナビゲーション](../basics/navigation-history-and-backwards-navigation.md)に関するページを参照してください。
@@ -397,9 +423,9 @@ Minimal モードまたは Compact モードでは、ナビゲーション ビ�
 ## <a name="code-example"></a>コードの例
 
 > [!IMPORTANT]
-> Windows UI (WinUI) ライブラリ ツールキットを活用するプロジェクトについては、同じ準備段階のセットアップの手順を実行します。 背景、セットアップ、およびサポート情報の詳細については、「[Windows UI ライブラリの概要](/uwp/toolkits/winui/getting-started)」を参照してください。
+> Windows UI (WinUI) ライブラリ ツールキットを利用するプロジェクトの場合、同じ準備段階のセットアップの手順を実行します。 背景、セットアップ、およびサポート情報の詳細については、「[Windows UI ライブラリの概要](/uwp/toolkits/winui/getting-started)」を参照してください。
 
-この例では、ウィンドウ サイズが大きい場合の上部のナビゲーション ウィンドウとウィンドウ サイズが小さい場合の左側のナビゲーション ウィンドウの両方で **NavigationView** を使用する方法を示します。 これは、**VisualStateManager** で*上部*のナビゲーション設定を削除することにより、左側のみのナビゲーションに適応させることができます。
+この例では、ウィンドウ サイズが大きい場合の上部のナビゲーション ウィンドウとウィンドウ サイズが小さい場合の左側のナビゲーション ウィンドウの両方で **NavigationView** を使用する方法を示します。 これは、**VisualStateManager** で *上部* のナビゲーション設定を削除することにより、左側のみのナビゲーションに適応させることができます。
 
 この例は、一般的なシナリオの多くで機能するナビゲーション データを設定するための推奨方法を示しています。 また、**NavigationView** の [戻る] ボタンとキーボード ナビゲーションを使用して後方ナビゲーションを実装する方法についても示します。
 
@@ -515,19 +541,14 @@ private void NavView_Loaded(object sender, RoutedEventArgs e)
     // here to load the home page.
     NavView_Navigate("home", new Windows.UI.Xaml.Media.Animation.EntranceNavigationTransitionInfo());
 
-    // Add keyboard accelerators for backwards navigation.
-    var goBack = new KeyboardAccelerator { Key = Windows.System.VirtualKey.GoBack };
-    goBack.Invoked += BackInvoked;
-    this.KeyboardAccelerators.Add(goBack);
+    // Listen to the window directly so the app responds
+    // to accelerator keys regardless of which element has focus.
+    Window.Current.CoreWindow.Dispatcher.AcceleratorKeyActivated +=
+        CoreDispatcher_AcceleratorKeyActivated;
 
-    // ALT routes here
-    var altLeft = new KeyboardAccelerator
-    {
-        Key = Windows.System.VirtualKey.Left,
-        Modifiers = Windows.System.VirtualKeyModifiers.Menu
-    };
-    altLeft.Invoked += BackInvoked;
-    this.KeyboardAccelerators.Add(altLeft);
+    Window.Current.CoreWindow.PointerPressed += CoreWindow_PointerPressed;
+
+    SystemNavigationManager.GetForCurrentView().BackRequested += System_BackRequested;
 }
 
 private void NavView_ItemInvoked(muxc.NavigationView sender,
@@ -589,17 +610,39 @@ private void NavView_Navigate(
 private void NavView_BackRequested(muxc.NavigationView sender,
                                    muxc.NavigationViewBackRequestedEventArgs args)
 {
-    On_BackRequested();
+    TryGoBack();
 }
 
-private void BackInvoked(KeyboardAccelerator sender,
-                         KeyboardAcceleratorInvokedEventArgs args)
+private void CoreDispatcher_AcceleratorKeyActivated(CoreDispatcher sender, AcceleratorKeyEventArgs e)
 {
-    On_BackRequested();
-    args.Handled = true;
+    // When Alt+Left are pressed navigate back
+    if (e.EventType == CoreAcceleratorKeyEventType.SystemKeyDown
+        && e.VirtualKey == VirtualKey.Left
+        && e.KeyStatus.IsMenuKeyDown == true
+        && !e.Handled)
+    {
+        e.Handled = TryGoBack();
+    }
 }
 
-private bool On_BackRequested()
+private void System_BackRequested(object sender, BackRequestedEventArgs e)
+{
+    if (!e.Handled)
+    {
+        e.Handled = TryGoBack();
+    }
+}
+
+private void CoreWindow_PointerPressed(CoreWindow sender, PointerEventArgs e)
+{
+    // Handle mouse back button.
+    if (e.CurrentPoint.Properties.IsXButton1Pressed)
+    {
+        e.Handled = TryGoBack();
+    }
+}
+
+private bool TryGoBack();
 {
     if (!ContentFrame.CanGoBack)
         return false;
@@ -639,7 +682,7 @@ private void On_Navigated(object sender, NavigationEventArgs e)
 ```
 
 > [!NOTE]
-> このコード例の [C++/WinRT](../../cpp-and-winrt-apis/index.md) バージョンについては、最初に**空のアプリ (C++/WinRT)** プロジェクト テンプレートに基づいて新しいプロジェクトを作成してから、登録情報内のコードを指定されたソース コード ファイルに追加します。 登録情報に示されているとおりにソース コードを使用するには、新しいプロジェクトに *NavigationViewCppWinRT* という名前を付けます
+> このコード例の [C++/WinRT](../../cpp-and-winrt-apis/index.md) バージョンについては、最初に **空のアプリ (C++/WinRT)** プロジェクト テンプレートに基づいて新しいプロジェクトを作成してから、登録情報内のコードを指定されたソース コード ファイルに追加します。 登録情報に示されているとおりにソース コードを使用するには、新しいプロジェクトに *NavigationViewCppWinRT* という名前を付けます
 
 ```cppwinrt
 // MainPage.idl
@@ -655,6 +698,9 @@ runtimeclass MainPage : Windows.UI.Xaml.Controls.Page
 #include "winrt/Windows.UI.Xaml.Media.Animation.h"
 #include "winrt/Microsoft.UI.Xaml.Controls.h"
 #include "winrt/Microsoft.UI.Xaml.XamlTypeInfo.h"
+#include <winrt/Windows.UI.Core.h>
+#include "winrt/Windows.UI.Input.h"
+
 
 // MainPage.h
 #pragma once
@@ -700,13 +746,19 @@ namespace winrt::NavigationViewCppWinRT::implementation
         void NavView_BackRequested(
             muxc::NavigationView const& /* sender */,
             muxc::NavigationViewBackRequestedEventArgs const& /* args */);
-        void BackInvoked(
-            Windows::UI::Xaml::Input::KeyboardAccelerator const& /* sender */,
-            Windows::UI::Xaml::Input::KeyboardAcceleratorInvokedEventArgs const& args);
-        bool On_BackRequested();
         void On_Navigated(
             Windows::Foundation::IInspectable const& /* sender */,
             Windows::UI::Xaml::Navigation::NavigationEventArgs const& args);
+        void CoreDispatcher_AcceleratorKeyActivated(
+            Windows::UI::Core::CoreDispatcher const& /* sender */,
+            Windows::UI::Core::AcceleratorKeyEventArgs const& args);
+        void CoreWindow_PointerPressed(
+            Windows::UI::Core::CoreWindow const& /* sender */,
+            Windows::UI::Core::PointerEventArgs const& args);
+        void System_BackRequested(
+            Windows::Foundation::IInspectable const& /* sender */,
+            Windows::UI::Core::BackRequestedEventArgs const& args);
+        bool TryGoBack();
 
     private:
         // Vector of std::pair holding the Navigation Tag and the relative Navigation Page.
@@ -783,18 +835,17 @@ namespace winrt::NavigationViewCppWinRT::implementation
         NavView_Navigate(L"home",
             Windows::UI::Xaml::Media::Animation::EntranceNavigationTransitionInfo());
 
-        // Add keyboard accelerators for backwards navigation.
-        Windows::UI::Xaml::Input::KeyboardAccelerator goBack;
-        goBack.Key(Windows::System::VirtualKey::GoBack);
-        goBack.Invoked({ this, &MainPage::BackInvoked });
-        KeyboardAccelerators().Append(goBack);
+        // Listen to the window directly so the app responds
+        // to accelerator keys regardless of which element has focus.
+        winrt::Windows::UI::Xaml::Window::Current().CoreWindow().Dispatcher().
+            AcceleratorKeyActivated({ this, &MainPage::CoreDispatcher_AcceleratorKeyActivated });
+ 
+        winrt::Windows::UI::Xaml::Window::Current().CoreWindow().
+            PointerPressed({ this, &MainPage::CoreWindow_PointerPressed });
+ 
+        Windows::UI::Core::SystemNavigationManager::GetForCurrentView().
+            BackRequested({ this, &MainPage::System_BackRequested });
 
-        // ALT routes here
-        Windows::UI::Xaml::Input::KeyboardAccelerator altLeft;
-        goBack.Key(Windows::System::VirtualKey::Left);
-        goBack.Modifiers(Windows::System::VirtualKeyModifiers::Menu);
-        goBack.Invoked({ this, &MainPage::BackInvoked });
-        KeyboardAccelerators().Append(altLeft);
     }
 
     void MainPage::NavView_ItemInvoked(
@@ -870,31 +921,56 @@ namespace winrt::NavigationViewCppWinRT::implementation
         muxc::NavigationView const& /* sender */,
         muxc::NavigationViewBackRequestedEventArgs const& /* args */)
     {
-        On_BackRequested();
+        TryGoBack();
     }
 
-    void MainPage::BackInvoked(
-        Windows::UI::Xaml::Input::KeyboardAccelerator const& /* sender */,
-        Windows::UI::Xaml::Input::KeyboardAcceleratorInvokedEventArgs const& args)
+    void MainPage::CoreDispatcher_AcceleratorKeyActivated(
+        Windows::UI::Core::CoreDispatcher const& /* sender */,
+        Windows::UI::Core::AcceleratorKeyEventArgs const& args)
     {
-        On_BackRequested();
-        args.Handled(true);
+        // When Alt+Left are pressed navigate back
+        if (args.EventType() == Windows::UI::Core::CoreAcceleratorKeyEventType::SystemKeyDown
+            && args.VirtualKey() == Windows::System::VirtualKey::Left
+            && args.KeyStatus().IsMenuKeyDown
+            && !args.Handled())
+        {
+            args.Handled(TryGoBack());
+        }
     }
-
-    bool MainPage::On_BackRequested()
+ 
+    void MainPage::CoreWindow_PointerPressed(
+        Windows::UI::Core::CoreWindow const& /* sender */,
+        Windows::UI::Core::PointerEventArgs const& args)
+    {
+        // Handle mouse back button.
+        if (args.CurrentPoint().Properties().IsXButton1Pressed())
+        {
+            args.Handled(TryGoBack());
+        }
+    }
+ 
+    void MainPage::System_BackRequested(
+        Windows::Foundation::IInspectable const& /* sender */,
+        Windows::UI::Core::BackRequestedEventArgs const& args)
+    {
+        if (!args.Handled())
+        {
+            args.Handled(TryGoBack());
+        }
+    }
+ 
+    bool MainPage::TryGoBack()
     {
         if (!ContentFrame().CanGoBack())
             return false;
-
-        // Don't go back if the nav pane is overlaid.
+        // Don't go back if the nav pane is overlayed.
         if (NavView().IsPaneOpen() &&
             (NavView().DisplayMode() == muxc::NavigationViewDisplayMode::Compact ||
                 NavView().DisplayMode() == muxc::NavigationViewDisplayMode::Minimal))
             return false;
-
         ContentFrame().GoBack();
         return true;
-    }
+    }  
 
     void MainPage::On_Navigated(
         Windows::Foundation::IInspectable const& /* sender */,
@@ -943,7 +1019,7 @@ namespace winrt::NavigationViewCppWinRT::implementation
 
 ### <a name="alternative-cwinrt-implementation"></a>別の C++ /WinRT 実装
 
-上記の C# および C++ /WinRT コードは、両方のバージョンで同じ XAML マークアップを使用できるように設計されています。 ただし、このセクションに記載されている C++/WinRT バージョンを実装する別の方法があり、これが適切である場合もあります。
+上で示した C# および C++/WinRT のコードは、両方のバージョンで同じ XAML マークアップを使用できるように設計されています。 ただし、このセクションに記載されている C++/WinRT バージョンを実装する別の方法があり、これが適切である場合もあります。
 
 次に示すのは、**NavView_ItemInvoked** ハンドラーの別のバージョンです。 このバージョンのハンドラーの手法では、移動先のページの完全な型名を ([**NavigationViewItem**](/uwp/api/windows.ui.xaml.controls.navigationviewitem) のタグに) 最初に格納する必要があります。 ハンドラーでは、その値のボックス化を解除し、それを [**Windows::UI::Xaml::Interop::TypeName**](/uwp/api/windows.ui.xaml.interop.typename) オブジェクトに変換し、それを使用して目的のページに移動します。 上記の例に示した `_pages` という名前のマッピング変数は必要ありません。また、ご利用のタグ内の値が有効な型であることを確認するための単体テストを作成することができます。 「[C++/WinRT を使用した IInspectable へのスカラー値のボックス化とボックス化解除](../../cpp-and-winrt-apis/boxing.md)」も参照してください。
 
@@ -969,7 +1045,7 @@ void MainPage::NavView_ItemInvoked(
 ## <a name="hierarchical-navigation"></a>階層型ナビゲーション
 アプリによっては、ナビゲーション項目の単純なリストだけでは対応しきれない、より複雑な階層構造が存在する場合があります。 最上位レベルのナビゲーション項目を使用してページのカテゴリを表示し、特定のページを子項目で表示することができます。 これは、他のページにリンクされているだけのハブスタイルのページがある場合にも便利です。 このような場合には、階層型の NavigationView を作成する必要があります。
 
-入れ子になったナビゲーション項目の階層型リストをペインに表示するには、**NavigationViewItem** の [MenuItems](/uwp/api/microsoft.ui.xaml.controls.navigationviewitem.menuitems?view=winui-2.4) プロパティか [MenuItemsSource](/uwp/api/microsoft.ui.xaml.controls.navigationviewitem.menuitemssource?view=winui-2.4) プロパティを使用します。
+入れ子になったナビゲーション項目の階層型リストをペインに表示するには、**NavigationViewItem** の [MenuItems](/uwp/api/microsoft.ui.xaml.controls.navigationviewitem.menuitems) プロパティか [MenuItemsSource](/uwp/api/microsoft.ui.xaml.controls.navigationviewitem.menuitemssource) プロパティを使用します。
 各 NavigationViewItem には、他の NavigationViewItems と整理のための要素 (項目ヘッダーや区切り記号など) 含めることができます。 `MenuItemsSource` を使用するときに階層型リストを表示するには、`ItemTemplate` が NavigationViewItem になるように設定し、その `MenuItemsSource` プロパティを階層の次のレベルにバインドします。
 
 NavigationViewItem には入れ子になったレベルをいくつでも含めることができますが、アプリのナビゲーション階層は浅く保つことをお勧めします。 使いやすさと理解しやすさを考慮すると、レベルは 2 つが理想的でしょう。
@@ -1002,7 +1078,7 @@ NavigationView では、Top、Left、LeftCompact のペイン表示モードで�
 * MenuItemsSource プロパティを階層型データにバインドする
 * 項目テンプレートを NavigationViewMenuItem として定義し、その内容をメニュー項目のラベルに設定し、その MenuItemsSource プロパティを階層の次のレベルにバインドする
 
-この例では、[Expanding](/uwp/api/microsoft.ui.xaml.controls.navigationview.expanding?view=winui-2.4) イベントと [Collapsed](/uwp/api/microsoft.ui.xaml.controls.navigationview.collapsed?view=winui-2.4) イベントも示されています。 これらのイベントは、子があるメニュー項目に対して発生します。
+この例では、[Expanding](/uwp/api/microsoft.ui.xaml.controls.navigationview.expanding) イベントと [Collapsed](/uwp/api/microsoft.ui.xaml.controls.navigationview.collapsed) イベントも示されています。 これらのイベントは、子があるメニュー項目に対して発生します。
 
 ```xaml
 <Page ... xmlns:muxc="using:Microsoft.UI.Xaml.Controls" ... >
@@ -1376,7 +1452,7 @@ NavigationView では、選択インジケーターは全体で 1 つだけ表�
 
 Top と Left どちらのモードも、NavigationViewItems の矢印をクリックすると、サブツリーが展開されるか折りたたまれます。 NavigationViewItem の "_別の場所_" をクリックまたはタップすると、`ItemInvoked` イベントがトリガーされ、サブツリーも折りたたまれるか展開されます。
 
-項目が呼び出されたときに選択インジケーターが表示されないようにするには、その項目の [SelectsOnInvoked](/uwp/api/microsoft.ui.xaml.controls.navigationviewitem.selectsoninvoked?view=winui-2.3) プロパティを次のように False に設定します。
+項目が呼び出されたときに選択インジケーターが表示されないようにするには、その項目の [SelectsOnInvoked](/uwp/api/microsoft.ui.xaml.controls.navigationviewitem.selectsoninvoked) プロパティを次のように False に設定します。
 
 ```xaml
 <Page ... xmlns:muxc="using:Microsoft.UI.Xaml.Controls" ... >
@@ -1659,7 +1735,7 @@ Space または Enter キーでは常に項目の呼び出しまたは選択を�
 
 > `IsTitleBarAutoPaddingEnabled` プロパティには、[Windows UI ライブラリ](/uwp/toolkits/winui/) 2.2 以降が必要です。
 
-一部のアプリでは、[そのウィンドウのタイトル バーをカスタマイズ](../shell/title-bar.md)するように選択できるため、そのアプリのコンテンツがタイトル バー領域に拡張される可能性があります。 NavigationView が、 **[ExtendViewIntoTitleBar](/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar.extendviewintotitlebar) API を使用**してタイトル バーに拡張されるアプリ内のルート要素である場合、[ドラッグ可能な領域](../shell/title-bar.md#draggable-regions)との重なりを避けるためその対話型要素の位置が自動的に調整されます。
+一部のアプリでは、[そのウィンドウのタイトル バーをカスタマイズ](../shell/title-bar.md)するように選択できるため、そのアプリのコンテンツがタイトル バー領域に拡張される可能性があります。 NavigationView が、 **[ExtendViewIntoTitleBar](/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar.extendviewintotitlebar) API を使用** してタイトル バーに拡張されるアプリ内のルート要素である場合、[ドラッグ可能な領域](../shell/title-bar.md#draggable-regions)との重なりを避けるためその対話型要素の位置が自動的に調整されます。
 
 ![アプリのタイトル バーへの拡張](images/navigation-view-with-titlebar-padding.png)
 

@@ -1,20 +1,19 @@
 ---
-author: knicholasa
 description: Z 深度 (相対的な深さ) とシャドウは、ユーザーが自然かつ効率的に注目できるように、アプリに深度を組み入れるための 2 つの方法です。
 title: Windows アプリの Z 深度とシャドウ
 template: detail.hbs
-ms.date: 04/19/2019
+ms.date: 09/24/2020
 ms.topic: article
 ms.custom: 19H1
 keywords: windows 10, uwp
 pm-contact: chigy
 ms.localizationpriority: medium
-ms.openlocfilehash: fc2adb295df97cf1af49608d15c135b9f56b4594
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 72cffc86d71b34de2c4c9292221889ee4f0bc1d5
+ms.sourcegitcommit: 5684340ad29a81939c6a93017b5a39ccbe1f6040
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89165566"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92184216"
 ---
 # <a name="z-depth-and-shadow"></a>Z 深度とシャドウ
 

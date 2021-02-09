@@ -3,7 +3,7 @@ description: カラー ピッカーを使用して、ユーザーが色を参照
 title: カラー ピッカー
 label: Color Picker
 template: detail.hbs
-ms.date: 05/19/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: kisai
@@ -11,12 +11,12 @@ design-contact: ksulliv
 dev-contact: llongley
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: c6739263917ab48040a2780a750948215d8d6361
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 886236000c31dbeda12ae95e4c920be0a2cb03f3
+ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173516"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91750558"
 ---
 # <a name="color-picker"></a>カラー ピッカー
 
@@ -26,9 +26,17 @@ ms.locfileid: "89173516"
 
 **Windows UI ライブラリを入手する**
 
-|  |  |
-| - | - |
-| ![WinUI ロゴ](images/winui-logo-64x64.png) | **ColorPicker** コントロールは、Windows アプリのための新しいコントロールと UI 機能を含む NuGet パッケージである Windows UI ライブラリの一部として含まれています。 インストール手順などについて詳しくは、「[Windows UI Library (Windows UI ライブラリ)](/uwp/toolkits/winui/)」をご覧ください。 |
+:::row:::
+   :::column:::
+      ![WinUI ロゴ](images/winui-logo-64x64.png)
+   :::column-end:::
+   :::column span="3":::
+      **ColorPicker** コントロールは、Windows アプリのための新しいコントロールと UI 機能を含む NuGet パッケージである Windows UI ライブラリの一部として含まれています。 インストール手順などについて詳しくは、「[Windows UI Library (Windows UI ライブラリ)](/uwp/toolkits/winui/)」をご覧ください。
+   :::column-end:::
+   :::column:::
+
+   :::column-end:::
+:::row-end:::
 
 > **Windows UI ライブラリ API:** [ColorPicker クラス](/uwp/api/microsoft.ui.xaml.controls.colorpicker)、[Color プロパティ](/uwp/api/microsoft.ui.xaml.controls.colorpicker.Color)、[ColorChanged イベント](/uwp/api/microsoft.ui.xaml.controls.colorpicker.ColorChanged)
 >

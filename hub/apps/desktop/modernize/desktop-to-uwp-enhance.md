@@ -1,19 +1,19 @@
 ---
 description: Windows ランタイム API を使用して Windows 10 ユーザー向けデスクトップ アプリケーションを強化します。
 title: デスクトップ アプリで Windows ランタイム API を呼び出す
-ms.date: 08/20/2019
+ms.date: 01/28/2021
 ms.topic: article
 keywords: windows 10, uwp
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: e58315ed70b889e1369e8c13a563f320c0ca1948
-ms.sourcegitcommit: a222ad0e2d97e35a60000c473808c678395376ee
+ms.openlocfilehash: 2dc56597dccf00a15ffc672f60ca2e1f0936f14f
+ms.sourcegitcommit: 6f15cc14e0c4c13999c862664fa7a70de8730b74
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89479082"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98981871"
 ---
 # <a name="call-windows-runtime-apis-in-desktop-apps"></a>デスクトップ アプリで Windows ランタイム API を呼び出す
 
@@ -23,58 +23,127 @@ ms.locfileid: "89479082"
 
 一部の Windows ランタイム API は、[パッケージ ID](modernize-packaged-apps.md) を持つデスクトップ アプリのみでサポートされています。 詳しくは、[利用可能な Windows ランタイム API](desktop-to-uwp-supported-api.md) に関する記事をご覧ください。
 
-## <a name="set-up-your-project"></a>プロジェクトを設定する
+## <a name="modify-a-net-project-to-use-windows-runtime-apis"></a>Windows ランタイム API を使用するように .NET プロジェクトを変更する
 
-Windows ランタイム API を使用するには、プロジェクトにいくつかの変更を加える必要があります。
+.NET プロジェクトには、次のいくつかのオプションがあります。
 
-### <a name="modify-a-net-project-to-use-windows-runtime-apis"></a>Windows ランタイム API を使用するように .NET プロジェクトを変更する
+* .NET 5 Preview 8 以降では、ターゲット フレームワーク モニカー (TFM) をプロジェクト ファイルに追加して、WinRT API にアクセスできます。 このオプションは、Windows 10 Version 1809 以降をターゲットとするプロジェクトでサポートされています。
+* それ以前のバージョンの .NET では、`Microsoft.Windows.SDK.Contracts` NuGet パッケージをインストールして、プロジェクトに必要なすべての参照を追加できます。 このオプションは、Windows 10 Version 1803 以降をターゲットとするプロジェクトでサポートされています。
+* プロジェクトが、NET 5 Preview 8 以降とそれより前のバージョンの .NET の両方をターゲットとする場合は、両方のオプションを使用するようにプロジェクト ファイルを構成できます。
 
-.NET プロジェクトには、次の 2 つのオプションがあります。
+### <a name="net-5-use-the-target-framework-moniker-option"></a>.NET 5:ターゲット フレームワーク モニカー オプションを使用する
 
-* アプリが Windows 10 バージョン1803 以降を対象としている場合は、必要なすべての参照が提供される NuGet パッケージをインストールできます。
-* または、手動で参照を追加できます。
+このオプションは、.NET 5 (または以降のリリース) を使用し、Windows 10 バージョン 1809 以降の OS リリースをターゲットとするプロジェクトでのみサポートされています。 このシナリオに関するさらに詳しい背景情報については、[このブログ記事](https://blogs.windows.com/windowsdeveloper/2020/09/03/calling-windows-apis-in-net5/)を参照してください。
 
-#### <a name="to-use-the-nuget-option"></a>NuGet オプションを使用するには
+1. Visual Studio 上でプロジェクトを開いた状態で、**ソリューション エクスプローラー** でプロジェクトを右クリックし、 **[プロジェクト ファイルの編集]** を選択します。 プロジェクト ファイルの内容は次のようになります。
+
+    ```csharp
+    <Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+      <PropertyGroup>
+        <OutputType>WinExe</OutputType>
+        <TargetFramework>net5.0</TargetFramework>
+        <UseWindowsForms>true</UseWindowsForms>
+      </PropertyGroup>
+    </Project>
+    ```
+
+2. **TargetFramework** 要素の値を、次のいずれかの文字列に置き換えます。
+
+    * **net5.0-windows10.0.17763.0**:アプリが Windows 10 Version 1809 をターゲットとしている場合は、この値を使用します。
+    * **net5.0-windows10.0.18362.0**:アプリが Windows 10 Version 1903 をターゲットとしている場合は、この値を使用します。
+    * **net5.0-windows10.0.19041.0**:アプリが Windows 10 Version 2004 をターゲットとしている場合は、この値を使用します。
+
+    たとえば、次の要素は Windows 10 Version 2004 をターゲットとするプロジェクト用です。
+
+    ```csharp
+    <TargetFramework>net5.0-windows10.0.19041.0</TargetFramework>
+    ```
+
+3. 変更を保存し、プロジェクト ファイルを閉じます。
+
+### <a name="earlier-versions-of-net-install-the-microsoftwindowssdkcontracts-nuget-package"></a>以前のバージョンの .NET:Microsoft.Windows.SDK.Contracts NuGet パッケージをインストールする
+
+このオプションは、アプリで .NET Core 3.x、.NET 5 Preview 7 以前、または .NET Framework を使用する場合に使用します。 このオプションは、Windows 10 Version 1803 以降の OS リリースをターゲットとするプロジェクトでサポートされています。
 
 1. [パッケージ参照](/nuget/consume-packages/package-references-in-project-files)が有効になっていることを確認します。
 
     1. Visual Studio で、 **[ツール] -> [NuGet パッケージ マネージャー] -> [パッケージ マネージャー設定]** の順にクリックします。
     2. **[既定のパッケージ管理形式]** に **[PackageReference]** が選択されていることを確認します。
 
-2. Visual Studio 上でプロジェクトを開いた状態で、**ソリューション エクスプローラー**でプロジェクトを右クリックし、 **[NuGet パッケージの管理]** を選択します。
+2. Visual Studio 上でプロジェクトを開いた状態で、**ソリューション エクスプローラー** でプロジェクトを右クリックし、 **[NuGet パッケージの管理]** を選択します。
 
 3. **[NuGet パッケージ マネージャー]** ウィンドウで、 **[参照]** タブを選択して、`Microsoft.Windows.SDK.Contracts` を検索します。
 
-4. `Microsoft.Windows.SDK.Contracts` パッケージが見つかったら、 **[NuGet パッケージ マネージャー]** ウィンドウの右側のペインで、ターゲットにする Windows 10 のバージョンに基づいて、インストールするパッケージの**バージョン**を選択します。
+4. `Microsoft.Windows.SDK.Contracts` パッケージが見つかったら、 **[NuGet パッケージ マネージャー]** ウィンドウの右側のペインで、ターゲットにする Windows 10 のバージョンに基づいて、インストールするパッケージの **バージョン** を選択します。
 
+    * **10.0.19041.xxxx**:Windows 10 Version 2004 の場合は、これを選択します。
     * **10.0.18362.xxxx**:Windows 10 バージョン 1903 の場合は、これを選択します。
     * **10.0.17763.xxxx**:Windows 10 バージョン 1809 の場合は、これを選択します。
     * **10.0.17134.xxxx**:Windows 10 バージョン 1803 の場合は、これを選択します。
 
 5. **[インストール]** をクリックします。
 
-#### <a name="to-add-the-required-references-manually"></a>必要な参照を手動で追加するには
+### <a name="configure-projects-that-multi-target-different-versions-of-net"></a>複数の異なるバージョンの .NET をターゲットとするプロジェクトを構成する
 
-1. **[参照マネージャー]** ダイアログ ボックスを開き、 **[参照]** ボタンを選択して、 **[すべてのファイル]** を選択します。
+プロジェクトが、NET 5 Preview 8 以降とそれより前のバージョン (.NET Core 3.x と .NET Framework を含む) の両方をターゲットとする場合は、ターゲット フレームワーク モニカーを使用することにより、.NET 5 には WinRT API 参照を自動的に取り込み、それより前のバージョンには `Microsoft.Windows.SDK.Contracts` NuGet パッケージを自動的に使用するようにプロジェクト ファイルを構成できます。
 
-    ![[参照の追加] ダイアログ ボックス](images/desktop-to-uwp/browse-references.png)
+1. Visual Studio 上でプロジェクトを開いた状態で、**ソリューション エクスプローラー** でプロジェクトを右クリックし、 **[プロジェクト ファイルの編集]** を選択します。 次に、.NET Core 3.1 を使用するアプリ用のプロジェクト ファイルの例を示します。
 
-2. 次のすべてのファイルへの参照を追加します。
+    ```csharp
+    <Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+      <PropertyGroup>
+        <OutputType>WinExe</OutputType>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
+        <UseWindowsForms>true</UseWindowsForms>
+      </PropertyGroup>
+    </Project>
+    ```
 
-    |ファイル|インストール先|
-    |--|--|
-    |System.Runtime.WindowsRuntime.dll|C:\Windows\Microsoft.NET\Framework\v4.0.30319|
-    |System.Runtime.WindowsRuntime.UI.Xaml.dll|C:\Windows\Microsoft.NET\Framework\v4.0.30319|
-    |System.Runtime.InteropServices.WindowsRuntime.dll|C:\Windows\Microsoft.NET\Framework\v4.0.30319|
-    |windows.winmd|C:\Program Files (x86)\Windows Kits\10\UnionMetadata\\<*SDK バージョン*>\Facade|
-    |Windows.Foundation.UniversalApiContract.winmd|C:\Program Files (x86)\Windows Kits\10\References\\<*SDK バージョン*>\Windows.Foundation.UniversalApiContract\\<*バージョン*>|
-    |Windows.Foundation.FoundationContract.winmd|C:\Program Files (x86)\Windows Kits\10\References\\<*SDK バージョン*>\Windows.Foundation.FoundationContract\\<*バージョン*>|
+2. ファイルの **TargetFramework** 要素を、**TargetFrameworks** 要素 (複数形であることに注意) に置き換えます。 この要素では、ターゲットとするすべてのバージョンの .NET について、ターゲット フレームワーク モニカーをセミコロンで区切って指定します。 
 
-3. **[プロパティ]** ウィンドウで、各 *.winmd* ファイルの **[ローカルにコピー]** フィールドを **[False]** に設定します。
+    * .NET 5 Preview 8 以降の場合は、次のいずれかのターゲット フレームワーク モニカーを使用します。
+        * **net5.0-windows10.0.17763.0**:アプリが Windows 10 Version 1809 をターゲットとしている場合は、この値を使用します。
+        * **net5.0-windows10.0.18362.0**:アプリが Windows 10 Version 1903 をターゲットとしている場合は、この値を使用します。
+        * **net5.0-windows10.0.19041.0**:アプリが Windows 10 Version 2004 をターゲットとしている場合は、この値を使用します。
+    * .NET Core 3.x の場合は、**netcoreapp3.0** または **netcoreapp3.1** を使用します。
+    * .NET Framework の場合は、**net46** を使用します。
 
-    ![[ローカルにコピー] フィールド](images/desktop-to-uwp/copy-local-field.png)
+    次に、.NET Core 3.1 と .NET 5 Preview 8 の両方をターゲットとする方法の例を示します (Windows 10 Version 2004 の場合)。
 
-### <a name="modify-a-c-win32-project-to-use-windows-runtime-apis"></a>Windows ランタイム API を使用するように C++ Win32 プロジェクトを変更する
+    ```csharp
+    <TargetFrameworks>netcoreapp3.1;net5.0-windows10.0.19041.0</TargetFrameworks>
+    ```
+
+3. **PropertyGroup** 要素の後ろに **PackageReference** 要素を追加します。ここには、アプリがターゲットとする任意のバージョンの .NET Core 3.x または .NET Framework 用の `Microsoft.Windows.SDK.Contracts` NuGet パッケージをインストールする条件付きステートメントを含めます。 **PackageReference** 要素は、**ItemGroup** 要素の子である必要があります。 次に、.NET Core 3.1 でこれを行う方法の例を示します。
+
+    ```csharp
+    <ItemGroup>
+      <PackageReference Condition="'$(TargetFramework)' == 'netcoreapp3.1'"
+                        Include="Microsoft.Windows.SDK.Contracts"
+                        Version="10.0.19041.0" />
+    </ItemGroup>
+    ```
+
+    完了すると、プロジェクト ファイルの内容は次のようになります。
+
+    ```csharp
+    <Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+      <PropertyGroup>
+        <OutputType>WinExe</OutputType>
+        <TargetFrameworks>netcoreapp3.1;net5.0-windows10.0.19041.0</TargetFrameworks>
+        <UseWPF>true</UseWPF>
+      </PropertyGroup>
+      <ItemGroup>
+        <PackageReference Condition="'$(TargetFramework)' == 'netcoreapp3.1'"
+                         Include="Microsoft.Windows.SDK.Contracts"
+                         Version="10.0.19041.0" />
+      </ItemGroup>
+    </Project>
+    ```
+
+4. 変更を保存し、プロジェクト ファイルを閉じます。
+
+## <a name="modify-a-c-win32-project-to-use-windows-runtime-apis"></a>Windows ランタイム API を使用するように C++ Win32 プロジェクトを変更する
 
 Windows ランタイム API を使用するには、[C++/WinRT](/windows/uwp/cpp-and-winrt-apis/) を使います。 C++/WinRT は Windows ランタイム (WinRT) API の標準的な最新の C++17 言語プロジェクションで、ヘッダー ファイル ベースのライブラリとして実装され、最新の Windows API への最上位アクセス権を提供するように設計されています。
 
@@ -240,11 +309,11 @@ Windows 10 ユーザー向けに個別のバイナリをビルドする場合は
 
 そのビルド構成に対して、Windows ランタイム API を呼び出すコードを識別する定数を作成します。  
 
-.NET ベースのプロジェクトの場合、この定数は**条件付きコンパイル定数**と呼ばれます。
+.NET ベースのプロジェクトの場合、この定数は **条件付きコンパイル定数** と呼ばれます。
 
 ![条件付きコンパイル定数](images/desktop-to-uwp/compilation-constants.png)
 
-C++ ベースのプロジェクトの場合、この定数は**プリプロセッサ定義**と呼ばれます。
+C++ ベースのプロジェクトの場合、この定数は **プリプロセッサ定義** と呼ばれます。
 
 ![プリプロセッサ定義定数](images/desktop-to-uwp/pre-processor.png)
 
@@ -273,7 +342,7 @@ void UWP::ShowToast()
 
 ユーザーが実行する Windows のバージョンに関係なく、1 組のバイナリをすべての Windows ユーザー向けにコンパイルできます。 アプリケーションでは、ユーザーが Windows 10 上でアプリケーションをパッケージ化されたアプリケーションとして実行している場合にのみ、Windows ランタイム API を呼び出します。
 
-コードにランタイム チェックを追加する最も簡単な方法は、Nuget パッケージである [Desktop Bridge Helpers](https://www.nuget.org/packages/DesktopBridge.Helpers/) をインストールしてから、``IsRunningAsUWP()`` メソッドを使用して、Windows ランタイム API を呼び出すすべてのコードを利用することです。 詳細については、こちらのブログ投稿「[デスクトップ ブリッジ - アプリケーションのコンテキストの識別](/archive/blogs/appconsult/desktop-bridge-identify-the-applications-context)」を参照してください。
+コードにランタイム チェックを追加する最も簡単な方法は、Nuget パッケージである [Desktop Bridge Helpers](https://www.nuget.org/packages/DesktopBridge.Helpers/) をインストールしてから、``IsRunningAsUWP()`` メソッドを使用して、Windows ランタイム API を呼び出すすべてのコードを利用することです。 詳細については、こちらのブログ投稿を参照してください。「[デスクトップ ブリッジ - アプリケーションのコンテキストの識別](/archive/blogs/appconsult/desktop-bridge-identify-the-applications-context)」を参照してください。
 
 ## <a name="related-samples"></a>関連するサンプル
 

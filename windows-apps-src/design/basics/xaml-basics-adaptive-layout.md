@@ -5,24 +5,24 @@ keywords: XAML, UWP, 概要
 ms.date: 08/20/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 8e1498836772c3c279a1b9d85d76070b29593f5e
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: e9db25c822d524ec36c6e512e132e49a69a2bd7d
+ms.sourcegitcommit: 7aa0e1108fd1a19ebc5632acbc9f66ea9af2b321
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89174476"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97691527"
 ---
 # <a name="tutorial-create-adaptive-layouts"></a>チュートリアル: アダプティブ レイアウトを作成する
 
 このチュートリアルでは、XAML のアダプティブ レイアウト機能の基本について説明します。これを使うと、どのようなサイズでも正しく表示されるアプリを作成できます。 ウィンドウ ブレークポイントの追加方法、新しい DataTemplate の作成方法、VisualStateManager クラスを使用してアプリのレイアウトをカスタマイズする方法について説明します。 これらのツールを使用して、小さめのウィンドウ サイズ用に画像編集プログラムを最適化します。
 
-画像編集プログラムには 2 つのページがあります。 _メイン ページ_には、フォト ギャラリー ビューが各画像ファイルに関する情報と共に表示されます。
+画像編集プログラムには 2 つのページがあります。 _メイン ページ_ には、フォト ギャラリー ビューが各画像ファイルに関する情報と共に表示されます。
 
-![MainPage](../basics/images/xaml-basics/mainpage.png)
+![写真ラボのメイン ページのスクリーンショット。](../basics/images/xaml-basics/mainpage.png)
 
-*詳細ページ*には、選択された 1 枚の写真が表示されます。 ポップアップの編集メニューにより、写真の編集、名前変更、保存を行うことができます。
+*詳細ページ* には、選択された 1 枚の写真が表示されます。 ポップアップの編集メニューにより、写真の編集、名前変更、保存を行うことができます。
 
-![DetailPage](../basics/images/xaml-basics/detailpage.png)
+![写真ラボの詳細ページのスクリーンショット。](../basics/images/xaml-basics/detailpage.png)
 
 ## <a name="prerequisites"></a>前提条件
 
@@ -48,7 +48,7 @@ ms.locfileid: "89174476"
 
     **GitHub に慣れている場合:**
 
-    a。 リポジトリのマスター ブランチをローカルに複製します。
+    a。 リポジトリのメイン ブランチをローカルに複製します。
 
     b. `Windows-appsample-photo-lab\xaml-basics-starting-points\adaptive-layout` ディレクトリを参照します。
 
@@ -165,17 +165,17 @@ ms.locfileid: "89174476"
     ...
 
         <!-- Large window VisualState -->
-        <VisualState x:Key="LargeWindow">
+        <VisualState>
 
         </VisualState>
 
         <!-- Medium window VisualState -->
-        <VisualState x:Key="MediumWindow">
+        <VisualState>
 
         </VisualState>
 
         <!-- Small window VisualState -->
-        <VisualState x:Key="SmallWindow">
+        <VisualState>
 
         </VisualState>
 
@@ -185,7 +185,7 @@ ms.locfileid: "89174476"
 
 ### <a name="create-statetriggers-to-apply-the-visual-state"></a>表示状態を適用する StateTriggers を作成する
 
-次に、各スナップ位置に対応する `StateTriggers` を作成します。 MainPage.xaml の `VisualStateManager` (パート 2 で作成) に次のコードを追加します。
+次に、各スナップ位置に対応する `StateTriggers` を作成します。 MainPage.xaml で、各 `VisualState` に次のコードを追加します。
 
 ```xaml
 <VisualStateManager.VisualStateGroups>
@@ -193,31 +193,31 @@ ms.locfileid: "89174476"
     ...
 
         <!-- Large window VisualState -->
-        <VisualState x:Key="LargeWindow">
+        <VisualState>
 
             <!-- Large window trigger -->
             <VisualState.StateTriggers>
-                <AdaptiveTrigger MinWindowWidth="{StaticResource LargeWindowSnapPoint}"/>
+                <AdaptiveTrigger MinWindowWidth="{StaticResource LargeWindowBreakpoint}"/>
             </VisualState.StateTriggers>
 
         </VisualState>
 
         <!-- Medium window VisualState -->
-        <VisualState x:Key="MediumWindow">
+        <VisualState>
 
             <!-- Medium window trigger -->
             <VisualState.StateTriggers>
-                <AdaptiveTrigger MinWindowWidth="{StaticResource MediumWindowSnapPoint}"/>
+                <AdaptiveTrigger MinWindowWidth="{StaticResource MediumWindowBreakpoint}"/>
             </VisualState.StateTriggers>
 
         </VisualState>
 
         <!-- Small window VisualState -->
-        <VisualState x:Key="SmallWindow">
+        <VisualState>
 
             <!-- Small window trigger -->
             <VisualState.StateTriggers >
-                <AdaptiveTrigger MinWindowWidth="{StaticResource MinWindowSnapPoint}"/>
+                <AdaptiveTrigger MinWindowWidth="{StaticResource MinWindowBreakpoint}"/>
             </VisualState.StateTriggers>
 
         </VisualState>
@@ -266,10 +266,7 @@ ms.locfileid: "89174476"
 
 これで、この演習は終わりです。自身でさらに試すために必要な、アダプティブ レイアウトに関する知識を身につけることができました。 さらに大きな課題としては、Surface Hub などの大きな画面サイズ用にレイアウトを最適化してみることができます。 Surface Hub のレイアウトをテストする場合は、「[Visual Studio を使った Surface Hub アプリのテスト](../../debug-test-perf/test-surface-hub-apps-using-visual-studio.md)」を参照してください。
 
-行き詰まった場合は、「[XAML を使ったページ レイアウトの定義](../layout/layouts-with-xaml.md)」の以下のセクションで、詳しいガイダンスを参照できます。
-
-+ [表示状態と状態トリガー](../layout/layouts-with-xaml.md#visual-states-and-state-triggers)
-+ [カスタマイズされたレイアウト](../layout/layouts-with-xaml.md#tailored-layouts)
+行き詰まった場合は、「[XAML でのレスポンシブ レイアウト](../layout/layouts-with-xaml.md)」で、詳しいガイダンスを参照できます。
 
 当初の写真編集アプリの作成方法を学習するには、XAML の[ユーザー インターフェイス](../basics/xaml-basics-ui.md)と[データ バインディング](../../data-binding/xaml-basics-data-binding.md)に関するチュートリアルをご覧ください。
 

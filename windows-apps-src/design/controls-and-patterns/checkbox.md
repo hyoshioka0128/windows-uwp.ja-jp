@@ -1,10 +1,10 @@
 ---
-Description: アクション項目の選択や選択解除を行うときに使います。 単一のリスト項目や複数のリスト項目に対して使うことができます。
+description: アクション項目の選択や選択解除を行うときに使います。 単一のリスト項目や複数のリスト項目に対して使うことができます。
 title: チェック ボックス
 ms.assetid: 6231A806-287D-43EE-BD8D-39D2FF761914
 label: Check boxes
 template: detail.hbs
-ms.date: 05/19/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: kisai
@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 5c5784490da53f15f4b7ac79d83b59391031748d
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: e18f750f7a442fdfe5d5ffc0119a8a64f5571407
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173566"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93030965"
 ---
 # <a name="check-boxes"></a>チェック ボックス
 
@@ -27,22 +27,30 @@ ms.locfileid: "89173566"
 
 **Windows UI ライブラリを入手する**
 
-|  |  |
-| - | - |
-| ![WinUI ロゴ](images/winui-logo-64x64.png) | Windows UI ライブラリ 2.2 以降には、丸めた角を使用するこのコントロールの新しいテンプレートが含まれます。 詳しくは、「[角の半径](../style/rounded-corner.md)」をご覧ください。 WinUI は、Windows アプリの新しいコントロールと UI 機能が含まれる NuGet パッケージです。 インストール手順などについて詳しくは、「[Windows UI Library (Windows UI ライブラリ)](/uwp/toolkits/winui/)」をご覧ください。 |
+:::row:::
+   :::column:::
+      ![WinUI ロゴ](images/winui-logo-64x64.png)
+   :::column-end:::
+   :::column span="3":::
+      Windows UI ライブラリ 2.2 以降には、丸めた角を使用するこのコントロールの新しいテンプレートが含まれます。 詳しくは、「[角の半径](../style/rounded-corner.md)」をご覧ください。 WinUI は、Windows アプリの新しいコントロールと UI 機能が含まれる NuGet パッケージです。 インストール手順などについて詳しくは、「[Windows UI Library (Windows UI ライブラリ)](/uwp/toolkits/winui/)」をご覧ください。 
+   :::column-end:::
+   :::column:::
 
-> **プラットフォーム API:** [CheckBox クラス](/uwp/api/Windows.UI.Xaml.Controls.CheckBox)、[Checked イベント](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.checked)、[IsChecked プロパティ](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.ischecked)
+   :::column-end:::
+:::row-end:::
+
+> **プラットフォーム API:** [CheckBox クラス](/uwp/api/Windows.UI.Xaml.Controls.CheckBox)、 [Checked イベント](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.checked)、 [IsChecked プロパティ](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.ischecked)
 
 
 ## <a name="is-this-the-right-control"></a>これは適切なコントロールですか?
 
-**1 つのチェック ボックス**を使うのは、"このアカウントを記憶する" ログイン シナリオや、 サービス契約の条項など、はい/いいえの二者択一の選択肢の場合です。
+**1 つのチェック ボックス** を使うのは、"このアカウントを記憶する" ログイン シナリオや、 サービス契約の条項など、はい/いいえの二者択一の選択肢の場合です。
 
 ![個人的な選択のための 1 つのチェック ボックス](images/checkbox1.png)
 
-二者択一の場合、**チェック ボックス**と[トグル スイッチ](toggles.md)との主な違いは、チェック ボックスが状態を管理し、トグル スイッチが動作を管理する点です。 チェック ボックスによる操作はコミットを遅らせることができますが (たとえばフォームの送信の一部として)、トグル スイッチによる操作は直ちにコミットしなければなりません。 また、複数の選択ができるのは、チェック ボックスだけです。
+二者択一の場合、 **チェック ボックス** と [トグル スイッチ](toggles.md)との主な違いは、チェック ボックスが状態を管理し、トグル スイッチが動作を管理する点です。 チェック ボックスによる操作はコミットを遅らせることができますが (たとえばフォームの送信の一部として)、トグル スイッチによる操作は直ちにコミットしなければなりません。 また、複数の選択ができるのは、チェック ボックスだけです。
 
-**複数のチェック ボックス**を使うのは、複数選択シナリオの場合 (ユーザーが相互排他的でない選択肢のグループから 1 つ以上の項目を選ぶ場合) です。
+**複数のチェック ボックス** を使うのは、複数選択シナリオの場合 (ユーザーが相互排他的でない選択肢のグループから 1 つ以上の項目を選ぶ場合) です。
 
 ユーザーがオプションの任意の組み合わせを選べる場合は、チェック ボックスのグループを作成します。
 
@@ -52,7 +60,7 @@ ms.locfileid: "89173566"
 
 ![混在する選択を示すために使用されるチェック ボックス](images/checkbox3.png)
 
-**チェック ボックス** コントロールと**ラジオ ボタン** コントロールの両方を使うと、ユーザーはオプションの一覧から選択できます。 チェック ボックスを使うと、ユーザーはオプションの組み合わせを選択できます。 これに対し、ラジオ ボタンを使うと、ユーザーは相互排他的なオプションの中から 1 つのオプションを選択できます。 1 つ以上のオプションがあっても、選択できるのが 1 つだけの場合は、代わりにラジオ ボタンを使います。
+**チェック ボックス** コントロールと **ラジオ ボタン** コントロールの両方を使うと、ユーザーはオプションの一覧から選択できます。 チェック ボックスを使うと、ユーザーはオプションの組み合わせを選択できます。 これに対し、ラジオ ボタンを使うと、ユーザーは相互排他的なオプションの中から 1 つのオプションを選択できます。 1 つ以上のオプションがあっても、選択できるのが 1 つだけの場合は、代わりにラジオ ボタンを使います。
 
 ## <a name="examples"></a>例
 
@@ -106,7 +114,7 @@ checkBox1.Content = "I agree to the terms of service.";
 </StackPanel>
 ```
 
-チェック ボックスを**不確定**状態にもできる場合は、バインディングの [FallbackValue](/uwp/api/windows.ui.xaml.data.binding.fallbackvalue) プロパティを使用して、この状態を表すブール値を指定します。 この場合、[送信] ボタンも有効にしないようにします。
+チェック ボックスを **不確定** 状態にもできる場合は、バインディングの [FallbackValue](/uwp/api/windows.ui.xaml.data.binding.fallbackvalue) プロパティを使用して、この状態を表すブール値を指定します。 この場合、[送信] ボタンも有効にしないようにします。
 
 ```xaml
 <Button Content="Submit" 
@@ -159,7 +167,7 @@ public class NullableBooleanToBooleanConverter : IValueConverter
 
 チェック ボックスの状態が変化したときにアクションを実行するには、[Click](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) イベント、または [Checked](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.checked) イベントと [Unchecked](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.unchecked) イベントを処理できます。 
 
-**Click** イベントはオンの状態が変化するたびに発生します。 Click イベントを処理する場合は、**IsChecked** プロパティを使ってチェック ボックスの状態を確認します。
+**Click** イベントはオンの状態が変化するたびに発生します。 Click イベントを処理する場合は、 **IsChecked** プロパティを使ってチェック ボックスの状態を確認します。
 
 **Checked** イベントと **Unchecked** イベントは別々に発生します。 これらのイベントを処理する場合は、チェック ボックスの状態の変化に応じて両方のイベントを処理する必要があります。
 
@@ -218,7 +226,7 @@ State | プロパティ | 値
 オフ | IsChecked | **false** 
 不確定 | IsChecked | **null** 
 
-不確定の状態を報告するチェック ボックスの場合、[IsThreeState](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.isthreestate) プロパティを **true** に設定する必要があります。 
+不確定の状態を報告するチェック ボックスの場合、 [IsThreeState](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.isthreestate) プロパティを **true** に設定する必要があります。 
 
 オプションをグループ化できる場合は、不確定状態のチェック ボックスを使ってグループ全体を表すことができます。 グループ内のすべてでなく一部のサブ項目をユーザーが選択する場合は、チェック ボックスの不確定の状態を使います。
 

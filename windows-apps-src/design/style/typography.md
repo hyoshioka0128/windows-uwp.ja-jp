@@ -1,17 +1,17 @@
 ---
 description: コンテンツをユーザーに理解しやすくするための、アプリにおける文字体裁の使用方法について説明します。
 title: Windows アプリの文字体裁
-ms.date: 04/06/2018
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 555459d427eae045d3cf7eda45a97ec806717380
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 3660417f6e88268dd2ad814ce4dba62354029828
+ms.sourcegitcommit: 05f9bb0c563e12daaacf7732d46f1c7f578dbe6a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89175516"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97529289"
 ---
 # <a name="typography-in-windows-apps"></a>Windows アプリの文字体裁
 
@@ -23,13 +23,14 @@ ms.locfileid: "89175516"
 
 アプリの UI 全体で同じフォントを使用してください。Windows アプリの既定のフォントである **Segoe UI** に統一することをお勧めします。 このフォントは、常に最適な読みやすさが維持されるサイズとピクセル密度を備え、システムのコンテンツを清潔で軽快、かつオープンに美しく表示します。
 
-![Segoe UI フォントのサンプル テキスト](images/type/segoe-sample.svg)
+![Segoe UI フォントのサンプル テキスト。](images/type/segoe-sample.svg)
 
 アプリで英語以外の言語を表示する場合、または異なるフォントを選択する場合は、「[言語](#languages)」と「[フォント](#fonts)」のセクションで、弊社が Windows アプリ向けに推奨するフォントを確認してください。
 
 :::row:::
     :::column:::
-![推奨](images/do.svg) UI のフォントを統一してください。
+![緑色のチェック マークが付いており、"Do" と書かれている緑色のバーの最初のスクリーンショット。](images/do.svg)
+UI のフォントを統一します。
     :::column-end:::
     :::column:::
 ![非推奨](images/dont.svg) 複数のフォントを混在させないでください。
@@ -40,13 +41,14 @@ ms.locfileid: "89175516"
 
 UWP アプリのフォント サイズは、すべてのデバイスで自動的に拡大縮小します。 スケーリング アルゴリズムによって、10 フィート離れた Surface Hub 上の 24 ピクセル フォントが、目の前にある 5 インチ サイズの電話の画面に表示された 24 ピクセル フォントと同じ読みやすさで表示されます。
 
-![さまざまなデバイスの視聴距離](images/type/scaling-chart.svg)
+![さまざまなデバイスの視距離。](images/type/scaling-chart.svg)
 
 スケーリング システムのしくみを踏まえ、実際の物理ピクセルではなく、有効ピクセルに基づいてデザインしてください。異なる画面サイズや解像度に応じてフォント サイズを変更する必要はありません。
 
 :::row:::
     :::column:::
-![推奨](images/do.svg) Windows の[書体見本](#type-ramp)に従います。
+![緑色のチェック マークが付いており、"Do" と書かれている緑色のバーの 2 番目のスクリーンショット。](images/do.svg)
+Windows の[書体見本](#type-ramp)に従います。
     :::column-end:::
     :::column:::
 ![非推奨](images/dont.svg) 12 ピクセルよりも小さいフォント サイズを使用しないでください。
@@ -60,7 +62,7 @@ UWP アプリのフォント サイズは、すべてのデバイスで自動的
 ユーザーはページを斜め読みするとき、視覚的な階層を手掛かりにしています。見出しは内容を要約し、本文は詳細を説明するものと想定されます。 アプリでわかりやすい視覚的な階層を作成するためには、Windows 書体見本に従ってください。
     :::column-end:::
     :::column:::
-![テキスト ブロック スタイル](images/type/type-hierarchy.svg)
+![3 行のテキストを行ごとに少しずつ小さいフォントで表示したスクリーンショット。](images/type/type-hierarchy.svg)
     :::column-end:::
 :::row-end:::
 
@@ -68,18 +70,13 @@ UWP アプリのフォント サイズは、すべてのデバイスで自動的
 
 Windows 書体見本は、ユーザーがコンテンツを読みやすいように、ページ上の各書体スタイル間の重要な関係を定めたものです。 すべてのサイズは有効ピクセル単位で示され、UWP アプリが動作するデバイスを問わず、常に最適に表示されるように調整されています。
 
-![書体見本](images/type/type-ramp.png)
+![Windows 書体見本。](images/type/type-ramp.png)
 
 ### <a name="using-the-type-ramp"></a>書体見本の使用
 
 :::row:::
     :::column:::
-各レベルの書体見本は、XAML の[静的リソース](../controls-and-patterns/xaml-theme-resources.md#the-xaml-type-ramp)としてアクセスできます。 これらのスタイルは、`*TextBlockStyle` 名前付け規則に従っています。
-    :::column-end:::
-    :::column:::
-![テキスト ブロック スタイル](images/type/text-block-type-ramp.svg)
-    :::column-end:::
-:::row-end:::
+各レベルの書体見本は、XAML の[静的リソース](../controls-and-patterns/xaml-theme-resources.md#the-xaml-type-ramp)としてアクセスできます。 これらのスタイルは、ここに示した `*TextBlockStyle` 名前付け規則に従っています。
 
 ```XAML
 <TextBlock Text="Header" Style="{StaticResource HeaderTextBlockStyle}"/>
@@ -90,10 +87,18 @@ Windows 書体見本は、ユーザーがコンテンツを読みやすいよう
 <TextBlock Text="Body" Style="{StaticResource BodyTextBlockStyle}"/>
 <TextBlock Text="Caption" Style="{StaticResource CaptionTextBlockStyle}"/>
 ```
+    :::column-end:::
+    :::column:::
+![Header、Subheader、Title、Subtitle、Base、Body、Caption テキスト スタイルのスクリーンショット。](images/type/text-block-type-ramp.svg)
+    :::column-end:::
+:::row-end:::
+
+
 
 :::row:::
     :::column:::
-![推奨](images/do.svg) ほとんどのテキストには "Body" を使用します。
+![緑色のチェック マークが付いており、"Do" と書かれている緑色のバーの 3 番目のスクリーンショット。](images/do.svg)
+ほとんどのテキストには "Body" を使用します。
 
 スペースに制約がある場合はタイトルに "Base" を使用します。
     :::column-end:::
@@ -118,7 +123,8 @@ Windows 書体見本は、ユーザーがコンテンツを読みやすいよう
 
 :::row:::
     :::column:::
-![推奨](images/do.svg) 読みやすさを確保するため、1 行当たり 50 ～ 60 文字の文字カウントを維持します。
+![緑色のチェック マークが付いており、"Do" と書かれている緑色のバーの 4 番目のスクリーンショット。](images/do.svg)
+読みやすさを確保するため、1 行当たり 50 から 60 文字にします。
     :::column-end:::
     :::column:::
 ![非推奨](images/dont.svg) 1 行当たりの文字カウントが 20 文字を下回るか 60 文字を超えると読みにくくなります。
@@ -129,7 +135,7 @@ Windows 書体見本は、ユーザーがコンテンツを読みやすいよう
 
 テキストの量が利用可能なスペースを超えている場合は、テキストをクリッピングすることが推奨されます。クリッピングは、ほとんどの [UWP テキスト コントロール](../controls-and-patterns/text-controls.md) で既定の処理です。
 
-![いくつかのテキスト クリッピングがあるデバイス フレームを示します。](images/type/clipping.svg)
+![一部がテキスト クリッピングされたデバイス フレームを示しています。](images/type/clipping.svg)
 
 ```xaml
 <TextBlock TextWrapping="WrapWholeWords" TextTrimming="Clip"/>
@@ -137,7 +143,8 @@ Windows 書体見本は、ユーザーがコンテンツを読みやすいよう
 
 :::row:::
     :::column:::
-![推奨](images/do.svg) テキストをクリップし、複数行を使用できる場合は、行を折り返します。
+![緑色のチェック マークが付いており、"Do" と書かれている緑色のバーの 5 番目のスクリーンショット。](images/do.svg)
+テキストをクリップし、複数行を使用できる場合は、行を折り返します。
     :::column-end:::
     :::column:::
 ![非推奨](images/dont.svg) すっきりと表示するため、省略記号は使用しないでください。

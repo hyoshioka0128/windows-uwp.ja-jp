@@ -1,27 +1,27 @@
 ---
-Description: Windows アプリのナビゲーションは、ナビゲーション構造、ナビゲーション要素、システム レベルの機能から成る柔軟なモデルに基づいています。
+description: Windows アプリのナビゲーションは、ナビゲーション構造、ナビゲーション要素、システム レベルの機能から成る柔軟なモデルに基づいています。
 title: Windows アプリのナビゲーションの基本
 ms.assetid: B65D33BA-AAFE-434D-B6D5-1A0C49F59664
 label: Navigation design basics
 template: detail.hbs
 op-migration-status: ready
-ms.date: 07/16/2018
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 01ccd7a7ead6bd79b79e8beb3de7f3208b616b7c
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: ae88d30988ff2c3ccb4e7b32e1fefbf4d8bb9fde
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89174536"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93031125"
 ---
 # <a name="navigation-design-basics-for-windows-apps"></a>Windows アプリのナビゲーション デザインの基本
 
 ![ナビゲーションの基本のヘッダー](images/nav/navigation-basics-header.jpg)
 
-アプリをページの集まりと考えると、*ナビゲーション*は、ページ間およびページ内を移動する動作を表します。 これはユーザー エクスペリエンスの出発点です。これによって、ユーザーは利用するコンテンツと機能を見つけます。 これは非常に重要ですが、適切な設計が難しい場合もあります。
+アプリをページの集まりと考えると、 *ナビゲーション* は、ページ間およびページ内を移動する動作を表します。 これはユーザー エクスペリエンスの出発点です。これによって、ユーザーは利用するコンテンツと機能を見つけます。 これは非常に重要ですが、適切な設計が難しい場合もあります。
 
 ナビゲーションに関して行うことができる膨大な数の選択肢があります。 以下を行うことができます。
 
@@ -67,7 +67,7 @@ ms.locfileid: "89174536"
 
 :::row:::
     :::column:::
-        ![実行例](images/nav/do.svg)
+        ![緑色のチェック マークが付いており、"Do" と書かれている緑色のバーの最初のスクリーンショット。](images/nav/do.svg)
 
         ![ナビゲーション ビュー良好](images/nav/navview-good.svg)
 
@@ -86,7 +86,7 @@ ms.locfileid: "89174536"
 
 明確なパスを示すと、ユーザーは論理的なナビゲーションを行うことができます。 ナビゲーション オプションをわかりやすくし、ページ間の関係を明確にすることで、ユーザーが自分の位置を見失うことを防止できます。
 
-![実行例](images/nav/clarity-image.svg)
+![ユーザーのナビゲーションの明確なパスを示している、アプリケーションのモックアップのスクリーンショット。](images/nav/clarity-image.svg)
 
 > 移動先にはわかりやすいラベルが付けられているため、ユーザーは自分の位置を知ることができます。
 

@@ -3,7 +3,7 @@ description: ユーザー画像を利用できる場合はユーザーのアバ�
 title: ユーザー画像コントロール
 template: detail.hbs
 label: Parallax View
-ms.date: 05/19/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: trestar
@@ -11,26 +11,34 @@ design-contact: kimsea
 dev-contact: kefodero
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 0f2c9a80dbe821feb910636eb26e783ec7eb309a
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: ee8d78b38c05483f127571b15e1f4ebfb267c331
+ms.sourcegitcommit: 4f032d7bb11ea98783db937feed0fa2b6f9950ef
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89169646"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91829432"
 ---
 # <a name="person-picture-control"></a>ユーザー画像コントロール
 
 ユーザー画像コントロールは、ユーザー画像を利用できる場合はユーザーのアバター画像を表示します。利用できない場合は、ユーザーの頭文字か汎用アイコンを表示します。 このコントロールを使うと、ユーザーの連絡先情報を管理するオブジェクトである [Contact オブジェクト](/uwp/api/Windows.ApplicationModel.Contacts.Contact)を表示できます。また、表示名やプロフィール画像などの連絡先情報は手動で提供することもできます。
 
-![ユーザー画像コントロール](images/person-picture/person-picture_hero.png)
+![ユーザー画像コントロールのスクリーンショット。](images/person-picture/person-picture_hero.png)
 
  > ユーザーの名前を表示する 2 つの[テキスト ブロック](text-block.md)要素が付属している 2 つのユーザー画像コントロール。
 
 **Windows UI ライブラリを入手する**
 
-|  |  |
-| - | - |
-| ![WinUI ロゴ](images/winui-logo-64x64.png) | **PersonPicture** コントロールは、Windows アプリのための新しいコントロールと UI 機能を含む NuGet パッケージである Windows UI ライブラリの一部として含まれています。 インストール手順などについて詳しくは、「[Windows UI Library (Windows UI ライブラリ)](/uwp/toolkits/winui/)」をご覧ください。 |
+:::row:::
+   :::column:::
+      ![WinUI ロゴ](images/winui-logo-64x64.png)
+   :::column-end:::
+   :::column span="3":::
+      **PersonPicture** コントロールは、Windows アプリのための新しいコントロールと UI 機能を含む NuGet パッケージである Windows UI ライブラリの一部として含まれています。 インストール手順などについて詳しくは、「[Windows UI Library (Windows UI ライブラリ)](/uwp/toolkits/winui/)」をご覧ください。
+   :::column-end:::
+   :::column:::
+
+   :::column-end:::
+:::row-end:::
 
 > **プラットフォーム API**: [PersonPicture クラス](/uwp/api/windows.ui.xaml.controls.personpicture)、[Contact クラス](/uwp/api/Windows.ApplicationModel.Contacts.Contact)、[ContactManager クラス](/uwp/api/Windows.ApplicationModel.Contacts.ContactManager)
 
@@ -43,7 +51,7 @@ ms.locfileid: "89169646"
 * メッセージの送信者を表示する
 * ソーシャル メディアの連絡先を表示する
 
-この図では、連絡先リストのユーザー画像コントロールを示しています。![ユーザー画像コントロール](images/person-picture/person-picture-control.png)
+この図では、連絡先リストのユーザー画像コントロールを示しています。![連絡先リストのユーザー画像コントロールを示すスクリーンショット。](images/person-picture/person-picture-control.png)
 
 ## <a name="examples"></a>例
 

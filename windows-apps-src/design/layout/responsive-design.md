@@ -1,19 +1,19 @@
 ---
-Description: 特定のデバイス向けにアプリを調整するためのレスポンシブ デザインの手法について説明します
+description: 特定のデバイス向けにアプリを調整するためのレスポンシブ デザインの手法について説明します
 title: レスポンシブ デザインの手法
 template: detail.hbs
 op-migration-status: ready
-ms.date: 10/10/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: f688522ec8970b1e3570610663f5a3e6cae65793
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 249b738e3db4b266ad5bd589bfb9aff875e0b0d3
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "68867409"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034585"
 ---
 # <a name="responsive-design-techniques"></a>レスポンシブ デザインの手法
 

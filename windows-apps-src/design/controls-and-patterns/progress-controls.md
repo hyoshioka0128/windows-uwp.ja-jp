@@ -4,7 +4,7 @@ title: プログレス コントロールのガイドライン
 ms.assetid: FD53B716-C43D-408D-8B07-522BC1F3DF9D
 label: Progress controls
 template: detail.hbs
-ms.date: 11/29/2019
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: kisai
@@ -12,12 +12,12 @@ design-contact: jeffarn
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: fbd9ed95137263f4ddad44e2272d4d77aced241f
-ms.sourcegitcommit: 234bb7c896b990f624b2b8789820b92426e52291
+ms.openlocfilehash: 24ba67dfa51c039055cc5bc4cb31d4aff4de6765
+ms.sourcegitcommit: b99fe39126fbb457c3690312641f57d22ba7c8b6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90013386"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96603893"
 ---
 # <a name="progress-controls"></a>プログレス コントロール
 
@@ -25,9 +25,17 @@ ms.locfileid: "90013386"
 
 **Windows UI ライブラリを入手する**
 
-|  |  |
-| - | - |
-| ![WinUI ロゴ](images/winui-logo-64x64.png) | **ProgressBar** コントロールは、Windows アプリのための新しいコントロールと UI 機能を含む NuGet パッケージである Windows UI ライブラリの一部として含まれています。 インストール手順などについて詳しくは、「[Windows UI Library (Windows UI ライブラリ)](/uwp/toolkits/winui/)」をご覧ください。 |
+:::row:::
+   :::column:::
+      ![WinUI ロゴ](images/winui-logo-64x64.png)
+   :::column-end:::
+   :::column span="3":::
+      **ProgressBar** コントロールは、Windows アプリのための新しいコントロールと UI 機能を含む NuGet パッケージである Windows UI ライブラリの一部として含まれています。 インストール手順などについて詳しくは、「[Windows UI Library (Windows UI ライブラリ)](/uwp/toolkits/winui/)」をご覧ください。
+   :::column-end:::
+   :::column:::
+
+   :::column-end:::
+:::row-end:::
 
 > **Windows UI ライブラリ API:** [ProgressBar クラス](/uwp/api/Microsoft.UI.Xaml.Controls.ProgressBar)、[IsIndeterminate プロパティ](/uwp/api/Microsoft.ui.xaml.controls.progressbar.isindeterminate)、[ProgressRing クラス](/uwp/api/Microsoft.UI.Xaml.Controls.ProgressRing)、[IsActive プロパティ](/uwp/api/Microsoft.ui.xaml.controls.progressring.isactive)
 >
@@ -53,11 +61,12 @@ Imports muxc = Microsoft.UI.Xaml.Controls
 
 ## <a name="types-of-progress"></a>プログレス コントロールの種類
 
-操作が進行中であることをユーザー示すコントロールは 2 つあります。ProgressBar または ProgressRing を使います。
+操作が進行中であることをユーザー示すコントロールは 2 つあります。ProgressBar または ProgressRing を使います。 ProgressBar と ProgressRing のどちらにも、ユーザーがアプリケーションと対話できるかどうかを伝える 2 つの状態があります。 
 
--   ProgressBar の*確定*状態では、タスクが完了しているパーセンテージを表示します。 これは、期間がわかっている操作の間に使いますが、その進行状況でユーザーのアプリとのやり取りはブロックされません。
--   ProgressBar の*不確定*状態は、操作が進行中であることを示します。ユーザーのアプリとのやり取りはブロックされず、完了時間は不明です。
--   ProgressRing には*不確定*状態だけがあり、操作が完了するまでさらにユーザーのやり取りがブロックされるときに使います。
+-   ProgressBar と ProgressRing の "*確定*" 状態は、タスクが完了しているパーセンテージを示します。 これは、期間がわかっている操作の間に使いますが、その進行状況でユーザーのアプリとのやり取りはブロックされません。
+-   ProgressBar の "*不確定*" 状態は、操作が進行中であることを示します。ユーザーのアプリとのやり取りはブロックされず、完了時間は不明です。
+-   ProgressRing の "*不確定*" 状態は、操作が進行中であることを示します。ユーザーのアプリとのやり取りはブロックされ、完了時間は不明です。
+
 
 なお、プログレス コントロールは読み取り専用で、対話型ではありません。 つまり、ユーザーはこれらのコントロールを直接呼び出したり、使ったりすることはできません。
 
@@ -65,7 +74,8 @@ Imports muxc = Microsoft.UI.Xaml.Controls
 |---|---|
 | 不確定な ProgressBar | ![ProgressBar - 不確定](images/progressbar-indeterminate.gif) |
 | 確定的な ProgressBar | ![ProgressBar - 確定](images/progressbar-determinate.png)|
-| 不確定な ProgressRing | ![ProgressRing 状態](images/progressring-indeterminate.gif)|
+| 不確定な ProgressRing | ![不確定な ProgressRing 状態](images/progressring-indeterminate.gif)|
+| 確定的な ProgressRing | ![確定的な ProgressRing 状態](images/progress_ring.jpg)|
 
 
 ## <a name="examples"></a>例
@@ -109,11 +119,15 @@ Imports muxc = Microsoft.UI.Xaml.Controls
 
 -   **この操作によってユーザーは続行できるまで待つことになるか?**
 
-    操作によって、操作が完了するまでアプリとのすべて (または大部分) のやり取りを待つことが必要になる場合は、ProgressRing の方が適しています。 ProgressRing コントロールはモーダル操作向けに使われます。つまり、ProgressRing が消えるまでユーザーはブロックされます。
+    操作によって、操作が完了するまでアプリとのすべて (または大部分) のやり取りを待つことが必要になる場合は、不確定な ProgressRing の方が適しています。
+
+    -   **コントロールには定義された期間や予測可能な終了時期があるか?**
+
+    バーではなくリングのビジュアルが必要な場合は確定的な ProgressRing を使用し、それに応じてパーセンテージまたは値を更新します。 
 
 -   **アプリはユーザーがタスクを完了するのを待っているか?**
 
-    その場合は、ProgressRing を使って不明の待ち時間をユーザーに示します。
+    その場合は、不確定の ProgressRing を使用して不明の待ち時間をユーザーに示します。
 
 -   **キーワード**
 
@@ -161,6 +175,12 @@ Imports muxc = Microsoft.UI.Xaml.Controls
 ![ProgressRing の不確定状態の例](images/PR_IndeterminateExample.png)
 
 ユーザーのそれ以上のアプリとのやり取りが停止されたとき、またはアプリがユーザーの入力を待っているときは、不確定 ProgressRing が使われます。 上記の "サインインしています..." の例は、ProgressRing の完全なシナリオであり、ユーザーはサインインが完了するまでアプリの使用を続けることはできません。
+
+**ProgressRing - 確定**
+
+![ProgressRing の確定状態の例](images/progress_ring_determinate_example.png)
+
+インストール、ダウンロード、設定など、操作の期間がわかっていて、リングのビジュアルが望ましいときは、確定の ProgressRing が最適です。
 
 ## <a name="customizing-a-progress-control"></a>プログレス コントロールのカスタマイズ
 

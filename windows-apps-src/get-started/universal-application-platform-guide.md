@@ -4,28 +4,28 @@ description: Windows 10 を搭載するさまざまなデバイスで実行で�
 ms.assetid: 59849197-B5C7-493C-8581-ADD6F5F8800B
 ms.date: 09/15/2020
 ms.topic: article
-ms.custom: contperfq1
+ms.custom: contperf-fy21q1
 keywords: Windows 10, UWP, ユニバーサル
 ms.localizationpriority: medium
-ms.openlocfilehash: 29e5171d0c6737bdf3d8064566b8ec2731e68978
-ms.sourcegitcommit: b99e2f4dffa603b68c2a8273fe6313432f91b353
+ms.openlocfilehash: e0d6991f261a9ee207a7e36f3dc5ad6a145f3b12
+ms.sourcegitcommit: afc4ff2c89f148d32073ab1cc42063ccdc573a8c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90569387"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98104673"
 ---
 # <a name="whats-a-universal-windows-platform-uwp-app"></a>ユニバーサル Windows プラットフォーム (UWP) アプリとは
 
 UWP は、Windows 用クライアント アプリケーションを作成するさまざまな方法の 1 つです。 UWP アプリは、WinRT API を使用して、インターネットに接続されたデバイスに適した、強力な UI と高度な非同期機能を提供します。
 
-UWP アプリの作成を始めるために必要なツールをダウンロードするには、「[準備](get-set-up.md)」を確認し、[初めてのアプリを作成](your-first-app.md)してください。
+UWP アプリの作成を始めるために必要なツールをダウンロードするには、「[準備](/windows/apps/get-set-up)」を確認し、[初めてのアプリを作成](your-first-app.md)してください。
 
 
 ## <a name="where-does-uwp-fit-in-the-microsoft-development-story"></a>UWP が Microsoft 開発ストーリーの中で占める位置
 
-UWP は、Windows 10 デバイスで実行されるアプリを作成するための 1 つの選択肢であり、他のプラットフォームと組み合わせることができます。 UWP アプリでは、Win32 API や .NET クラスを使用できます ([UWP アプリ用の API セット](https://docs.microsoft.com/previous-versions/mt186421(v=vs.85))、[UWP アプリ用の DLL](https://docs.microsoft.com/previous-versions/mt186422(v=vs.85))、[UWP アプリ用の .NET](https://docs.microsoft.com/dotnet/api/index?view=dotnet-uwp-10.0) に関する各記事をご覧ください)。
+UWP は、Windows 10 デバイスで実行されるアプリを作成するための 1 つの選択肢であり、他のプラットフォームと組み合わせることができます。 UWP アプリでは、Win32 API や .NET クラスを使用できます ([UWP アプリ用の API セット](/previous-versions/mt186421(v=vs.85))、[UWP アプリ用の DLL](/previous-versions/mt186422(v=vs.85))、[UWP アプリ用の .NET](/dotnet/api/index?view=dotnet-uwp-10.0) に関する各記事をご覧ください)。
 
-Microsoft の開発ストーリーは進化を続けており、[WinUI](https://docs.microsoft.com/windows/apps/winui/)、[MSIX](https://docs.microsoft.com/windows/msix/)、[Project Reunion](https://github.com/microsoft/ProjectReunion) などのイニシアチブと並んで、UWP はクライアント アプリを作成するための強力なツールです。
+Microsoft の開発ストーリーは進化を続けており、[WinUI](/windows/apps/winui/)、[MSIX](/windows/msix/)、[Project Reunion](https://github.com/microsoft/ProjectReunion) などのイニシアチブと並んで、UWP はクライアント アプリを作成するための強力なツールです。
 
 
 ## <a name="features-of-a-uwp-app"></a>UWP アプリの機能
@@ -48,17 +48,17 @@ UWP アプリでは、マイク、位置情報、Web カメラ、USB デバイ�
 
 ### <a name="a-common-api-surface-across-all-devices"></a>すべてのデバイスに共通の API セット
 
-Windows 10 ではユニバーサル Windows プラットフォーム (UWP) が導入され、Windows 10 を実行する各デバイスで共通のアプリ プラットフォームが提供されます。 UWP のコア API は、すべての Windows デバイスで同じです。 アプリがコア API のみを使う場合は、対象がデスクトップ PC、Xbox、Mixed Reality ヘッドセットなどのどれであるかに関係なく、そのアプリはどの Windows 10 デバイスでも動作します。
+Windows 10 ではユニバーサル Windows プラットフォーム (UWP) が導入され、Windows 10 を実行する各デバイスで共通のアプリ プラットフォームが提供されます。 UWP のコア API は、すべての Windows デバイスで同じです。 アプリがコア API のみを使う場合は、対象となるのがデスクトップ PC、Xbox、Mixed Reality ヘッドセットなどのいずれかに関係なく、そのアプリはどの Windows 10 デバイスでも動作します。
 
-C++/WinRT または C++/CX で記述された UWP アプリは UWP の一部である Win32 API にアクセスします。 これらの Win32 API は、すべての Windows 10 デバイスで実装されます。
+C++/WinRT または C++/CX で記述された UWP アプリは UWP の一部である Win32 API にアクセスします。 これらの Win32 API は、すべての Windows 10 デバイスによって実装されます。
 
 ### <a name="extension-sdks-expose-the-unique-capabilities-of-specific-device-types"></a>拡張 SDK が特定のデバイスの種類に固有の機能を公開する
 
 ユニバーサル API を対象としている場合、アプリは Windows 10 が動作しているすべてのデバイスで実行できます。 ただし、UWP アプリでデバイス固有の API を利用したい場合は、そうすることもできます。
 
-拡張 SDK では、さまざまなデバイスに特化した API を呼び出すことができます。 たとえば、UWP アプリで IoT デバイスをターゲットにしている場合、IoT デバイスに固有の機能をターゲットにしたプロジェクトに IoT 拡張 SDK を追加できます。 拡張 SDK の追加に関する詳細については、「[拡張 SDK を使用するプログラミング](/uwp/extension-sdks/device-families-overvieww#extension-sdks)」の**拡張 SDK** のセクションを参照してください。
+拡張 SDK では、さまざまなデバイスに特化した API を呼び出すことができます。 たとえば、UWP アプリで IoT デバイスをターゲットにしている場合、IoT デバイスに固有の機能をターゲットにしたプロジェクトに IoT 拡張 SDK を追加できます。 拡張 SDK の追加に関する詳細については、「[拡張 SDK を使用するプログラミング](/uwp/extension-sdks/device-families-overvieww#extension-sdks)」の **拡張 SDK** のセクションを参照してください。
 
-特定の種類のデバイスでのみ実行されることを想定し、Microsoft Store からの配布をその種類のデバイスのみに制限するようにアプリを記述することができます。 または、実行時に API の存在を条件付きでテストし、結果に応じてアプリの動作を調整できます。 詳細については、「[拡張 SDK を使用するプログラミング](/uwp/extension-sdks/device-families-overview#writing-code)」の**コードの記述**のセクションを参照してください。<br>
+特定の種類のデバイスでのみ実行されることを想定し、Microsoft Store からの配布をその種類のデバイスのみに制限するようにアプリを記述することができます。 または、実行時に API の存在を条件付きでテストし、結果に応じてアプリの動作を調整できます。 詳細については、「[拡張 SDK を使用するプログラミング](/uwp/extension-sdks/device-families-overview#writing-code)」の **コードの記述** のセクションを参照してください。<br>
 
 次のビデオでは、デバイス ファミリとアダプティブ コードの作成に関する簡単な概要を示します。
 <iframe src="https://channel9.msdn.com/Blogs/One-Dev-Minute/Introduction-to-UWP-and-Device-Families/player" width="640" height="360" allowFullScreen frameBorder="0"></iframe>
@@ -79,11 +79,11 @@ Windows では、UI を次の機能を備えた複数のデバイスを対象と
 
 ### <a name="theres-one-store-for-all-devices"></a>1 つのストアですべてのデバイスに対応する
 
-統一されたアプリ ストアによって、PC、タブレット、Xbox、HoloLens、Surface Hub、IoT (モノのインターネット) などの Windows 10 デバイスでアプリを入手できます。 開発者は、アプリをストアに提出し、すべての種類のデバイスまたは選択した種類のデバイス向けに販売できます。 Windows デバイス向けのすべてのアプリを 1 か所で提出、管理できます。 UWP の機能を使って最新化し、Microsoft Store での販売を希望する C++ デスクトップ アプリがある場合も 問題ありません。
+統一されたアプリ ストアによって、PC、タブレット、Xbox、HoloLens、Surface Hub、IoT (モノのインターネット) デバイス などの Windows 10 デバイスでアプリを入手できます。 開発者は、アプリをストアに提出し、すべての種類のデバイスまたは選択した種類のデバイス向けに販売できます。 Windows デバイス向けのすべてのアプリを 1 か所で提出、管理できます。 UWP の機能を使って最新化し、Microsoft Store での販売を希望する C++ デスクトップ アプリがある場合も 問題ありません。
 
 UWP アプリは、詳細なテレメトリや分析のために [Application Insights](https://azure.microsoft.com/services/application-insights/) に統合されています。これは、ユーザーを理解し、アプリの品質を向上させるために欠かせないツールです。
 
-UWP アプリは、[MSIX](https://docs.microsoft.com/windows/msix/) を使用してパッケージ化し、Microsoft Store またはその他の方法で配布することができます。 MSIX を使用すると、アプリがどのような方法で配布されても、アプリを更新できます。「[ストアに公開されていないアプリ パッケージをコードから更新する](https://docs.microsoft.com/windows/msix/non-store-developer-updates)」をご覧ください。
+UWP アプリは、[MSIX](/windows/msix/) を使用してパッケージ化し、Microsoft Store またはその他の方法で配布することができます。 MSIX を使用すると、アプリがどのような方法で配布されても、アプリを更新できます。「[ストアに公開されていないアプリ パッケージをコードから更新する](/windows/msix/non-store-developer-updates)」をご覧ください。
 
 ### <a name="monetize-your-app"></a>アプリの収益の獲得
 
@@ -115,13 +115,12 @@ UWP アプリでは、オペレーティング システムによって提供さ
 - DirectX UI と C++
 - JavaScript と HTML
 - WinUI
--
 
 ## <a name="links-to-help-you-get-going"></a>役に立つリンク
 
 ### <a name="get-set-up"></a>準備
 
-「[準備](get-set-up.md)」を確認し、アプリの作成を始めるために必要なツールをダウンロードしてから、[初めてのアプリを作成](your-first-app.md)してください。
+「[準備](/windows/apps/get-started/get-set-up)」を確認し、アプリの作成を始めるために必要なツールをダウンロードしてから、[初めてのアプリを作成](your-first-app.md)してください。
 
 ### <a name="design-your-app"></a>アプリをデザインする
 
@@ -145,7 +144,7 @@ Microsoft デザイン システムは Fluent と呼ばれます。 Fluent Desig
 
 [パートナー センター](https://partner.microsoft.com/dashboard)を使うと、Windows デバイス向けのすべてのアプリの管理と申請を 1 か所で行うことができます。 Microsoft Store にアプリの公開を申請する方法については、「[Windows アプリとゲームを公開する](../publish/index.md)」をご覧ください。
 
-新しい機能が追加されたことで、より高度な管理が可能になった一方、プロセスは簡単になりました。 また、詳しい[分析レポート](../publish/analytics.md)に加えて、[支払いの詳細](../publish/payout-summary.md)も得られるようになりました。いずれも[アプリの宣伝と顧客エンゲージメントの獲得](../publish/attract-customers-and-promote-your-apps.md)に役立ちます。
+新しい機能が追加されたことで、より高度な管理が可能になった一方、プロセスは簡単になりました。 また、詳しい[分析レポート](../publish/analytics.md)に加えて、[支払いの詳細](/partner-center/payout-statement)も得られるようになりました。いずれも[アプリの宣伝と顧客エンゲージメントの獲得](../publish/attract-customers-and-promote-your-apps.md)に役立ちます。
 
 別の入門資料については、「[Windows 10 デバイス向け Windows アプリのビルドの概要](/archive/msdn-magazine/2015/may/windows-10-an-introduction-to-building-windows-apps-for-windows-10-devices)」をご覧ください。
 
@@ -160,7 +159,7 @@ Microsoft デザイン システムは Fluent と呼ばれます。 Fluent Desig
 - [デスクトップ ブリッジ](https://developer.microsoft.com/windows/bridges/desktop)を使用して、既存のデスクトップ アプリに Windows 10 ユーザー向けの最新のエクスペリエンスを追加し、そのアプリを Microsoft Store で配布する方法を確認してください。
 
 ## <a name="how-the-universal-windows-platform-relates-to-windows-runtime-apis"></a>ユニバーサル Windows プラットフォームと Windows ランタイム API の関連性
-ユニバーサル Windows プラットフォーム (UWP) アプリをビルドする場合は、"ユニバーサル Windows プラットフォーム (UWP)" と "Windows ランタイム (WinRT)" をほぼ同義と考えると便利です。 ただし、テクノロジの実体を明らかにして、この 2 つの概念の違いを確認しておくことも可能*です*。 この最後のセクションは、この点に興味があるユーザーを対象としています。
+ユニバーサル Windows プラットフォーム (UWP) アプリをビルドする場合は、"ユニバーサル Windows プラットフォーム (UWP)" と "Windows ランタイム (WinRT)" をほぼ同義と考えると便利です。 ただし、テクノロジの実体を明らかにして、この 2 つの概念の違いを確認しておくことも可能 *です*。 この最後のセクションは、この点に興味があるユーザーを対象としています。
 
 Windows ランタイム (WinRT) API は、Windows API が進化したものです。 元々 Windows は、フラットな C スタイルの Win32 API でプログラミングされました。 そこに追加されたのが COM API です (主な例は [DirectX](/windows/desktop/directx))。 Windows フォーム、WPF、.NET、およびマネージ言語は、Windows アプリの記述方法や API テクノロジの特徴がそれぞれに異なっていました。 COM の次の段階というのが Windows ランタイムの実体です。 実際のアプリケーション バイナリ インターフェイス (ABI) レイヤーで、COM におけるそのルーツが可視化されます。 ただし、Windows ランタイムはさまざまなプログラミング言語から呼び出すことができるように設計されています。 また、それぞれの言語にとってきわめて自然な方法で呼び出すことができます。 このために、Windows ランタイムは言語プロジェクションと呼ばれる仕組みを介してアクセスできるようになっています。 Windows ランタイムの言語プロジェクションは、C#、Visual Basic、標準 C++、JavaScript などに対応しています。 さらに、適切にパッケージ化すれば (「[デスクトップ ブリッジ](/windows/msix/desktop/source-code-overview)」を参照)、次のような広範囲の言語モデルのいずれかでビルドされたアプリから WinRT API を呼び出すことができます:Win32、.NET、WinForms、WPF。
 

@@ -1,18 +1,18 @@
 ---
-Description: すべての UWP アプリに含まれているユニバーサル デザイン機能は、さまざまなデバイス間で美しく拡大縮小されるアプリを構築するのに役立ちます。
+description: すべての UWP アプリに含まれているユニバーサル デザイン機能は、さまざまなデバイス間で美しく拡大縮小されるアプリを構築するのに役立ちます。
 title: Windows アプリ デザインの概要 (Windows アプリ)
 ms.assetid: 50A5605E-3A91-41DB-800A-9180717C1E86
-ms.date: 05/05/2018
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: add292dd5b58c3e8da1a0ce2c2371bf211b2a617
-ms.sourcegitcommit: 7704c888a28edc7ab0515a75afac93d1dda4d693
+ms.openlocfilehash: 1f6474170967986bfee555eb07d7ea41601e9e48
+ms.sourcegitcommit: aaa72ddeb01b074266f4cd51740eec8d1905d62d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84151951"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94339760"
 ---
 # <a name="introduction-to-windows-app-design"></a>Windows アプリ デザインの概要
 
@@ -47,7 +47,7 @@ UWP は、すべてのデバイスと画面サイズで読みやすく、操作�
 
 :::row:::
     :::column span:::
-UWP アプリでは、UI 要素のサイズ、余白、および位置は、必ず **4 epx の倍数**にする必要があります。
+UWP アプリでは、UI 要素のサイズ、余白、および位置は、必ず **4 epx の倍数** にする必要があります。
 
 UWP のスケールはデバイスによって異なり、100%、125%、150%、175%、200%、225%、250%、300%、350%、および 400% のスケール プラトーがあります。 基本単位は 4 になりますが、これは、整数以外の数値によってスケーリングできる唯一の整数であるためです (例: 4*1.5 = 6)。 4 の倍数の使用によってすべての UI 要素のピクセル全体が整列し、UI 要素のエッジがすっきりとシャープになります (この要件はテキストには適用されません。テキストのサイズと位置に制限はありません)。
     :::column-end:::
@@ -67,7 +67,7 @@ UWP アプリは、すべてのデバイスに合わせて自動的に拡大縮�
 Windows 10 デバイスで UWP アプリが起動されると、[フレーム](/uwp/api/windows.ui.xaml.controls.frame)がある[ウィンドウ](/uwp/api/windows.ui.xaml.window)で起動し、[ページ](/uwp/api/windows.ui.xaml.controls.page) インスタンス間を移動できます。
     :::column-end:::
     :::column:::
-![Frame](images/frame.svg)
+![フレームがあるウィンドウのスクリーンショット。](images/frame.svg)
     :::column-end:::
 :::row-end:::
 
@@ -78,7 +78,7 @@ Windows 10 デバイスで UWP アプリが起動されると、[フレーム](/
 ページを整理する方法については、[ナビゲーションの基本](navigation-basics.md)に関する記事を参照してください。
     :::column-end:::
     :::column:::
-![Frame](images/collection-pages.svg)
+![コレクション ページのスクリーンショット。](images/collection-pages.svg)
     :::column-end:::
 :::row-end:::
 
@@ -94,7 +94,7 @@ Windows 10 デバイスで UWP アプリが起動されると、[フレーム](/
 
 UWP アプリの一般的なパターンを実装する方法の詳細については、「[ページのレイアウト](../layout/page-layout.md)」を参照してください。
 
-Visual Studio で [Windows Template Studio](https://github.com/Microsoft/WindowsTemplateStudio/tree/master) を使用してアプリのレイアウトを使い始めることもできます。
+Visual Studio で [Windows Template Studio](https://github.com/Microsoft/WindowsTemplateStudio) を使用してアプリのレイアウトを使い始めることもできます。
 
 ## <a name="controls"></a>コントロール
 
@@ -134,7 +134,7 @@ UWP アプリには 4 つのタイル サイズ (小、中、横長、大) が�
 UWP アプリではスマート操作が使用されます。 クリックの発生元がマウスか、スタイラスか、指によるタップかを認識または定義しなくても、クリック操作に対応したデザインを行うことができます。 ただし、[特定の入力モード](../input/input-primer.md)向けにアプリを設計することもできます。
     :::column-end:::
     :::column:::
-![入力](images/inputs.svg)
+![さまざまな入力モードを指定するアイコンのスクリーンショット。](images/inputs.svg)
     :::column-end:::
 :::row-end:::
 
@@ -146,7 +146,7 @@ UWP アプリではスマート操作が使用されます。 クリックの発
 
 ## <a name="usability"></a>使いやすさ
 
-<img src="https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/REYaAb?ver=727c">
+:::image type="content" source="https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/REYaAb" alt-text="さまざまな能力を持つ人々を描画する、棒人間のイラストの短いビデオ。":::
 
 最後に重要な点として、ユーザビリティの目的は、アプリのエクスペリエンスをすべてのユーザーに開かれたものにすることです。 すべての人が、本当に包括的なユーザー エクスペリエンスの恩恵を受けます。すべてのユーザーに対してアプリを使いやすくする方法については、「[UWP アプリの操作性](../usability/index.md)」をご覧ください。
 
@@ -162,7 +162,7 @@ UWP アプリではスマート操作が使用されます。 クリックの発
 
 - [設計ツールキットのページ](../downloads/index.md)をご覧ください。XD、Illustrator、Photoshop、Framer、Sketch の各ツールキット、および追加の設計ツールやフォントのダウンロードが提供されています。
 
-- コンピューターを設定して UWP アプリのコードを記述できるようにするには、[「はじめに」 &gt; 「準備」](../../get-started/get-set-up.md)の記事をご覧ください。
+- コンピューターを設定して UWP アプリのコードを記述できるようにするには、[「はじめに」 &gt; 「準備」](/windows/apps/get-started/get-set-up)の記事をご覧ください。
 
 - UWP の UI を実装する方法については、エンド ツー エンドの「[サンプル UWP アプリ](https://developer.microsoft.com/windows/samples)」をご覧ください。
 

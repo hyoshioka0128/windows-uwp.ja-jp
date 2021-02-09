@@ -6,12 +6,12 @@ ms.date: 05/14/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: c7f0e1ba5c78ce41a5326d3643b5afe80f380b3c
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 155fd01b16f93ac8419282e5b2256f7e8a939a7f
+ms.sourcegitcommit: d51c3dd64d58c7fa9513ba20e736905f12df2a9a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89155176"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98988754"
 ---
 # <a name="walkthrough-of-creating-a-ccx-windows-runtime-component-and-calling-it-from-javascript-or-c"></a>C++/CX Windows ランタイム コンポーネントの作成と JavaScript または C# からの呼び出しに関するチュートリアル
 
@@ -272,14 +272,14 @@ IAsyncActionWithProgress<double>^ Class1::GetPrimesUnordered(int first, int last
 C# クライアントを作成する場合は、このセクションを省略できます。
 
 > [!NOTE]
-> ユニバーサル Windows プラットフォーム (UWP) プロジェクトは、Visual Studio 2019 ではサポートされていません。 「 [Visual Studio 2019 での JavaScript と TypeScript](/visualstudio/javascript/javascript-in-vs-2019?view=vs-2019#projects)」を参照してください。 このセクションに従うには、Visual Studio 2017 を使用することをお勧めします。 「 [Visual Studio 2017 での JavaScript」を](/visualstudio/javascript/javascript-in-vs-2017)参照してください。
+> JavaScript を使用したユニバーサル Windows プラットフォーム (UWP) プロジェクトは、Visual Studio 2019 ではサポートされていません。 「 [Visual Studio 2019 での JavaScript と TypeScript](/visualstudio/javascript/javascript-in-vs-2019#projects)」を参照してください。 このセクションに従うには、Visual Studio 2017 を使用することをお勧めします。 「 [Visual Studio 2017 での JavaScript」を](/visualstudio/javascript/javascript-in-vs-2017)参照してください。
 
 ### <a name="to-create-a-javascript-project"></a>JavaScript プロジェクトを作成するには
 1. ソリューションエクスプローラー (Visual Studio 2017 では、上の **メモ** を参照) で、ソリューションノードのショートカットメニューを開き、[ **追加]、[新しいプロジェクト**] の順に選択します。
 
 2. [JavaScript] (**[他の言語]** の下に入れ子になっていることがあります) を展開し、**[空白のアプリ (ユニバーサル Windows)]** を選択します。
 
-3. [OK] をクリックして、既定の名前 [名前] をそのまま使用し &mdash; &mdash; ます。 **OK**
+3. [OK] をクリックして、既定の名前 [名前] をそのまま使用し &mdash; &mdash; ます。 
 
 4. App1 プロジェクト ノードのショートカット メニューを開き、**[スタートアップ プロジェクトに設定]** をクリックします。
 
@@ -426,7 +426,7 @@ function ButtonClear_Click() {
 }
 ```
 
-default.js 内の app.onactivated での WinJS.UI.processAll の既存の呼び出しを、then ブロックでイベント登録を実装する次のコードに置き換えて、イベント リスナーを追加するコードを追加します。 詳細については、 [「Hello, World "アプリ (JS) を作成する](../get-started/create-a-hello-world-app-js-uwp.md)」を参照してください。
+default.js 内の app.onactivated での WinJS.UI.processAll の既存の呼び出しを、then ブロックでイベント登録を実装する次のコードに置き換えて、イベント リスナーを追加するコードを追加します。 詳細については、 [「Hello, World "アプリ (JS) を作成する](/windows/apps/get-started/)」を参照してください。
 
 ```JavaScript
 args.setPromise(WinJS.UI.processAll().then( function completed() {

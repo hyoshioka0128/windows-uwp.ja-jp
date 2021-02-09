@@ -2,17 +2,17 @@
 title: WinUI 2.4 リリース ノート
 description: 新機能とバグ修正を含む WinUI 2.4 のリリース ノート。
 ms.date: 07/15/2020
-ms.topic: reference
-ms.openlocfilehash: 22fd028ba2059a092ee2f2be47a114fb2d618ce1
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.topic: article
+ms.openlocfilehash: f649a72d2875a26d9802f547dfcf72e218b0878d
+ms.sourcegitcommit: 617344ae1a1f5b580c938b61e910d99120b73626
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86492827"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98620821"
 ---
 # <a name="windows-ui-library-24"></a>Windows UI ライブラリ 2.4
 
-WinUI 2.4 は、Windows UI ライブラリ (WinUI) の最新の公式リリースです。
+WinUI 2.4 は、Windows UI ライブラリ (WinUI) の 2020 年 5 月のリリースです。
 
 WinUI は、GitHub の [Windows UI ライブラリ リポジトリ](https://aka.ms/winui)にホストされているオープン ソース プロジェクトです。 すべてのバグ レポート、機能要求、およびコミュニティ コードの投稿をこのリポジトリに登録してください。
 
@@ -28,7 +28,7 @@ NuGet パッケージのダウンロード:[Microsoft.UI.Xaml](https://www.nuget
 
 RadialGradientBrush は、Center、RadiusX、RadiusY プロパティによって定義される楕円内に描画されます。 グラデーションの色は楕円の中心から始まり、半径の位置で終了します。
 
-![放射状グラデーション ブラシ](../images/radialgradientbrush.gif)<br>
+![放射状グラデーション ブラシの動作を示す短い動画。](../images/radialgradientbrush.gif)<br>
 *放射状グラデーション ブラシ*
 
 [使用に関するガイドライン](/windows/uwp/design/style/brushes#radial-gradient-brushes)
@@ -39,7 +39,7 @@ RadialGradientBrush は、Center、RadiusX、RadiusY プロパティによって
 
 ProgressRing コントロールはモーダル操作向けに使われ、ProgressRing が消えるまでユーザーはブロックされます。 ある操作で、その操作が完了するまで、アプリとのほとんどのやり取りを中断する必要がある場合は、このコントロールを使用します。
 
-![ProgressRing コントロール](../images/progressring.gif)<br>
+![プログレス リング コントロールの動作を示す短い動画。](../images/progressring.gif)<br>
 *ProgressRing コントロール*
 
 [使用に関するガイドライン](/windows/uwp/design/controls-and-patterns/progress-controls)
@@ -70,8 +70,8 @@ TabView コントロールの更新により、タブの表示方法をより詳
 
 | 変更前 | クリック後 |
 | - | - |
-| ![TextBox のダーク テーマの更新 (変更前)](..\images\textbox-darkthemeupdates-before1.gif)<br>*TextBox のダーク テーマの更新 (変更前)* | ![TextBox のダーク テーマの更新 (変更後)](..\images\textbox-darkthemeupdates-after1.gif)<br>*TextBox のダーク テーマの更新 (変更後)* |
-| ![TextBox のダーク テーマの更新 (変更前)](..\images\textbox-darkthemeupdates-before2.gif)<br>*TextBox のダーク テーマの更新 (変更前)* | ![TextBox のダーク テーマの更新 (変更後)](..\images\textbox-darkthemeupdates-after2.gif)<br>*TextBox のダーク テーマの更新 (変更後)* |
+| ![更新前の TextBox のダーク テーマの動作を示す短い動画。](..\images\textbox-darkthemeupdates-before1.gif)<br>*TextBox のダーク テーマの更新 (変更前)* | ![更新後の TextBox のダーク テーマの動作を示す短い動画。](..\images\textbox-darkthemeupdates-after1.gif)<br>*TextBox のダーク テーマの更新 (変更後)* |
+| ![更新前の TextBox のダーク テーマの動作を示す別の短い動画。](..\images\textbox-darkthemeupdates-before2.gif)<br>*TextBox のダーク テーマの更新 (変更前)* | ![更新後の TextBox のダーク テーマの動作を示す別の短い動画。](..\images\textbox-darkthemeupdates-after2.gif)<br>*TextBox のダーク テーマの更新 (変更後)* |
 
 TextBox コントロール ファミリに含まれるコントロールの一部を次に示します。
 
@@ -83,13 +83,13 @@ TextBox コントロール ファミリに含まれるコントロールの一�
 
 ### <a name="hierarchical-navigation"></a>階層型ナビゲーション
 
-[NavigationView](/uwp/api/microsoft.ui.xaml.controls.navigationview?view=winui-2.4) コントロールは、階層型ナビゲーションをサポートするようになりました。Left、Top、LeftCompact の表示モードが含まれています。 階層構造の NavigationView は、ページのカテゴリの表示、関連する子ページを含むページの識別、またはハブ スタイルのページが他の多くのページにリンクしているアプリ内での使用に役立ちます。
+[NavigationView](/uwp/api/microsoft.ui.xaml.controls.navigationview?view=winui-2.4&preserve-view=true) コントロールは、階層型ナビゲーションをサポートするようになりました。Left、Top、LeftCompact の表示モードが含まれています。 階層構造の NavigationView は、ページのカテゴリの表示、関連する子ページを含むページの識別、またはハブ スタイルのページが他の多くのページにリンクしているアプリ内での使用に役立ちます。
 
 ![階層構造の NavigationView コントロール](..\images\HierarchicalNavView.gif)<br>*階層構造の NavigationView コントロール*
 
 [使用に関するガイドライン](/windows/uwp/design/controls-and-patterns/navigationview#hierarchical-navigation)
 
-[API リファレンス](/uwp/api/microsoft.ui.xaml.controls.navigationview)
+[API リファレンス](/uwp/api/microsoft.ui.xaml.controls.navigationview?view=winui-2.4&preserve-view=true)
 
 ## <a name="samples"></a>サンプル
 

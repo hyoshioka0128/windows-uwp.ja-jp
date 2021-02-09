@@ -1,11 +1,11 @@
 ---
-Description: DatePicker は、ユーザーがタッチ、マウス、またはキーボード入力を使ってローカライズされた日付値を選択できる標準化された方法です。
+description: DatePicker は、ユーザーがタッチ、マウス、またはキーボード入力を使ってローカライズされた日付値を選択できる標準化された方法です。
 title: 日付の選択コントロール
 ms.assetid: d4a01425-4dee-4de3-9a05-3e85c3fc03cb
 isNew: true
 label: Date picker
 template: detail.hbs
-ms.date: 05/19/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: kisai
@@ -13,12 +13,12 @@ design-contact: ksulliv
 dev-contact: joyate
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: c254595909a20d7215006089bd0cf8b199e18439
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: b196ba3c7475240ec1e7a5bdfc8c1ad9f39e4c50
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89160326"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93032345"
 ---
 # <a name="date-picker"></a>日付の選択コントロール
 
@@ -28,11 +28,19 @@ DatePicker は、ユーザーがタッチ、マウス、またはキーボード
 
 **Windows UI ライブラリを入手する**
 
-|  |  |
-| - | - |
-| ![WinUI ロゴ](images/winui-logo-64x64.png) | Windows UI ライブラリ 2.2 以降には、丸めた角を使用するこのコントロールの新しいテンプレートが含まれます。 詳しくは、「[角の半径](../style/rounded-corner.md)」をご覧ください。 WinUI は、Windows アプリの新しいコントロールと UI 機能が含まれる NuGet パッケージです。 インストール手順などについて詳しくは、「[Windows UI Library (Windows UI ライブラリ)](/uwp/toolkits/winui/)」をご覧ください。 |
+:::row:::
+   :::column:::
+      ![WinUI ロゴ](images/winui-logo-64x64.png)
+   :::column-end:::
+   :::column span="3":::
+      Windows UI ライブラリ 2.2 以降には、丸めた角を使用するこのコントロールの新しいテンプレートが含まれます。 詳しくは、「[角の半径](../style/rounded-corner.md)」をご覧ください。 WinUI は、Windows アプリの新しいコントロールと UI 機能が含まれる NuGet パッケージです。 インストール手順などについて詳しくは、「[Windows UI Library (Windows UI ライブラリ)](/uwp/toolkits/winui/)」をご覧ください。
+   :::column-end:::
+   :::column:::
 
-> **プラットフォーム API:** [DatePicker クラス](/uwp/api/Windows.UI.Xaml.Controls.DatePicker)、[Date プロパティ](/uwp/api/windows.ui.xaml.controls.datepicker.date)
+   :::column-end:::
+:::row-end:::
+
+> **プラットフォーム API:** [DatePicker クラス](/uwp/api/Windows.UI.Xaml.Controls.DatePicker)、 [Date プロパティ](/uwp/api/windows.ui.xaml.controls.datepicker.date)
 
 ## <a name="is-this-the-right-control"></a>これは適切なコントロールですか?
 
@@ -77,7 +85,7 @@ birthDatePicker.Header = "Date of birth";
 
 ![日付の選択コントロールの例](images/date-picker-closed.png)
 
-> **注:** &nbsp;&nbsp;日付値の重要な情報については、「日付と時刻コントロール」の「[DateTime と Calendar の値](date-and-time.md#datetime-and-calendar-values)」をご覧ください。
+> **注:** &nbsp;&nbsp;日付値の重要な情報については、「日付と時刻コントロール」の「 [DateTime と Calendar の値](date-and-time.md#datetime-and-calendar-values)」をご覧ください。
 
 ## <a name="get-the-sample-code"></a>サンプル コードの入手
 

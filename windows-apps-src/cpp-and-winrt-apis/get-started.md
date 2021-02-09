@@ -5,12 +5,12 @@ ms.date: 04/18/2019
 ms.topic: article
 keywords: windows 10, uwp, 標準, c++, cpp, winrt, プロジェクション, 取得, 取得, 開始
 ms.localizationpriority: medium
-ms.openlocfilehash: d7dc6455219510d75307df02571fc506b909553c
-ms.sourcegitcommit: 6009896ead442b378106d82870f249dc8b55b886
+ms.openlocfilehash: f38269acd9f1d6e2e830b51b3fcfa3a9014f2d7e
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89643822"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91219905"
 ---
 # <a name="get-started-with-cwinrt"></a>C++/WinRT の使用を開始する
 
@@ -183,7 +183,7 @@ XAML は、リフレクションを提供するプログラミング言語で最
 
 ## <a name="sample-apps-written-in-cwinrt"></a>C++/WinRT で記述されたサンプル アプリ
 
-「[C++/WinRT サンプル アプリはどこにありますか?](/windows/uwp/cpp-and-winrt-apis/faq#where-can-i-find-cwinrt-sample-apps)」を参照してください。
+「[C++/WinRT サンプル アプリはどこにありますか?](./faq.md#where-can-i-find-cwinrt-sample-apps)」を参照してください。
 
 ## <a name="important-apis"></a>重要な API
 * [SyndicationClient::RetrieveFeedAsync メソッド](/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync)

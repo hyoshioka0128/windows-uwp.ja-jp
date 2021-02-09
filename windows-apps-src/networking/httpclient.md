@@ -6,12 +6,12 @@ ms.date: 06/05/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: bb97e58e914da1982066d9cf150f5c8b18ef884a
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: b3a46d04cec817dfcacb9c2bab8433a3eb4e363b
+ms.sourcegitcommit: afc4ff2c89f148d32073ab1cc42063ccdc573a8c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89155446"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98104693"
 ---
 # <a name="httpclient"></a>HttpClient
 
@@ -45,8 +45,8 @@ HTTP 2.0 プロトコルと HTTP 1.1 プロトコルを使って情報を送受�
 
 -   [**HttpBufferContent**](/uwp/api/Windows.Web.Http.HttpBufferContent)。 バッファーとしてのコンテンツ。
 -   [**HttpFormUrlEncodedContent**](/uwp/api/Windows.Web.Http.HttpFormUrlEncodedContent)。 **application/x-www-form-urlencoded** MIME タイプでエンコードされた名前と値の組としてのコンテンツ。
--   [**HttpMultipartContent**](/uwp/api/Windows.Web.Http.HttpMultipartContent)。 **multipart/\*** MIME タイプ形式のコンテンツ。
--   [**HttpMultipartFormDataContent**](/uwp/api/Windows.Web.Http.HttpMultipartFormDataContent)。 **multipart/form-data** MIME タイプとしてエンコードされているコンテンツ。
+-   [**HttpMultipartContent**](/uwp/api/Windows.Web.Http.HttpMultipartContent)。 **multipart/\** _ MIME タイプ形式のコンテンツ。
+-   [_ *HttpMultipartFormDataContent**](/uwp/api/Windows.Web.Http.HttpMultipartFormDataContent)。 **multipart/form-data** MIME タイプとしてエンコードされているコンテンツ。
 -   [**HttpStreamContent**](/uwp/api/Windows.Web.Http.HttpStreamContent)。 ストリームとしてのコンテンツ (この内部タイプは、HTTP GET メソッドでのデータの受信、および HTTP POST メソッドでのデータのアップロードに使われます)。
 -   [**HttpStringContent**](/uwp/api/Windows.Web.Http.HttpStringContent)。 文字列としてのコンテンツ。
 -   [**IHttpContent**](/uwp/api/Windows.Web.Http.IHttpContent) - 開発者が独自のコンテンツ オブジェクトを作成するための基本インターフェイス
@@ -329,7 +329,7 @@ int main()
 
 Uniform Resource Identifier (URI) として無効な文字列が、[**Windows.Foundation.Uri**](/uwp/api/Windows.Foundation.Uri) オブジェクトのコンストラクターに渡されると、例外がスローされます。
 
-**.NET:**   [**Windows.Foundation.Uri**](/uwp/api/Windows.Foundation.Uri) 型は、C# や VB では [**System.Uri**](/dotnet/api/system.uri) と表示されます。
+**.NET:** [**Windows.Foundation.Uri**](/uwp/api/Windows.Foundation.Uri) 型は、C# や VB では [**System.Uri**](/dotnet/api/system.uri) と表示されます。
 
 C# や Visual Basic では、.NET 4.5 の [**System.Uri**](/dotnet/api/system.uri) クラスと、[**System.Uri.TryCreate**](/dotnet/api/system.uri.trycreate#overloads) メソッドの 1 つを使って、URI が作成される前にユーザーから受け取った文字列をテストすることによって、このエラーを回避できます。
 
@@ -337,8 +337,12 @@ C++ では、URI として渡される文字列を試行して解析するメソ
 
 [  **Windows.Web.Http**](/uwp/api/Windows.Web.Http) には便利な関数がありません。 そのため、この名前空間の [**HttpClient**](/uwp/api/Windows.Web.Http.HttpClient) と他のクラスを使うアプリは、**HRESULT** 値を使う必要があります。
 
-C# と VB.NET で .NET Framework 4.5 を使うアプリでは、アプリの実行中に例外が発生した場合、[System.Exception](/dotnet/api/system.exception) でエラーが表されます。 [System.Exception.HResult](/dotnet/api/system.exception.hresult#System_Exception_HResult) プロパティは、特定の例外に割り当てられた **HRESULT** を返します。 [System.Exception.Message](/dotnet/api/system.exception.message#System_Exception_Message) プロパティは、例外を説明するメッセージを返します。 使うことができる **HRESULT** 値は、*Winerror.h* ヘッダー ファイルに記載されています。 アプリは特定の **HRESULT** 値に対するフィルター処理を行い、例外の原因に応じてアプリの動作を変更できます。
+[C++/WinRT](../cpp-and-winrt-apis/index.md) を使用しているアプリでは、[**winrt::hresult_error**](/uwp/cpp-ref-for-winrt/error-handling/hresult-error) 構造体はアプリの実行中に発生する例外を表します。 [winrt::hresult_error::code](/uwp/cpp-ref-for-winrt/error-handling/hresult-error#hresult_errorcode-function) 関数では、特定の例外に割り当てられた **HRESULT** が返します。 [winrt::hresult_error::message](/uwp/cpp-ref-for-winrt/error-handling/hresult-error#hresult_errormessage-function) 関数では、**HRESULT** 値に関連付けられた、システムが提供する文字列を返します。 詳細については、「[C++/WinRT でのエラー処理](../cpp-and-winrt-apis/error-handling.md)」を参照してください。
 
-Managed C++ を使うアプリでは、アプリの実行中に例外が発生したときに、[Platform::Exception](/cpp/cppcx/platform-exception-class) がエラーを表します。 [Platform::Exception::HResult](/cpp/cppcx/platform-exception-class#hresult) プロパティは、特定の例外に割り当てられた **HRESULT** を返します。 [Platform::Exception::Message](/cpp/cppcx/platform-exception-class#message) プロパティは、**HRESULT** 値に関連付けられた、システムが提供する文字列を返します。 使うことができる **HRESULT** 値は、*Winerror.h* ヘッダー ファイルに記載されています。 アプリは特定の **HRESULT** 値に対するフィルター処理を行い、例外の原因に応じてアプリの動作を変更できます。
+使うことができる **HRESULT** 値は、*Winerror.h* ヘッダー ファイルに記載されています。 アプリで特定の **HRESULT** 値に対するフィルター処理を行い、例外の原因に応じてアプリの動作を変更できます。
+
+C# と VB.NET で .NET Framework 4.5 を使うアプリでは、アプリの実行中に例外が発生した場合、[System.Exception](/dotnet/api/system.exception) でエラーが表されます。 [System.Exception.HResult](/dotnet/api/system.exception.hresult#System_Exception_HResult) プロパティは、特定の例外に割り当てられた **HRESULT** を返します。 [System.Exception.Message](/dotnet/api/system.exception.message#System_Exception_Message) プロパティは、例外を説明するメッセージを返します。
+
+C++/CX は、[C++/WinRT](../cpp-and-winrt-apis/index.md) に置き換えられました。 ただし、C++/CX を使うアプリでは、アプリの実行中に例外が発生したときに、[Platform::Exception](/cpp/cppcx/platform-exception-class) がエラーを表します。 [Platform::Exception::HResult](/cpp/cppcx/platform-exception-class#hresult) プロパティは、特定の例外に割り当てられた **HRESULT** を返します。 [Platform::Exception::Message](/cpp/cppcx/platform-exception-class#message) プロパティは、**HRESULT** 値に関連付けられた、システムが提供する文字列を返します。
 
 ほとんどのパラメーター検証エラーの場合、返される **HRESULT** は **E\_INVALIDARG** です。 一部の無効なメソッド呼び出しでは、返される **HRESULT** は **E\_ILLEGAL\_METHOD\_CALL** です。

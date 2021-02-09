@@ -1,24 +1,24 @@
 ---
-Description: アドオンを申請するとき、ストア登録情報の手順で入力した情報がユーザーに表示されます。
+description: アドオンを申請するとき、ストア登録情報の手順で入力した情報がユーザーに表示されます。
 title: アドオンのストア登録情報の作成
 ms.assetid: 07178278-A18A-4F73-A660-0047DAAE49B5
 ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 43782a1a5d26ba84fe53f6c164a944fa357edfb1
-ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
+ms.openlocfilehash: 266386da04b9a16fc5e5016774ab333dc60409e3
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79210808"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93033395"
 ---
 # <a name="create-add-on-store-listings"></a>アドオンのストア登録情報の作成
 
-[パートナーセンター](https://partner.microsoft.com/dashboard)でアドオンを送信する場合、アドオンを取得するオプションが表示されると、 **[ストアの一覧]** ステップで指定した情報が顧客に表示されます。 ストア登録情報は、ユーザーを最も引きつける方法でアドオンを正確に表すように慎重に検討してください。 また、このストア登録情報は、さまざまな言語でカスタマイズすることができます。
+[パートナーセンター](https://partner.microsoft.com/dashboard)でアドオンを送信する場合、アドオンを取得するオプションが表示されると、[ **ストアの一覧** ] ステップで指定した情報が顧客に表示されます。 ストア登録情報は、ユーザーを最も引きつける方法でアドオンを正確に表すように慎重に検討してください。 また、このストア登録情報は、さまざまな言語でカスタマイズすることができます。
 
 > [!TIP]
-> また、この情報をパートナーセンターに直接入力するのではなく、.csv ファイルに登録情報をオフラインで入力する場合は、アドオンの[ストアの一覧をインポートおよびエクスポート](import-and-export-store-listings.md)することもできます。 これは、多数の言語の登録情報を作成するときに、特に便利な場合があります。 ただし、インポート/エクスポート機能を使用するのではなく、常に[パートナーセンター](https://partner.microsoft.com/dashboard)に情報を直接入力することができます。
+> また、この情報をパートナーセンターに直接入力するのではなく、.csv ファイルに登録情報をオフラインで入力する場合は、アドオンの [ストアの一覧をインポートおよびエクスポート](import-and-export-store-listings.md) することもできます。 これは、多数の言語の登録情報を作成するときに、特に便利な場合があります。 ただし、インポート/エクスポート機能を使用するのではなく、常に [パートナーセンター](https://partner.microsoft.com/dashboard) に情報を直接入力することができます。
 
 
 ## <a name="store-listing-languages"></a>ストア登録情報の言語
@@ -45,9 +45,9 @@ ms.locfileid: "79210808"
 
 ユーザーに表示できる画像を指定するオプションもあります。 このアイコンは、ちょうど 300 x 300 ピクセルの .png ファイルにする必要があります。
 
- 
+ 
 
- 
+ 
 
 
 

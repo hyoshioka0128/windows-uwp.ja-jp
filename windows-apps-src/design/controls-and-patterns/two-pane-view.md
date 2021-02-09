@@ -1,17 +1,17 @@
 ---
-Description: TwoPaneView は、2 つの個別のコンテンツ領域を持つアプリの表示を管理するために役立つレイアウト コントロールです。
+description: TwoPaneView は、2 つの個別のコンテンツ領域を持つアプリの表示を管理するために役立つレイアウト コントロールです。
 title: 2 つのペインからなるビュー
 template: detail.hbs
-ms.date: 01/22/2020
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 9c2fd792b9652e38637810b4ccd0aee94075895b
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 76a6264a8ce1704e9bd209a6246c81ba9665265f
+ms.sourcegitcommit: 4df27104a9e346d6b9fb43184812441fe5ea3437
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89174696"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "93034435"
 ---
 # <a name="two-pane-view"></a>2 つのペインからなるビュー
 
@@ -27,9 +27,17 @@ TwoPaneView コントロールは、すべての Windows デバイス上で動�
 
 **Windows UI ライブラリを入手する**
 
-|  |  |
-| - | - |
-| ![WinUI ロゴ](images/winui-logo-64x64.png) | **TwoPaneView** コントロールは、Windows アプリのための新しいコントロールと UI 機能を含む NuGet パッケージである Windows UI ライブラリの一部として含まれています。 インストール手順などについて詳しくは、「[Windows UI Library (Windows UI ライブラリ)](/uwp/toolkits/winui/)」をご覧ください。 |
+:::row:::
+   :::column:::
+      ![WinUI ロゴ](images/winui-logo-64x64.png)
+   :::column-end:::
+   :::column span="3":::
+      **TwoPaneView** コントロールは、Windows アプリのための新しいコントロールと UI 機能を含む NuGet パッケージである Windows UI ライブラリの一部として含まれています。 インストール手順などについて詳しくは、「[Windows UI Library (Windows UI ライブラリ)](/uwp/toolkits/winui/)」をご覧ください。
+   :::column-end:::
+   :::column:::
+
+   :::column-end:::
+:::row-end:::
 
 > **Windows UI ライブラリ API:** [TwoPaneView クラス](/uwp/api/microsoft.ui.xaml.controls.twopaneview)
 

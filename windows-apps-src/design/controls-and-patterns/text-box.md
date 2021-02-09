@@ -1,22 +1,22 @@
 ---
 ms.assetid: CC1BF51D-3DAC-4198-ADCB-1770B901C2FC
-Description: TextBox コントロールによって、ユーザーはアプリにテキストを入力できます。
+description: TextBox コントロールによって、ユーザーはアプリにテキストを入力できます。
 title: テキスト ボックス
 label: Text box
 template: detail.hbs
-ms.date: 05/19/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: e304f7b3df5ffbf00fb11554b11c0e48ddadc4b5
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 542822b27f356c9471ec8a6c6f5bec0aac2144ce
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173926"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034755"
 ---
 # <a name="text-box"></a>テキスト ボックス
 
@@ -26,15 +26,23 @@ TextBox には、テキスト入力を簡略化するための多くの機能が
 
 **Windows UI ライブラリを入手する**
 
-|  |  |
-| - | - |
-| ![WinUI ロゴ](images/winui-logo-64x64.png) | Windows UI ライブラリ 2.2 以降には、丸めた角を使用するこのコントロールの新しいテンプレートが含まれます。 詳しくは、「[角の半径](../style/rounded-corner.md)」をご覧ください。 WinUI は、Windows アプリの新しいコントロールと UI 機能が含まれる NuGet パッケージです。 インストール手順などについて詳しくは、「[Windows UI Library (Windows UI ライブラリ)](/uwp/toolkits/winui/)」をご覧ください。 |
+:::row:::
+   :::column:::
+      ![WinUI ロゴ](images/winui-logo-64x64.png)
+   :::column-end:::
+   :::column span="3":::
+      Windows UI ライブラリ 2.2 以降には、丸めた角を使用するこのコントロールの新しいテンプレートが含まれます。 詳しくは、「[角の半径](../style/rounded-corner.md)」をご覧ください。 WinUI は、Windows アプリの新しいコントロールと UI 機能が含まれる NuGet パッケージです。 インストール手順などについて詳しくは、「[Windows UI Library (Windows UI ライブラリ)](/uwp/toolkits/winui/)」をご覧ください。
+   :::column-end:::
+   :::column:::
 
-> **プラットフォーム API**: [TextBox クラス](/uwp/api/Windows.UI.Xaml.Controls.TextBox)、[Text プロパティ](/uwp/api/windows.ui.xaml.controls.textbox.text)
+   :::column-end:::
+:::row-end:::
+
+> **プラットフォーム API** : [TextBox クラス](/uwp/api/Windows.UI.Xaml.Controls.TextBox)、 [Text プロパティ](/uwp/api/windows.ui.xaml.controls.textbox.text)
 
 ## <a name="is-this-the-right-control"></a>適切なコントロールの選択
 
-フォームなどで書式設定されていないテキストをユーザーが入力、編集できるようにするには、**TextBox** コントロールを使用します。 TextBox 内のテキストの取得と設定には、[Text](/uwp/api/windows.ui.xaml.controls.textbox.text) プロパティを使用します。
+フォームなどで書式設定されていないテキストをユーザーが入力、編集できるようにするには、 **TextBox** コントロールを使用します。 TextBox 内のテキストの取得と設定には、[Text](/uwp/api/windows.ui.xaml.controls.textbox.text) プロパティを使用します。
 
 TextBox を読み取り専用にすることはできますが、これは一時的な条件付きの状態である必要があります。 テキストを編集可能にしない場合は、代わりに [TextBlock](text-block.md) を使用することを検討してください。
 
@@ -144,8 +152,8 @@ IsEnabled
 
 テキスト ボックスで複数行のテキストを表示するかどうかを制御するために使用できるプロパティが 2 つあります。 通常、両方のプロパティを設定して複数行テキスト ボックスを作成します。
 
-- テキスト ボックスで改行文字の入力を受け付けて表示するには、[AcceptsReturn](/uwp/api/windows.ui.xaml.controls.textbox.acceptsreturn) プロパティを **true** に設定します。
-- テキストの折り返しを有効にするには、[TextWrapping](/uwp/api/windows.ui.xaml.controls.textbox.textwrapping) プロパティを **Wrap** に設定します。 これにより、テキストがテキスト ボックスの端に達すると、行の区切り文字とは無関係に折り返されます。
+- テキスト ボックスで改行文字の入力を受け付けて表示するには、 [AcceptsReturn](/uwp/api/windows.ui.xaml.controls.textbox.acceptsreturn) プロパティを **true** に設定します。
+- テキストの折り返しを有効にするには、 [TextWrapping](/uwp/api/windows.ui.xaml.controls.textbox.textwrapping) プロパティを **Wrap** に設定します。 これにより、テキストがテキスト ボックスの端に達すると、行の区切り文字とは無関係に折り返されます。
 
 > **注**&nbsp;&nbsp;TextBox および RichEditBox では、TextWrapping プロパティの **WrapWholeWords** 値をサポートしていません。 TextBox.TextWrapping または RichEditBox.TextWrapping の値として WrapWholeWords を使用しようとすると、無効な引数の例外がスローされます。
 
@@ -221,7 +229,7 @@ rootGrid.Children.Add(textBox);
 すべて選択 | TextBox にテキストが含まれている。
 元に戻す | テキストが変更されている。
 
-コンテキスト メニューに表示されるコマンドを変更するには、[ContextMenuOpening](/uwp/api/windows.ui.xaml.controls.textbox.contextmenuopening) イベントを処理します。 この例については、<a href="xamlcontrolsgallery:/item/RichEditBox">XAML コントロール ギャラリー</a>の **Customizing RichEditBox's CommandBarFlyout - adding 'Share'** (RichEditBox の CommandBarFlyout のカスタマイズ - 'Share' の追加) を参照してください。 設計については、[コンテキスト メニュー](menus.md)のガイドラインを参照してください。
+コンテキスト メニューに表示されるコマンドを変更するには、[ContextMenuOpening](/uwp/api/windows.ui.xaml.controls.textbox.contextmenuopening) イベントを処理します。 この例については、 <a href="xamlcontrolsgallery:/item/RichEditBox">XAML コントロール ギャラリー</a>の **Customizing RichEditBox's CommandBarFlyout - adding 'Share'** (RichEditBox の CommandBarFlyout のカスタマイズ - 'Share' の追加) を参照してください。 設計については、[コンテキスト メニュー](menus.md)のガイドラインを参照してください。
 
 ### <a name="select-copy-and-paste"></a>選択、コピー、貼り付け
 
@@ -263,7 +271,7 @@ private void TextBox1_SelectionChanged(object sender, RoutedEventArgs e)
 
 タッチ キーボードは、アプリがタッチ スクリーン付きのデバイスで実行されているときにテキスト入力に使用できます。 タッチ キーボードは、TextBox または RichEditBox などの編集可能な入力フィールドをユーザーがタップしたときに呼び出されます。 ユーザーが入力すると予想されるデータの種類と一致するようにテキスト コントロールの入力値の種類を設定することで、ユーザーがより速く簡単にアプリにデータを入力できるようになります。 入力値の種類は、システムに対してコントロールが予期しているテキスト入力の種類のヒントとなるため、システムはその入力の種類用の特殊なタッチ キーボード レイアウトを提供できます。
 
-たとえば、テキスト ボックスが 4 桁の PIN の入力専用の場合は、[InputScope](/uwp/api/windows.ui.xaml.controls.textbox.inputscope) プロパティを **Number** に設定します。 これにより、システムに数字キーパッド レイアウトの表示が指示されるため、ユーザーは簡単に PIN を入力できます。
+たとえば、テキスト ボックスが 4 桁の PIN の入力専用の場合は、 [InputScope](/uwp/api/windows.ui.xaml.controls.textbox.inputscope) プロパティを **Number** に設定します。 これにより、システムに数字キーパッド レイアウトの表示が指示されるため、ユーザーは簡単に PIN を入力できます。
 
 > **重要**&nbsp;&nbsp;入力値の種類の設定によって、入力の検証が実行されるわけではありません。また、ユーザーが、ハードウェア キーボードやその他の入力デバイスから入力できなくなることもありません。 必要に応じて、コードで入力を検証する必要があります。
 

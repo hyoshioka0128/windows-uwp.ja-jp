@@ -1,23 +1,27 @@
 ---
-Description: Microsoft テスト アプリ用の JavaScript API を使用すると、セキュリティ保護された評価を行うことができます。 テスト アプリでは、学生がテスト中に他のコンピューターやインターネット リソースを使用することを防ぐセキュリティ保護されたブラウザーが提供されます。
+description: Microsoft テスト アプリ用の JavaScript API を使用すると、セキュリティ保護された評価を行うことができます。 テスト アプリでは、学生がテスト中に他のコンピューターやインターネット リソースを使用することを防ぐセキュリティ保護されたブラウザーが提供されます。
 title: テスト JavaScript API。
 ms.assetid: 9bff6318-504c-4d0e-ba80-1a5ea45743da
 ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp, 教育
 ms.localizationpriority: medium
-ms.openlocfilehash: 2eeb190fc95e46a95813affd432948d38c0328a4
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: d4ed3bf3062deac308b9ed39ff7be709bcee4af3
+ms.sourcegitcommit: 3be258523c5ee3666498d6a98ed2648b27b2907d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91218395"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99973102"
 ---
 # <a name="take-a-test-javascript-api"></a>テスト JavaScript API
 
 [テストを実行](/education/windows/take-tests-in-windows-10) するブラウザーベースの UWP アプリでは、杭テスト用にロックダウンされたオンライン評価をレンダリングします。これにより、教育機関は、セキュリティで保護されたテスト環境を提供する方法ではなく、評価コンテンツに焦点を絞ることができます。 これを実現するには、任意の Web アプリケーションで利用できる JavaScript API を使用します。 テスト API は、重要な共通学力テストの [SBAC ブラウザー API 標準](https://www.smarterapp.org/documents/SecureBrowserRequirementsSpecifications_0-3.pdf)に対応しています。
 
 アプリ自体の詳細については、「[テスト アプリ技術リファレンス](/education/windows/take-a-test-app-technical?f=255&MSPPError=-2147217396)」を参照してください。 トラブルシューティングについては、「[イベント ビューアーを使用して、Microsoft テストをトラブルシューティングする](troubleshooting.md)」を参照してください。
+
+> [!NOTE]
+> この記事には、Microsoft では使用されなくなった "ブラックリスト" という用語への言及があります。 ソフトウェアからこの用語が削除された時点で、この記事から削除します。
+
 
 ## <a name="reference-documentation"></a>リファレンス ドキュメント
 テスト API は、次の名前空間に存在します。 すべての API は、グローバルな `SecureBrowser` オブジェクトに依存する点に注意してください。
@@ -58,7 +62,7 @@ ms.locfileid: "91218395"
 `void SecureBrowser.security.lockDown(Boolean enable, Function onSuccess, Function onError);`
 
 **パラメーター**  
-* `enable` - ロック画面の上にテストアプリを実行し、この[ドキュメント](/education/windows/take-a-test-app-technical?f=255&MSPPError=-2147217396)で説明されているポリシーを適用する**場合は true** 。 **false** は、アプリがロックダウンされていない場合は、ロック画面上で実行しているテスト アプリを停止して閉じます。アプリがロックダウンされている場合は、何も行われません。  
+* `enable` - ロック画面の上にテストアプリを実行し、この [ドキュメント](/education/windows/take-a-test-app-technical?f=255&MSPPError=-2147217396)で説明されているポリシーを適用する **場合は true** 。 **false** は、アプリがロックダウンされていない場合は、ロック画面上で実行しているテスト アプリを停止して閉じます。アプリがロックダウンされている場合は、何も行われません。  
 * `onSuccess` -[省略可能] ロックダウンが正常に有効または無効にされた後に呼び出される関数。 `Function(Boolean currentlockdownstate)` という形式にする必要があります。  
 * `onError` -[省略可能] ロックダウン操作が失敗した場合に呼び出す関数。 `Function(Boolean currentlockdownstate)` という形式にする必要があります。  
 
@@ -132,7 +136,7 @@ Windows 10 バージョン 1709
 
 <span id="close"/>
 
-### <a name="close"></a>閉じる
+### <a name="close"></a>close
 ブラウザーを閉じて、デバイスのロックを解除します。 ユーザーがブラウザーを終了するときに、テスト アプリケーションでこれを呼び出す必要があります。
 
 **構文**  

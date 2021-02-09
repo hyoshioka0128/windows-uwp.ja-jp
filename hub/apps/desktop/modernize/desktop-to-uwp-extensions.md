@@ -8,16 +8,16 @@ ms.assetid: 0a8cedac-172a-4efd-8b6b-67fd3667df34
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: e0a8a7bf38fbf44fd3544d7912729bbd42672f34
-ms.sourcegitcommit: 7c49f789f5b382b5b12efed6a81cbb4a25d44bd9
+ms.openlocfilehash: 91b5e975c40b7c9642cd452b3c67045c7be1127d
+ms.sourcegitcommit: 069f5ab4be85a7d638fc2a426afaed824e5dfeae
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90026327"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98668721"
 ---
 # <a name="integrate-your-desktop-app-with-windows-10-and-uwp"></a>Windows 10 と UWP にデスクトップ アプリを統合する
 
-デスクトップ アプリに[パッケージ ID](modernize-packaged-apps.md) がある場合は、[パッケージ マニフェスト](/uwp/schemas/appxpackage/uapmanifestschema/schema-root)内で定義済みの拡張機能を使用することによって、拡張機能を使用してアプリを Windows 10 と統合できます。
+デスクトップ アプリに[パッケージ ID](modernize-packaged-apps.md) がある場合は、[パッケージ マニフェスト内で定義済みの拡張機能](/uwp/schemas/appxpackage/uapmanifestschema/extensions)を使用することによって、拡張機能を使用してアプリを Windows 10 と統合できます。
 
 たとえば、ファイアウォール例外を作成する、アプリを特定のファイルの種類の既定アプリケーションにする、アプリをスタート タイルの参照先に指定する、などの操作を拡張機能で行うことができます。 拡張機能は、アプリのパッケージ マニフェスト ファイルに XML を追加するだけで使用できます。 コードは必要ありません。
 
@@ -53,7 +53,7 @@ ms.locfileid: "90026327"
     <DesktopAppMigration>
         <DesktopApp AumId="[your_app_aumid]" />
         <DesktopApp ShortcutPath="[path]" />
-    </DesktopAppMigration>
+    </DesktopAppMigration>
 </Extension>
 ```
 
@@ -80,7 +80,7 @@ ms.locfileid: "90026327"
             <rescap3:DesktopApp ShortcutPath="%USERPROFILE%\Desktop\[my_app].lnk" />
             <rescap3:DesktopApp ShortcutPath="%APPDATA%\Microsoft\Windows\Start Menu\Programs\[my_app].lnk" />
             <rescap3:DesktopApp ShortcutPath="%PROGRAMDATA%\Microsoft\Windows\Start Menu\Programs\[my_app_folder]\[my_app].lnk"/>
-         </rescap3:DesktopAppMigration>
+         </rescap3:DesktopAppMigration>
         </rescap3:Extension>
       </Extensions>
     </Application>
@@ -109,11 +109,11 @@ ms.locfileid: "90026327"
 
 ```XML
 <Extension Category="windows.fileTypeAssociation">
-    <FileTypeAssociation Name="[Name]">
-         <MigrationProgIds>
-            <MigrationProgId>"[ProgID]"</MigrationProgId>
-        </MigrationProgIds>
-    </FileTypeAssociation>
+    <FileTypeAssociation Name="[Name]">
+         <MigrationProgIds>
+            <MigrationProgId>"[ProgID]"</MigrationProgId>
+        </MigrationProgIds>
+    </FileTypeAssociation>
 </Extension>
 ```
 
@@ -137,11 +137,11 @@ ms.locfileid: "90026327"
       <Extensions>
         <uap:Extension Category="windows.fileTypeAssociation">
           <uap3:FileTypeAssociation Name="myfiletypes">
-            <rescap3:MigrationProgIds>
-              <rescap3:MigrationProgId>Foo.Bar.1</rescap3:MigrationProgId>
+            <rescap3:MigrationProgIds>
+              <rescap3:MigrationProgId>Foo.Bar.1</rescap3:MigrationProgId>
               <rescap3:MigrationProgId>Foo.Bar.2</rescap3:MigrationProgId>
-            </rescap3:MigrationProgIds>
-          </uap3:FileTypeAssociation>
+            </rescap3:MigrationProgIds>
+          </uap3:FileTypeAssociation>
         </uap:Extension>
       </Extensions>
     </Application>
@@ -688,13 +688,13 @@ DLL 検索順序に含まれるパッケージには、既定で、その "*有�
 ```XML
 <Extension Category="windows.fileTypeAssociation">
     <FileTypeAssociation Name="[Name]">
-        <SupportedFileTypes>
-            <FileType>"[FileExtension]"</FileType>
-        </SupportedFileTypes>
-        <KindMap>
-            <Kind value="[KindValue]">
-        </KindMap>
-    </FileTypeAssociation>
+        <SupportedFileTypes>
+            <FileType>"[FileExtension]"</FileType>
+        </SupportedFileTypes>
+        <KindMap>
+            <Kind value="[KindValue]">
+        </KindMap>
+    </FileTypeAssociation>
 </Extension>
 ```
 
@@ -719,16 +719,16 @@ DLL 検索順序に含まれるパッケージには、既定で、その "*有�
       <Extensions>
         <uap:Extension Category="windows.fileTypeAssociation">
            <uap:FileTypeAssociation Name="mediafiles">
-             <uap:SupportedFileTypes>
-               <uap:FileType>.m4a</uap:FileType>
-               <uap:FileType>.mta</uap:FileType>
-             </uap:SupportedFileTypes>
-             <rescap:KindMap>
-               <rescap:Kind value="Item">
+             <uap:SupportedFileTypes>
+               <uap:FileType>.m4a</uap:FileType>
+               <uap:FileType>.mta</uap:FileType>
+             </uap:SupportedFileTypes>
+             <rescap:KindMap>
+               <rescap:Kind value="Item">
                <rescap:Kind value="Communications">
                <rescap:Kind value="Task">
-             </rescap:KindMap>
-          </uap:FileTypeAssociation>
+             </rescap:KindMap>
+          </uap:FileTypeAssociation>
       </uap:Extension>
       </Extensions>
     </Application>
@@ -874,7 +874,7 @@ DLL 検索順序に含まれるパッケージには、既定で、その "*有�
         <com:Extension Category="windows.comServer">
           <com:ComServer>
             <com:SurrogateServer AppId="d0c8bceb-28eb-49ae-bc68-454ae84d6264" DisplayName="ContosoHandler"">
-              <com:Class Id="Id="d0c8bceb-28eb-49ae-bc68-454ae84d6264" Path="ExplorerCommandVerb.dll" ThreadingModel="STA"/>
+              <com:Class Id="d0c8bceb-28eb-49ae-bc68-454ae84d6264" Path="ExplorerCommandVerb.dll" ThreadingModel="STA"/>
             </com:SurrogateServer>
           </com:ComServer>
         </com:Extension>
@@ -1029,14 +1029,14 @@ DLL 検索順序に含まれるパッケージには、既定で、その "*有�
 #### <a name="elements-and-attributes-of-this-extension"></a>この拡張機能の要素と属性
 
 ```XML
-<Extension
+<uap3:Extension
     Category="windows.appExecutionAlias"
     Executable="[ExecutableName]"
     EntryPoint="Windows.FullTrustApplication">
-    <AppExecutionAlias>
+    <uap3:AppExecutionAlias>
         <desktop:ExecutionAlias Alias="[AliasName]" />
-    </AppExecutionAlias>
-</Extension>
+    </uap3:AppExecutionAlias>
+</uap3:Extension>
 ```
 
 |名前 |説明 |

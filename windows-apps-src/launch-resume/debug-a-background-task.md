@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10、uwp、バックグラウンドタスク
 ms.localizationpriority: medium
-ms.openlocfilehash: 5b5daec3f4d0fa823341ff7590094463ef412b88
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 5696d3c5ffb28ee8dc6ebd51e678894ee78ae420
+ms.sourcegitcommit: e39b569626804d2ce4246353ac2c03a916dc9737
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89156006"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92192982"
 ---
 # <a name="debug-a-background-task"></a>バックグラウンド タスクのデバッグ
 
@@ -42,16 +42,16 @@ ms.locfileid: "89156006"
 
 2.  デバッガーでアプリケーションを実行し、**[ライフサイクル イベント]** ツール バーを使ってバックグラウンド タスクをトリガーします。 このドロップダウンには、Visual Studio でアクティブ化できるバックグラウンド タスクの名前が表示されます。
 
-> [!NOTE]
-> Visual Studio では、[ライフサイクルイベント] ツールバーのオプションは既定では表示されません。 これらのオプションを表示するには、Visual Studio で現在のツールバーを右クリックし、[ **デバッグの場所** ] オプションが有効になっていることを確認します。
+    > [!NOTE]
+    > Visual Studio では、[ライフサイクルイベント] ツールバーのオプションは既定では表示されません。 これらのオプションを表示するには、Visual Studio で現在のツールバーを右クリックし、[ **デバッグの場所** ] オプションが有効になっていることを確認します。
 
-    For this to work, the background task must already be registered and it must still be waiting for the trigger. For example, if a background task was registered with a one-shot TimeTrigger and that trigger has already fired, launching the task through Visual Studio will have no effect.
+    この機能を使うには、バックグラウンド タスクが既に登録されていて、トリガーを待機する状態になっていることが必要です。 たとえば、1 回限りの TimeTrigger に対してバックグラウンド タスクを登録した場合、そのトリガーが起動された後に Visual Studio からそのタスクを起動しても何も起こりません。
 
-> [!Note]
-> 次のトリガーを使ったバックグラウンド タスクを、[**アプリケーション トリガー**](/uwp/api/windows.applicationmodel.background.applicationtrigger)、[**MediaProcessing トリガー**](/uwp/api/windows.applicationmodel.background.mediaprocessingtrigger)、[**ControlChannelTrigger**](/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger)、[**PushNotificationTrigger**](/uwp/api/Windows.ApplicationModel.Background.PushNotificationTrigger)、[**SmsReceived**](/uwp/api/Windows.ApplicationModel.Background.SystemTriggerType) トリガー型の [**SystemTrigger**](/uwp/api/Windows.ApplicationModel.Background.SystemTrigger) を使ったバックグラウンド タスク、という方法でアクティブ化することはできません。  
-> **Application trigger** と **MediaProcessingTrigger** は、`trigger.RequestAsync()` を使ってコードで手動通知できます。
+    > [!Note]
+    > 次のトリガーを使ったバックグラウンド タスクを、[**アプリケーション トリガー**](/uwp/api/windows.applicationmodel.background.applicationtrigger)、[**MediaProcessing トリガー**](/uwp/api/windows.applicationmodel.background.mediaprocessingtrigger)、[**ControlChannelTrigger**](/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger)、[**PushNotificationTrigger**](/uwp/api/Windows.ApplicationModel.Background.PushNotificationTrigger)、[**SmsReceived**](/uwp/api/Windows.ApplicationModel.Background.SystemTriggerType) トリガー型の [**SystemTrigger**](/uwp/api/Windows.ApplicationModel.Background.SystemTrigger) を使ったバックグラウンド タスク、という方法でアクティブ化することはできません。  
+    > **Application trigger** と **MediaProcessingTrigger** は、`trigger.RequestAsync()` を使ってコードで手動通知できます。
 
-![バックグラウンド タスクのデバッグ](images/debugging-activation.png)
+    ![バックグラウンド タスクのデバッグ](images/debugging-activation.png)
 
 3.  バックグラウンド タスクがアクティブになると、デバッガーがアタッチされて、デバッグ出力が VS に表示されます。
 
@@ -91,12 +91,12 @@ ms.locfileid: "89156006"
 
 ## <a name="background-tasks-and-visual-studio-package-deployment"></a>バックグラウンド タスクと Visual Studio パッケージの展開
 
-バックグラウンド タスクを使ったアプリが Visual Studio を使って展開され、その後、マニフェスト デザイナーで指定されたバージョン (メジャー バージョンとマイナー バージョン、またはそのどちらか一方) が更新された場合、以後、Visual Studio を使ってそのアプリを再展開すると、アプリのバックグラウンド タスクが停止することがあります。 これは、次のようにして対処できます。
+バックグラウンドタスクを使用するアプリが Visual Studio を使用して展開され、マニフェストデザイナーで指定されたバージョン (メジャーまたはマイナー) が更新された場合、その後 Visual Studio でアプリを再配置すると、アプリのバックグラウンドタスクが停止する可能性があります。 これは、次のようにして対処できます。
 
 -   更新したアプリを (Visual Studio ではなく) Windows PowerShell を使って展開します。パッケージと一緒に生成されるスクリプトを実行してください。
--   既に Visual Studio でアプリを展開したことによってアプリのバックグラウンド タスクが停止している場合は、再起動するか、いったんログオフしてからログインし直し、アプリのバックグラウンド タスクをもう一度作動させます。
+-   既に Visual Studio を使用してアプリをデプロイしていて、バックグラウンドタスクが停滞している場合は、再起動またはログオフ/ログインして、アプリのバックグラウンドタスクを再度実行します。
 -   C# プロジェクトでは、"パッケージを常に再インストール" というデバッグ オプションを選ぶことで、この問題を回避することができます。
--   展開用にアプリが最終確定するのを待ってパッケージのバージョンをインクリメントします (デバッグ中は変更しない)。
+-   アプリが最終的な配置の準備が整うまで待ってから、パッケージのバージョンを増やします (デバッグ中に変更しないでください)。
 
 ## <a name="remarks"></a>注釈
 
@@ -104,7 +104,7 @@ ms.locfileid: "89156006"
 -   バックグラウンド タスクがロック画面へのアクセスを必要とする場合は、バックグラウンド タスクをデバッグする前にロック画面にアプリを配置してください。 ロック画面対応アプリのマニフェスト オプションを指定する方法については、「[アプリケーション マニフェストでのバックグラウンド タスクの宣言](declare-background-tasks-in-the-application-manifest.md)」をご覧ください。
 -   バックグラウンド タスクの登録パラメーターは登録時に検証されます。 いずれかの登録パラメーターが有効でない場合は、エラーが返されます。 バックグラウンド タスクの登録が失敗するシナリオをアプリが適切に処理するようにします。タスクを登録しようとした後で、有効な登録オブジェクトを持っていることを前提として動作するアプリは、クラッシュする場合があります。
 
-VS を使用してバックグラウンドタスクをデバッグする方法の詳細については、「 [UWP アプリで中断イベント、再開イベント、およびバックグラウンドイベントをトリガーする方法](/visualstudio/debugger/how-to-trigger-suspend-resume-and-background-events-for-windows-store-apps-in-visual-studio?view=vs-2015)」を参照してください。
+VS を使用してバックグラウンドタスクをデバッグする方法の詳細については、「 [UWP アプリで中断イベント、再開イベント、およびバックグラウンドイベントをトリガーする方法](/visualstudio/debugger/how-to-trigger-suspend-resume-and-background-events-for-windows-store-apps-in-visual-studio)」を参照してください。
 
 ## <a name="related-topics"></a>関連トピック
 
@@ -113,7 +113,7 @@ VS を使用してバックグラウンドタスクをデバッグする方法�
 * [バックグラウンド タスクの登録](register-a-background-task.md)
 * [アプリケーション マニフェストでのバックグラウンド タスクの宣言](declare-background-tasks-in-the-application-manifest.md)
 * [バックグラウンド タスクのガイドライン](guidelines-for-background-tasks.md)
-* [UWP アプリで中断イベント、再開イベント、およびバックグラウンド イベントをトリガーする方法](/visualstudio/debugger/how-to-trigger-suspend-resume-and-background-events-for-windows-store-apps-in-visual-studio?view=vs-2015)
+* [UWP アプリで中断イベント、再開イベント、およびバックグラウンド イベントをトリガーする方法](/visualstudio/debugger/how-to-trigger-suspend-resume-and-background-events-for-windows-store-apps-in-visual-studio)
 * [Visual Studio code 分析を使用した UWP アプリのコード品質の分析](/visualstudio/test/analyze-the-code-quality-of-store-apps-using-visual-studio-static-code-analysis?view=vs-2015)
 
  

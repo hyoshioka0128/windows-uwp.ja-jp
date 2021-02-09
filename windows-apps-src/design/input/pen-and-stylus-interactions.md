@@ -1,5 +1,5 @@
 ---
-Description: ペンやスタイラスデバイス (自然な書き込みと描画のためのデジタルインクなど) からのカスタム対話をサポートする Windows アプリを構築します。
+description: ペンやスタイラスデバイス (自然な書き込みと描画のためのデジタルインクなど) からのカスタム対話をサポートする Windows アプリを構築します。
 title: Windows アプリでのペン操作と Windows Ink
 ms.assetid: 3DA4F2D2-5405-42A1-9ED9-3A87BCD84C43
 label: Pen interactions and Windows Ink in Windows apps
@@ -8,16 +8,16 @@ keywords: Windows Ink, Windows の手書き入力, DirectInk, InkPresenter, InkC
 ms.date: 09/24/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 34e41ff4b6fa402e8a1857a2ea406c9e63e7c868
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 7a29a7ed497fdcd463df0855b4aad3b65ce6408a
+ms.sourcegitcommit: d786d084dafee5da0268ebb51cead1d8acb9b13e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91216965"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91860178"
 ---
 # <a name="pen-interactions-and-windows-ink-in-windows-apps"></a>Windows アプリでのペン操作と Windows Ink
 
-![Surface ペン](images/ink/hero-small.png)  
+![表面ペンのヒーロー画像。](images/ink/hero-small.png)  
 *Surface ペン* ([Microsoft ストア](https://www.microsoft.com/p/surface-pen/8zl5c82qmg6b)で購入できます)。
 
 ## <a name="overview"></a>概要
@@ -27,10 +27,18 @@ Windows アプリをペン入力用に最適化して、標準の [**ポイン�
 > [!NOTE]
 > ここでは主に、Windows Ink プラットフォームについて説明します。 ポインター入力処理 (マウス、タッチ、タッチパッドに類似) の概要については、「[ポインター入力の処理](handle-pointer-input.md)」をご覧ください。
 
-| ビデオ |   |
-| --- | --- |
-| <iframe src="https://channel9.msdn.com/Blogs/One-Dev-Minute/Using-Ink-in-Your-UWP-App/player" width="300" height="200" allowFullScreen frameBorder="0"></iframe> | <iframe src="https://channel9.msdn.com/Events/Ignite/2016/BRK2060/player" width="300" height="200" allowFullScreen frameBorder="0"></iframe> |
-| *Windows アプリでインクを使用する* | *Use Windows Pen and Ink to build more engaging enterprise apps (Windows ペンとインクを使ったより魅力的なエンタープライズ アプリの構築)* |
+:::row:::
+   :::column:::
+      <iframe src="https://channel9.msdn.com/Blogs/One-Dev-Minute/Using-Ink-in-Your-UWP-App/player" width="300" height="200" allowFullScreen frameBorder="0"></iframe>
+
+      *Windows アプリでインクを使用する*
+   :::column-end:::
+   :::column:::
+      <iframe src="https://channel9.msdn.com/Events/Ignite/2016/BRK2060/player" width="300" height="200" allowFullScreen frameBorder="0"></iframe>
+
+      *Use Windows Pen and Ink to build more engaging enterprise apps (Windows ペンとインクを使ったより魅力的なエンタープライズ アプリの構築)*
+   :::column-end:::
+:::row-end:::
 
 Windows Ink プラットフォームでペン デバイスを使うと、自然な形でデジタルの手書きノート、描画、コメントを作れます。 このプラットフォームは、デジタイザー入力のインク データとしてのキャプチャ、インク データの生成、インク データの管理、出力デバイスのインク ストロークとしてのインク データのレンダリング、手書き認識によるインクからテキストへの変換をサポートします。
 
@@ -87,7 +95,7 @@ Windows Ink UX のガイドラインについては、「[手描き入力コン�
 
 次の一連の画像は、この [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) コントロールによってペン入力がどのようにレンダリングされるかを示しています。
 
-| ![空の InkCanvas と背景画像](images/ink_basic_1_small.png) | ![インク ストロークを含む InkCanvas](images/ink_basic_2_small.png) | ![1 つのストロークが消去された InkCanvas](images/ink_basic_3_small.png) |
+| ![背景画像がある空の System.windows.controls.inkcanvas> のスクリーンショット。](images/ink_basic_1_small.png) | ![インクストロークを含む System.windows.controls.inkcanvas> のスクリーンショット。](images/ink_basic_2_small.png) | ![1つのストロークが消去された System.windows.controls.inkcanvas> のスクリーンショット。](images/ink_basic_3_small.png) |
 | --- | --- | ---|
 | 背景画像を含む空白の [**system.windows.controls.inkcanvas>**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) 。 | インクストロークを含む [**system.windows.controls.inkcanvas>**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) 。 | ストロークの一部が削除された [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas)  (削除が部分ではなく全体にどのように影響するかに注意してください)。 |
 
@@ -198,7 +206,7 @@ private void OnPenColorChanged(object sender, SelectionChangedEventArgs e)
 
 これらの画像は、ペン入力が [**InkPresenter**](/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter)によってどのように処理およびカスタマイズされるかを示しています。
 
-| ![既定の黒のインク ストロークを含む InkCanvas](images/ink-basic-custom-1-small.png) | ![ユーザーが選択した赤のインク ストロークを含む InkCanvas](images/ink-basic-custom-2-small.png) |
+| ![既定の黒のインクストロークの System.windows.controls.inkcanvas> を示すスクリーンショット。](images/ink-basic-custom-1-small.png) | ![ユーザーが選択した赤いインクストロークを使用した System.windows.controls.inkcanvas> のスクリーンショット。](images/ink-basic-custom-2-small.png) |
 | --- | --- |
 | 既定の黒のインク ストロークを含む [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas)。 | ユーザーが赤のインクストロークを選択した [**system.windows.controls.inkcanvas>**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) 。 | 
 
@@ -222,7 +230,7 @@ Windows Ink プラットフォームには、変更された入力を必要と�
 
     ここでは、選択ストロークを描画するためのキャンバスを ([**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) の下に) 追加しています。 別のレイヤーを使って選択ストロークを描画すると、**InkCanvas** とそのコンテンツに影響を与えずに済みます。
 
-    ![下に選択キャンバスがある空の InkCanvas](images/ink-unprocessed-1-small.png)
+    ![基になる選択キャンバスがある空の System.windows.controls.inkcanvas> のスクリーンショット。](images/ink-unprocessed-1-small.png)
 
       ```xaml
         <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -263,7 +271,7 @@ Windows Ink プラットフォームには、変更された入力を必要と�
 
     最後に、[**InkPresenter**](/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter) の [**StrokeStarted**](/uwp/api/windows.ui.input.inking.inkstrokeinput.strokestarted) イベントと [**StrokesErased**](/uwp/api/windows.ui.input.inking.inkpresenter.strokeserased) イベントのリスナーを割り当てます。 これらのイベントのハンドラーを使って、新しいストロークが開始された場合や既にあるストロークが消去された場合に選択 UI をクリーンアップします。
 
-    ![既定の黒のインク ストロークを含む InkCanvas](images/ink-unprocessed-2-small.png)
+    ![既定の黒のインクストロークで system.windows.controls.inkcanvas> が表示されている、[先進インクのカスタマイズのサンプルアプリのスクリーンショット。](images/ink-unprocessed-2-small.png)
 
       ```csharp
         public MainPage()
@@ -312,7 +320,7 @@ Windows Ink プラットフォームには、変更された入力を必要と�
 
     なげなわストロークと境界の四角形を含むすべての選択機能をこれらのハンドラーに実装します。
 
-    ![なげなわ選択](images/ink-unprocessed-3-small.png)
+    ![選択されたなげなわのスクリーンショット。](images/ink-unprocessed-3-small.png)
 
       ```csharp
         // Handle unprocessed pointer events from modified input.
@@ -360,7 +368,7 @@ Windows Ink プラットフォームには、変更された入力を必要と�
 
 5.  PointerReleased イベント ハンドラーの最後の処理として、選択レイヤーのすべてのコンテンツ (なげなわストローク) をクリアして、なげなわの領域で囲まれたインク ストロークの周りに境界の四角形を 1 つ描画します。
 
-    ![選択範囲の境界の四角形](images/ink-unprocessed-4-small.png)
+    ![選択範囲外接する四角形のスクリーンショット。](images/ink-unprocessed-4-small.png)
 
       ```csharp
         // Draw a bounding rectangle, on the selection canvas, encompassing

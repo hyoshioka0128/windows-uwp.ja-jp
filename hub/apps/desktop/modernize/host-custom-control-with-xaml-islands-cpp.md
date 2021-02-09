@@ -1,27 +1,27 @@
 ---
-description: この記事では、XAML ホスティング API を使用して C++ Win32 アプリでカスタム UWP コントロールをホストする方法を示します。
-title: XAML ホスティング API を使用して C++ Win32 アプリでカスタム UWP コントロールをホストする
-ms.date: 04/07/2020
+description: この記事では、XAML ホスティング API を使用して C++ Win32 アプリでカスタム WinRT XAML コントロールをホストする方法を示します。
+title: XAML ホスティング API を使用して C++ Win32 アプリでカスタム WinRT XAML コントロールをホストする
+ms.date: 10/02/2020
 ms.topic: article
 keywords: Windows 10, UWP, C++, Win32, XAML Islands, カスタム コントロール, ユーザー コントロール, コントロールのホスト
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: d61abe8b59f916ed56c1fefe0bda4b9f25b673a4
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 99b0c362613cd1da2050b5f96b9963ca922f75d2
+ms.sourcegitcommit: caf4dba6bdfc3c6d9685d10aa9924b170b00bed8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173726"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93049523"
 ---
-# <a name="host-a-custom-uwp-control-in-a-c-win32-app"></a>C++ Win32 アプリでカスタム UWP コントロールをホストする
+# <a name="host-a-custom-winrt-xaml-control-in-a-c-win32-app"></a>C++ Win32 アプリでカスタム WinRT XAML コントロールをホストする
 
 この記事では、[UWP XAML ホスティング API](using-the-xaml-hosting-api.md) を使用して、新しい C++ Win32 アプリでカスタム UWP XAML コントロールをホストする方法について説明します。 C++ Win32 アプリ プロジェクトが既にある場合は、以下の手順とコード例をプロジェクトに合わせて調整してかまいません。
 
 カスタム UWP XAML コントロールをホストするため、このチュートリアルの一部として次のプロジェクトとコンポーネントを作成します。
 
-* **Windows デスクトップ アプリケーション プロジェクト**。 このプロジェクトでは、C++ Win32 のネイティブ デスクトップ アプリを実装します。 UWP XAML ホスティング API を使用してカスタム UWP XAML コントロールをホストするコードを、このプロジェクトに追加します。
+* **Windows デスクトップ アプリケーション プロジェクト** 。 このプロジェクトでは、C++ Win32 のネイティブ デスクトップ アプリを実装します。 UWP XAML ホスティング API を使用してカスタム UWP XAML コントロールをホストするコードを、このプロジェクトに追加します。
 
 * **UWP アプリ プロジェクト (C++/WinRT)** 。 このプロジェクトでは、カスタム UWP XAML コントロールを実装します。 また、カスタム UWP XAML 型のメタデータをプロジェクトに読み込むためのルート メタデータ プロバイダーも実装します。
 
@@ -33,35 +33,41 @@ ms.locfileid: "89173726"
 
 ## <a name="create-a-desktop-application-project"></a>デスクトップ アプリケーション プロジェクトを作成する
 
-1. Visual Studio で、**MyDesktopWin32App** という名前の新しい **Windows デスクトップ アプリケーション** プロジェクトを作成します。 このプロジェクト テンプレートは、**C++** 、**Windows**、および**デスクトップ**のプロジェクト フィルターで使用できます。
+1. Visual Studio で、 **MyDesktopWin32App** という名前の新しい **Windows デスクトップ アプリケーション** プロジェクトを作成します。 このプロジェクト テンプレートは、 **C++** 、 **Windows** 、および **デスクトップ** のプロジェクト フィルターで使用できます。
 
-2. **ソリューション エクスプローラー**でソリューション ノードを右クリックして、 **[ソリューションの再ターゲット]** をクリックし、**10.0.18362.0** 以降の SDK リリースを選択してから、 **[OK]** をクリックします。
+2. **ソリューション エクスプローラー** でソリューション ノードを右クリックして、 **[ソリューションの再ターゲット]** をクリックし、 **10.0.18362.0** 以降の SDK リリースを選択してから、 **[OK]** をクリックします。
 
 3. [Microsoft.Windows.CppWinRT](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/) NuGet パッケージをインストールして、プロジェクトでの [C++/WinRT](/windows/uwp/cpp-and-winrt-apis) のサポートを有効にします。
 
-    1. **ソリューション エクスプローラー**で **MyDesktopWin32App** プロジェクトを右クリックし、 **[NuGet パッケージの管理]** を選択します。
-    2. **[参照]** タブを選択し、[Microsoft.Windows.CppWinRT](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/) パッケージを探して、このパッケージの最新バージョンをインストールします。
+    1. **ソリューション エクスプローラー** で **MyDesktopWin32App** プロジェクトを右クリックし、 **[NuGet パッケージの管理]** を選択します。
+    2. **[参照]** タブを選択し、 [Microsoft.Windows.CppWinRT](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/) パッケージを探して、このパッケージの最新バージョンをインストールします。
 
 4. **[NuGet パッケージの管理]** ウィンドウで、次の追加の NuGet パッケージをインストールします。
 
-    * [Microsoft.Toolkit.Win32.UI.SDK](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.SDK) (バージョン v6.0.0 以降)。 このパッケージでは、XAML Islands がアプリで動作できるようにする、いくつかのビルド資産と実行時資産が提供されています。
-    * [Microsoft.Toolkit.Win32.UI.XamlApplication](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.XamlApplication) (バージョン v6.0.0 以降)。 このパッケージは、このチュートリアルの後半で使用する [Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication) クラスを定義します。
+    * [Microsoft.Toolkit.Win32.UI.SDK](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.SDK) (最新の安定バージョン)。 このパッケージでは、XAML Islands がアプリで動作できるようにする、いくつかのビルド資産と実行時資産が提供されています。
+    * [Microsoft.Toolkit.Win32.UI.XamlApplication](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.XamlApplication) (最新の安定バージョン)。 このパッケージは、このチュートリアルの後半で使用する [Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication) クラスを定義します。
     * [Microsoft.VCRTForwarders.140](https://www.nuget.org/packages/Microsoft.VCRTForwarders.140)。
 
-5. ソリューションをビルドし、正常にビルドされたことを確認します。
+5. Windows ランタイム メタデータへの参照を追加します。
+   1. **ソリューション エクスプローラー** で、プロジェクトの **[参照設定]** ノードを右クリックし、 **[参照の追加]** を選択します。
+   2. ページの下部にある **[参照]** ボタンをクリックし、SDK インストール パスの UnionMetadata フォルダーに移動します。 既定では、SDK は `C:\Program Files (x86)\Windows Kits\10\UnionMetadata` にインストールされます。 
+   3. 次に、ターゲットとする Windows バージョン (例: 10.0.18362.0) が名前に含まれるフォルダーを選択して、そのフォルダー内で `Windows.winmd` ファイルを選びます。
+   4. **[OK]** をクリックし、 **[参照の追加]** ダイアログを閉じます。
+
+6. ソリューションをビルドし、正常にビルドされたことを確認します。
 
 ## <a name="create-a-uwp-app-project"></a>UWP アプリ プロジェクトを作成する
 
-次に、**UWP (C++/WinRT)** アプリ プロジェクトをソリューションに追加し、このプロジェクトの構成にいくつかの変更を行います。 このチュートリアルの後半では、カスタム UWP XAML コントロールを実装するためのコードをこのプロジェクトに追加し、[Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication) クラスのインスタンスを定義します。 
+次に、 **UWP (C++/WinRT)** アプリ プロジェクトをソリューションに追加し、このプロジェクトの構成にいくつかの変更を行います。 このチュートリアルの後半では、カスタム UWP XAML コントロールを実装するためのコードをこのプロジェクトに追加し、[Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication) クラスのインスタンスを定義します。 
 
-1. **ソリューション エクスプローラー**で、ソリューション ノードを右クリックし、 **[追加]**  ->  **[新しいプロジェクト]** を選択します。
+1. **ソリューション エクスプローラー** で、ソリューション ノードを右クリックし、 **[追加]**  ->  **[新しいプロジェクト]** を選択します。
 
-2. ソリューションに**空のアプリ (C++/WinRT)** プロジェクトを追加します。 プロジェクトの名前を **MyUWPApp** にして、対象バージョンと最小バージョンの両方が **Windows 10 バージョン 1903** 以降に設定されていることを確認します。
+2. ソリューションに **空のアプリ (C++/WinRT)** プロジェクトを追加します。 プロジェクトの名前を **MyUWPApp** にして、対象バージョンと最小バージョンの両方が **Windows 10 バージョン 1903** 以降に設定されていることを確認します。
 
-3. **MyUWPApp** プロジェクトに、[Microsoft.Toolkit.Win32.UI.XamlApplication](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.XamlApplication) NuGet パッケージをインストールします。 このパッケージは、このチュートリアルの後半で使用する [Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication) クラスを定義します。
+3. **MyUWPApp** プロジェクトに、 [Microsoft.Toolkit.Win32.UI.XamlApplication](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.XamlApplication) NuGet パッケージをインストールします。 このパッケージは、このチュートリアルの後半で使用する [Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication) クラスを定義します。
 
     1. **MyUWPApp** プロジェクトを右クリックし、 **[NuGet パッケージの管理]** を選択します。
-    2. **[参照]** タブを選択し、[Microsoft.Toolkit.Win32.UI.XamlApplication](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.XamlApplication) パッケージを見つけて、このパッケージの 6.0.0 以降のバージョンをインストールします。
+    2. **[参照]** タブを選択し、 [Microsoft.Toolkit.Win32.UI.XamlApplication](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.XamlApplication) パッケージを見つけて、このパッケージの最新の安定バージョンをインストールします。
 
 4. **MyUWPApp** ノードを右クリックし、 **[プロパティ]** を選択します。 **[共通プロパティ]**  ->  **[C++/WinRT]** ページで、 **[詳細]** プロパティを **[通常]** に設定して、 **[適用]** をクリックします。 完了すると、プロパティ ページは次のようになります。
 
@@ -73,12 +79,12 @@ ms.locfileid: "89173726"
 
 6. **MyUWPApp** プロジェクトに、プレースホルダー実行可能ファイルを追加します。 このプレースホルダー実行可能ファイルは、Visual Studio で必要なプロジェクト ファイルが生成され、プロジェクトが正しくビルドされるために必要です。
 
-    1. **ソリューション エクスプローラー**で、**MyUWPApp** プロジェクト ノードを右クリックし、 **[追加]**  ->  **[新しい項目]** を選択します。
-    2. **[新しい項目の追加]** ダイアログで、左側のページにある **[ユーティリティ]** を選択し、 **[テキスト ファイル (.txt)]** を選択します。 名前に「**placeholder.exe**」と入力し、 **[追加]** をクリックします。
+    1. **ソリューション エクスプローラー** で、 **MyUWPApp** プロジェクト ノードを右クリックし、 **[追加]**  ->  **[新しい項目]** を選択します。
+    2. **[新しい項目の追加]** ダイアログで、左側のページにある **[ユーティリティ]** を選択し、 **[テキスト ファイル (.txt)]** を選択します。 名前に「 **placeholder.exe** 」と入力し、 **[追加]** をクリックします。
       ![テキスト ファイルを追加する](images/xaml-islands/xaml-island-cpp-3.png)
-    3. **ソリューション エクスプローラー**で、**placeholder.exe** ファイルを選択します。 **[プロパティ]** ウィンドウで、 **[コンテンツ]** プロパティが **[True]** に設定されていることを確認します。
-    4. **ソリューション エクスプローラー**で、**MyUWPApp** プロジェクトの **Package.appxmanifest** ファイルを右クリックし、 **[プログラムから開く]** を選択し、 **[XML (テキスト) エディター]** を選択して、 **[OK]** をクリックします。
-    5. **&lt;Application&gt;** 要素を見つけて、**Executable** 属性の値を `placeholder.exe` に変更します。 完了すると、 **&lt;Application&gt;** 要素は次のようになります。
+    3. **ソリューション エクスプローラー** で、 **placeholder.exe** ファイルを選択します。 **[プロパティ]** ウィンドウで、 **[コンテンツ]** プロパティが **[True]** に設定されていることを確認します。
+    4. **ソリューション エクスプローラー** で、 **MyUWPApp** プロジェクトの **Package.appxmanifest** ファイルを右クリックし、 **[プログラムから開く]** を選択し、 **[XML (テキスト) エディター]** を選択して、 **[OK]** をクリックします。
+    5. **&lt;Application&gt;** 要素を見つけて、 **Executable** 属性の値を `placeholder.exe` に変更します。 完了すると、 **&lt;Application&gt;** 要素は次のようになります。
 
         ```xml
         <Application Id="App" Executable="placeholder.exe" EntryPoint="MyUWPApp.App">
@@ -93,7 +99,7 @@ ms.locfileid: "89173726"
 
     6. **Package.appxmanifest** ファイルを保存して閉じます。
 
-7. **ソリューション エクスプローラー**で、**MyUWPApp** ノードを右クリックして、 **[プロジェクトのアンロード]** を選択します。
+7. **ソリューション エクスプローラー** で、 **MyUWPApp** ノードを右クリックして、 **[プロジェクトのアンロード]** を選択します。
 8. **MyUWPApp** ノードを右クリックして、 **[Edit MyUWPApp.vcxproj]\(MyUWPApp.vcxproj の編集\)** を選択します。
 9. `<Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />` 要素を見つけて、次の XML に置き換えます。 この XML では、要素の直前に新しいプロパティがいくつか追加されます。
 
@@ -108,13 +114,13 @@ ms.locfileid: "89173726"
     ```
 
 10. プロジェクト ファイルを保存して閉じます。
-11. **ソリューション エクスプローラー**で、**MyUWPApp** ノードを右クリックして、 **[プロジェクトの再読み込み]** を選択します。
+11. **ソリューション エクスプローラー** で、 **MyUWPApp** ノードを右クリックして、 **[プロジェクトの再読み込み]** を選択します。
 
 ## <a name="configure-the-solution"></a>ソリューションを構成する
 
 このセクションでは、両方のプロジェクトが含まれるソリューションを更新して、プロジェクトを正しくビルドするために必要なプロジェクトの依存関係とビルドのプロパティを構成します。
 
-1. **ソリューション エクスプローラー**でソリューション ノードを右クリックし、**Solution.props** という名前の新しい XML ファイルを追加します。
+1. **ソリューション エクスプローラー** でソリューション ノードを右クリックし、 **Solution.props** という名前の新しい XML ファイルを追加します。
 2. 次の XML を **Solution.props** ファイルに追加します。
 
     ```xml
@@ -132,25 +138,25 @@ ms.locfileid: "89173726"
 4. **[プロパティ マネージャー]** ウィンドウで **MyDesktopWin32App** を右クリックし、 **[既存のプロパティ シートの追加]** を選択します。 先ほど追加した **Solution.props** ファイルに移動し、 **[開く]** をクリックします。
 5. 前の手順を繰り返して、 **[プロパティ マネージャー]** ウィンドウで **MyUWPApp** プロジェクトに **Solution.props** ファイルを追加します。
 6. **[プロパティ マネージャー]** ウィンドウを閉じます。
-7. プロパティ シートの変更が正常に保存されたことを確認します。 **ソリューション エクスプローラー**で **MyDesktopWin32App** プロジェクトを右クリックし、 **[プロパティ]** を選択します。 **[構成プロパティ]**  ->  **[全般]** をクリックし、 **[出力ディレクトリ]** プロパティと **[中間ディレクトリ]** プロパティが、**Solution.props** ファイルに追加した値に設定されていることを確認します。 **MyUWPApp** プロジェクトでも同じことを確認できます。
+7. プロパティ シートの変更が正常に保存されたことを確認します。 **ソリューション エクスプローラー** で **MyDesktopWin32App** プロジェクトを右クリックし、 **[プロパティ]** を選択します。 **[構成プロパティ]**  ->  **[全般]** をクリックし、 **[出力ディレクトリ]** および **[中間ディレクトリ]** プロパティが、 **Solution.props** ファイルに追加した値に設定されていることを確認します。 **MyUWPApp** プロジェクトでも同じことを確認できます。
     ![プロジェクトのプロパティ](images/xaml-islands/xaml-island-cpp-4.png)
 
-8. **ソリューション エクスプローラー**でソリューション ノードを右クリックし、 **[プロジェクトの依存関係]** を選択します。 **[プロジェクト]** ドロップダウンで **MyDesktopWin32App** が選択されていることを確認し、 **[依存先]** の一覧で **MyUWPApp** を選択します。
+8. **ソリューション エクスプローラー** でソリューション ノードを右クリックし、 **[プロジェクトの依存関係]** を選択します。 **[プロジェクト]** ドロップダウンで **MyDesktopWin32App** が選択されていることを確認し、 **[依存先]** の一覧で **MyUWPApp** を選択します。
     ![プロジェクトの依存関係](images/xaml-islands/xaml-island-cpp-5.png)
 
 9. **[OK]** をクリックします。
 
 ## <a name="add-code-to-the-uwp-app-project"></a>UWP アプリ プロジェクトにコードを追加する
 
-これで、**MyUWPApp** プロジェクトにコードを追加し、次のタスクを実行できるようになりました。
+これで、 **MyUWPApp** プロジェクトにコードを追加し、次のタスクを実行できるようになりました。
 
-* カスタム UWP XAML コントロールを実装します。 このチュートリアルでこの後、**MyDesktopWin32App** プロジェクトでこのコントロールをホストするコードを追加します。
+* カスタム UWP XAML コントロールを実装します。 このチュートリアルでこの後、 **MyDesktopWin32App** プロジェクトでこのコントロールをホストするコードを追加します。
 * Windows Community Toolkit の [Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication) クラスから派生する型を定義します。
 
 ### <a name="define-a-custom-uwp-xaml-control"></a>カスタム UWP XAML コントロールを定義する
 
-1. **ソリューション エクスプローラー**で **MyUWPApp** を右クリックし、 **[追加]**  ->  **[新しい項目]** を選択します。 左側のペインで **[Visual C++]** ノードを選択して、 **[Blank User Control (C++/WinRT)]\(空のユーザー コントロール (C++/WinRT)\)** を選択し、**MyUserControl** という名前を付けて、 **[追加]** をクリックします。
-2. XAML エディターで、**MyUserControl.xaml** ファイルの内容を次の XAML に置き換えて、ファイルを保存します。
+1. **ソリューション エクスプローラー** で **MyUWPApp** を右クリックし、 **[追加]**  ->  **[新しい項目]** を選択します。 左側のペインで **[Visual C++]** ノードを選択して、 **[Blank User Control (C++/WinRT)]\(空のユーザー コントロール (C++/WinRT)\)** を選択し、 **MyUserControl** という名前を付けて、 **[追加]** をクリックします。
+2. XAML エディターで、 **MyUserControl.xaml** ファイルの内容を次の XAML に置き換えて、ファイルを保存します。
 
     ```xml
     <UserControl
@@ -176,16 +182,16 @@ ms.locfileid: "89173726"
 
 ### <a name="define-a-xamlapplication-class"></a>XamlApplication クラスを定義する
 
-次に、**MyUWPApp** プロジェクトの既定の **App** クラスを、Windows Community Toolkit によって提供される [Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication) クラスから派生するように変更します。 このクラスは [IXamlMetadaraProvider](/uwp/api/Windows.UI.Xaml.Markup.IXamlMetadataProvider) インターフェイスをサポートしています。これにより、アプリは実行時にアプリケーションの現在のディレクトリにある、アセンブリ内のカスタム UWP XAML コントロールのメタデータを検出して読み込むことができます。 このクラスでは、現在のスレッドの UWP XAML フレームワークも初期化されます。 このチュートリアルの後の方で、デスクトップ プロジェクトを更新して、このクラスのインスタンスを作成します。
+次に、 **MyUWPApp** プロジェクトの既定の **App** クラスを、Windows Community Toolkit によって提供される [Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication) クラスから派生するように変更します。 このクラスでは、[IXamlMetadataProvider](/uwp/api/Windows.UI.Xaml.Markup.IXamlMetadataProvider) インターフェイスがサポートされています。これにより、アプリの実行時に、アプリケーションの現在のディレクトリにある、アセンブリ内のカスタム UWP XAML コントロールのメタデータを検出して読み込むことができるようになります。 このクラスでは、現在のスレッドの UWP XAML フレームワークも初期化されます。 このチュートリアルの後の方で、デスクトップ プロジェクトを更新して、このクラスのインスタンスを作成します。
 
   > [!NOTE]
   > `XamlApplication` オブジェクトは、XAML Islands を使用する各ソリューション内の 1 つのプロジェクトだけで、定義されている必要があります。 アプリ内のすべてのカスタム UWP XAML コントロールで、同じ `XamlApplication` オブジェクトを共有します。 
 
-1. **ソリューション エクスプローラー**で、**MyUWPApp** プロジェクトの **MainPage.xaml** ファイルを右クリックします。 **[削除]** をクリックした後、 **[削除]** をクリックして、このファイルをプロジェクトから完全に削除します。
-2. **MyUWPApp** プロジェクトで、**App.xaml** ファイルを展開します。
-3. **App.xaml**、**App.cpp**、**App.h**、**App.idl** ファイルの内容を、次のコードに置き換えます。
+1. **ソリューション エクスプローラー** で、 **MyUWPApp** プロジェクトの **MainPage.xaml** ファイルを右クリックします。 **[削除]** をクリックした後、 **[削除]** をクリックして、このファイルをプロジェクトから完全に削除します。
+2. **MyUWPApp** プロジェクトで、 **App.xaml** ファイルを展開します。
+3. **App.xaml** 、 **App.cpp** 、 **App.h** 、 **App.idl** ファイルの内容を、次のコードに置き換えます。
 
-    * **App.xaml**:
+    * **App.xaml** :
 
         ```xml
         <Toolkit:XamlApplication
@@ -197,7 +203,7 @@ ms.locfileid: "89173726"
         </Toolkit:XamlApplication>
         ```
 
-    * **App.idl**:
+    * **App.idl** :
 
         ```IDL
         namespace MyUWPApp
@@ -210,7 +216,7 @@ ms.locfileid: "89173726"
         }
         ```
 
-    * **App.h**:
+    * **App.h** :
 
         ```cpp
         #pragma once
@@ -233,7 +239,7 @@ ms.locfileid: "89173726"
         }
         ```
 
-    * **App.cpp**:
+    * **App.cpp** :
 
         ```cpp
         #include "pch.h"
@@ -257,9 +263,9 @@ ms.locfileid: "89173726"
         ```
 
         > [!NOTE]
-        > プロジェクト プロパティの **[共通プロパティ]**  ->  **[C++/WinRT]** ページで **[最適化済み]** プロパティが **[はい]** に設定されている場合は、`#include "App.g.cpp"` ステートメントが必要です、 これは、新しい C++/WinRT プロジェクトの既定値です。 **[最適化済み]** プロパティの効果の詳細については、[こちらのセクション](/windows/uwp/cpp-and-winrt-apis/author-apis#opt-in-to-uniform-construction-and-direct-implementation-access)を参照してください。
+        > プロジェクト プロパティの **[共通プロパティ]**  ->  **[C++/WinRT]** ページで **[最適化済み]** プロパティが **[はい]** に設定されている場合は、`#include "App.g.cpp"` ステートメントが必要です、 これは、新しい C++/WinRT プロジェクトの既定値です。 **[最適化済み]** プロパティの効果の詳細については、 [こちらのセクション](/windows/uwp/cpp-and-winrt-apis/author-apis#opt-in-to-uniform-construction-and-direct-implementation-access)を参照してください。
 
-4. **app.base.h** という名前の新しいヘッダー ファイルを、**MyUWPApp** プロジェクトに追加します。
+4. **app.base.h** という名前の新しいヘッダー ファイルを、 **MyUWPApp** プロジェクトに追加します。
 5. 次のコードを **app.base.h** ファイルに追加し、ファイルを保存して閉じます。
 
     ```cpp
@@ -284,12 +290,12 @@ ms.locfileid: "89173726"
             }
         private:
             bool _contentLoaded{ false };
-            std::shared_ptr<XamlMetaDataProvider> _appProvider;
-            std::shared_ptr<XamlMetaDataProvider> AppProvider()
+            winrt::com_ptr<XamlMetaDataProvider> _appProvider;
+            winrt::com_ptr<XamlMetaDataProvider> AppProvider()
             {
                 if (!_appProvider)
                 {
-                    _appProvider = std::make_shared<XamlMetaDataProvider>();
+                    _appProvider = winrt::make_self<XamlMetaDataProvider>();
                 }
                 return _appProvider;
             }
@@ -303,15 +309,15 @@ ms.locfileid: "89173726"
 
 ## <a name="configure-the-desktop-project-to-consume-custom-control-types"></a>カスタム コントロール型を使用するようにデスクトップ プロジェクトを構成する
 
-**MyDesktopWin32App** アプリの XAML Island でカスタム UWP XAML コントロールをホストできるようにするには、先に、**MyUWPApp** プロジェクトのカスタム コントロール型を使用するようにアプリを構成する必要があります。 これを行うには 2 つの方法があり、どちらかのオプションを選択して、このチュートリアルを完了できます。
+**MyDesktopWin32App** アプリの XAML Island でカスタム UWP XAML コントロールをホストできるようにするには、先に、 **MyUWPApp** プロジェクトのカスタム コントロール型を使用するようにアプリを構成する必要があります。 これを行うには 2 つの方法があり、どちらかのオプションを選択して、このチュートリアルを完了できます。
 
 ### <a name="option-1-package-the-app-using-msix"></a>オプション 1:MSIX を使用してアプリをパッケージ化する
 
 配置用にアプリを [MSIX パッケージ](/windows/msix)にパッケージ化できます。 MSIX は、Windows 向けの最新のアプリ パッケージ化テクノロジであり、MSI、.appx、App-V、ClickOnce インストールの各テクノロジの組み合わせが基になっています。
 
-1. ソリューションに新しい [Windows アプリケーション パッケージ プロジェクト](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net)を追加します。 プロジェクトを作成するときに、名前を **MyDesktopWin32Project** にして、 **[ターゲット バージョン]** と **[最小バージョン]** の両方に対して、**Windows 10 バージョン 1903 (10.0、ビルド 18362)** を選択します。
+1. ソリューションに新しい [Windows アプリケーション パッケージ プロジェクト](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net)を追加します。 プロジェクトを作成するときに、名前を **MyDesktopWin32Project** にして、 **[ターゲット バージョン]** と **[最小バージョン]** の両方に対して、 **Windows 10 バージョン 1903 (10.0、ビルド 18362)** を選択します。
 
-2. パッケージ プロジェクトで、 **[アプリケーション]** ノードを右クリックして **[参照の追加]** を選択します。 プロジェクトの一覧で、**MyDesktopWin32App** プロジェクトの横のチェック ボックスをオンにして、 **[OK]** をクリックします。
+2. パッケージ プロジェクトで、 **[アプリケーション]** ノードを右クリックして **[参照の追加]** を選択します。 プロジェクトの一覧で、 **MyDesktopWin32App** プロジェクトの横のチェック ボックスをオンにして、 **[OK]** をクリックします。
     ![プロジェクトを参照する](images/xaml-islands/xaml-island-cpp-6.png)
 
 > [!NOTE]
@@ -323,8 +329,8 @@ ms.locfileid: "89173726"
 
 1. **MyDesktopWin32App** プロジェクトを右クリックし、 **[追加]**  ->  **[新しい項目]** を選択します。 
 2. **[新しい項目の追加]** ダイアログで、左側のペインの **[Web]** をクリックし、 **[XML ファイル (.xml)]** を選択します。 
-3. 新しいファイルに「**app.manifest**」という名前を指定し、 **[追加]** をクリックします。
-4. 新しいファイルの内容を次の XML に置き換えます。 この XML では、**MyUWPApp** プロジェクトにカスタム コントロール型が登録されます。
+3. 新しいファイルに「 **app.manifest** 」という名前を指定し、 **[追加]** をクリックします。
+4. 新しいファイルの内容を次の XML に置き換えます。 この XML では、 **MyUWPApp** プロジェクトにカスタム コントロール型が登録されます。
 
     ```xml
     <?xml version="1.0" encoding="utf-8"?>
@@ -351,9 +357,9 @@ ms.locfileid: "89173726"
 
 ## <a name="configure-additional-desktop-project-properties"></a>デスクトップ プロジェクトの追加のプロパティを構成する
 
-次に、**MyDesktopWin32App** プロジェクトを更新して、追加のインクルード ディレクトリのマクロを定義し、追加のプロパティを構成します。
+次に、 **MyDesktopWin32App** プロジェクトを更新して、追加のインクルード ディレクトリのマクロを定義し、追加のプロパティを構成します。
 
-1. **ソリューション エクスプローラー**で **MyDesktopWin32App** プロジェクトを右クリックし、 **[プロジェクトのアンロード]** を選択します。
+1. **ソリューション エクスプローラー** で **MyDesktopWin32App** プロジェクトを右クリックし、 **[プロジェクトのアンロード]** を選択します。
 
 2. **MyDesktopWin32App (アンロード済み)** を右クリックし、 **[MyDesktopWin32App.vcxproj の編集]** を選択します。
 
@@ -373,19 +379,17 @@ ms.locfileid: "89173726"
       <!-- End Section-->
     ```
 
-4. **ソリューション エクスプローラー**で、**MyDesktopWin32App (アンロード済み)** を右クリックして、 **[プロジェクトの再読み込み]** を選択します。
+4. **ソリューション エクスプローラー** で、 **MyDesktopWin32App (アンロード済み)** を右クリックして、 **[プロジェクトの再読み込み]** を選択します。
 
-5. **MyDesktopWin32App** を右クリックし、 **[プロパティ]** を選択して、左側のペインで **[C/C++]** ノードをクリックします。 **[追加のインクルード ディレクトリ]** のマクロが、前のステップで行ったプロジェクト ファイルの変更で定義されていることを確認します。
+5. **MyDesktopWin32App** プロジェクトを右クリックして **[プロパティ]** を選択し、左側ペインで **[マニフェスト ツール]**  ->  **[入力と出力]** を展開します。 **[DPI 認識]** プロパティを **[モニターごとの高い DPI 認識]** に設定します。 このプロパティを設定しなかった場合、特定の高 DPI シナリオでマニフェスト構成エラーが発生することがあります。
 
-    ![C/C++ プロジェクトの設定](images/xaml-islands/xaml-island-cpp-7.png)
+    ![C/C++ プロジェクトの設定のスクリーンショット。](images/xaml-islands/xaml-island-cpp-8.png)
 
-6. **[プロパティ ページ]** ダイアログで、 **[マニフェスト ツール]**  ->  **[入出力]** を展開します。 **[DPI 認識]** プロパティを **[モニターごとの高い DPI 認識]** に設定します。 このプロパティを設定しなかった場合、特定の高 DPI シナリオでマニフェスト構成エラーが発生することがあります。
-
-    ![C/C++ プロジェクトの設定](images/xaml-islands/xaml-island-cpp-8.png)
+6. **[OK]** をクリックして、 **[プロパティ ページ]** ダイアログを閉じます。
 
 ## <a name="host-the-custom-uwp-xaml-control-in-the-desktop-project"></a>デスクトップ プロジェクトでカスタム UWP XAML コントロールをホストする
 
-最後に、**MyUWPApp** プロジェクトで前に定義したカスタム UWP XAML コントロールをホストするコードを、**MyDesktopWin32App** プロジェクトに追加します。
+最後に、 **MyUWPApp** プロジェクトで前に定義したカスタム UWP XAML コントロールをホストするコードを、 **MyDesktopWin32App** プロジェクトに追加します。
 
 1. **MyDesktopWin32App** プロジェクトで **framework.h** ファイルを開き、次のコード行をコメントアウトします。 終わったらファイルを保存します。
 
@@ -512,16 +516,19 @@ ms.locfileid: "89173726"
 9. ファイルを保存します。
 10. ソリューションをビルドし、正常にビルドされたことを確認します。
 
-## <a name="add-a-control-from-the-winui-library-to-the-custom-control"></a>WinUI ライブラリのコントロールをカスタム コントロールに追加する
+## <a name="add-a-control-from-the-winui-2x-library-to-the-custom-control"></a>WinUI 2.x ライブラリのコントロールをカスタム コントロールに追加する
 
-従来、UWP コントロールは Windows 10 OS の一部としてリリースされ、開発者は Windows SDK を通じてそれを使用できました。 [WinUI ライブラリ](/uwp/toolkits/winui/) はそれに代わる方法であり、Windows SDK の UWP コントロールの更新バージョンが、Windows SDK のリリースに関連付けられていない NuGet パッケージで配布されます。 また、このライブラリには、Windows SDK および既定の UWP プラットフォームの一部ではない新しいコントロールも含まれています。 詳しくは、[WinUI ライブラリのロードマップ](https://github.com/microsoft/microsoft-ui-xaml/blob/master/docs/roadmap.md)をご覧ください。
+従来、WinRT XAML コントロールは Windows 10 OS の一部としてリリースされ、開発者は Windows SDK を通じてそれを使用できました。 [WinUI ライブラリ](/uwp/toolkits/winui/) はそれに代わる方法であり、Windows SDK の WinRT XAML コントロールの更新バージョンが、Windows SDK のリリースに関連付けられていない NuGet パッケージで配布されます。 また、このライブラリには、Windows SDK および既定の UWP プラットフォームの一部ではない新しいコントロールも含まれています。 詳しくは、[WinUI ライブラリのロードマップ](https://github.com/microsoft/microsoft-ui-xaml/blob/master/docs/roadmap.md)をご覧ください。
 
-このセクションでは、WinUI ライブラリからユーザー コントロールに UWP コントロールを追加する方法について説明します。
+このセクションでは、WinUI 2.x ライブラリからユーザー コントロールに WinRT XAML コントロールを追加する方法について説明します。
+
+> [!NOTE]
+> 現在、XAML Islands では、WinUI 2.x ライブラリのコントロールのホストのみがサポートされています。 WinUI 3 ライブラリのコントロールのホストは、今後のリリースでサポートされる予定です。
 
 1. **MyUWPApp** プロジェクトで、最新のプレリリースまたはリリース バージョンの [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml) NuGet パッケージをインストールします。
 
-    > [!NOTE]
-    > お使いのデスクトップ アプリが [MSIX パッケージ](/windows/msix)にパッケージ化されている場合は、[Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml) NugGet パッケージのプレリリースまたはリリース バージョンのいずれかを使用できます。 お使いのデスクトップ アプリが MSIX を使用してパッケージ化されていない場合は、プレリリース バージョンの [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml) NuGet パッケージをインストールする必要があります。
+    * このチュートリアルの前の手順で [MSIX を使用する MyDesktopWin32App プロジェクトのパッケージ化](#option-1-package-the-app-using-msix)を選択した場合、[Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml) NugGet パッケージのプレリリース バージョンまたはリリース バージョンのいずれかをインストールできます。 パッケージ化されたデスクトップ アプリは、このパッケージのプレリリース バージョンまたはリリース バージョンのいずれかを使用できます。
+    * **MyDesktopWin32App** プロジェクトのパッケージ化を選択しなかった場合、 [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml) NuGet パッケージのプレリリース バージョンをインストールする必要があります。 パッケージ化されていないデスクトップ アプリは、このパッケージのプレリリース バージョンを使用する必要があります。
 
 2. このプロジェクトの pch.h ファイルで、次の `#include` ステートメントを追加し、変更を保存します。 これらのステートメントは、一連の必要なプロジェクション ヘッダーを WinUI ライブラリからプロジェクトに取り込みます。 この手順は、WinUI ライブラリを使用する任意の C++/WinRT プロジェクトに必要です。 詳しくは、[こちらの記事](/uwp/toolkits/winui/getting-started#additional-steps-for-a-cwinrt-project)をご覧ください。
 
@@ -561,7 +568,7 @@ ms.locfileid: "89173726"
     xmlns:winui="using:Microsoft.UI.Xaml.Controls"
     ```
 
-5. 同じファイルで、`<StackPanel>` の子として `<winui:RatingControl />` 要素を追加し、変更を保存します。 この要素により、WinUI ライブラリの [RatingControl](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.ratingcontrol ) クラスのインスタンスが追加されます。 この要素を追加した後の `<StackPanel>` は、次のようになります。
+5. 同じファイルで、`<StackPanel>` の子として `<winui:RatingControl />` 要素を追加し、変更を保存します。 この要素により、WinUI ライブラリの [RatingControl](/uwp/api/microsoft.ui.xaml.controls.ratingcontrol) クラスのインスタンスが追加されます。 この要素を追加した後の `<StackPanel>` は、次のようになります。
 
     ```xml
     <StackPanel HorizontalAlignment="Center" Spacing="10" 
@@ -594,6 +601,6 @@ XAML Islands をホストする多くのデスクトップ アプリケーショ
 
 * [デスクトップ アプリで UWP XAML コントロールをホストする (XAML Islands)](xaml-islands.md)
 * [C++ Win32 アプリでの UWP XAML ホスティング API の使用](using-the-xaml-hosting-api.md)
-* [C++ Win32 アプリで標準 UWP コントロールをホストする](host-standard-control-with-xaml-islands-cpp.md)
+* [C++ Win32 アプリで標準 WinRT XAML コントロールをホストする](host-standard-control-with-xaml-islands-cpp.md)
 * [C++ Win32 アプリでの XAML Islands の高度なシナリオ](advanced-scenarios-xaml-islands-cpp.md)
 * [XAML Islands コード サンプル](https://github.com/microsoft/Xaml-Islands-Samples)

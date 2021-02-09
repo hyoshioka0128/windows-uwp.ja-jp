@@ -1,17 +1,17 @@
 ---
-Description: アプリの申請の [組織のライセンス] セクションでは、ビジネス向け Microsoft ストアと教育機関向け Microsoft ストアでアプリでボリューム購入を提供するかどうかと、その提供方法を指定できます。
+description: アプリの申請の [組織のライセンス] セクションでは、ビジネス向け Microsoft ストアと教育機関向け Microsoft ストアでアプリでボリューム購入を提供するかどうかと、その提供方法を指定できます。
 title: 組織のライセンス オプション
 ms.assetid: 1EB139B0-67E7-4F66-AAEF-491B1E52E96F
 ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, ビジネス向け Store, 教育機関向け Store, 組織, ボリューム ライセンス, 企業, 教育機関 Store, ビジネス Store, ボリューム購入, 一括
 localizationpriority: high
-ms.openlocfilehash: f572a09c488cfff391fead603612148b6a85bc02
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 754e2efcfe865532a0d08a20337a3026bd384432
+ms.sourcegitcommit: afc4ff2c89f148d32073ab1cc42063ccdc573a8c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89174746"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98104593"
 ---
 # <a name="organizational-licensing-options"></a>組織のライセンス オプション
 
@@ -46,7 +46,7 @@ ms.locfileid: "89174746"
 
 オフラインのライセンスに対応したアプリを多くの組織が必要としています。 たとえば、一部の組織では、インターネットに接続することがまったくないか、ほとんどないデバイスにアプリを展開する必要があります。 このようなユーザーがアプリを利用できるようにする場合は、 **[組織に対して、組織で管理される (オフライン) ライセンスと配布を許可する]** というチェック ボックスをオンにします。
 
-既定では、このチェック ボックスは**オフ**です。 検証済みの組織が組織で管理する (オフライン) ライセンスを使用してインストールできるように、Microsoft ストアからアプリを提供する場合は、このチェック ボックスをオンにする必要があります。 この方法で有料アプリをエンド ユーザーにインストールするためには、組織は追加の検証を受ける必要があります。
+既定では、このチェック ボックスは **オフ** です。 検証済みの組織が組織で管理する (オフライン) ライセンスを使用してインストールできるように、Microsoft ストアからアプリを提供する場合は、このチェック ボックスをオンにする必要があります。 この方法で有料アプリをエンド ユーザーにインストールするためには、組織は追加の検証を受ける必要があります。
 
 オフラインのライセンスでは、組織はボリューム ベースでアプリを取得し、各デバイスがストアのライセンス システムに問い合わせる必要なくアプリをインストールすることができます。 組織はライセンスと共にアプリのパッケージをダウンロードすることができ、このライセンスでは特定のライセンスが使用されているときにストアに通知することなく、(独自の管理ツールを使用するか、OS イメージにアプリを事前に読み込むことによって) アプリをデバイスにインストールすることができます。 このシナリオを有効にすることで展開の柔軟性が大幅に増し、ユーザーにとってのアプリの魅力が大きく高まる場合があります。
 
@@ -59,7 +59,7 @@ ms.locfileid: "89174746"
 現在、特定の市場の開発者アカウントでは、有料アプリをビジネス向け Microsoft ストアでボリューム取得用に提供することができます。 
 
 > [!NOTE]
-> 一部の市場では、ビジネス向け Microsoft Store や教育機関向け Microsoft Store に表示されるアプリの価格が、Microsoft Store の同じ価格帯で小売顧客に表示される価格と異なる場合があります。 組織による購入の収益の支払いは、コンシューマーによるアプリの購入の場合と同様に機能します。 詳しくは、「[支払いの受け取り](getting-paid-apps.md)」と「[アプリ開発者契約](/legal/windows/agreements/app-developer-agreement)」をご覧ください。 ビジネス向け Microsoft ストアと教育機関向け Microsoft ストアを利用できる市場の一覧については、「[ビジネス向け Microsoft ストアと教育機関向け Microsoft ストアの概要](/windows/manage/windows-store-for-business-overview#supported-markets)」をご覧ください。
+> 一部の市場では、ビジネス向け Microsoft Store や教育機関向け Microsoft Store に表示されるアプリの価格が、Microsoft Store の同じ価格帯で小売顧客に表示される価格と異なる場合があります。 組織による購入の収益の支払いは、コンシューマーによるアプリの購入の場合と同様に機能します。 詳しくは、「[支払いの受け取り](/partner-center/marketplace-get-paid)」と「[アプリ開発者契約](/legal/windows/agreements/app-developer-agreement)」をご覧ください。 ビジネス向け Microsoft ストアと教育機関向け Microsoft ストアを利用できる市場の一覧については、「[ビジネス向け Microsoft ストアと教育機関向け Microsoft ストアの概要](/windows/manage/windows-store-for-business-overview#supported-markets)」をご覧ください。
 
 お住まいの国または地域が以下の一覧にない場合は、現在、有料アプリをビジネス向け Microsoft ストアと教育機関向け Microsoft ストアで提供することはできません。 この場合、有料アプリ用に選択した組織のライセンスの設定は後で適用されることがあります。Microsoft ストアでは、他の開発者アカウント市場からの申請に対するサポートを将来追加することがあるためです。
 

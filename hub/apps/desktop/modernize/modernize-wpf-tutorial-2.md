@@ -1,5 +1,5 @@
 ---
-description: このチュートリアルでは、UWP XAML ユーザー インターフェイスを追加し、MSIX パッケージを作成し、その他の最新のコンポーネントをお使いの WPF アプリに組み込む方法について説明します。
+description: このチュートリアルでは、Contoso Expenses アプリにデジタル署名のサポートを追加する方法について説明します。
 title: XAML Islands を使用した UWP InkCanvas コントロールの追加
 ms.topic: article
 ms.date: 01/24/2020
@@ -8,12 +8,12 @@ author: mcleanbyron
 keywords: windows 10、uwp、windows フォーム、wpf、xaml islands
 ms.localizationpriority: medium
 ms.custom: RS5, 19H1
-ms.openlocfilehash: 0b5250f1e01aece4f73d83dc7327f193a58f53cf
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 34a92d9a1bd9101d059e5bd9b3cf18eabc3d619b
+ms.sourcegitcommit: 0c4bbaf1c119a84002748cdcf02e1449835559c3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89161496"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92133035"
 ---
 # <a name="part-2-add-a-uwp-inkcanvas-control-using-xaml-islands"></a>パート 2: XAML Islands を使用した UWP InkCanvas コントロールの追加
 
@@ -147,7 +147,7 @@ ms.locfileid: "89161496"
 
 13. マウスで署名スペースに何かを描画してみましょう。 今回は画面にインクが表示されます。
 
-    ![署名](images/wpf-modernize-tutorial/Signature.png)
+    ![署名スペースが表示されている [Expense Detail] のスクリーンショット。](images/wpf-modernize-tutorial/Signature.png)
 
 ## <a name="next-steps"></a>次の手順
 

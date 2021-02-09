@@ -6,17 +6,17 @@ ms.date: 02/18/2020
 ms.topic: article
 keywords: Windows 10, UWP, 広告, 宣伝, バナー, 広告コントロール, スポット広告
 ms.localizationpriority: medium
-ms.openlocfilehash: 4e9a67bb26d47d0bd9cc26c56df90efac5e2daa5
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 3b4c49c08deb793614bacb0e30136dd4bd8cdfb3
+ms.sourcegitcommit: afc4ff2c89f148d32073ab1cc42063ccdc573a8c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89164836"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98104653"
 ---
 # <a name="display-ads-in-your-app-with-the-microsoft-advertising-sdk"></a>Microsoft Advertising SDK を使用したアプリでの広告の表示
 
 >[!WARNING]
-> 2020年6月1日から、Microsoft Ad 収益化 platform for Windows UWP アプリがシャットダウンされます。 [詳細を表示](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/db8d44cb-1381-47f7-94d3-c6ded3fea36f/microsoft-ad-monetization-platform-shutting-down-june-1st?forum=aiamgr)
+> 2020年6月1日から、Microsoft Ad 収益化 platform for Windows UWP アプリがシャットダウンされます。 [詳細情報](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/db8d44cb-1381-47f7-94d3-c6ded3fea36f/microsoft-ad-monetization-platform-shutting-down-june-1st?forum=aiamgr)
 
 Microsoft Advertising SDK を使用して、Windows 10 用ユニバーサル Windows プラットフォーム (UWP) アプリに広告を配置することで、収益機会を増やせます。 Microsoft の ad 収益化プラットフォームでは、アプリにシームレスに統合できるさまざまな ad 形式が提供されており、多くの一般的な ad ネットワークでの仲介をサポートしています。 マイクロソフトのプラットフォームは、OpenRTB、VAST 2.x、MRAID 2、および VPAID 3 の各標準に準拠しており、MOAT および IAS と互換性があります。 
 
@@ -71,7 +71,7 @@ Microsoft Advertising SDK では、アプリで使用できるさまざまな種
 
 手順とコード例については、[この記事](adcontrol-in-xaml-and--net.md)をご覧ください。
 
-![addreferences](images/banner-ad.png)
+![タブレットでバナー広告を表す画像。](images/banner-ad.png)
 
 ### <a name="interstitial-video-and-interstitial-banner-ads"></a>スポット ビデオ広告とスポット バナー広告
 
@@ -79,7 +79,7 @@ Microsoft Advertising SDK では、アプリで使用できるさまざまな種
 
 手順とコード例については、[この記事](interstitial-ads.md)をご覧ください。
 
-![addreferences](images/interstitial-ad.png)
+![タブレットで再生されているゲームのスポット提供情報を表す画像。](images/interstitial-ad.png)
 
 ### <a name="native-ads"></a>ネイティブ広告
 
@@ -87,7 +87,7 @@ Microsoft Advertising SDK では、アプリで使用できるさまざまな種
 
 手順とコード例については、[この記事](native-ads.md)をご覧ください。
 
-![addreferences](images/native-ad.png)
+![さまざまなデバイスで表示できるネイティブ提供情報を表すイメージ。](images/native-ad.png)
 
 <span id="ad-mediation"/>
 
@@ -103,7 +103,7 @@ UWP アプリで広告仲介の使用を開始するには、広告ユニット�
 
 広告を使用したアプリの開発が完了したら、 [更新されたアプリ](../publish/app-submissions.md) をパートナーセンターで送信して、ストアで使用できるようにすることができます。 広告を表示するアプリは、[Microsoft Store ポリシーの第 10.10 項](/legal/windows/agreements/store-policies#1010-advertising-conduct-and-content)と、[アプリ開発者契約の追加条項 E](/legal/windows/agreements/app-developer-agreement) で指定されたその他の要件を満たしている必要があります。
 
-アプリが公開され、ストアで使用できるようになったら、パートナーセンターで [広告パフォーマンスレポート](../publish/advertising-performance-report.md) を確認し、引き続き仲介の設定を変更して、広告のパフォーマンスを最適化することができます。 広告の収益は[入金状況](../publish/payout-summary.md)に表示されます。
+アプリが公開され、ストアで使用できるようになったら、パートナーセンターで [広告パフォーマンスレポート](../publish/advertising-performance-report.md) を確認し、引き続き仲介の設定を変更して、広告のパフォーマンスを最適化することができます。 広告の収益は[入金状況](/partner-center/payout-statement)に表示されます。
 
 <span id="additional-help" />
 

@@ -1,10 +1,10 @@
 ---
-Description: ユーザーに操作の実行を指示する前に、ヒントを使ってコントロールに関する詳しい情報を表示します。
+description: ユーザーに操作の実行を指示する前に、ヒントを使ってコントロールに関する詳しい情報を表示します。
 title: ツール ヒント
 ms.assetid: A21BB12B-301E-40C9-B84B-C055FD43D307
 label: Tooltips
 template: detail.hbs
-ms.date: 05/19/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: yulikl
@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: stpete
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 1635f1aa808355c246be96706400e384da8a9777
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 0c9d2f26acfe431eb1be895f1021d544f78b52fb
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89175566"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93030805"
 ---
 # <a name="tooltips"></a>ツール ヒント
 
@@ -27,11 +27,19 @@ ms.locfileid: "89175566"
 
 **Windows UI ライブラリを入手する**
 
-|  |  |
-| - | - |
-| ![WinUI ロゴ](images/winui-logo-64x64.png) | Windows UI ライブラリ 2.2 以降には、丸めた角を使用するこのコントロールの新しいテンプレートが含まれます。 詳しくは、「[角の半径](../style/rounded-corner.md)」をご覧ください。 WinUI は、Windows アプリの新しいコントロールと UI 機能が含まれる NuGet パッケージです。 インストール手順などについて詳しくは、「[Windows UI Library (Windows UI ライブラリ)](/uwp/toolkits/winui/)」をご覧ください。 |
+:::row:::
+   :::column:::
+      ![WinUI ロゴ](images/winui-logo-64x64.png)
+   :::column-end:::
+   :::column span="3":::
+      Windows UI ライブラリ 2.2 以降には、丸めた角を使用するこのコントロールの新しいテンプレートが含まれます。 詳しくは、「[角の半径](../style/rounded-corner.md)」をご覧ください。 WinUI は、Windows アプリの新しいコントロールと UI 機能が含まれる NuGet パッケージです。 インストール手順などについて詳しくは、「[Windows UI Library (Windows UI ライブラリ)](/uwp/toolkits/winui/)」をご覧ください。
+   :::column-end:::
+   :::column:::
 
-> **プラットフォーム API**: [ToolTip クラス](/uwp/api/Windows.UI.Xaml.Controls.ToolTip)、[ToolTipService クラス](/uwp/api/windows.ui.xaml.controls.tooltipservice)
+   :::column-end:::
+:::row-end:::
+
+> **プラットフォーム API** : [ToolTip クラス](/uwp/api/Windows.UI.Xaml.Controls.ToolTip)、 [ToolTipService クラス](/uwp/api/windows.ui.xaml.controls.tooltipservice)
 
 ## <a name="is-this-the-right-control"></a>これは適切なコントロールですか?
 
@@ -84,7 +92,7 @@ Windows マップ アプリのヒント。
 
 [ToolTip](/uwp/api/Windows.UI.Xaml.Controls.ToolTip) は、その所有者である別の UI 要素に割り当てる必要があります。 [ToolTipService](/uwp/api/windows.ui.xaml.controls.tooltipservice) クラスは静的メソッドを提供し、ToolTip を表示します。
 
-XAML では、**ToolTipService.Tooltip** 添付プロパティを使用して ToolTip を所有者に割り当てます。
+XAML では、 **ToolTipService.Tooltip** 添付プロパティを使用して ToolTip を所有者に割り当てます。
 
 ```xaml
 <Button Content="Submit" ToolTipService.ToolTip="Click to submit"/>
@@ -118,7 +126,7 @@ ToolTipService.SetToolTip(submitButton, toolTip);
 
 既定では、ToolTip はポインターの上部に中央揃えで表示されます。 配置はアプリ ウィンドウによって制約されていないため、ToolTip が部分的に表示されたり、完全にアプリ ウィンドウの境界の外部に表示されたりすることがあります。
 
-広範囲の調整には、[Placement](/uwp/api/windows.ui.xaml.controls.tooltip.placement) プロパティまたは **ToolTipService.Placement** 添付プロパティを使用して、ToolTip をポインターの上、下、左、右のいずれに表示するかを指定します。 [VerticalOffset](/uwp/api/windows.ui.xaml.controls.tooltip.verticaloffset) プロパティまたは [HorizontalOffset](/uwp/api/windows.ui.xaml.controls.tooltip.horizontaloffset) プロパティを設定して、ポインターと ToolTip 間の距離を変更することができます。 2 つのオフセット値の 1 つだけが、最終的な位置に影響します。Placement が Top または Bottom の場合は VerticalOffset、Placement が Left または Right の場合は HorizontalOffset です。
+広範囲の調整には、 [Placement](/uwp/api/windows.ui.xaml.controls.tooltip.placement) プロパティまたは **ToolTipService.Placement** 添付プロパティを使用して、ToolTip をポインターの上、下、左、右のいずれに表示するかを指定します。 [VerticalOffset](/uwp/api/windows.ui.xaml.controls.tooltip.verticaloffset) プロパティまたは [HorizontalOffset](/uwp/api/windows.ui.xaml.controls.tooltip.horizontaloffset) プロパティを設定して、ポインターと ToolTip 間の距離を変更することができます。 2 つのオフセット値の 1 つだけが、最終的な位置に影響します。Placement が Top または Bottom の場合は VerticalOffset、Placement が Left または Right の場合は HorizontalOffset です。
 
 ```xaml
 <!-- An Image with an offset ToolTip. -->

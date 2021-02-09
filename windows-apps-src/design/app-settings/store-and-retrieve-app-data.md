@@ -1,5 +1,5 @@
 ---
-Description: ローカル アプリ データ、ローミング アプリ データ、一時アプリ データの保存方法と取得方法について説明します。
+description: ローカル アプリ データ、ローミング アプリ データ、一時アプリ データの保存方法と取得方法について説明します。
 title: 設定と他のアプリ データを保存して取得する
 ms.assetid: 41676A02-325A-455E-8565-C9EC0BC3A8FE
 label: App settings and data
@@ -8,16 +8,16 @@ ms.date: 11/14/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 642f49927a113a79e50dad52c1a73d32a1571fcb
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 9f00a056085b6b1f4315a19d223c21c7a4cd6638
+ms.sourcegitcommit: d0eef123b167dc63f482a9f4432a237c1c6212db
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173946"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99077240"
 ---
 # <a name="store-and-retrieve-settings-and-other-app-data"></a>設定と他のアプリ データを保存して取得する
 
-*アプリ データ*は、特定のアプリによって作成および管理される変更可能なデータです。 アプリ データには、ランタイム状態、アプリ設定、ユーザー設定、参照コンテンツ (たとえば、辞書アプリの辞書定義)、その他の設定が含まれます。 アプリ データは*ユーザー データ*とは異なり、アプリを使用しているときに、ユーザーが作成、管理するデータです。 ユーザー データには、ドキュメント ファイル、メディア ファイル、メール トランスクリプト、通信トランスクリプト、ユーザーが作成したコンテンツを保持するデータベース レコードなどがあります。 ユーザー データは複数のアプリで有効な場合があります。 多くの場合、ユーザー データは、ユーザーがアプリ自体とは無関係にエンティティとして操作または転送するデータ (ドキュメントなど) です。
+*アプリ データ* は、特定のアプリによって作成および管理される変更可能なデータです。 アプリ データには、ランタイム状態、アプリ設定、ユーザー設定、参照コンテンツ (たとえば、辞書アプリの辞書定義)、その他の設定が含まれます。 アプリ データは *ユーザー データ* とは異なり、アプリを使用しているときに、ユーザーが作成、管理するデータです。 ユーザー データには、ドキュメント ファイル、メディア ファイル、メール トランスクリプト、通信トランスクリプト、ユーザーが作成したコンテンツを保持するデータベース レコードなどがあります。 ユーザー データは複数のアプリで有効な場合があります。 多くの場合、ユーザー データは、ユーザーがアプリ自体とは無関係にエンティティとして操作または転送するデータ (ドキュメントなど) です。
 
 **アプリ データに関する重要な注意事項:** アプリ データの有効期間はアプリの有効期間に依存します。 アプリが削除されると、すべてのアプリ データが失われます。 ユーザー データや、ユーザーにとって欠かすことができない重要なデータの保存には、アプリ データを使用しないでください。 そのような情報の保存には、ユーザーのライブラリや Microsoft OneDrive を使用することをお勧めします。 アプリ データは、アプリ固有のユーザー設定、設定、お気に入りを保存するのに適しています。
 
@@ -152,6 +152,10 @@ async void ReadTimestamp()
 
 ## <a name="roaming-data"></a>ローミング データ
 
+> [!WARNING]
+> Windows 10 バージョン 1909 の時点では、今後の更新で Package State Roaming (PSR) が削除されることが[発表](/windows/deployment/planning/windows-10-deprecated-features)されました。 Microsoft 以外の開発者は、PSR を使用してデバイス上のローミング データにアクセスできます。これにより、UWP アプリケーションの開発者は、Windows にデータを書き込んで、そのユーザーの Windows の他のインスタンス化に同期することができます。
+> 
+>PSR の代替として推奨されるのは、[Azure App Service](/azure/app-service/) です。 Azure App Service は、広くサポートされており、ドキュメントが豊富で、信頼性が高く、iOS、Android、Web などのクロスプラットフォームやクロスエコシステムのシナリオに対応しています。
 
 アプリでローミング データを使用すると、複数のデバイス間でアプリ データを簡単に同期することができます。 アプリを複数のデバイス上にインストールすると、OS によってアプリ データの同期が維持されるため、2 つ目のデバイス上でユーザーが行うアプリのセットアップ作業が軽減されます。 またローミングを使うと、異なるデバイス上でも、一覧の作成などの作業を中断したときの状態から再開することができます。 ローミング データが更新されると、OS によってクラウドにレプリケートされ、アプリがインストールされている別のデバイスに同期されます。
 
@@ -160,6 +164,8 @@ async void ReadTimestamp()
 アプリのローミング データは、一定の時間間隔内にユーザーがいずれかのデバイスからアクセスしている限り、クラウドに保持されます。 この時間間隔内にアプリが実行されないと、そのローミング データはクラウドから削除されます。 ユーザーがアプリをアンインストールしても、そのローミング データがクラウドから自動的に削除されることはなく、保持されます。 時間間隔内にユーザーがアプリを再インストールすると、ローミング データがクラウドから同期されます。
 
 ### <a name="roaming-data-dos-and-donts"></a>データのローミングの推奨事項と非推奨事項
+
+> [データのローミング](#roaming-data)に関する重要な注意事項を参照してください。
 
 - ユーザーの基本設定やカスタマイズ、リンク、小さなデータ ファイルにローミングを使います。 たとえば、ローミングを使って、ユーザーの背景色の基本設定をすべてのデバイスで保持します。
 - ユーザーがデバイス間で作業を続けられるようにローミングを使います。 たとえば、下書きしたメールの内容やリーダー アプリで最近表示したページなどのアプリ データをローミングします。
@@ -173,23 +179,33 @@ async void ReadTimestamp()
 
 ### <a name="roaming-pre-requisites"></a>ローミングの前提条件
 
+> [データのローミング](#roaming-data)に関する重要な注意事項を参照してください。
+
 アプリ データのローミングは、Microsoft アカウントを使ってデバイスにログインするすべてのユーザーに利点をもたらします。 ただし、いつでもデバイスでアプリ データのローミングを切り替えることができるのは、ユーザーとグループ ポリシーの管理者です。 ユーザーが Microsoft アカウントを使わない場合やデータのローミング機能を無効にする場合、ユーザーは引き続きアプリを使用できますが、アプリ データは各デバイスに対してローカルのままになります。
 
-[  **PasswordVault**](/uwp/api/Windows.Security.Credentials.PasswordVault) に格納されているデータは、ユーザーが "信頼" しているデバイスにしか移行されません。 デバイスが信頼されていない場合、この資格情報コンテナーのセキュリティで確保されているデータはローミングされません。
+[**PasswordVault**](/uwp/api/Windows.Security.Credentials.PasswordVault) に格納されているデータは、ユーザーが "信頼" しているデバイスにしか移行されません。 デバイスが信頼されていない場合、この資格情報コンテナーのセキュリティで確保されているデータはローミングされません。
 
-### <a name="conflict-resolution"></a>［競合の解決］
+### <a name="conflict-resolution"></a>競合の解決
+
+> [データのローミング](#roaming-data)に関する重要な注意事項を参照してください。
 
 アプリ データのローミングは、複数のデバイスでの同時使用を想定していません。 2 台のデバイスで特定のデータ単位が変更されたことが原因で同期中に競合が発生した場合、最後に書き込まれた値が常に優先されます。 これにより、アプリで最新の情報が利用されます。 データ単位が設定コンポジットの場合、競合の解決は設定の単位で行われ、最新の変更を含むコンポジットが同期されます。
 
 ### <a name="when-to-write-data"></a>データを書き込むタイミング
 
+> [データのローミング](#roaming-data)に関する重要な注意事項を参照してください。
+
 想定される設定の有効期間に応じて、データを書き込むタイミングを変える必要があります。 変更の頻度が低いアプリ データや変更間隔の長いアプリ データは、変更されたらすぐに書き込むようにします。 ただし、頻繁に変更されるアプリ データは、アプリが中断されたとき以外は、一定の間隔 (5 分に 1 回など) でのみ書き込むようにします。 たとえば、音楽アプリでは、"現在の曲" の設定は新しい曲の再生が始まるたびに書き込みますが、曲の途中の実際の位置は中断したときにのみ書き込みます。
 
 ### <a name="excessive-usage-protection"></a>使いすぎに対する保護
 
+> [データのローミング](#roaming-data)に関する重要な注意事項を参照してください。
+
 リソースの不適切な使用を防止するために、システムにはさまざまな保護メカニズムが備わっています。 アプリ データが想定どおりに移行されない場合は、デバイスが一時的に制限されていることが考えられます。 通常、この状況はしばらくすると自動的に解決されるため、操作は必要ありません。
 
 ### <a name="versioning"></a>バージョン管理
+
+> [データのローミング](#roaming-data)に関する重要な注意事項を参照してください。
 
 アプリ データは、バージョンに基づいてデータ構造をアップグレードできます。 バージョン番号は、アプリのバージョンとは別の番号で、自由に設定することができます。 強制ではありませんが、バージョン番号は新しいデータほど大きくすることを強くお勧めします。新しいデータを表すバージョン番号が小さくなると、データ損失などの望ましくない問題が発生する可能性があります。
 
@@ -197,20 +213,23 @@ async void ReadTimestamp()
 
 ### <a name="testing-and-tools"></a>テストとツール
 
+> [データのローミング](#roaming-data)に関する重要な注意事項を参照してください。
+
 開発者は、ローミング アプリ データの同期をトリガーするためにデバイスをロックできます。 一定の期間にわたってアプリ データが移行されていない場合は、次の点を確認してください。
 
 - ローミング データが最大サイズを超えていないこと (詳しくは、「[**RoamingStorageQuota**](/uwp/api/windows.storage.applicationdata.roamingstoragequota)」をご覧ください)。
 - ファイルが閉じていて、適切に解放されていること。
 - 同じバージョンのアプリを実行しているデバイスが 2 台以上あること。
 
-
 ### <a name="register-to-receive-notification-when-roaming-data-changes"></a>ローミング データが変更された場合に通知を受け取るように登録する
+
+> [データのローミング](#roaming-data)に関する重要な注意事項を参照してください。
 
 アプリのローミング データを使用するには、ローミング データの変更に備えて登録し、設定を読み書きできるように、ローミング データのコンテナーを取得する必要があります。
 
 1.  ローミング データが変更されたときに通知を受け取るように登録します。
 
-    [  **DataChanged**](/uwp/api/windows.storage.applicationdata.datachanged) イベントで、ローミング データが変更されたときに通知します。 この例では、ローミング データの変更のハンドラーとして `DataChangeHandler` を設定します。
+    [**DataChanged**](/uwp/api/windows.storage.applicationdata.datachanged) イベントで、ローミング データが変更されたときに通知します。 この例では、ローミング データの変更のハンドラーとして `DataChangeHandler` を設定します。
 
 ```csharp
 void InitHandlers()
@@ -237,6 +256,8 @@ Windows.Storage.ApplicationDataContainer roamingSettings =
 ```
 
 ### <a name="create-and-retrieve-roaming-settings"></a>ローミング設定を作成して取得する
+
+> [データのローミング](#roaming-data)に関する重要な注意事項を参照してください。
 
 前のセクションで取得した `roamingSettings` コンテナー内の設定にアクセスするには、[**ApplicationDataContainer.Values**](/uwp/api/windows.storage.applicationdatacontainer.values) プロパティを使用します。 次の例では、`exampleSetting` という名前の簡易設定と、`composite` という名前のコンポジット値を作成します。
 
@@ -282,7 +303,9 @@ else
 
 ### <a name="create-and-retrieve-roaming-files"></a>ローミング ファイルを作成して取得する
 
-ローミング アプリ データ ストアでファイルを作成して更新するには、[**Windows.Storage.StorageFolder.CreateFileAsync**](/uwp/api/windows.storage.storagefolder.createfileasync) や [**Windows.Storage.FileIO.WriteTextAsync**](/uwp/api/windows.storage.fileio.writetextasync) などのファイル API を使用します。 次の例では、`roamingFolder` コンテナーに `dataFile.txt` という名前のファイルを作成し、現在の日付と時刻をファイルに書き込みます。 [  **CreationCollisionOption**](/uwp/api/Windows.Storage.CreationCollisionOption) 列挙体の **ReplaceExisting** 値は、ファイルが既にある場合にファイルを置き換えることを示します。
+> [データのローミング](#roaming-data)に関する重要な注意事項を参照してください。
+
+ローミング アプリ データ ストアでファイルを作成して更新するには、[**Windows.Storage.StorageFolder.CreateFileAsync**](/uwp/api/windows.storage.storagefolder.createfileasync) や [**Windows.Storage.FileIO.WriteTextAsync**](/uwp/api/windows.storage.fileio.writetextasync) などのファイル API を使用します。 次の例では、`roamingFolder` コンテナーに `dataFile.txt` という名前のファイルを作成し、現在の日付と時刻をファイルに書き込みます。 [**CreationCollisionOption**](/uwp/api/Windows.Storage.CreationCollisionOption) 列挙体の **ReplaceExisting** 値は、ファイルが既にある場合にファイルを置き換えることを示します。
 
 ```csharp
 async void WriteTimestamp()
@@ -314,7 +337,6 @@ async void ReadTimestamp()
 }
 ```
 
-
 ## <a name="temporary-app-data"></a>一時アプリ データ
 
 
@@ -330,7 +352,7 @@ Windows.Storage.StorageFolder temporaryFolder = ApplicationData.Current.Temporar
 
 ### <a name="create-and-read-temporary-files"></a>一時ファイルを作成して読み取る
 
-一時アプリ データ ストアにファイルを作成して更新するには、[**Windows.Storage.StorageFolder.CreateFileAsync**](/uwp/api/windows.storage.storagefolder.createfileasync) や [**Windows.Storage.FileIO.WriteTextAsync**](/uwp/api/windows.storage.fileio.writetextasync) などのファイル API を使用します。 次の例では、`temporaryFolder` コンテナーに `dataFile.txt` という名前のファイルを作成し、現在の日付と時刻をファイルに書き込みます。 [  **CreationCollisionOption**](/uwp/api/Windows.Storage.CreationCollisionOption) 列挙体の **ReplaceExisting** 値は、ファイルが既にある場合にファイルを置き換えることを示します。
+一時アプリ データ ストアにファイルを作成して更新するには、[**Windows.Storage.StorageFolder.CreateFileAsync**](/uwp/api/windows.storage.storagefolder.createfileasync) や [**Windows.Storage.FileIO.WriteTextAsync**](/uwp/api/windows.storage.fileio.writetextasync) などのファイル API を使用します。 次の例では、`temporaryFolder` コンテナーに `dataFile.txt` という名前のファイルを作成し、現在の日付と時刻をファイルに書き込みます。 [**CreationCollisionOption**](/uwp/api/Windows.Storage.CreationCollisionOption) 列挙体の **ReplaceExisting** 値は、ファイルが既にある場合にファイルを置き換えることを示します。
 
 
 ```csharp
@@ -368,7 +390,7 @@ async void ReadTimestamp()
 
 アプリ データの設定とファイルを整理するには、ディレクトリで直接作業するのではなく、コンテナー ([**ApplicationDataContainer**](/uwp/api/Windows.Storage.ApplicationDataContainer) オブジェクトで表されます) を作成します。 コンテナーは、ローカル アプリ データ ストア、ローミング アプリ データ ストア、一時アプリ データ ストアに追加できます。 コンテナーは 32 階層まで入れ子にすることができます。
 
-設定コンテナーを作成するには、[**ApplicationDataContainer.CreateContainer**](/uwp/api/windows.storage.applicationdatacontainer.createcontainer) メソッドを呼び出します。 次の例では、`exampleContainer` という名前のローカル設定コンテナーを作成し、`exampleSetting` という名前の設定を追加します。 [  **ApplicationDataCreateDisposition**](/uwp/api/Windows.Storage.ApplicationDataCreateDisposition) 列挙体の **Always** 値は、コンテナーがまだない場合に作成されることを示します。
+設定コンテナーを作成するには、[**ApplicationDataContainer.CreateContainer**](/uwp/api/windows.storage.applicationdatacontainer.createcontainer) メソッドを呼び出します。 次の例では、`exampleContainer` という名前のローカル設定コンテナーを作成し、`exampleSetting` という名前の設定を追加します。 [**ApplicationDataCreateDisposition**](/uwp/api/Windows.Storage.ApplicationDataCreateDisposition) 列挙体の **Always** 値は、コンテナーがまだない場合に作成されることを示します。
 
 ```csharp
 Windows.Storage.ApplicationDataContainer localSettings = 

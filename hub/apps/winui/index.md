@@ -4,12 +4,12 @@ description: Windows アプリ開発用の WinUI ライブラリ。
 ms.topic: article
 ms.date: 07/15/2020
 keywords: windows 10, uwp, ツールキット sdk, winui, Windows UI ライブラリ
-ms.openlocfilehash: eb87744ed5d3eb5882b4ebae75b8dcf295d89f10
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: cd96367579c61223dcaf2be2f336026244a6ed9b
+ms.sourcegitcommit: b99fe39126fbb457c3690312641f57d22ba7c8b6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89166756"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96603689"
 ---
 # <a name="windows-ui-library-winui"></a>Windows UI ライブラリ (WinUI)
 
@@ -29,7 +29,7 @@ WinUI では、すべてのエクスペリエンス、コントロール、お�
 WinUI 2.x は UWP アプリケーションで使用でき、[XAML Islands](../desktop/modernize/xaml-islands.md) を使用して、新規または既存のデスクトップ アプリケーションに組み込むことができます。
 
 > [!NOTE]
-> WinUI 2.x の最新のリリースは WinUI 2.4 です。 次のリリースで計画されている作業の一覧については、[WinUI 2.5 のマイルストーン](https://github.com/microsoft/microsoft-ui-xaml/milestone/10)を参照してください。
+> WinUI 2.x の最新のリリースは WinUI 2.5 です。 次のリリースで計画されている作業の一覧については、[WinUI 2.6 のマイルストーン](https://github.com/microsoft/microsoft-ui-xaml/milestone/11)を参照してください。
 
 WinUI 2.x ライブラリは [Windows 10 SDK](https://developer.microsoft.com/windows/downloads/windows-10-sdk/) と密接に結び付けられており、UWP アプリ用の公式のネイティブ Windows UI コントロールとその他の UI 要素を提供します。
 
@@ -42,16 +42,16 @@ WinUI 2.x ライブラリは [Windows 10 SDK](https://developer.microsoft.com/wi
 ### <a name="related-links-for-winui-2x"></a>WinUI 2.x の関連リンク
 
 - [WinUI 2.x ライブラリの概要](winui2/index.md)
-- [API ドキュメント](/uwp/api/overview/winui/)
+- [API ドキュメント](/windows/winui/api/)
 - [ソース コード](https://aka.ms/winui)
 - [XAML Controls Gallery アプリ](https://www.microsoft.com/p/xaml-controls-gallery/9msvh128x2zt)
 
-## <a name="windows-ui-3-library-preview-2"></a>Windows UI 3 ライブラリ (Preview 2)
+## <a name="windows-ui-3-library-preview-3"></a>Windows UI 3 ライブラリ (Preview 3)
 
 WinUI 3 は WinUI の次期バージョンであり、[Windows 10 SDK](https://developer.microsoft.com/windows/downloads/windows-10-sdk/) から完全に切り離されたネイティブ Windows 10 UI プラットフォームです。
 
 > [!Important]
-> この WinUI 3 Preview リリースは、早期評価と、開発者コミュニティからのフィードバックの収集を目的としています。 実稼働アプリには使用**できません**。
+> この WinUI 3 Preview リリースは、早期評価と、開発者コミュニティからのフィードバックの収集を目的としています。 実稼働アプリには使用 **できません**。
 >
 > WinUI 3 Preview のリリースは 2020 年から 2021 年前半にかけて継続され、その後、最初の公式リリースが利用可能になる予定です。
 >
@@ -69,8 +69,8 @@ XAML のすべての新機能は、最終的には WinUI の一部として同�
 
 ### <a name="related-links-for-winui-3"></a>WinUI 3 の関連リンク
 
-- [Windows UI ライブラリ 3 Preview 2 (2020 年 7 月)](winui3/index.md)
-- [XAML コントロール ギャラリー (WinUI 3 Preview 2) アプリ](https://github.com/microsoft/Xaml-Controls-Gallery/tree/winui3preview)
+- [Windows UI ライブラリ 3 Preview 3 (2020 年 11 月)](winui3/index.md)
+- [XAML コントロール ギャラリー (WinUI 3 Preview 3) アプリ](https://github.com/microsoft/Xaml-Controls-Gallery/tree/winui3preview)
 
 ## <a name="winui-resources"></a>WinUI リソース
 

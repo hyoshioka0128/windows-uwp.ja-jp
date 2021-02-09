@@ -6,12 +6,12 @@ ms.date: 03/06/2017
 ms.topic: article
 keywords: windows 10, uwp, 初めてのアプリ, hello world
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b39efb7aa90499f6d238306ad079f1969907f46
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: b602970b2b1f37a4511e2a87eb1be72fba7f5423
+ms.sourcegitcommit: aaa72ddeb01b074266f4cd51740eec8d1905d62d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89175256"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94339840"
 ---
 # <a name="create-a-hello-world-app-xaml"></a>"Hello, World!" アプリを作成する (XAML)
 
@@ -28,7 +28,7 @@ ms.locfileid: "89175256"
 ## <a name="before-you-start"></a>はじめに...
 
 -   [ユニバーサル Windows アプリとは?](universal-application-platform-guide.md)
--   [Visual Studio 2017 (および Windows 10) をダウンロードします](https://developer.microsoft.com/windows/downloads)。 サポートが必要な場合は、[セットアップする](get-set-up.md)方法をご覧ください。
+-   [Visual Studio 2017 (および Windows 10) をダウンロードします](https://developer.microsoft.com/windows/downloads)。 サポートが必要な場合は、[セットアップする](/windows/apps/get-started/get-set-up)方法をご覧ください。
 -   また、Visual Studio の既定のウィンドウ レイアウトを使用することを前提としています。 既定のレイアウトを変更した場合は、 **[ウィンドウ]** メニューの **[ウィンドウ レイアウトのリセット]** を使って、レイアウトをリセットできます。
 
 > [!NOTE]
@@ -46,7 +46,7 @@ ms.locfileid: "89175256"
 
 3.  左側のテンプレートの一覧で、 **[インストール済み]、[Visual C#]、[Windows ユニバーサル]** の順に選択し、UWP プロジェクト テンプレートの一覧を表示します。
 
-    ユニバーサル テンプレートが表示されない場合は、UWP アプリを作成するためのコンポーネントがない可能性があります。 インストール プロセスを繰り返して UWP サポートを追加することもできます ( *[新しいプロジェクト]* ダイアログで **[Visual Studio インストーラーを開く]** をクリック)。 「[準備](get-set-up.md)」をご覧ください。
+    ユニバーサル テンプレートが表示されない場合は、UWP アプリを作成するためのコンポーネントがない可能性があります。 インストール プロセスを繰り返して UWP サポートを追加することもできます ( *[新しいプロジェクト]* ダイアログで **[Visual Studio インストーラーを開く]** をクリック)。 「[準備](/windows/apps/get-started/get-set-up)」をご覧ください。
 
     ![インストール プロセスを繰り返す方法](images/win10-cs-install.png)
 
@@ -55,24 +55,24 @@ ms.locfileid: "89175256"
     ![[新しいプロジェクト] ウィンドウ](images/win10-cs-01.png)
 
 > [!NOTE]
-> Visual Studio を初めて使う場合は、[設定] ダイアログ ボックスが表示され、**開発者モード**を有効にするよう求められることがあります。 開発者モードは、アプリをストアからだけではなく、直接実行するためのアクセス許可など、特定の機能を有効にする特別な設定です。 詳しくは、「[デバイスを開発用に有効にする](enable-your-device-for-development.md)」をご覧ください。 先に進むには、 **[開発者モード]** を選択し、 **[はい]** をクリックしてダイアログ ボックスを閉じます。
+> Visual Studio を初めて使う場合は、[設定] ダイアログ ボックスが表示され、 **開発者モード** を有効にするよう求められることがあります。 開発者モードは、アプリをストアからだけではなく、直接実行するためのアクセス許可など、特定の機能を有効にする特別な設定です。 詳しくは、「[デバイスを開発用に有効にする](/windows/apps/get-started/enable-your-device-for-development)」をご覧ください。 先に進むには、 **[開発者モード]** を選択し、 **[はい]** をクリックしてダイアログ ボックスを閉じます。
 
  ![開発者モードのアクティブ化ダイアログ](images/win10-cs-00.png)
 
 5.  ターゲット バージョンと最小バージョンのダイアログが表示されます。 このチュートリアルでは既定の設定で問題ないため、 **[OK]** を選択してプロジェクトを作成します。
 
-    ![ソリューション エクスプローラーのウィンドウ](images/win10-cs-02.png)
+    ![[新しいユニバーサル Windows プロジェクト] ダイアログボックスのスクリーンショット。](images/win10-cs-02.png)
 
-6.  新しいプロジェクトが開き、そのプロジェクトのファイルが右側の**ソリューション エクスプローラー**のウィンドウに表示されます。 場合によっては、ファイルを表示するために **[ソリューション エクスプローラー]** タブを選択する必要があります ( **[プロパティ]** タブではありません)。
+6.  新しいプロジェクトが開き、そのプロジェクトのファイルが右側の **ソリューション エクスプローラー** のウィンドウに表示されます。 場合によっては、ファイルを表示するために **[ソリューション エクスプローラー]** タブを選択する必要があります ( **[プロパティ]** タブではありません)。
 
-    ![ソリューション エクスプローラーのウィンドウ](images/win10-cs-03.png)
+    ![Hello World (ユニバーサル Windows) が強調表示された [ソリューション エクスプローラー] パネルのスクリーンショット。](images/win10-cs-03.png)
 
 **[空白のアプリ (ユニバーサル Windows)]** は最小限のテンプレートですが、多くのファイルが含まれています。 これらのファイルは、C# を使うすべての UWP アプリに必要です。 Visual Studio で作るすべてのプロジェクトには、これらのファイルが必ず含まれます。
 
 
 ### <a name="whats-in-the-files"></a>ファイルの内容
 
-プロジェクトのファイルを表示して編集するには、**ソリューション エクスプローラー**でファイルをダブルクリックします。 フォルダーと同様、XAML ファイルを展開して、関連するコード ファイルを表示します。 XAML ファイルは、デザイン サーフェスと XAML エディターの両方を表示する分割ビューで開きます。
+プロジェクトのファイルを表示して編集するには、 **ソリューション エクスプローラー** でファイルをダブルクリックします。 フォルダーと同様、XAML ファイルを展開して、関連するコード ファイルを表示します。 XAML ファイルは、デザイン サーフェスと XAML エディターの両方を表示する分割ビューで開きます。
 > [!NOTE]
 > XAML とは Extensible Application Markup Language (XAML) は、アプリのユーザー インターフェイスを定義するための言語です。 XAML は、手動で入力することも、Visual Studio のデザイン ツールを使って作成することもできます。 .xaml ファイルには、ロジックが格納される .xaml.cs 分離コード ファイルがあります。 XAML と分離コードがまとまって、完全なクラスが作成されます。 詳しくは、「[XAML の概要](../xaml-platform/xaml-overview.md)」をご覧ください。
 
@@ -87,7 +87,7 @@ ms.locfileid: "89175256"
 
 -   MainPage.xaml は、アプリの UI を定義する場所です。 要素の追加は、XAML マークアップを使って直接行うことも、Visual Studio のデザイン ツールを使って行うこともできます。
 -   MainPage.xaml.cs は、MainPage.xaml のコード ビハインド ページです。 ここには、アプリのロジックとイベント ハンドラーを追加します。
--   これら 2 つのファイルで、[**Page**](/uwp/api/Windows.UI.Xaml.Controls.Page) から継承される `MainPage` という新しいクラスを `HelloWorld` 名前空間に定義します。
+-   これら 2 つのファイルで、 [**Page**](/uwp/api/Windows.UI.Xaml.Controls.Page) から継承される `MainPage` という新しいクラスを `HelloWorld` 名前空間に定義します。
 
 *Package.appxmanifest*
 -   名前、説明、タイル、開始ページなど、アプリを説明するマニフェスト ファイルです。
@@ -110,15 +110,15 @@ ms.locfileid: "89175256"
 
     画面の上部にグラフィック ビュー、その下部に XAML コード ビューがあります。 どちらのビューでも変更を加えることができますが、ここではグラフィック ビューを使います。
 
-    ![ソリューション エクスプローラーのウィンドウ](images/win10-cs-04.png)
+    ![メイン ページの X A M L デザイン ビューが表示されている Visual Studio のスクリーンショット。](images/win10-cs-04.png)
 
 2.  左側の縦方向に配置された **[ツールボックス]** タブをクリックして UI コントロールの一覧を開きます (タイトル バーのピン アイコンをクリックすると、このウィンドウを表示したままにすることができます)。
 
-    ![ソリューション エクスプローラーのウィンドウ](images/win10-cs-05.png)
+    ![[ツールボックス] ペインのスクリーンショット。赤い矢印がピン アイコンを指しています。](images/win10-cs-05.png)
 
-3.  **[コモン XAML コントロール]** を展開し、**Button** をドラッグしてデザイン キャンバスの中央に配置します。
+3.  **[コモン XAML コントロール]** を展開し、 **Button** をドラッグしてデザイン キャンバスの中央に配置します。
 
-    ![ソリューション エクスプローラーのウィンドウ](images/win10-cs-06.png)
+    ![[ツールボックス] ペイントとメイン ページの X A M L デザイン ビューのスクリーンショット。[ツールボックス] ペインでは [ボタン] オプションが強調表示されており、デザイン ビューにはボタンが表示されています。](images/win10-cs-06.png)
 
     XAML コード ウィンドウを見ると、そこにも Button が追加されたことがわかります。
 
@@ -136,7 +136,7 @@ ms.locfileid: "89175256"
 
 デザイン キャンバスに表示されたボタンが更新され、新しいテキストが表示されることがわかります。
 
-![ソリューション エクスプローラーのウィンドウ](images/win10-cs-07.png)
+![[Hello, world] ボタンのスクリーンショット。その周囲には赤色の枠が付いており、ボタンの背後にあるコードが表示されています。](images/win10-cs-07.png)
 
 ## <a name="step-3-start-the-app"></a>手順 3:アプリを起動する
 
@@ -220,7 +220,7 @@ private async void Button_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-メソッド シグネチャに**async** キーワードを含めるようにしてください。そうしないと、アプリを実行しようとしたときにエラーが表示されます。
+メソッド シグネチャに **async** キーワードを含めるようにしてください。そうしないと、アプリを実行しようとしたときにエラーが表示されます。
 
 ### <a name="what-did-we-just-do"></a>ここで実行したこと
 
@@ -242,4 +242,4 @@ private async void Button_Click(object sender, RoutedEventArgs e)
 * [UWP アプリの開発に関するハウツー記事](../develop/index.md)
 * [UWP 開発者向けコード サンプル](https://developer.microsoft.com/windows/samples)
 * [ユニバーサル Windows アプリとは?](universal-application-platform-guide.md)
-* [Windows アカウントのサインアップ](sign-up.md)
+* [Windows アカウントのサインアップ](/windows/apps/get-started/sign-up)

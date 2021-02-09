@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, 公開する, 公開, 販売, 販売する, 配布, 配布する, store, ダッシュボード
 ms.assetid: 631d1e2d-e4da-4740-ace0-4c0ad78653fe
 ms.localizationpriority: medium
-ms.openlocfilehash: a4fb353ef9c4ff5227cb1cff21b26ce3067f5dcc
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: fe4dc46b7f6d5a9f55ecf8b5fe8ee58da27850de
+ms.sourcegitcommit: afc4ff2c89f148d32073ab1cc42063ccdc573a8c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91219015"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98104603"
 ---
 # <a name="publish-windows-apps-and-games"></a>Windows アプリとゲームを公開する  
 
@@ -59,14 +59,14 @@ ms.locfileid: "91219015"
         <img src="https://docs.microsoft.com/media/illustrations/team-services-get-started-account-manager.svg" alt="Payment icon" />
         <h3 style="margin-top: 10px; margin-bottom: 0px">支払いとレポート</h3>
         <a href="account-types-locations-and-fees.md">アカウントの種類、場所、料金</a><br/>
-        <a href="getting-paid-apps.md">支払いの受け取り</a><br/>
+        <a href="/partner-center/marketplace-get-paid">支払いの受け取り</a><br/>
         <a href="in-app-ads.md">アプリ内広告</a><br/>
         <a href="analytics.md">分析レポート</a><br/>
     :::column-end:::
     :::column:::
         <img src="https://docs.microsoft.com/media/illustrations/ms365enterprise-partner-news-2.svg" alt="Promote icon" />
         <h3 style="margin-top: 10px; margin-bottom: 0px">アプリの販売促進</h3>
-        <a href="create-an-ad-campaign-for-your-app.md">広告キャンペーンの作成</a><br/>
+        <a href="/windows/uwp/monetize/">広告キャンペーンの作成</a><br/>
         <a href="generate-promotional-codes.md">プロモーション コードを生成する</a><br/>
         <a href="put-apps-and-add-ons-on-sale.md">セール価格を提供する</a><br/>
     :::column-end:::

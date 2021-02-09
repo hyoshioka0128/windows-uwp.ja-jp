@@ -5,12 +5,12 @@ ms.topic: article
 ms.date: 07/15/2020
 keywords: windows 10, uwp, ツールキット sdk, winui, Windows UI ライブラリ
 ms.custom: RS5
-ms.openlocfilehash: 42f790ed92a41f298465bcc42b21dcdb3fa8bc86
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: 92a546dcd177639b8c9bc7d2fd3dd6ca1fc7d3e5
+ms.sourcegitcommit: 67c4d4ecda4ffe5f1a233de5e8555ca2228e8489
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86493637"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94933117"
 ---
 # <a name="windows-ui-library-2x"></a>Windows UI ライブラリ 2.x
 
@@ -21,7 +21,7 @@ Windows UI ライブラリでは、Windows アプリ向けに公式のネイテ�
 以前のバージョンの Windows 10 との下位互換性が維持されるため、ユーザーが最新の OS を使用していない場合でも、アプリが動作します。
 
 > [!NOTE]
-> Windows 10 UI プラットフォームのメジャー アップデートである、[Windows UI ライブラリ 3 Preview 2 (2020 年 7 月)](../winui3/index.md) を確認してください。
+> Windows 10 UI プラットフォームのメジャー アップデートである、[Windows UI ライブラリ 3 Preview 3 (2020 年 11 月)](../winui3/index.md) を確認してください。
 
 ## <a name="features"></a>機能
 
@@ -47,7 +47,7 @@ https://github.com/Microsoft/Xaml-Controls-Gallery)でもあります
 
 Windows UI ライブラリ コントロールの操作方法に関する記事は、[ユニバーサル Windows プラットフォーム コントロール ドキュメント](/windows/uwp/design/controls-and-patterns/)に含まれています。
 
-API リファレンスのドキュメントがある場所は、[Windows UI ライブラリ API](/uwp/api/overview/winui/) です。
+API リファレンスのドキュメントがある場所は、[Windows UI ライブラリ API](/windows/winui/api/) です。
 
 ## <a name="install-and-use-the-windows-ui-library"></a>Windows UI ライブラリをインストールして使用する
 

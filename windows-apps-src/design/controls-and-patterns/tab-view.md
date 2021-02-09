@@ -1,18 +1,18 @@
 ---
-Description: TabView は、動的なタブに複数のドキュメントを整理するための柔軟な方法です
+description: TabView は、動的なタブに複数のドキュメントを整理するための柔軟な方法です
 title: タブ ビュー
 template: detail.hbs
-ms.date: 09/12/2019
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: f59bb821b65eda89aa1fbc88e9c38d5789f61f6e
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: f34e2a882746ac833d2b78373a96496c1f079864
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89163426"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034775"
 ---
 # <a name="tabview"></a>TabView
 
@@ -22,11 +22,19 @@ TabView コントロールは、一連のタブとそれぞれの内容を表示
 
 **Windows UI ライブラリを入手する**
 
-|  |  |
-| - | - |
-| ![WinUI ロゴ](images/winui-logo-64x64.png) | **TabView** コントロールでは、Windows アプリのための新しいコントロールと UI 機能を含む NuGet パッケージである Windows UI ライブラリが必要になります。 インストール手順などについて詳しくは、「[Windows UI Library (Windows UI ライブラリ)](/uwp/toolkits/winui/)」をご覧ください。 |
+:::row:::
+   :::column:::
+      ![WinUI ロゴ](images/winui-logo-64x64.png)
+   :::column-end:::
+   :::column span="3":::
+      **TabView** コントロールでは、Windows アプリのための新しいコントロールと UI 機能を含む NuGet パッケージである Windows UI ライブラリが必要になります。 インストール手順などについて詳しくは、「[Windows UI Library (Windows UI ライブラリ)](/uwp/toolkits/winui/)」をご覧ください。
+   :::column-end:::
+   :::column:::
 
-> **Windows UI ライブラリ API**: [TabView クラス](/uwp/api/microsoft.ui.xaml.controls.tabview)、[TabViewItem クラス](/uwp/api/microsoft.ui.xaml.controls.tabviewitem)
+   :::column-end:::
+:::row-end:::
+
+> **Windows UI ライブラリ API** : [TabView クラス](/uwp/api/microsoft.ui.xaml.controls.tabview)、 [TabViewItem クラス](/uwp/api/microsoft.ui.xaml.controls.tabviewitem)
 
 > [!TIP]
 > このドキュメントでは、XAML で **muxc** エイリアスを使って、プロジェクトに含めた Windows UI Library API を表します。 [Page](/uwp/api/windows.ui.xaml.controls.page) 要素にこれを追加しました。`xmlns:muxc="using:Microsoft.UI.Xaml.Controls"`
@@ -35,8 +43,8 @@ TabView コントロールは、一連のタブとそれぞれの内容を表示
 
 ## <a name="is-this-the-right-control"></a>これは適切なコントロールですか?
 
-一般に、タブ付き UI は、機能と外観が異なる 2 種類のスタイルのいずれかで提供されます。**静的タブ**は、設定ウィンドウでよく見られるタブの種類です。 通常、内容があらかじめ定義されている固定順序の複数のページが含まれます。
-**ドキュメント タブ**は、Microsoft Edge のようなブラウザーで見られるタブの種類です。 ユーザーは、タブの作成、削除、再配置、ウィンドウ間でのタブの移動、タブの内容の変更を行うことができます。
+一般に、タブ付き UI は、機能と外観が異なる 2 種類のスタイルのいずれかで提供されます。 **静的タブ** は、設定ウィンドウでよく見られるタブの種類です。 通常、内容があらかじめ定義されている固定順序の複数のページが含まれます。
+**ドキュメント タブ** は、Microsoft Edge のようなブラウザーで見られるタブの種類です。 ユーザーは、タブの作成、削除、再配置、ウィンドウ間でのタブの移動、タブの内容の変更を行うことができます。
 
 [TabView](/uwp/api/microsoft.ui.xaml.controls.tabview) では、UWP アプリ用のドキュメント タブが提供されています。 次のような場合は TabView を使用します。
 

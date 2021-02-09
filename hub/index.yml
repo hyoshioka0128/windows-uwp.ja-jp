@@ -9,12 +9,12 @@ metadata:
   ms.author: tedhudek
   ms.topic: hub-page
   uhfHeaderId: MSDocsHeader-DocsL1
-  ms.openlocfilehash: f57585392a34cdf6bf61dce474b48efbc8ec9f58
-  ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+  ms.openlocfilehash: f536faa2a68269dc8a4ff89fcfb928434854d1e3
+  ms.sourcegitcommit: afc4ff2c89f148d32073ab1cc42063ccdc573a8c
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 08/31/2020
-  ms.locfileid: "89166686"
+  ms.lasthandoff: 01/11/2021
+  ms.locfileid: "98104523"
 productDirectory:
   items:
   - title: アプリケーション開発者
@@ -33,3 +33,11 @@ productDirectory:
     imageSrc: https://docs.microsoft.com/media/logos/logo_Windows.svg
     summary: Windows Server で接続されたアプリケーション、ネットワーク、Web サービスを構築およびデプロイします。
     url: /windows-server/
+  - title: Windows for IoT
+    imageSrc: https://docs.microsoft.com/media/logos/logo_Windows.svg
+    summary: 迅速にプロビジョニング、簡単に管理、およびクラウド戦略全体にシームレスに接続できるセキュア デバイスにより IoT ソリューションを作成します。
+    url: /windows/iot-core/
+  - title: Windows Insider Program
+    imageSrc: https://docs.microsoft.com/media/logos/logo_Windows.svg
+    summary: Windows 10 Insider Preview ビルドを実行してフィードバックを提供することで、次の段階をいち早く確認し、Windows の未来像を描くことができます。
+    url: /windows-insider/

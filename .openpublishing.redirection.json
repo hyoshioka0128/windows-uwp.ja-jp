@@ -1,6 +1,16 @@
 {
   "redirections": [
     {
+      "source_path": "windows-apps-src/debug-test-perf/device-portal-hololens.md",
+      "redirect_url": "/windows/mixed-reality/develop/platform-capabilities-and-apis/using-the-windows-device-portal",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/debug-test-perf/device-portal-api-hololens.md",
+      "redirect_url": "/windows/mixed-reality/develop/platform-capabilities-and-apis/device-portal-api-reference",
+      "redirect_document_id": false
+    },
+    {
       "source_path": "windows-apps-src/get-started/get-uwp-app-samples.md",
       "redirect_url": "/windows/uwp/get-started/get-app-samples",
       "redirect_document_id": true
@@ -116,8 +126,48 @@
       "redirect_document_id": false
     },
     {
-      "source_path": "windows-apps-src/get-started/learn-more.md",
-      "redirect_url": "/windows/uwp/get-started/create-uwp-apps",
+      "source_path": "windows-apps-src/get-started/enable-your-device-for-development.md",
+      "redirect_url": "/windows/apps/get-started/enable-your-device-for-development",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/get-started/get-set-up.md",
+      "redirect_url": "/windows/apps/get-started/get-set-up",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/get-started/sign-up.md",
+      "redirect_url": "/windows/apps/get-started/sign-up",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/get-started/adding-webvr-to-a-babylonjs-game.md",
+      "redirect_url": "/windows/apps/get-started/",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/get-started/create-a-hello-world-app-js-uwp.md",
+      "redirect_url": "/windows/apps/get-started/",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/get-started/get-started-tutorial-fullstack-web-app.md",
+      "redirect_url": "/windows/uwp/get-started/",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/get-started/get-started-tutorial-game-js2d.md",
+      "redirect_url": "/windows/uwp/get-started/",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/get-started/get-started-tutorial-game-js3d.md",
+      "redirect_url": "/windows/uwp/get-started/",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/get-started/get-started-tutorial-game-mg2d.md",
+      "redirect_url": "/windows/uwp/get-started/",
       "redirect_document_id": false
     },
     {
@@ -156,43 +206,8 @@
       "redirect_document_id": false
     },
     {
-      "source_path": "windows-apps-src/input-and-devices/cortana-design-guidelines.md",
-      "redirect_url": "/cortana/skills/#pivot=start&panel=designskill",
-      "redirect_document_id": false
-    },
-    {
-      "source_path": "windows-apps-src/input-and-devices/deep-link-into-your-app-from-cortana.md",
-      "redirect_url": "/cortana/voice-commands/deep-link-into-your-app-from-cortana",
-      "redirect_document_id": false
-    },
-    {
-      "source_path": "windows-apps-src/input-and-devices/dynamically-modify-voice-command-definition-vcd-phrase-lists.md",
-      "redirect_url": "/cortana/voice-commands/dynamically-modify-voice-command-definition-vcd-phrase-lists",
-      "redirect_document_id": false
-    },
-    {
       "source_path": "windows-apps-src/input-and-devices/guidelines-for-user-interaction.md",
       "redirect_url": "/windows/uwp/input-and-devices/touch-interactions",
-      "redirect_document_id": false
-    },
-    {
-      "source_path": "windows-apps-src/input-and-devices/interact-with-a-background-app-in-cortana.md",
-      "redirect_url": "/cortana/voice-commands/interact-with-a-background-app-in-cortana",
-      "redirect_document_id": false
-    },
-    {
-      "source_path": "windows-apps-src/input-and-devices/launch-a-background-app-with-voice-commands-in-cortana.md",
-      "redirect_url": "/cortana/voice-commands/launch-a-background-app-with-voice-commands-in-cortana",
-      "redirect_document_id": false
-    },
-    {
-      "source_path": "windows-apps-src/input-and-devices/launch-a-foreground-app-with-voice-commands-in-cortana.md",
-      "redirect_url": "/cortana/voice-commands/launch-a-foreground-app-with-voice-commands-in-cortana",
-      "redirect_document_id": false
-    },
-    {
-      "source_path": "windows-apps-src/input-and-devices/support-natural-language-voice-commands-in-cortana.md",
-      "redirect_url": "/cortana/voice-commands/support-natural-language-voice-commands-in-cortana",
       "redirect_document_id": false
     },
     {
@@ -1176,11 +1191,6 @@
       "redirect_document_id": true
     },
     {
-      "source_path": "windows-apps-src/input-and-devices/cortana-interactions.md",
-      "redirect_url": "/windows/uwp/design/input/cortana-interactions",
-      "redirect_document_id": true
-    },
-    {
       "source_path": "windows-apps-src/input-and-devices/custom-keyboard-interactions.md",
       "redirect_url": "/windows/uwp/design/input/custom-keyboard-interactions",
       "redirect_document_id": true
@@ -1737,7 +1747,7 @@
     },
     {
       "source_path": "windows-apps-src/publish/managing-your-profile.md",
-      "redirect_url": "/windows/uwp/publish/manage-account-settings-and-profile",
+      "redirect_url": "/partner-center/partner-center-account-setup",
       "redirect_document_id": false
     },
     {
@@ -4923,6 +4933,81 @@
     {
       "source_path": "windows-apps-src/monetize/payment-request.md",
       "redirect_url": "/windows/uwp/monetize",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/design/shell/tiles-and-notifications/toast-xml-schema.md",
+      "redirect_url": "/windows/uwp/design/shell/tiles-and-notifications/toast-schema",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/publish/create-an-ad-campaign-for-your-app.md",
+      "redirect_url": "/windows/uwp/monetize",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/publish/managing-your-ad-campaign.md",
+      "redirect_url": "/windows/uwp/monetize",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/publish/about-house-ads.md",
+      "redirect_url": "/windows/uwp/monetize",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/publish/about-community-ads.md",
+      "redirect_url": "/windows/uwp/monetize",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/publish/common-questions.md",
+      "redirect_url": "/windows/uwp/monetize",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/publish/tax-details-for-paid-apps.md",
+      "redirect_url": "https://docs.microsoft.com/partner-center/tax-details-marketplace",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/publish/getting-paid-apps.md",
+      "redirect_url": "https://docs.microsoft.com/partner-center/marketplace-get-paid",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/publish/setting-up-your-payout-account-and-tax-forms.md",
+      "redirect_url": "https://docs.microsoft.com/partner-center/set-up-your-payout-account ",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/publish/payout-summary.md",
+      "redirect_url": "https://docs.microsoft.com/partner-center/payout-statement",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/publish/understand-irs-tax-forms.md",
+      "redirect_url": "https://docs.microsoft.com/partner-center/understand-irs-tax-forms",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/publish/payment-thresholds-methods-and-timeframes.md",
+      "redirect_url": "https://docs.microsoft.com/partner-center/payment-thresholds-methods-timeframes",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/publish/mobile-operator-billing.md",
+      "redirect_url": "https://docs.microsoft.com/partner-center/mobile-operator-billing",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/publish/vat-info.md",
+      "redirect_url": "https://docs.microsoft.com/partner-center/vat-info",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/publish/manage-account-settings-and-profile.md",
+      "redirect_url": "https://docs.microsoft.com/partner-center/partner-center-account-setup",
       "redirect_document_id": false
     }
   ]

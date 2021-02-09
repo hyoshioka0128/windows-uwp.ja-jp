@@ -1,10 +1,10 @@
 ---
-description: まとめて表示される複数の関連データ項目の表現としてのコレクションとリストについて説明します。 
+description: まとめて表示される複数の関連データ項目の表現としてのコレクションとリストについて説明します。
 title: コレクションとリスト
 ms.assetid: C73125E8-3768-46A5-B078-FDDF42AB1077
 label: Collections and Lists
 template: detail.hbs
-ms.date: 10/08/2019
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: anawish
@@ -12,18 +12,18 @@ design-contact: kimsea
 dev-contact: ranjeshj
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: ede68414d86f333b516be81cbae83ea58dc83ba0
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 7b1304032243c7675c4aba6cbda7e7899e8deddb
+ms.sourcegitcommit: e252ccb4a76c4883c7073083d73007957202b84d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89169916"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97657679"
 ---
 # <a name="collections-and-lists"></a>コレクションとリスト
 
 コレクションとリストは、どちらも、まとめて表示される複数の関連データ項目の表現を指します。 コレクションは、さまざまなコレクション コントロール (コレクション ビューと呼ばれる場合もあります) によって、複数の方法で表現できます。 コレクション コントロールを使用して、連絡先リスト、日付リスト、画像コレクションなど、コレクションベースのコンテンツを表示して操作できるようにします。
 
-> **重要な API**:[ListView クラス](/uwp/api/Windows.UI.Xaml.Controls.ListView)、[GridView クラス](/uwp/api/Windows.UI.Xaml.Controls.GridView)、[FlipView クラス](/uwp/api/windows.ui.xaml.controls.flipview)、[TreeView クラス](/uwp/api/windows.ui.xaml.controls.treeview)、[ItemsRepeater クラス](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater?view=winui-2.2)
+> **重要な API**:[ListView クラス](/uwp/api/Windows.UI.Xaml.Controls.ListView)、[GridView クラス](/uwp/api/Windows.UI.Xaml.Controls.GridView)、[FlipView クラス](/uwp/api/windows.ui.xaml.controls.flipview)、[TreeView クラス](/uwp/api/windows.ui.xaml.controls.treeview)、[ItemsRepeater クラス](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater)
 
 この記事で説明するコントロールには、以下が含まれます。
 
@@ -74,7 +74,9 @@ ms.locfileid: "89169916"
     - メッセージまたはメッセージ ログの一覧を作成する。
     - 連絡先リストを作成する。
     - [マスター/詳細パターン](master-details.md)のマスター ウィンドウを作成する。 マスター/詳細パターンは、メール アプリによく使われます。このパターンでは、選択できる項目の一覧を一方のウィンドウ (マスター) に表示し、選択された項目の詳細ビューをもう一方のウィンドウ (詳細) に表示します。
-    
+
+> [!NOTE]
+> スクロール可能なビュー (ScrollViewer や ListView など) で [**UIElement**](/uwp/api/Windows.UI.Xaml.UIElement) のポインター イベントを処理する必要がある場合は、[UIElement.CancelDirectmanipulation()](/uwp/api/windows.ui.xaml.uielement.canceldirectmanipulations) を呼び出すことにより、ビュー内のこの要素に対する操作イベントのサポートを明示的に無効にする必要があります。 ビューで操作イベントを再び有効にするには、[UIElement.TryStartDirectManipulation()](/uwp/api/windows.ui.xaml.uielement.trystartdirectmanipulation) を呼び出します。
 
 ### <a name="examples"></a>例
 
@@ -140,6 +142,9 @@ ms.locfileid: "89169916"
 - 次の一般的なケースを含むさまざまなユース ケースに対応する。
     - ネットショップ型のユーザー インターフェイス (アプリ、曲、製品を閲覧する)
     - 対話型フォト ライブラリ
+
+> [!NOTE]
+> スクロール可能なビュー (ScrollViewer や ListView など) で [**UIElement**](/uwp/api/Windows.UI.Xaml.UIElement) のポインター イベントを処理する必要がある場合は、[UIElement.CancelDirectmanipulation()](/uwp/api/windows.ui.xaml.uielement.canceldirectmanipulations) を呼び出すことにより、ビュー内のこの要素に対する操作イベントのサポートを明示的に無効にする必要があります。 ビューで操作イベントを再び有効にするには、[UIElement.TryStartDirectManipulation()](/uwp/api/windows.ui.xaml.uielement.trystartdirectmanipulation) を呼び出します。
 
 ### <a name="examples"></a>例
 
@@ -277,7 +282,7 @@ ItemsRepeater は、次に該当する場合に使用します。
 
 ### <a name="examples"></a>例
 
-次の 3 つの例は、すべてが同じデータ ソース (数値のコレクション) にバインドされている ItemsRepeater コントロールです。 数値のコレクションが、3 つの方法で表現されています。それぞれの ItemsRepeater で、異なるカスタム [Layout](/uwp/api/microsoft.ui.xaml.controls.layout) と異なるカスタム [ItemTemplate](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.itemtemplate?view=winui-2.2) が使用されています。
+次の 3 つの例は、すべてが同じデータ ソース (数値のコレクション) にバインドされている ItemsRepeater コントロールです。 数値のコレクションが、3 つの方法で表現されています。それぞれの ItemsRepeater で、異なるカスタム [Layout](/uwp/api/microsoft.ui.xaml.controls.layout) と異なるカスタム [ItemTemplate](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.itemtemplate) が使用されています。
 
 ![水平バーを使用した ItemsRepeater](images/itemsrepeater-1.png)
 ![垂直バーを使用した ItemsRepeater](images/itemsrepeater-2.png)
@@ -328,7 +333,7 @@ ItemsRepeater は、次に該当する場合に使用します。
 - [マスター/詳細](master-details.md)
 - [ナビゲーション ウィンドウ](navigationview.md)
 - [セマンティック ズーム](semantic-zoom.md)
-- [ドラッグ アンド ドロップ](https://docs.microsoft.com/windows/uwp/app-to-app/drag-and-drop)
+- [ドラッグ アンド ドロップ](../input/drag-and-drop.md)
 - [サムネイル画像](../../files/thumbnails.md)
 
 **API リファレンス**

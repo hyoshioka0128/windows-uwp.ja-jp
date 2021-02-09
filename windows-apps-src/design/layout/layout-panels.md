@@ -1,16 +1,16 @@
 ---
 description: RelativePanel、StackPanel、Grid、Canvas などの組み込みの XAML レイアウト パネルを使用して、アプリの UI 要素を配置およびグループ化する方法を説明します。
 title: Windows アプリのレイアウト パネル
-ms.date: 04/02/2018
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 22fa8ef8df6f97ed63465df0cb3e62cbb14e2ced
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 3fd8d57db92b8a59f32935586edfc247ec3c281f
+ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89172446"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91750458"
 ---
 # <a name="layout-panels"></a>レイアウト パネル
 
@@ -186,8 +186,8 @@ StackPanel では、子要素のサイズを明示的に設定しない場合、
 
 次の例では、4 つの列を含む [**Grid**](/uwp/api/Windows.UI.Xaml.Controls.Grid) で、固定、自動、比例サイズ指定を組み合わせています。
 
-&nbsp;|&nbsp;|&nbsp;
-------|------|------
+| 列 | サイズ変更 | 説明 |
+| ------ | ------ | ----------- |
 Column_1 | **自動** | 列は、コンテンツが収まるようにサイズ変更されます。
 Column_2 | * | [自動] 列の計算後、この列は残りの幅の一部を取得します。 Column_2 の幅は Column_4 の半分になります。
 Column_3 | **44** | 列の幅は 44 ピクセルに設定されます。

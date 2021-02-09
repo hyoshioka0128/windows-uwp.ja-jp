@@ -1,5 +1,5 @@
 ---
-Description: データ テンプレート セレクターを使用して、項目のプロパティに基づいて項目のスタイルをカスタマイズします。
+description: データ テンプレート セレクターを使用して、項目のプロパティに基づいて項目のスタイルをカスタマイズします。
 title: データ テンプレートの選択
 label: Data template selection
 template: detail.hbs
@@ -7,12 +7,12 @@ ms.date: 10/18/2019
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: anawish
-ms.openlocfilehash: 382e28b38347a4901e781a12637423260c4bd3e3
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 0d9a35c3e66a4d4189016ca87d3da51da5bf5be4
+ms.sourcegitcommit: 4cafc1c55511741dd1e5bfe4496d9950a9b4de1b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89160386"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97860391"
 ---
 # <a name="data-template-selection-styling-items-based-on-their-properties"></a>データ テンプレートの選択:プロパティに基づいて項目のスタイルを設定する
 
@@ -124,7 +124,7 @@ public class MyDataTemplateSelector : DataTemplateSelector
 コードをコンパイルすると、各コレクション項目は `MyDataTemplateSelector` のオーバーライドされた `SelectTemplateCore` メソッドを通じて実行され、適切な DataTemplate を使用してレンダリングされます。
 
 > [!IMPORTANT]
-> [ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater?view=winui-2.2) で `DataTemplateSelector` を使用する場合は、`DataTemplateSelector` を `ItemTemplate` プロパティにバインドします。 `ItemsRepeater` には `ItemTemplateSelector` のプロパティがありません。
+> [ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater?view=winui-2.2&preserve-view=true) で `DataTemplateSelector` を使用する場合は、`DataTemplateSelector` を `ItemTemplate` プロパティにバインドします。 `ItemsRepeater` には `ItemTemplateSelector` のプロパティがありません。
 
 ## <a name="datatemplateselector-performance-considerations"></a>DataTemplateSelector のパフォーマンスに関する考慮事項
 
@@ -133,4 +133,4 @@ public class MyDataTemplateSelector : DataTemplateSelector
 - _項目ごとの要素の削減_ - データ テンプレート内の UI 要素の数を適切な最小値に維持します。
 - 異種コレクションでのコンテナー リサイクル
   - _ChoosingItemContainer_ の使用 - このイベントは異なる項目に異なるデータ テンプレートを使用するための効率的な方法です。 最適なパフォーマンスを実現するには、キャッシュを最適化し、特定のデータに応じたデータ テンプレートを選択する必要があります。
-  - _項目テンプレート セレクター_の使用 - 一部のインスタンスでは、パフォーマンスに影響を与えるために項目テンプレート セレクター (`DataTemplateSelector`) を使用しないようにする必要があります。
+  - _項目テンプレート セレクター_ の使用 - 一部のインスタンスでは、パフォーマンスに影響を与えるために項目テンプレート セレクター (`DataTemplateSelector`) を使用しないようにする必要があります。

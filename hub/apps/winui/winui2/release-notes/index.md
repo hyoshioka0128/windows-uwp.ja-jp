@@ -2,13 +2,13 @@
 title: WinUI のリリース ノート
 description: WinUI リリース ノートのインデックス。
 ms.date: 07/15/2020
-ms.topic: reference
-ms.openlocfilehash: 33d4b9dfb497017f446549d4f3daf737a8fa5ebb
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.topic: article
+ms.openlocfilehash: b2e337065df48cadd54332b9d22bda963fbc4a29
+ms.sourcegitcommit: 617344ae1a1f5b580c938b61e910d99120b73626
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89166696"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98620829"
 ---
 # <a name="windows-ui-library-2x-release-notes"></a>Windows UI ライブラリ 2.x のリリース ノート
 
@@ -38,7 +38,7 @@ https://github.com/Microsoft/Xaml-Controls-Gallery)でもあります
 
 Windows UI ライブラリ コントロールの操作方法に関する記事は、[ユニバーサル Windows プラットフォーム コントロール ドキュメント](/windows/uwp/design/controls-and-patterns/)に含まれています。
 
-API リファレンスのドキュメントがある場所は、[Windows UI ライブラリ API](/uwp/api/overview/winui/) です。
+API リファレンスのドキュメントがある場所は、[Windows UI ライブラリ API](/windows/winui/api/) です。
 
 ## <a name="version-history"></a>バージョン履歴
 
@@ -46,12 +46,13 @@ API リファレンスのドキュメントがある場所は、[Windows UI ラ�
 
 | Microsoft.UI.Xaml NuGet のバージョン | 種類 | リリース日 | リリース ノート | ハイライト |
 | --- | --- | --- | --- | --- |
+| [2.5](winui-2.5.md) | 安定 | 2020 年 12 月 | [リリース ノート](winui-2.5.md) | [情報バー](winui-2.5.md#infobar)、[確定的な ProgressRing](winui-2.5.md#determinate-progressring)、[NavigationView FooterMenuItems](winui-2.5.md#navigationview-footermenuitems) |
 | [2.4](winui-2.4.md) | 安定 | 2020 年 5 月 | [リリース ノート](winui-2.4.md) | [RadialGradientBrush](winui-2.4.md#radialgradientbrush)、[ProgressRing](winui-2.4.md#progressring)、[TabView の更新](winui-2.4.md#tabview-updates)、[TextBox コントロール ファミリのダーク テーマの更新](winui-2.4.md#dark-theme-updates-to-textbox-family-of-controls)、[階層型のナビゲーション](winui-2.4.md#hierarchical-navigation)  |
 | [2.3](winui-2.3.md) | 安定 | 2019 年 11 月 | [リリース ノート](winui-2.3.md) | [進捗状況バーのビジュアルの更新](winui-2.3.md#progress-bar-visual-refresh)、[NumberBox](winui-2.3.md#numberbox)、[RadioButtons](winui-2.3.md#radiobuttons) |
 | [2.2](winui-2.2.md) | 安定 | 2019 年 8 月 | [リリース ノート](winui-2.2.md) | [TabView](winui-2.2.md#tabview)、[NavigationView の更新](winui-2.2.md#navigationview-updates)、[視覚スタイルの更新](winui-2.2.md#visual-style-updates)  |
-| [2.1](winui-2.1.md) | 安定 | 2019 年 4 月 | [リリース ノート](winui-2.1.md) | [GitHub](https://github.com/microsoft/microsoft-ui-xaml) からの**最初のオープン ソース リリース**。 [ItemsRepeater](winui-2.1.md#itemsrepeater)、[AnimatedVisualPlayer](winui-2.1.md#animatedvisualplayer)、[TeachingTip](winui-2.1.md#teachingtip)、[RadioMenuFlyoutItem](winui-2.1.md#radiomenuflyoutitem)、[CompactDensity](winui-2.1.md#compactdensity)、[Shadows](winui-2.1.md#shadows) が含まれます。 |
+| [2.1](winui-2.1.md) | 安定 | 2019 年 4 月 | [リリース ノート](winui-2.1.md) | [GitHub](https://github.com/microsoft/microsoft-ui-xaml) からの **最初のオープン ソース リリース**。 [ItemsRepeater](winui-2.1.md#itemsrepeater)、[AnimatedVisualPlayer](winui-2.1.md#animatedvisualplayer)、[TeachingTip](winui-2.1.md#teachingtip)、[RadioMenuFlyoutItem](winui-2.1.md#radiomenuflyoutitem)、[CompactDensity](winui-2.1.md#compactdensity)、[Shadows](winui-2.1.md#shadows) が含まれます。 |
 | [2.0](winui-2.0.md) | 安定 | 2018 年 10 月 | [リリース ノート](winui-2.0.md) | **最初のリリース**。 Windows UWP アプリ用の正式なネイティブ Fluent コントロールと機能が含まれています。  |
 
-### <a name="windows-ui-library-3-preview-2-july-2020"></a>Windows UI ライブラリ 3 Preview 2 (2020 年 7 月)
+### <a name="windows-ui-library-3-preview-3-november-2020"></a>Windows UI ライブラリ 3 Preview 3 (2020 年 11 月)
 
-WinUI 3 の早期プレビューを試す方法については、「[Windows UI ライブラリ 3 Preview 2 (2020 年 7 月)](../../winui3/index.md)」を参照してください。
+WinUI 3 の早期プレビューを試す方法については、「[Windows UI ライブラリ 3 Preview 3 (2020 年 11 月)](../../winui3/index.md)」を参照してください。

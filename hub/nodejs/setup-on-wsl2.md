@@ -8,12 +8,12 @@ ms.topic: article
 keywords: NodeJS, Node.js, Windows 10, Microsoft, ラーニング NodeJS, Windows 上のノード, WSL 上のノード, Windows 上の Linux 上のノード, Windows 上のインストール ノード, NodeJS と VS Code, Windows 上のノードでの開発, Windows 上の NodeJS での開発, WSL 上のインストール ノード, Linux 用 Windows サブシステム上の NodeJS
 ms.localizationpriority: medium
 ms.date: 07/28/2020
-ms.openlocfilehash: 1b44cc51ecbb83e52a16ab7e5c577578c8765cb9
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 4e0477c91470d69f9ec5fd726079a1164e2cf276
+ms.sourcegitcommit: 3fafc6b6d548a03e6191fa95ebf9384c42396a30
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89166557"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97880535"
 ---
 # <a name="set-up-your-nodejs-development-environment-with-wsl-2"></a>WSL 2 を使用して Node.js 開発環境を設定する
 

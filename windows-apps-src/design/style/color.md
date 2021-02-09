@@ -1,7 +1,7 @@
 ---
 description: アクセント カラーとテーマのリソースを操作することにより、ユニバーサル Windows プラットフォーム (UWP) アプリで色を効果的に使用する方法について説明します。
 title: Windows アプリの色
-ms.date: 04/07/2019
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 design-contact: karenmui
@@ -10,12 +10,12 @@ ms.custom: RS5
 dev_langs:
 - csharp
 - cppwinrt
-ms.openlocfilehash: 06b566abf3fa20ca15e28a72b88e7c6e5a5cc4d5
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: c2f2053a02f6ddb2f955597f1a25cc58d220e115
+ms.sourcegitcommit: cbdfac0e2d8bead6c225e815e7d6dffe1f5ef864
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89169336"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92344981"
 ---
 # <a name="color"></a>色
 
@@ -216,7 +216,7 @@ Windows シェルのアクセント カラーのアルゴリズムによって�
 
 以下の表は、さまざまな色調のアクセント カラーと、色付きの表面上での文字色の見え方の例を示します。
 
-![色調の組み合わせ](images/color/color-on-color.png)
+![上端の薄い青から下端の濃い青まで変化する色のグラデーションを示すカラー チャートの色のスクリーンショット。](images/color/color-on-color.png)
 
 コントロールのスタイルについて詳しくは、「[XAML スタイル](../controls-and-patterns/xaml-styles.md)」をご覧ください。
 
@@ -427,7 +427,7 @@ ColorPaletteResources では、システム カラーを配置して、インラ
 
 :::row:::
     :::column:::
-![コントラストの図](images/color/illo-lighting.svg)
+![照明の図](images/color/illo-lighting.svg)
     :::column-end:::
     :::column span="2":::
 **照明**
@@ -438,7 +438,7 @@ ColorPaletteResources では、システム カラーを配置して、インラ
 
 :::row:::
     :::column:::
-![コントラストの図](images/color/illo-colorblindness.svg)
+![色覚障碍の図](images/color/illo-colorblindness.svg)
     :::column-end:::
     :::column span="2":::
 **色覚障碍**

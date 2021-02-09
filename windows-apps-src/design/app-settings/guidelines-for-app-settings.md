@@ -1,19 +1,19 @@
 ---
-Description: この記事では、アプリ設定を作成し、表示する際のベスト プラクティスについて説明します。
+description: この記事では、アプリ設定を作成し、表示する際のベスト プラクティスについて説明します。
 title: アプリ設定のガイドライン
 ms.assetid: 2D765E90-3FA0-42F5-A5CB-BEDC14C3F60A
 label: Guidelines
 template: detail.hbs
-ms.date: 08/07/2020
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e3fcbcaa88fa39795ac078617c9a958ff3a997ac
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 1b3f3388951dc2e3d854fcb97269e5bfb0449a6e
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173986"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93032405"
 ---
 # <a name="guidelines-for-app-settings"></a>アプリ設定のガイドライン
 
@@ -82,7 +82,7 @@ ms.locfileid: "89173986"
 - 濃色
 - Windows の既定
 
-また、Windows 設定アプリの [色] ページへのハイパーリンクを追加して、ユーザーが現在の既定のアプリ モードにアクセスして変更できるようにすることもお勧めします。 ハイパーリンク テキストには、"Windows の色の設定" という文字列を使用します。
+また、Windows 設定アプリの [色] ページへのハイパーリンクを追加して、ユーザーが現在の既定のアプリ モードにアクセスして変更できるようにすることもお勧めします。 ハイパーリンク テキストには "Windows の色の設定" という文字列を使用し、URI には `ms-settings:colors` を使用します。
 
 !["モードを選ぶ" セクション](images/appsettings_mode.png)
 

@@ -1,18 +1,18 @@
 ---
-Description: 数値ボックスは、数値の表示と編集に使用できるコントロールです。
+description: 数値ボックスは、数値の表示と編集に使用できるコントロールです。
 title: 数値ボックス
 template: detail.hbs
-ms.date: 11/27/2019
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 5e3bcbfc338d629bbda1036ef722d75ed6df37cd
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 4bba2f90d7240b454c4dbd5331251e306f946af7
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89169756"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93030915"
 ---
 # <a name="number-box"></a>数値ボックス
 
@@ -20,9 +20,17 @@ ms.locfileid: "89169756"
 
 **Windows UI ライブラリを入手する**
 
-|  |  |
-| - | - |
-| ![WinUI ロゴ](images/winui-logo-64x64.png) | **NumberBox** コントロールでは、Windows アプリのための新しいコントロールと UI 機能を含む NuGet パッケージである Windows UI ライブラリが必要になります。 インストール手順などの詳細については、[Windows UI ライブラリの概要](/uwp/toolkits/winui/)に関するページを参照してください。 |
+:::row:::
+   :::column:::
+      ![WinUI ロゴ](images/winui-logo-64x64.png)
+   :::column-end:::
+   :::column span="3":::
+      **NumberBox** コントロールでは、Windows アプリのための新しいコントロールと UI 機能を含む NuGet パッケージである Windows UI ライブラリが必要になります。 インストール手順などの詳細については、[Windows UI ライブラリの概要](/uwp/toolkits/winui/)に関するページを参照してください。
+   :::column-end:::
+   :::column:::
+
+   :::column-end:::
+:::row-end:::
 
 **Windows UI ライブラリ API:** [NumberBox クラス](/uwp/api/microsoft.ui.xaml.controls.NumberBox)
 
@@ -174,7 +182,7 @@ private void SetNumberBoxNumberFormatter()
 
 ### <a name="input-scope"></a>入力スコープ
 
-`Number` は[入力スコープ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.InputScopeNameValue)に使用されます。 この入力スコープは 0 ～ 9 の数字を操作するためのものです。 これは上書きできますが、代替の InputScope 型は明示的にサポートされません。
+`Number` は[入力スコープ](/uwp/api/Windows.UI.Xaml.Input.InputScopeNameValue)に使用されます。 この入力スコープは 0 ～ 9 の数字を操作するためのものです。 これは上書きできますが、代替の InputScope 型は明示的にサポートされません。
 
 ### <a name="not-a-number"></a>数値がない
 

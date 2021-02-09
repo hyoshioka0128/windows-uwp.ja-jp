@@ -3,16 +3,16 @@ title: WinUI 2.3 リリース ノート
 description: 新機能とバグ修正を含む WinUI 2.3 のリリース ノート。
 ms.date: 07/15/2020
 ms.topic: article
-ms.openlocfilehash: 63091f927f63a708c5a5e4d41e9d81fd9f528cb1
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: e3f6aca344fb86725e6addc7758110aca9eaf01b
+ms.sourcegitcommit: b99fe39126fbb457c3690312641f57d22ba7c8b6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89154786"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96603849"
 ---
 # <a name="windows-ui-library-23"></a>Windows UI ライブラリ 2.3
 
-WinUI 2.3 は、Windows UI ライブラリ (WinUI) の最新の公式リリースです。
+WinUI 2.3 は、Windows UI ライブラリ (WinUI) の 2020 年 1 月のリリースです。
 
 WinUI は、GitHub の [Windows UI ライブラリ リポジトリ](https://aka.ms/winui)にホストされているオープン ソース プロジェクトです。 すべてのバグ レポート、機能要求、およびコミュニティ コードの投稿をこのリポジトリに登録してください。
 
@@ -56,7 +56,7 @@ NuGet パッケージのダウンロード:[Microsoft.UI.Xaml](https://www.nuget
 
 **Radiobutton** は、RadioButton 要素の関連グループを簡単に作成できる新しいコンテナー コントロールです。また、キーボード入力機能やナレーター/スクリーン リーダー機能を適切にサポートします
 
-![RadioButtons](../images/RadioButtons.png)
+![3 つのラジオ ボタンのスクリーンショット (3 つ目が選択されている)。](../images/RadioButtons.png)
 
 [ドキュメントとサンプル リンク](https://github.com/microsoft/microsoft-ui-xaml-specs/blob/c8d3d3668af546091656dfc37436b13cd062f52d/active/radiobuttons/RadioButtons_Spec.md)
 
@@ -67,11 +67,10 @@ XAML Controls Gallery サンプル アプリには、WinUI コントロールを
 * [Microsoft Store](
 https://www.microsoft.com/p/xaml-controls-gallery/9msvh128x2zt) から XAML Controls Gallery アプリをインストールします
 
-* XAML Controls Gallery は [GitHub のオープン ソース](
-https://github.com/Microsoft/Xaml-Controls-Gallery)でもあります
+* XAML Controls Gallery は [GitHub のオープン ソース](https://github.com/Microsoft/Xaml-Controls-Gallery)でもあります
 
 ## <a name="documentation"></a>ドキュメント
 
 Windows UI ライブラリ コントロールの操作方法に関する記事は、[ユニバーサル Windows プラットフォーム コントロール ドキュメント](/windows/uwp/design/controls-and-patterns/)に含まれています。
 
-API リファレンスのドキュメントがある場所は、[Windows UI ライブラリ API](/uwp/api/overview/winui/) です。
+API リファレンスのドキュメントがある場所は、[Windows UI ライブラリ API](/windows/winui/api/) です。

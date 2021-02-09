@@ -2,20 +2,20 @@
 ms.assetid: B071F6BC-49D3-4E74-98EA-0461A1A55EFB
 description: アプリとアドオンのカタログがある場合は、Microsoft Store コレクション API および Microsoft Store 購入 API を使って、サービスからこれらの製品の所有権情報にアクセスできます。
 title: サービスによる製品の権利の管理
-ms.date: 08/01/2018
+ms.date: 01/21/2021
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store コレクション API, Microsoft Store 購入 API, 製品の表示, 製品の付与
 ms.localizationpriority: medium
-ms.openlocfilehash: 769366cd45b4734987e3f558c11a6e0e105cfe21
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 7674a9b966510d914850e1fc8b2c8ca531f64a20
+ms.sourcegitcommit: 069f5ab4be85a7d638fc2a426afaed824e5dfeae
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89164456"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98668730"
 ---
 # <a name="manage-product-entitlements-from-a-service"></a>サービスによる製品の権利の管理
 
-アプリとアドオンのカタログがある場合は、*Microsoft Store コレクション API* と *Microsoft Store 購入 API* を使って、サービスからこれらの製品の権利の情報にアクセスできます。 "権利"** とは、Microsoft Store を通じて公開されたアプリまたはアドオンを顧客が使用する権利を表します。
+アプリとアドオンのカタログがある場合は、*Microsoft Store コレクション API* と *Microsoft Store 購入 API* を使って、サービスからこれらの製品の権利の情報にアクセスできます。 "権利" とは、Microsoft Store を通じて公開されたアプリまたはアドオンを顧客が使用する権利を表します。
 
 これらの API は、クロスプラットフォーム サービスでサポートされるアドオン カタログを持つ開発者向けに設計された REST メソッドで構成されています。 これらの API を使用すると、次の操作を実行できます。
 
@@ -33,7 +33,6 @@ ms.locfileid: "89164456"
 2.  [Azure AD アプリケーション ID をパートナーセンターのアプリに関連付け](#step-2)ます。
 3.  サービスで、発行元 ID を表す [Azure AD アクセス トークンを作成します](#step-3)。
 4.  クライアントの Windows アプリで、現在のユーザーの id を表す [MICROSOFT STORE ID キーを作成](#step-4) し、このキーをサービスに戻します。
-5.  必要な Azure AD のアクセス トークンと Microsoft Store ID キーを取得した後、[サービスから Microsoft Store コレクション API または Microsoft Store 購入 API を呼び出します](#step-5)。
 
 このエンドツーエンドのプロセスには、さまざまなタスクを実行する2つのソフトウェアコンポーネントが含まれます。
 
@@ -46,27 +45,13 @@ ms.locfileid: "89164456"
 
 Microsoft Store collection API または purchase API を使用するには、Azure AD Web アプリケーションを作成し、アプリケーションのテナント ID とアプリケーション ID を取得して、キーを生成する必要があります。 Azure AD Web アプリケーションは、Microsoft Store collection API または purchase API の呼び出し元のサービスを表します。 API を呼び出すために必要な Azure AD アクセストークンを生成するには、テナント ID、アプリケーション ID、およびキーが必要です。
 
-> [!NOTE]
-> このセクションの作業は 1 回実行する必要があるだけです。 Azure AD アプリケーションマニフェストを更新し、テナント ID、アプリケーション ID、およびクライアントシークレットがある場合は、新しい Azure AD アクセストークンを作成する必要があるときはいつでもこれらの値を再利用できます。
-
 1.  まだ行っていない場合は、「アプリケーションを [Azure Active Directory と統合](/azure/active-directory/develop/active-directory-integrating-applications) して、 **WEB アプリ/API** アプリケーションを Azure AD に登録する」の手順に従ってください。
     > [!NOTE]
-    > アプリケーションを登録するときに、アプリケーションの種類として [ **Web アプリ/API** ] を選択して、アプリケーションのキー ( *クライアントシークレット*とも呼ばれます) を取得できるようにする必要があります。 Microsoft Store コレクション API または購入 API を呼び出すには、後の手順で Azure AD からアクセス トークンを要求するときにクライアント シークレットを指定する必要があります。
+    > アプリケーションを登録するときに、アプリケーションの種類として [ **Web アプリ/API** ] を選択して、アプリケーションのキー ( *クライアントシークレット* とも呼ばれます) を取得できるようにする必要があります。 Microsoft Store コレクション API または購入 API を呼び出すには、後の手順で Azure AD からアクセス トークンを要求するときにクライアント シークレットを指定する必要があります。
 
-2.  [Azure 管理ポータル](https://portal.azure.com/)で、 **Azure Active Directory**に移動します。 ディレクトリを選択し、左側のナビゲーションウィンドウで [ **アプリの登録** ] をクリックして、アプリケーションを選択します。
+2.  [Azure 管理ポータル](https://portal.azure.com/)で、 **Azure Active Directory** に移動します。 ディレクトリを選択し、左側のナビゲーションウィンドウで [ **アプリの登録** ] をクリックして、アプリケーションを選択します。
 3.  アプリケーションのメイン登録ページが表示されます。 このページで、[ **アプリケーション ID** ] の値をコピーして後で使用します。
-4.  後で必要になるキーを作成します (これは、 *クライアントシークレット*と呼ばれます)。 左側のウィンドウで、[ **設定** ]、[ **キー**] の順にクリックします。 このページで、 [キーを作成](/azure/active-directory/develop/active-directory-integrating-applications#to-add-application-credentials-or-permissions-to-access-web-apis)する手順を完了します。 後で使用するためにこのキーをコピーします。
-5.  [アプリケーションマニフェスト](/azure/active-directory/develop/active-directory-application-manifest)に必要な対象ユーザーの uri をいくつか追加します。 左側のウィンドウで **[マニフェスト]** をクリックします。 [ **編集**] をクリックし、 `"identifierUris"` セクションを次のテキストに置き換えて、[ **保存**] をクリックします。
-
-    ```json
-    "identifierUris" : [                                
-            "https://onestore.microsoft.com",
-            "https://onestore.microsoft.com/b2b/keys/create/collections",
-            "https://onestore.microsoft.com/b2b/keys/create/purchase"
-        ],
-    ```
-
-    これらの文字列は、アプリケーションでサポートされる対象ユーザーを表します。 後の手順で、各対象ユーザー値に関連付けられた Azure AD アクセス トークンを作成します。
+4.  後で必要になるキーを作成します (これは、 *クライアントシークレット* と呼ばれます)。 左側のウィンドウで、[ **設定** ]、[ **キー**] の順にクリックします。 このページで、 [キーを作成](/azure/active-directory/develop/active-directory-integrating-applications#to-add-application-credentials-or-permissions-to-access-web-apis)する手順を完了します。 後で使用するためにこのキーをコピーします。
 
 <span id="step-2"/>
 
@@ -75,10 +60,10 @@ Microsoft Store collection API または purchase API を使用するには、Az
 Microsoft Store collection API または purchase API を使用してアプリまたはアドオンの所有権と購入を構成する前に、パートナーセンターで Azure AD アプリケーション ID をアプリ (またはアドオンを含むアプリ) に関連付ける必要があります。
 
 > [!NOTE]
-> この作業を行うのは一度だけです。
+> この作業を行うのは一度だけです。 テナント ID、アプリケーション ID、およびクライアントシークレットを取得した後、新しい Azure AD アクセストークンを作成する必要がある場合は、いつでもこれらの値を再利用できます。
 
 1.  [パートナーセンター](https://partner.microsoft.com/dashboard)にサインインし、アプリを選択します。
-2.  **サービス** &gt; **製品コレクションと購入**ページにアクセスし、[使用可能な**クライアント id** ] フィールドのいずれかに Azure AD アプリケーション id を入力します。
+2.  **サービス** &gt; **製品コレクションと購入** ページにアクセスし、[使用可能な **クライアント id** ] フィールドのいずれかに Azure AD アプリケーション id を入力します。
 
 <span id="step-3"/>
 
@@ -93,7 +78,7 @@ Microsoft Store ID キーを取得したり、Microsoft Store コレクション
 
 ### <a name="understanding-the-different-tokens-and-audience-uris"></a>さまざまなトークンとオーディエンス URI を理解する
 
-Microsoft Store コレクション API または購入 API で呼び出そうとしているメソッドに応じて、2 つまたは 3 つの異なるトークンを作成する必要があります。 各アクセス トークンは、別々のオーディエンス URI に関連付けられます (これらは、以前に Azure AD アプリケーション マニフェストの `"identifierUris"` セクションに追加した URI と同じです)。
+Microsoft Store コレクション API または購入 API で呼び出そうとしているメソッドに応じて、2 つまたは 3 つの異なるトークンを作成する必要があります。 各アクセストークンは、異なる対象ユーザーの URI に関連付けられています。
 
   * いずれの場合も、`https://onestore.microsoft.com` オーディエンス URI のトークンを 1 つ作成する必要があります。 このトークンは、後の手順で Microsoft Store コレクション API または購入 API のメソッドの **Authorization** ヘッダーに渡します。
       > [!IMPORTANT]
@@ -180,29 +165,6 @@ Microsoft Store コレクション API または Microsoft Store 購入 API の�
 次の図は、Microsoft Store ID キーを作成するプロセスを示しています。
 
   ![Windows ストア ID キーを作成する](images/b2b-1.png)
-
-<span id="step-5"/>
-
-## <a name="step-5-call-the-microsoft-store-collection-api-or-purchase-api-from-your-service"></a>手順 5: サービスから Microsoft Store コレクション API または購入 API を呼び出す
-
-特定のユーザーの製品所有権情報にアクセスするための Microsoft Store ID キーをサービスで取得したら、次の手順に従って、サービスから Microsoft Store コレクション API または購入 API を呼び出すことができます。
-
-* [製品の照会](query-for-products.md)
-* [コンシューマブルな製品をフルフィルメント完了として報告する](report-consumable-products-as-fulfilled.md)
-* [無料の製品の付与](grant-free-products.md)
-* [ユーザーのサブスクリプションの取得](get-subscriptions-for-a-user.md)
-* [ユーザーのサブスクリプションに関する請求の状態を変更する](change-the-billing-state-of-a-subscription-for-a-user.md)
-
-各シナリオについて、次の情報を API に渡します。
-
--   要求ヘッダーで、対象ユーザー URI 値 `https://onestore.microsoft.com` を持つ Azure AD アクセス トークンを渡します。 これは、[前述の手順 3](#step-3) で作成したトークンのいずれかです。 このトークンは発行元 ID を表します。
--   要求本文で、[前述の手順 4](#step-4) でアプリのクライアント側コードから取得した Microsoft Store ID キーを渡します。 このキーは、ユーザーの製品所有権情報にアクセスする場合にそのユーザーの ID を表します。
-
-### <a name="diagram"></a>ダイアグラム
-
-次の図は、サービスからの Microsoft Store collection API または purchase API でメソッドを呼び出すプロセスを示しています。
-
-  ![呼び出しコレクションまたは購入 API](images/b2b-2.png)
 
 ## <a name="claims-in-a-microsoft-store-id-key"></a>Microsoft Store ID キー内の要求
 

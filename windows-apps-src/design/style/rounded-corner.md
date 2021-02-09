@@ -4,12 +4,12 @@ description: 角の丸めの原則、デザイン方法、カスタマイズ オ
 ms.date: 10/08/2019
 ms.topic: article
 keywords: windows 10, uwp, 角の半径, 丸め
-ms.openlocfilehash: 134a49ac57678eea0da718e93a14e3d0cf8896d5
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 33432ac0083c0d6660d0669ea43805e0ae73f37e
+ms.sourcegitcommit: 4cafc1c55511741dd1e5bfe4496d9950a9b4de1b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "81001479"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97860196"
 ---
 # <a name="corner-radius"></a>角の半径
 
@@ -22,7 +22,7 @@ ms.locfileid: "81001479"
 WinUI 2.2 以降の NuGet パッケージをインストールすると、WinUI コントロールとプラットフォーム コントロールの両方で、新しい既定のスタイルがインストールされます。 アプリで WinUI 2.2 を使用すると、これらのスタイルが自動的に使用されます。新しいスタイルを使用するために、特に何かをする必要はありません。 ただし、この記事の後半では、必要に応じて角の丸めをカスタマイズする方法について説明します。
 
 > [!IMPORTANT]
-> **TreeView** や **ColorPicker** などの一部のコントロールは、プラットフォーム ([Windows.UI.Xaml.Controls](/uwp/api/windows.ui.xaml.controls)) と WinUI ([Microsoft.UI.Xaml.Controls](/uwp/api/microsoft.ui.xaml.controls?view=winui-2.2)) の両方で使用できます。 アプリで WinUI を使用するときは、コントロールの WinUI バージョンを使用することをお勧めします。 WinUI と共に使用すると、プラットフォーム バージョンでは角の丸めが一貫して適用されない場合があります。
+> **TreeView** や **ColorPicker** などの一部のコントロールは、プラットフォーム ([Windows.UI.Xaml.Controls](/uwp/api/windows.ui.xaml.controls)) と WinUI ([Microsoft.UI.Xaml.Controls](/uwp/api/microsoft.ui.xaml.controls?view=winui-2.2&preserve-view=true)) の両方で使用できます。 アプリで WinUI を使用するときは、コントロールの WinUI バージョンを使用することをお勧めします。 WinUI と共に使用すると、プラットフォーム バージョンでは角の丸めが一貫して適用されない場合があります。
 
 > **重要な API**:[Control.CornerRadius プロパティ](/uwp/api/windows.ui.xaml.controls.control.cornerradius)
 
@@ -115,11 +115,11 @@ WinUI 2.2 以降の NuGet パッケージをインストールすると、WinUI 
 
 - コントロールが別のコンテナーに格納されている場合。たとえば、ScrollBar のバーとボタンが ScrollBar コンテナーの一部であり、ScrollBar コンテナーがさらに ScrollViewer の一部である場合。
 
-![ScrollBar](images/rounded-corner/scrollbar.png)
+![角が丸められていない垂直スクロール バーのスクリーンショット。](images/rounded-corner/scrollbar.png)
 
 - フライアウト UI 要素が、1 つの端で、そのフライアウトを呼び出す UI と接している場合。
 
-![AutoSuggest](images/rounded-corner/autosuggest.png)
+![一部の角が丸められていない AutoSuggest ポップアップのスクリーンショット。](images/rounded-corner/autosuggest.png)
 
 ### <a name="keyboard-focus-rectangle-and-shadow"></a>キーボード フォーカスの四角形と影
 

@@ -3,19 +3,19 @@ description: ドロップダウン リストとも呼ばれるリスト ボッ�
 title: コンボ ボックスとリスト ボックス
 label: Combo box and list box
 template: detail.hbs
-ms.date: 10/02/2018
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: stmoy
 design-contact: ''
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: 911585d4e00c5e6c6aea66a72488c48f4d6ffb6d
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: bb903be202724927d60ee5bcd1edb9e16bc4c982
+ms.sourcegitcommit: 4f032d7bb11ea98783db937feed0fa2b6f9950ef
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173496"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91829484"
 ---
 # <a name="combo-box-and-list-box"></a>コンボ ボックスとリスト ボックス
 
@@ -23,15 +23,23 @@ ms.locfileid: "89173496"
 
 コンボ ボックスを閉じると、現在の選択が表示されるか、選択された項目がない場合は空です。 ユーザーがコンボ ボックスを展開すると、選択可能な項目の一覧が表示されます。
 
-![コンパクトな状態のドロップダウン リストの例](images/combo-box-expand.gif)
+![コンパクトな状態と展開された状態のドロップダウン リストを示す短いビデオ。](images/combo-box-expand.gif)
 
 > _ヘッダーが表示されたコンパクトな状態のコンボ ボックス。_
 
 **Windows UI ライブラリを入手する**
 
-|  |  |
-| - | - |
-| ![WinUI ロゴ](images/winui-logo-64x64.png) | Windows UI ライブラリ 2.2 以降には、丸めた角を使用するこのコントロールの新しいテンプレートが含まれます。 詳しくは、「[角の半径](../style/rounded-corner.md)」をご覧ください。 WinUI は、Windows アプリの新しいコントロールと UI 機能が含まれる NuGet パッケージです。 インストール手順などについて詳しくは、「[Windows UI Library (Windows UI ライブラリ)](/uwp/toolkits/winui/)」をご覧ください。 |
+:::row:::
+   :::column:::
+      ![WinUI ロゴ](images/winui-logo-64x64.png)
+   :::column-end:::
+   :::column span="3":::
+      Windows UI ライブラリ 2.2 以降には、丸めた角を使用するこのコントロールの新しいテンプレートが含まれます。 詳しくは、「[角の半径](../style/rounded-corner.md)」をご覧ください。 WinUI は、Windows アプリの新しいコントロールと UI 機能が含まれる NuGet パッケージです。 インストール手順などについて詳しくは、「[Windows UI Library (Windows UI ライブラリ)](/uwp/toolkits/winui/)」をご覧ください。
+   :::column-end:::
+   :::column:::
+
+   :::column-end:::
+:::row-end:::
 
 > **プラットフォーム API:** [ComboBox クラス](/uwp/api/Windows.UI.Xaml.Controls.ComboBox)、[IsEditable プロパティ](/uwp/api/windows.ui.xaml.controls.combobox.iseditable)、[Text プロパティ](/uwp/api/Windows.UI.Xaml.Controls.ComboBox)、[TextSubmitted イベント](/uwp/api/Windows.UI.Xaml.Controls.ComboBox)
 
@@ -60,7 +68,7 @@ ms.locfileid: "89173496"
 
 コンパクトな状態のコンボ ボックスには、ヘッダーを表示できます。
 
-![コンパクトな状態のドロップダウン リストの例](images/combo_box_collapsed.png)
+![コンパクトな状態のドロップダウン リストを示すスクリーンショット。](images/combo_box_collapsed.png)
 
 コンボ ボックスは、長い文字列の幅をサポートするために拡張できますが、読みづらくなるような長すぎる文字列は使わないでください。
 
